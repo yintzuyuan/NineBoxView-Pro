@@ -181,9 +181,9 @@ a:hover {
 
 .hero__image {
   max-width: 100%;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   margin: var(--spacing-md) 0;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1); */
 }
 
 @media (prefers-color-scheme: dark) {
