@@ -1,0 +1,533 @@
+/* NineBoxView Pro - Website Styles
+   Design Language: Eastern Minimalism (inheriting erikyin.net)
+
+   Color System:
+   - Light mode: rice paper (#f8f6f0), ink black (#4a4a4a)
+   - Dark mode: ink black (#1a1a1a), rice paper (#f8f6f0)
+*/
+
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Light mode (default) */
+  --color-bg: #f8f6f0;
+  --color-text: #4a4a4a;
+  --color-text-secondary: #6a6a6a;
+  --color-border: #d4d4d4;
+  --color-accent: #2a2a2a;
+  --color-glyphs: #87F32D;
+  --color-glyphs-dark: #2C372A;  /* Glyphs 官方深綠色 */
+
+  /* Typography */
+  --font-sans: 'IBM Plex Sans', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Spacing */
+  --max-width: 42rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a1a;
+    --color-text: #f8f6f0;
+    --color-text-secondary: #b0b0b0;
+    --color-border: #3a3a3a;
+    --color-accent: #e0e0e0;
+  }
+}
+
+/* ==================== Reset & Base ==================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================== Typography ==================== */
+h1, h2, h3 {
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.125rem; }
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ==================== Layout ==================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* ==================== Navigation ==================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-sm) 0;
+}
+
+.nav__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.nav__link:hover {
+  opacity: 0.7;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: var(--spacing-xs);
+  font-size: 0.75rem;
+}
+
+.lang-switcher a {
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.lang-switcher a:hover,
+.lang-switcher a.active {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  letter-spacing: 0.08em;
+}
+
+.hero__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.hero__subtitle--secondary {
+  margin-top: calc(-0.5 * var(--spacing-sm));
+  margin-bottom: var(--spacing-md);
+}
+
+.hero__image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: var(--spacing-md) 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero__image {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ==================== CTA Button ==================== */
+.cta {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.cta--secondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.cta--secondary:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.cta--glyphs {
+  background-color: transparent;
+  color: var(--color-glyphs-dark);
+  border: 1px solid var(--color-glyphs-dark);
+}
+
+.cta--glyphs:hover {
+  background-color: var(--color-glyphs);
+  color: var(--color-glyphs-dark);
+  border-color: var(--color-glyphs);
+}
+
+/* Dark mode: restore bright green for glyphs button */
+@media (prefers-color-scheme: dark) {
+  .cta--glyphs {
+    color: var(--color-glyphs);
+    border-color: var(--color-glyphs);
+  }
+
+  .cta--glyphs:hover {
+    color: #1a1a1a;
+  }
+}
+
+/* Hero Actions (dual buttons) */
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero__pricing-note {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-sm);
+}
+
+/* ==================== Features Section ==================== */
+.features {
+  text-align: center;
+}
+
+.features__title {
+  margin-bottom: var(--spacing-sm);
+}
+
+.features__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: left;
+}
+
+/* 統一左影片右文字 */
+
+/* 影片/GIF 區域 */
+.feature__media {
+  flex: 0 0 55%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+/* 主要功能區塊（核心功能）較大的影像 */
+.features--primary .feature__media {
+  flex: 0 0 65%;
+  aspect-ratio: 16/10;
+}
+
+.features--primary .features__grid {
+  gap: var(--spacing-xl);
+}
+
+.feature__media img,
+.feature__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Image fallback placeholder */
+.feature__placeholder {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-secondary);
+}
+
+.feature__media.img-error img {
+  display: none;
+}
+
+.feature__media.img-error .feature__placeholder {
+  display: flex;
+}
+
+/* 文字區域 */
+.feature__content {
+  flex: 1;
+}
+
+.feature__title {
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature__desc {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+/* ==================== Localization Section ==================== */
+.localization {
+  text-align: center;
+}
+
+.localization__image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: var(--spacing-md) 0;
+}
+
+/* ==================== Download Section ==================== */
+.download {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.download__title {
+  margin-bottom: var(--spacing-md);
+}
+
+.download__note {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.download__note a {
+  color: var(--color-text-secondary);
+}
+
+.download__purchase {
+  margin-top: var(--spacing-sm);
+}
+
+.download__purchase a {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.download__purchase a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* ==================== Trust Section ==================== */
+.trust {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.trust__story {
+  max-width: 32rem;
+  margin: 0 auto var(--spacing-md);
+  line-height: 1.8;
+}
+
+.trust__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.trust__feature {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* ==================== Footer ==================== */
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-md) 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+  list-style: none;
+}
+
+.footer__link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--color-text);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 640px) {
+  :root {
+    --spacing-xl: 4rem;
+    --spacing-lg: 3rem;
+  }
+
+  h1 { font-size: 2rem; }
+
+  .nav__inner {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  /* Features: 手機版改為上下排列 */
+  .feature {
+    flex-direction: column;
+  }
+
+
+  .feature__media {
+    flex: none;
+    width: 100%;
+  }
+
+  .feature__content {
+    text-align: center;
+  }
+}
+
+/* ==================== Utilities ==================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* ==================== FAQ Section ==================== */
+.faq {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq__list {
+  margin-top: var(--spacing-md);
+  text-align: left;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq__item {
+  margin-bottom: var(--spacing-md);
+}
+
+.faq__item dt {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.faq__item dd {
+  color: var(--color-text-secondary);
+  margin-left: 0;
+}
+

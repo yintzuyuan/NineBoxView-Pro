@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NineBoxView Pro - Nine-Grid Preview Tool | Glyphs Plugin</title>
+  <meta name="description" content="Nine-grid preview tool built for Glyphs 3. Native performance, 60fps smooth experience, five-language interface support.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NineBoxView Pro - Nine-Grid Preview Tool">
+  <meta property="og:description" content="Nine-grid preview tool built for Glyphs 3.">
+  <meta property="og:image" content="../assets/images/og-image.png">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <ul class="nav__links">
+        <li><a href="./" class="nav__link">Home</a></li>
+        <li><a href="https://github.com/yintzuyuan/NineBoxView-dev/wiki" class="nav__link" target="_blank" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://erikyin.net/en/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <a href="../index.html" title="繁體中文">繁</a>
+        <a href="index.html" class="active" title="English">EN</a>
+        <a href="../zh-Hans/index.html" title="简体中文">简</a>
+        <!-- <a href="../ja/index.html" title="日本語">日</a>
+        <a href="../ko/index.html" title="한국어">한</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title">NineBoxView Pro</h1>
+        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">Built for Glyphs 3.</p>
+
+        <!-- Hero Image -->
+        <img src="../assets/images/hero.gif" alt="NineBoxView Pro Interface" class="hero__image"
+             onerror="this.style.display='none'">
+        <div class="hero__image hero__placeholder" style="height: 400px; background: var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary);">
+          Product Hero Image (To be replaced)
+        </div>
+
+        <div class="hero__actions">
+          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
+            Get License
+          </a>
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            Install Trial
+          </a>
+        </div>
+        <p class="hero__pricing-note">*Regional pricing available at checkout</p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features features--primary">
+      <div class="container">
+        <h2 class="features__title">Core Features</h2>
+        <p>Quickly test glyph combinations, spot problematic pairings</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-reference.gif" alt="Reference Glyphs Demo"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Reference GIF (To be replaced)</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Reference Glyphs</h3>
+              <p class="feature__desc">Enter common glyphs, auto-shuffle around the grid. Click to reshuffle, quickly spot problematic combinations.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lock.gif" alt="Locked Glyphs Demo"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Locked GIF (To be replaced)</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Locked Glyphs</h3>
+              <p class="feature__desc">Pin specific glyphs to fixed positions, test spacing for fixed pairings. Settings saved with your file, seamless team collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="features__title">Advanced Integration</h2>
+        <p>Seamless collaboration with the Glyphs ecosystem</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-native.gif" alt="Native macOS Experience Demo"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Native Experience GIF (To be replaced)</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Native macOS Experience</h3>
+              <p class="feature__desc">Drag & drop, glyph picker—seamlessly integrated with your Glyphs workflow.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lighttable.gif" alt="Light Table Sync Demo"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Light Table GIF (To be replaced)</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Light Table Sync</h3>
+              <p class="feature__desc">Hold Shift to compare versions instantly. Seamless Light Table integration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section localization">
+      <div class="container">
+        <h2>Speaking Your Language.</h2>
+        <p>Native interface, seamless experience</p>
+
+        <!-- Localization Image Placeholder -->
+        <div class="localization__image" style="height: 300px; background: var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary); border-radius: 8px;">
+          Five-Language Interface Display (To be replaced)
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download">
+      <div class="container">
+        <h2 class="download__title">Ready to Get Started?</h2>
+
+        <div class="hero__actions">
+          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
+            Get License
+          </a>
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            Install Trial
+          </a>
+        </div>
+        <p class="hero__pricing-note">*Regional pricing available at checkout</p>
+
+        <div class="download__note">
+          <p>Looking for the free version?</p>
+          <p>The open-source Python version is still available on GitHub.</p>
+          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+      <div class="container">
+        <h2>FAQ</h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt>One-time or subscription?</dt>
+            <dd>One-time purchase, lifetime use.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>How many Macs?</dt>
+            <dd>Single-user license — use on all your personal Macs.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>Free trial?</dt>
+            <dd>Yes, 14-day free trial.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section trust">
+      <div class="container">
+        <h2>Built for my own workflow.</h2>
+        <p class="trust__story">I originally built this tool to solve my own daily type design pain points. Because it dramatically improved my efficiency, I've now refined it into a Pro version—hoping it helps you who also care about the details.</p>
+
+        <ul class="trust__features">
+          <li class="trust__feature">• Data stored only in local .glyphs files</li>
+          <li class="trust__feature">• No font data uploaded to the cloud</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 TzuYuan Yin · 殷慈遠</p>
+      <ul class="footer__links">
+        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">Contact</a></li>
+        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://erikyin.net/en/privacy/" class="footer__link" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        <li><a href="https://erikyin.net/en/terms/" class="footer__link" target="_blank" rel="noopener noreferrer">Terms & Refund Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- i18n Script -->
+  <script src="../i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NineBoxView Pro - 九宮格プレビューツール | Glyphs プラグイン</title>
+  <meta name="description" content="Glyphs 3 専用の九宮格プレビューツール。ネイティブパフォーマンス、60fps のスムーズな体験、5言語インターフェース対応。">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NineBoxView Pro - 九宮格プレビューツール">
+  <meta property="og:description" content="Glyphs 3 専用の九宮格プレビューツール。">
+  <meta property="og:image" content="../assets/images/og-image.png">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <ul class="nav__links">
+        <li><a href="./" class="nav__link">ホーム</a></li>
+        <li><a href="https://github.com/yintzuyuan/NineBoxView-dev/wiki" class="nav__link" target="_blank" rel="noopener noreferrer">ドキュメント</a></li>
+        <li><a href="https://erikyin.net" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <a href="../index.html" title="繁體中文">繁</a>
+        <a href="../en/index.html" title="English">EN</a>
+        <a href="../zh-Hans/index.html" title="简体中文">简</a>
+        <a href="index.html" class="active" title="日本語">日</a>
+        <a href="../ko/index.html" title="한국어">한</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title">九マスビュー Pro</h1>
+        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">Glyphs 3 専用の九宮格プレビューツール。</p>
+
+        <!-- Hero Image -->
+        <img src="../assets/images/hero.gif" alt="NineBoxView Pro インターフェース" class="hero__image"
+             onerror="this.style.display='none'">
+        <div class="hero__image hero__placeholder" style="height: 400px; background: var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary);">
+          製品メインビジュアル（差し替え予定）
+        </div>
+
+        <div class="hero__actions">
+          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
+            ライセンス購入
+          </a>
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            試用版をインストール
+          </a>
+        </div>
+        <p class="hero__pricing-note">*お会計時に地域価格が適用されます</p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features features--primary">
+      <div class="container">
+        <h2 class="features__title">コア機能</h2>
+        <p>グリフの組み合わせを素早くテスト、問題のあるペアリングを発見</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-reference.gif" alt="参照グリフ デモ"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">参照グリフ GIF（差し替え予定）</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">参照グリフ</h3>
+              <p class="feature__desc">よく使うグリフを入力すると、周囲に自動でランダム配置。クリックで再シャッフル、問題のある組み合わせを素早く発見。</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lock.gif" alt="ロックグリフ デモ"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">ロックグリフ GIF（差し替え予定）</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">ロックグリフ</h3>
+              <p class="feature__desc">特定のグリフを固定位置にピン留め、固定ペアリングのスペーシングをテスト。設定はファイルと共に保存、チームコラボレーションもシームレス。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="features__title">高度な統合</h2>
+        <p>Glyphs エコシステムとシームレスに連携</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-native.gif" alt="ネイティブ macOS 体験 デモ"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">ネイティブ体験 GIF（差し替え予定）</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">ネイティブ macOS 体験</h3>
+              <p class="feature__desc">ドラッグ＆ドロップ、グリフピッカー — Glyphs ワークフローとシームレスに統合。</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lighttable.gif" alt="Light Table 同期 デモ"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Light Table GIF（差し替え予定）</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Light Table 同期</h3>
+              <p class="feature__desc">Shift キーを押してバージョンを即座に比較。Light Table とシームレスに連携。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section localization">
+      <div class="container">
+        <h2>Speaking Your Language.</h2>
+        <p>ネイティブインターフェース、シームレスな体験</p>
+
+        <!-- Localization Image Placeholder -->
+        <div class="localization__image" style="height: 300px; background: var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary); border-radius: 8px;">
+          5言語インターフェース表示（差し替え予定）
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download">
+      <div class="container">
+        <h2 class="download__title">始める準備はできましたか？</h2>
+
+        <div class="hero__actions">
+          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
+            ライセンス購入
+          </a>
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            試用版をインストール
+          </a>
+        </div>
+        <p class="hero__pricing-note">*お会計時に地域価格が適用されます</p>
+
+        <div class="download__note">
+          <p>無料版をお探しですか？</p>
+          <p>オープンソースの Python 版は GitHub で引き続き利用可能です。</p>
+          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+      <div class="container">
+        <h2>よくある質問</h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt>買い切り？サブスク？</dt>
+            <dd>一度の購入で永久に使用できます。</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>何台のMacで使える？</dt>
+            <dd>シングルユーザーライセンス — ご自身のすべてのMacでご利用いただけます。</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>試用版はある？</dt>
+            <dd>はい、14日間の無料トライアルがあります。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section trust">
+      <div class="container">
+        <h2>Built for my own workflow.</h2>
+        <p class="trust__story">これは私自身の日々の書体デザインの課題を解決するために開発したツールです。効率が大幅に向上したため、Pro 版として整理しました。細部にこだわるあなたのお役に立てれば幸いです。</p>
+
+        <ul class="trust__features">
+          <li class="trust__feature">• データはローカルの .glyphs ファイルにのみ保存</li>
+          <li class="trust__feature">• フォントデータをクラウドにアップロードしません</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 TzuYuan Yin · 殷慈遠</p>
+      <ul class="footer__links">
+        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">お問い合わせ</a></li>
+        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://erikyin.net/en/privacy/" class="footer__link" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+        <li><a href="https://erikyin.net/en/terms/" class="footer__link" target="_blank" rel="noopener noreferrer">利用規約・返金ポリシー</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- i18n Script -->
+  <script src="../i18n.js"></script>
+</body>
+</html>
