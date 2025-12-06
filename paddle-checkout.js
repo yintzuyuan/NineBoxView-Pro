@@ -3,10 +3,11 @@
  * NineBoxView Pro - 統一管理所有語言版本的結帳邏輯
  */
 
-// Paddle 配置
+// Paddle 配置（Sandbox 模式）
 const PADDLE_CONFIG = {
-  token: 'live_bcd7ccbae67e2898f24a47b9021',
-  priceId: 'pri_01kbn8p26p62k3sv8tnbqg5kgc'
+  token: 'test_86bc26e0361179c74bee97d56d8',
+  priceId: 'pri_01kbt8e0yeaqvfvap0p973kx06',
+  environment: 'sandbox'
 };
 
 // 語言對應表（HTML lang 屬性 → Paddle locale）
@@ -24,6 +25,7 @@ function initPaddle() {
     console.error('Paddle.js not loaded');
     return;
   }
+  Paddle.Environment.set(PADDLE_CONFIG.environment);
   Paddle.Initialize({
     token: PADDLE_CONFIG.token,
     eventCallback: function(event) {
