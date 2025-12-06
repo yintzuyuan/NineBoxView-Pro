@@ -234,6 +234,13 @@ a:hover {
   border-color: var(--color-glyphs);
 }
 
+/* Coming Soon - disabled state */
+.cta--coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* Dark mode: restore bright green for glyphs button */
 @media (prefers-color-scheme: dark) {
   .cta--glyphs {

@@ -59,8 +59,8 @@
              onerror="this.style.display='none'">
 
         <div class="hero__actions">
-          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
-            购买授权
+          <a href="#" onclick="openCheckout(); return false;" class="cta cta--coming-soon">
+            即将推出
           </a>
           <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
             安装试用
@@ -157,8 +157,8 @@
         <h2 class="download__title">准备好开始了吗？</h2>
 
         <div class="hero__actions">
-          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
-            购买授权
+          <a href="#" onclick="openCheckout(); return false;" class="cta cta--coming-soon">
+            即将推出
           </a>
           <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
             安装试用
@@ -227,5 +227,9 @@
 
   <!-- i18n Script -->
   <script src="../i18n.js"></script>
+
+  <!-- Paddle.js SDK -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="../paddle-checkout.js"></script>
 </body>
 </html>
