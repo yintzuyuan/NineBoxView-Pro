@@ -12,8 +12,8 @@ const PADDLE_CONFIG = {
 
 // 語言對應表（HTML lang 屬性 → Paddle locale）
 const LOCALE_MAP = {
-  'zh-Hant': 'zh',
-  'zh-Hans': 'zh',
+  'zh-Hant': 'zh-TW',  // 繁體中文（2024-11 新增支援）
+  'zh-Hans': 'zh',     // 簡體中文
   'en': 'en',
   'ja': 'ja',
   'ko': 'ko'
