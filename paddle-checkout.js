@@ -24,7 +24,15 @@ function initPaddle() {
     console.error('Paddle.js not loaded');
     return;
   }
-  Paddle.Initialize({ token: PADDLE_CONFIG.token });
+  Paddle.Initialize({
+    token: PADDLE_CONFIG.token,
+    eventCallback: function(event) {
+      console.log('Paddle Event:', event.name, event.data);
+      if (event.name === 'checkout.warning' || event.name === 'checkout.error') {
+        console.error('Paddle Error Details:', event);
+      }
+    }
+  });
 }
 
 // 開啟結帳視窗
