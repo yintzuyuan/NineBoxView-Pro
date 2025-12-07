@@ -53,4 +53,13 @@ function openCheckout() {
 }
 
 // 頁面載入時初始化
-document.addEventListener('DOMContentLoaded', initPaddle);
+document.addEventListener('DOMContentLoaded', function() {
+  initPaddle();
+
+  // 偵測 URL 參數，自動開啟結帳
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('checkout') === 'true') {
+    // 等待 Paddle 初始化完成
+    setTimeout(openCheckout, 500);
+  }
+});
