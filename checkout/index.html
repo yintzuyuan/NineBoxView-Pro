@@ -6,10 +6,27 @@
   <title>購買授權 - NineBoxView Pro</title>
   <meta name="robots" content="noindex, nofollow">
 
-  <!-- Fonts -->
+  <!-- Fonts (dynamically loaded based on language) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var lang = params.get('lang') || 'zh-Hant';
+      var fontMap = {
+        'zh-Hant': 'family=IBM+Plex+Sans:wght@100..700&family=Noto+Sans+TC:wght@100..900',
+        'zh-Hans': 'family=IBM+Plex+Sans:wght@100..700&family=Noto+Sans+SC:wght@100..900',
+        'ja': 'family=IBM+Plex+Sans:wght@100..700&family=Noto+Sans+JP:wght@100..900',
+        'ko': 'family=IBM+Plex+Sans:wght@100..700&family=Noto+Sans+KR:wght@100..900',
+        'en': 'family=IBM+Plex+Sans:wght@100..700'
+      };
+      var fontQuery = fontMap[lang] || fontMap['zh-Hant'];
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?' + fontQuery + '&display=swap';
+      document.head.appendChild(link);
+    })();
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -21,16 +38,7 @@
       --color-text: #4a4a4a;
       --color-text-secondary: #6a6a6a;
       --color-border: #d4d4d4;
-      --font-sans: 'IBM Plex Sans', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-bg: #1a1a1a;
-        --color-text: #f8f6f0;
-        --color-text-secondary: #b0b0b0;
-        --color-border: #3a3a3a;
-      }
+      --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
     }
 
     *, *::before, *::after {
@@ -54,7 +62,7 @@
 
     .checkout-container {
       width: 100%;
-      max-width: 500px;
+      max-width: 680px;
       text-align: center;
     }
 
@@ -154,6 +162,16 @@
       document.getElementById('back-link').textContent = config.back;
       document.getElementById('checkout-loading').textContent = config.loading;
 
+      // 設定字體
+      const fontMap = {
+        'zh-Hant': "'IBM Plex Sans', 'Noto Sans TC', system-ui, sans-serif",
+        'zh-Hans': "'IBM Plex Sans', 'Noto Sans SC', system-ui, sans-serif",
+        'ja': "'IBM Plex Sans', 'Noto Sans JP', system-ui, sans-serif",
+        'ko': "'IBM Plex Sans', 'Noto Sans KR', system-ui, sans-serif",
+        'en': "'IBM Plex Sans', system-ui, sans-serif"
+      };
+      document.documentElement.style.setProperty('--font-sans', fontMap[lang] || fontMap['zh-Hant']);
+
       // 更新返回連結
       const backLink = document.getElementById('back-link');
       if (lang === 'zh-Hant') {
@@ -191,7 +209,7 @@
             displayMode: 'inline',
             frameTarget: 'paddle-checkout-frame',
             frameInitialHeight: 450,
-            frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: none;',
+            frameStyle: 'width: 100%; min-width: 643px;',
             theme: 'light',
             variant: 'one-page',
             locale: config.paddle
