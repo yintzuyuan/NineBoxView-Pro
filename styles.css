@@ -2,8 +2,8 @@
    Design Language: Eastern Minimalism (inheriting erikyin.net)
 
    Color System:
-   - Light mode: rice paper (#f8f6f0), ink black (#4a4a4a)
-   - Dark mode: ink black (#1a1a1a), rice paper (#f8f6f0)
+   - Light mode: rice paper (#f8f6f0), ink gray (#4a4a4a)
+   - Dark mode: ink black (#1a1a1a), warm gray (#e8e6e0) - 降低亮度減少光暈
 */
 
 /* ==================== CSS Variables ==================== */
@@ -18,11 +18,11 @@
   --color-glyphs-dark: #2C372A;  /* Glyphs 官方深綠色 */
 
   /* Typography */
-  --font-sans: 'IBM Plex Sans', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  --font-sans: 'IBM Plex Sans', 'Noto Sans CJK', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   /* Spacing */
-  --max-width: 42rem;
+  --max-width: 56rem;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
@@ -38,7 +38,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #1a1a1a;
-    --color-text: #f8f6f0;
+    --color-text: #e8e6e0;  /* 降低亮度減少光暈效應 */
     --color-text-secondary: #b0b0b0;
     --color-border: #3a3a3a;
     --color-accent: #e0e0e0;
@@ -124,37 +124,171 @@ a:hover {
 
 .nav__links {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-xs);
   list-style: none;
 }
 
 .nav__link {
   text-decoration: none;
   font-size: 0.875rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .nav__link:hover {
-  opacity: 0.7;
+  color: var(--color-text);
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 1;
 }
 
-.lang-switcher {
+.nav__link.active {
+  color: var(--color-text);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 淺色模式（明確設定） */
+[data-theme="light"] .nav__link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .nav__link.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 暗色模式 */
+[data-theme="dark"] .nav__link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .nav__link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav__link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* === Language Menu (custom dropdown) === */
+.lang-menu {
+  position: relative;
+}
+
+.lang-trigger {
   display: flex;
-  gap: var(--spacing-xs);
-  font-size: 0.75rem;
-}
-
-.lang-switcher a {
+  align-items: center;
+  gap: 0.25rem;
   padding: 0.25rem 0.5rem;
-  text-decoration: none;
   border: 1px solid var(--color-border);
   border-radius: 4px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.lang-switcher a:hover,
-.lang-switcher a.active {
-  background-color: var(--color-text);
-  color: var(--color-bg);
+.lang-trigger:hover {
+  color: var(--color-text);
   border-color: var(--color-text);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 淺色模式（明確設定） */
+[data-theme="light"] .lang-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 暗色模式 */
+[data-theme="dark"] .lang-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .lang-trigger:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.lang-chevron {
+  transition: transform var(--transition-fast);
+}
+
+.lang-menu.open .lang-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  min-width: 8rem;
+  z-index: 200;
+}
+
+.lang-menu.open .lang-dropdown {
+  display: block;
+}
+
+.lang-dropdown li {
+  margin: 0;
+}
+
+.lang-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.lang-dropdown a[aria-current="page"] {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.lang-dropdown a:hover {
+  color: var(--color-text);
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 1;
+}
+
+/* 淺色模式（明確設定） */
+[data-theme="light"] .lang-dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 暗色模式 */
+[data-theme="dark"] .lang-dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .lang-dropdown {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .lang-dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 }
 
 /* ==================== Hero Section ==================== */
@@ -260,10 +394,17 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.hero__pricing-note {
-  font-size: 0.85rem;
+.hero__note {
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
   margin-top: var(--spacing-sm);
+}
+
+.china-notice {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-sm);
+  opacity: 0.8;
 }
 
 /* ==================== Features Section ==================== */
@@ -375,6 +516,16 @@ a:hover {
   margin-bottom: var(--spacing-md);
 }
 
+.download__note--small {
+  margin-top: var(--spacing-md);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.download__note--small a {
+  color: var(--color-text-secondary);
+}
+
 .download__note {
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-md);
@@ -447,10 +598,31 @@ a:hover {
 .footer__link {
   color: var(--color-text-secondary);
   text-decoration: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .footer__link:hover {
   color: var(--color-text);
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 1;
+}
+
+/* 淺色模式（明確設定） */
+[data-theme="light"] .footer__link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 暗色模式 */
+[data-theme="dark"] .footer__link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer__link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 }
 
 /* ==================== Responsive ==================== */

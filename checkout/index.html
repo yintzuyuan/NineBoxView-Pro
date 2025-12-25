@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購買授權 - NineBoxView Pro</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+
+  <style>
+    :root {
+      --color-bg: #f8f6f0;
+      --color-text: #4a4a4a;
+      --color-text-secondary: #6a6a6a;
+      --color-border: #d4d4d4;
+      --font-sans: 'IBM Plex Sans', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #1a1a1a;
+        --color-text: #f8f6f0;
+        --color-text-secondary: #b0b0b0;
+        --color-border: #3a3a3a;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .checkout-container {
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .checkout-header {
+      margin-bottom: 2rem;
+    }
+
+    .checkout-logo {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .checkout-subtitle {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    #paddle-checkout-frame {
+      width: 100%;
+      min-height: 450px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-bg);
+    }
+
+    .checkout-footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+
+    .checkout-footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    .checkout-footer a:hover {
+      color: var(--color-text);
+    }
+
+    .checkout-loading {
+      padding: 3rem;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <header class="checkout-header">
+      <h1 class="checkout-logo">NineBoxView Pro</h1>
+      <p class="checkout-subtitle" id="checkout-subtitle">感謝試用，購買授權以解鎖完整功能</p>
+    </header>
+
+    <div id="paddle-checkout-frame">
+      <div class="checkout-loading" id="checkout-loading">載入中...</div>
+    </div>
+
+    <footer class="checkout-footer">
+      <a href="../" id="back-link">← 返回官網</a>
+    </footer>
+  </div>
+
+  <!-- Paddle.js SDK -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+    // Paddle 配置
+    const PADDLE_CONFIG = {
+      token: 'live_bcd7ccbae67e2898f24a47b9021',
+      priceId: 'pri_01kbn8p26p62k3sv8tnbqg5kgc',
+      environment: 'production'
+    };
+
+    // 多語言設定
+    const LOCALE_MAP = {
+      'zh-Hant': { paddle: 'zh-TW', subtitle: '感謝試用，購買授權以解鎖完整功能', back: '← 返回官網', loading: '載入中...' },
+      'zh-Hans': { paddle: 'zh', subtitle: '感谢试用，购买授权以解锁完整功能', back: '← 返回官网', loading: '载入中...' },
+      'en': { paddle: 'en', subtitle: 'Thanks for trying! Purchase a license to unlock full features.', back: '← Back to website', loading: 'Loading...' },
+      'ja': { paddle: 'ja', subtitle: 'お試しいただきありがとうございます。ライセンスを購入して全機能をご利用ください。', back: '← ウェブサイトに戻る', loading: '読み込み中...' },
+      'ko': { paddle: 'ko', subtitle: '체험해 주셔서 감사합니다. 라이선스를 구매하여 전체 기능을 이용하세요.', back: '← 웹사이트로 돌아가기', loading: '로딩 중...' }
+    };
+
+    // 從 URL 參數取得語言
+    function getLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const lang = params.get('lang');
+      return LOCALE_MAP[lang] ? lang : 'zh-Hant';
+    }
+
+    // 設定頁面語言
+    function setPageLanguage(lang) {
+      const config = LOCALE_MAP[lang];
+      document.documentElement.lang = lang;
+      document.getElementById('checkout-subtitle').textContent = config.subtitle;
+      document.getElementById('back-link').textContent = config.back;
+      document.getElementById('checkout-loading').textContent = config.loading;
+
+      // 更新返回連結
+      const backLink = document.getElementById('back-link');
+      if (lang === 'zh-Hant') {
+        backLink.href = '../';
+      } else if (lang === 'zh-Hans') {
+        backLink.href = '../zh-Hans/';
+      } else {
+        backLink.href = '../' + lang + '/';
+      }
+    }
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', function() {
+      const lang = getLanguage();
+      const config = LOCALE_MAP[lang];
+
+      setPageLanguage(lang);
+
+      // 初始化 Paddle
+      if (typeof Paddle !== 'undefined') {
+        Paddle.Environment.set(PADDLE_CONFIG.environment);
+        Paddle.Initialize({
+          token: PADDLE_CONFIG.token,
+          eventCallback: function(event) {
+            if (event.name === 'checkout.loaded') {
+              document.getElementById('checkout-loading').style.display = 'none';
+            }
+          }
+        });
+
+        // 開啟 Inline Checkout
+        Paddle.Checkout.open({
+          items: [{ priceId: PADDLE_CONFIG.priceId, quantity: 1 }],
+          settings: {
+            displayMode: 'inline',
+            frameTarget: 'paddle-checkout-frame',
+            frameInitialHeight: 450,
+            frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: none;',
+            theme: 'light',
+            locale: config.paddle
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

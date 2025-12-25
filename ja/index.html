@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="../styles.css">
@@ -29,22 +29,28 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="nav">
-    <div class="container nav__inner">
-      <ul class="nav__links">
-        <li><a href="./" class="nav__link">ホーム</a></li>
-        <li><a href="https://github.com/yintzuyuan/NineBoxView-Pro/wiki" class="nav__link" target="_blank" rel="noopener noreferrer">ドキュメント</a></li>
-        <li><a href="https://erikyin.net" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+<nav class="nav">
+  <div class="container nav__inner">
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link active">ホーム</a></li>
+      <li><a href="guide/index.html" class="nav__link">ガイド</a></li>
+      <li><a href="https://erikyin.net/en/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+    </ul>
+    <div class="lang-menu">
+      <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
+        <span class="lang-current">日</span>
+        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+      </button>
+      <ul class="lang-dropdown" role="listbox">
+        <li><a href="../index.html">繁體中文</a></li>
+        <li><a href="../en/index.html">English</a></li>
+        <li><a href="../zh-Hans/index.html">简体中文</a></li>
+        <li><a href="index.html" aria-current="page">日本語</a></li>
+        <li><a href="../ko/index.html">한국어</a></li>
       </ul>
-      <div class="lang-switcher">
-        <a href="../index.html" title="繁體中文">繁</a>
-        <a href="../en/index.html" title="English">EN</a>
-        <a href="../zh-Hans/index.html" title="简体中文">简</a>
-        <a href="index.html" class="active" title="日本語">日</a>
-        <a href="../ko/index.html" title="한국어">한</a>
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <main>
     <!-- Hero Section -->
@@ -62,14 +68,13 @@
         </div>
 
         <div class="hero__actions">
-          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
+          <button onclick="openCheckout()" class="cta">
             ライセンス購入
-          </a>
+          </button>
           <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
             試用版をインストール
           </a>
         </div>
-        <p class="hero__pricing-note">ライセンス価格 $29 USD〜（最終価格はお会計時に地域に基づいて計算されます）</p>
       </div>
     </section>
 
@@ -160,14 +165,13 @@
         <h2 class="download__title">始める準備はできましたか？</h2>
 
         <div class="hero__actions">
-          <a href="https://buy.paddle.com/product/PLACEHOLDER" class="cta" target="_blank" rel="noopener noreferrer">
+          <button onclick="openCheckout()" class="cta">
             ライセンス購入
-          </a>
+          </button>
           <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
             試用版をインストール
           </a>
         </div>
-        <p class="hero__pricing-note">ライセンス価格 $29 USD〜（最終価格はお会計時に地域に基づいて計算されます）</p>
 
         <div class="download__note">
           <p>無料版をお探しですか？</p>
@@ -216,19 +220,24 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 YTY Digital TypeFoundry · TzuYuan Yin 殷慈遠</p>
-      <ul class="footer__links">
-        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">お問い合わせ</a></li>
-        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://erikyin.net/en/privacy/" class="footer__link" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
-        <li><a href="https://erikyin.net/en/terms/" class="footer__link" target="_blank" rel="noopener noreferrer">利用規約・返金ポリシー</a></li>
-      </ul>
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 YTY Digital TypeFoundry · 殷 慈遠</p>
+    <ul class="footer__links">
+      <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">お問い合わせ</a></li>
+      <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://erikyin.net/en/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">プライバシー</a></li>
+      <li><a href="https://erikyin.net/en/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">利用規約</a></li>
+    </ul>
+  </div>
+</footer>
 
-  <!-- i18n Script -->
+  <!-- Scripts -->
   <script src="../i18n.js"></script>
+  <script src="../guide-lang.js"></script>
+
+  <!-- Paddle.js SDK -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="../paddle-checkout.js"></script>
 </body>
 </html>
