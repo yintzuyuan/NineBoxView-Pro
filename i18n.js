@@ -8,7 +8,7 @@
  * 4. Default: Traditional Chinese (zh-Hant)
  *
  * Language Mapping:
- * zh-TW, zh-Hant → / (Traditional Chinese, default)
+ * zh-TW, zh-Hant → /zh-Hant/ (Traditional Chinese, default)
  * en             → /en/
  * zh-CN, zh-Hans → /zh-Hans/
  * ja             → /ja/
@@ -20,7 +20,7 @@
 
   // Language configuration
   const LANG_CONFIG = {
-    'zh-Hant': { path: './', aliases: ['zh-TW', 'zh-Hant', 'zh'] },
+    'zh-Hant': { path: './zh-Hant/', aliases: ['zh-TW', 'zh-Hant', 'zh'] },
     'en': { path: './en/', aliases: ['en', 'en-US', 'en-GB', 'en-AU'] },
     'zh-Hans': { path: './zh-Hans/', aliases: ['zh-CN', 'zh-Hans', 'zh-SG'] },
     'ja': { path: './ja/', aliases: ['ja', 'ja-JP'] },
@@ -41,7 +41,7 @@
       return path.substring(0, docsIndex + 6); // Include '/docs/'
     }
     // For local file:// protocol or root deployment
-    return path.substring(0, path.lastIndexOf('/') + 1).replace(/\/(en|zh-Hans|ja|ko)\/$/, '/');
+    return path.substring(0, path.lastIndexOf('/') + 1).replace(/\/(zh-Hant|en|zh-Hans|ja|ko)\/$/, '/').replace(/\/(zh-Hant|en|zh-Hans|ja|ko)\/guide\/$/, '/');
   }
 
   /**
@@ -49,11 +49,12 @@
    */
   function getCurrentLangFromUrl() {
     const path = window.location.pathname;
+    if (path.includes('/zh-Hant/')) return 'zh-Hant';
     if (path.includes('/en/')) return 'en';
     if (path.includes('/zh-Hans/')) return 'zh-Hans';
     if (path.includes('/ja/')) return 'ja';
     if (path.includes('/ko/')) return 'ko';
-    return 'zh-Hant'; // Default (root path)
+    return null; // Root path (redirect page)
   }
 
   /**

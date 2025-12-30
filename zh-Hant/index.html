@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NineBoxView Pro - Nine-Grid Preview Tool | Glyphs Plugin</title>
-  <meta name="description" content="Nine-grid preview tool built for Glyphs 3. Native performance, 60fps smooth experience, five-language interface support.">
+  <title>NineBoxView Pro - 九宮格預覽工具 | Glyphs 外掛</title>
+  <meta name="description" content="專為 Glyphs 3 打造的九宮格預覽工具。原生效能、60fps 流暢體驗、五語系介面支援。">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="NineBoxView Pro - Nine-Grid Preview Tool">
-  <meta property="og:description" content="Nine-grid preview tool built for Glyphs 3.">
+  <meta property="og:title" content="NineBoxView Pro - 九宮格預覽工具">
+  <meta property="og:description" content="專為 Glyphs 3 打造的九宮格預覽工具。">
   <meta property="og:image" content="../assets/images/og-image.png">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="../styles.css">
@@ -32,18 +32,18 @@
 <nav class="nav">
   <div class="container nav__inner">
     <ul class="nav__links">
-      <li><a href="index.html" class="nav__link active">Home</a></li>
-      <li><a href="guide/index.html" class="nav__link">Guide</a></li>
+      <li><a href="index.html" class="nav__link active">首頁</a></li>
+      <li><a href="guide/index.html" class="nav__link">指南</a></li>
       <li><a href="https://erikyin.net/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
     </ul>
     <div class="lang-menu">
       <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
-        <span class="lang-current">EN</span>
+        <span class="lang-current">繁</span>
         <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
       </button>
       <ul class="lang-dropdown" role="listbox">
-        <li><a href="../zh-Hant/index.html">繁體中文</a></li>
-        <li><a href="index.html" aria-current="page">English</a></li>
+        <li><a href="index.html" aria-current="page">繁體中文</a></li>
+        <li><a href="../en/index.html">English</a></li>
         <li><a href="../zh-Hans/index.html">简体中文</a></li>
         <li><a href="../ja/index.html">日本語</a></li>
         <li><a href="../ko/index.html">한국어</a></li>
@@ -56,51 +56,51 @@
     <!-- Hero Section -->
     <section class="section hero">
       <div class="container">
-        <h1 class="hero__title">NineBoxView Pro</h1>
+        <h1 class="hero__title">九宮格預覽 Pro</h1>
         <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
-        <p class="hero__subtitle hero__subtitle--secondary">Built for Glyphs 3.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">專為 Glyphs 3 打造的九宮格預覽工具。</p>
 
         <!-- Hero Image -->
-        <img src="../assets/images/hero-en.png" alt="NineBoxView Pro Interface" class="hero__image"
+        <img src="../assets/images/hero-zh-Hant.png" alt="NineBoxView Pro 介面展示" class="hero__image"
              onerror="this.style.display='none'">
 
         <div class="hero__actions">
           <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
-            Install Trial
+            安裝試用
           </a>
         </div>
-        <p class="hero__note">Install via Glyphs Plugin Manager · 14-day free trial</p>
+        <p class="hero__note">透過 Glyphs 外掛管理員安裝 · 14 天免費試用</p>
       </div>
     </section>
 
     <!-- Features Section -->
     <section class="section features features--primary">
       <div class="container">
-        <h2 class="features__title">Core Features</h2>
-        <p>Quickly test glyph combinations, spot problematic pairings</p>
+        <h2 class="features__title">核心功能</h2>
+        <p>快速測試字符組合，發現問題搭配</p>
 
         <div class="features__grid">
           <div class="feature">
             <div class="feature__media">
-              <img src="../assets/images/feature-reference.gif" alt="Reference Glyphs Demo"
+              <img src="../assets/images/feature-reference.gif" alt="參考字功能展示"
                    onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">Reference GIF (To be replaced)</div>
+              <div class="feature__placeholder">參考字 GIF (待替換)</div>
             </div>
             <div class="feature__content">
-              <h3 class="feature__title">Reference Glyphs</h3>
-              <p class="feature__desc">Enter common glyphs, auto-shuffle around the grid. Click to reshuffle, quickly spot problematic combinations.</p>
+              <h3 class="feature__title">參考字</h3>
+              <p class="feature__desc">輸入常用字，自動隨機排列在周圍。點擊重新洗牌，快速發現問題組合。</p>
             </div>
           </div>
 
           <div class="feature">
             <div class="feature__media">
-              <img src="../assets/images/feature-lock.gif" alt="Locked Glyphs Demo"
+              <img src="../assets/images/feature-lock.gif" alt="鎖定字功能展示"
                    onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">Locked GIF (To be replaced)</div>
+              <div class="feature__placeholder">鎖定字 GIF (待替換)</div>
             </div>
             <div class="feature__content">
-              <h3 class="feature__title">Locked Glyphs</h3>
-              <p class="feature__desc">Pin specific glyphs to fixed positions, test spacing for fixed pairings. Settings saved with your file, seamless team collaboration.</p>
+              <h3 class="feature__title">鎖定字</h3>
+              <p class="feature__desc">將特定字符固定在指定位置，測試固定搭配的字距。設定隨檔案保存，團隊協作無縫銜接。</p>
             </div>
           </div>
         </div>
@@ -110,31 +110,31 @@
     <!-- Integration Section -->
     <section class="section features">
       <div class="container">
-        <h2 class="features__title">Advanced Integration</h2>
-        <p>Seamless collaboration with the Glyphs ecosystem</p>
+        <h2 class="features__title">進階整合</h2>
+        <p>與 Glyphs 生態系無縫協作</p>
 
         <div class="features__grid">
           <div class="feature">
             <div class="feature__media">
-              <img src="../assets/images/feature-native.gif" alt="Native macOS Experience Demo"
+              <img src="../assets/images/feature-native.gif" alt="原生 macOS 體驗展示"
                    onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">Native Experience GIF (To be replaced)</div>
+              <div class="feature__placeholder">原生體驗 GIF (待替換)</div>
             </div>
             <div class="feature__content">
-              <h3 class="feature__title">Native macOS Experience</h3>
-              <p class="feature__desc">Drag & drop, glyph picker—seamlessly integrated with your Glyphs workflow.</p>
+              <h3 class="feature__title">原生 macOS 體驗</h3>
+              <p class="feature__desc">拖放操作、字符選擇器，與 Glyphs 工作流程無縫整合。</p>
             </div>
           </div>
 
           <div class="feature">
             <div class="feature__media">
-              <img src="../assets/images/feature-lighttable.gif" alt="Light Table Sync Demo"
+              <img src="../assets/images/feature-lighttable.gif" alt="透寫台同步展示"
                    onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">Light Table GIF (To be replaced)</div>
+              <div class="feature__placeholder">透寫台 GIF (待替換)</div>
             </div>
             <div class="feature__content">
-              <h3 class="feature__title">Light Table Sync</h3>
-              <p class="feature__desc">Hold Shift to compare versions instantly. Seamless Light Table integration.</p>
+              <h3 class="feature__title">透寫台同步</h3>
+              <p class="feature__desc">按住 Shift 即時比較版本差異，與透寫台無縫整合。</p>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
     <section class="section localization">
       <div class="container">
         <h2>Speaking Your Language.</h2>
-        <p>Native interface, seamless experience</p>
+        <p>原生介面，無縫接軌</p>
 
         <!-- Localization Image Placeholder -->
         <img src="../assets/images/localization.png" alt="NineBoxView Pro 五語系介面展示" class="localization__image"
@@ -157,21 +157,21 @@
     <!-- Download Section -->
     <section class="section download">
       <div class="container">
-        <h2 class="download__title">Ready to Get Started?</h2>
+        <h2 class="download__title">準備好開始了嗎？</h2>
 
         <div class="hero__actions">
           <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
-            Install Trial
+            安裝試用
           </a>
         </div>
 
         <p class="download__note--small">
-          Manual download available on <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a>, but Plugin Manager installation is recommended for automatic updates.
+          也可從 <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a> 手動下載，但建議透過外掛管理員安裝以獲得自動更新。
         </p>
 
         <div class="download__note">
-          <p>Looking for the free version?</p>
-          <p>The open-source Python version is still available on GitHub.</p>
+          <p>想要免費版本？</p>
+          <p>開源的 Python 版本仍可在 GitHub 取得。</p>
           <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView →</a>
         </div>
       </div>
@@ -180,22 +180,22 @@
     <!-- FAQ Section -->
     <section class="section faq">
       <div class="container">
-        <h2>FAQ</h2>
+        <h2>常見問題</h2>
 
         <dl class="faq__list">
           <div class="faq__item">
-            <dt>One-time or subscription?</dt>
-            <dd>One-time purchase, lifetime use.</dd>
+            <dt>買斷還是訂閱？</dt>
+            <dd>一次購買，永久使用。</dd>
           </div>
 
           <div class="faq__item">
-            <dt>How many Macs?</dt>
-            <dd>Single-user license — use on all your personal Macs.</dd>
+            <dt>可以裝幾台電腦？</dt>
+            <dd>單一使用者授權 — 您可以在自己的所有 Mac 上使用。</dd>
           </div>
 
           <div class="faq__item">
-            <dt>Free trial?</dt>
-            <dd>Yes, 14-day free trial.</dd>
+            <dt>有試用嗎？</dt>
+            <dd>有，免費試用 14 天。</dd>
           </div>
         </dl>
       </div>
@@ -205,11 +205,11 @@
     <section class="section trust">
       <div class="container">
         <h2>Built for my own workflow.</h2>
-        <p class="trust__story">I originally built this tool to solve my own daily type design pain points. Because it dramatically improved my efficiency, I've now refined it into a Pro version—hoping it helps you who also care about the details.</p>
+        <p class="trust__story">這原本是我為了解決日常造字痛點而開發的工具。因為它極大提升了我的效率，現在整理為 Pro 版本，希望能幫助到同樣追求細節的你。</p>
 
         <ul class="trust__features">
-          <li class="trust__feature">• Data stored only in local .glyphs files</li>
-          <li class="trust__feature">• No font data uploaded to the cloud</li>
+          <li class="trust__feature">• 資料只存在本地 .glyphs 檔案</li>
+          <li class="trust__feature">• 不上傳任何字型資料到雲端</li>
         </ul>
       </div>
     </section>
@@ -220,10 +220,10 @@
   <div class="container">
     <p>&copy; 2025 YTY Digital TypeFoundry · 殷慈遠</p>
     <ul class="footer__links">
-      <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">Contact</a></li>
+      <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">聯絡</a></li>
       <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">Privacy</a></li>
-      <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">Terms</a></li>
+      <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">隱私權政策</a></li>
+      <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">使用條款</a></li>
     </ul>
   </div>
 </footer>
