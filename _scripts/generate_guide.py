@@ -537,10 +537,9 @@ def generate_lang_switcher(current_locale: str, current_page: str, strings: dict
     - 展開選單顯示完整語言名稱
 
     路徑計算（指南頁面）:
-    - 繁中在 guide/，其他語系在 {locale}/guide/
-    - 從繁中到其他語系：../{locale}/guide/{page}
-    - 從其他語系到繁中：../../guide/{page}
-    - 從其他語系到其他語系：../../{locale}/guide/{page}
+    - 所有語系統一在 {locale}/guide/ 目錄下
+    - 當前語系：{page}
+    - 其他語系：../../{locale}/guide/{page}
 
     注意：current_page 已經是完整檔案名（如 index.html、reference.html）
     """
@@ -557,20 +556,12 @@ def generate_lang_switcher(current_locale: str, current_page: str, strings: dict
     for locale, config in LOCALES.items():
         full_name = config['name']
 
-        # 計算連結路徑
+        # 計算連結路徑（所有語系統一在 {locale}/guide/ 目錄下）
         if locale == current_locale:
             href = current_page
             aria_current = ' aria-current="page"'
-        elif current_locale == 'zh-Hant':
-            # 從繁中到其他語系
-            href = f'../{locale}/guide/{current_page}'
-            aria_current = ''
-        elif locale == 'zh-Hant':
-            # 從其他語系到繁中
-            href = f'../../guide/{current_page}'
-            aria_current = ''
         else:
-            # 從其他語系到其他語系
+            # 到其他語系
             href = f'../../{locale}/guide/{current_page}'
             aria_current = ''
 
@@ -634,16 +625,11 @@ def generate_page_html(
     # 取得頁面 meta
     meta = get_page_meta(page_config['source'], strings, locale, page_config)
 
-    # 計算路徑
+    # 計算路徑（所有語系統一在 {locale}/guide/ 目錄下）
     locale_config = LOCALES[locale]
-    if locale == 'zh-Hant':
-        root_path = '../'
-        home_link = '../index.html'
-        guide_link = 'index.html'
-    else:
-        root_path = '../../'
-        home_link = '../index.html'
-        guide_link = 'index.html'
+    root_path = '../../'
+    home_link = '../index.html'
+    guide_link = 'index.html'
 
     # 生成側邊導覽和語言切換器
     sidebar_nav = generate_sidebar_nav(page_config['output'], strings, locale)
