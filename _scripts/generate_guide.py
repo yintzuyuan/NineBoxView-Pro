@@ -704,11 +704,8 @@ def generate_for_locale(
     locale_source_dir = source_base / locale
     fallback_source_dir = source_base / 'zh-Hant'
 
-    # 決定輸出目錄
-    if locale == 'zh-Hant':
-        output_dir = output_base / 'guide'
-    else:
-        output_dir = output_base / locale / 'guide'
+    # 決定輸出目錄（統一輸出到 locale/guide/ 目錄）
+    output_dir = output_base / locale / 'guide'
 
     # === 第一階段：收集所有頁面的搜尋索引 ===
     search_entries = []
