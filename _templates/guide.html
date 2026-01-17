@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PAGE_TITLE}} | NineBoxView Pro</title>
+  <meta name="description" content="{{PAGE_DESCRIPTION}}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{PAGE_TITLE}} | NineBoxView Pro">
+  <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+  <meta property="og:image" content="{{ROOT_PATH}}assets/images/og-image.png">
+  <meta property="og:type" content="article">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="{{FONT_LINK}}" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ROOT_PATH}}styles.css">
+  <link rel="stylesheet" href="{{ROOT_PATH}}guide.css">
+  <link rel="stylesheet" href="{{ROOT_PATH}}search.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ROOT_PATH}}assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ROOT_PATH}}assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ROOT_PATH}}assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ROOT_PATH}}assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="{{ROOT_PATH}}assets/favicon.ico">
+
+  <!-- Theme initialization (prevent FOUC) -->
+  <script>
+    (function() {
+      var stored = localStorage.getItem('nineboxview-guide-theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="guide-page">
+  {{HEADER}}
+
+  <main class="guide">
+    <div class="guide__container">
+      <!-- Sidebar Navigation -->
+      <aside class="guide__sidebar">
+        <button class="search-trigger">
+          <svg class="search-trigger__icon" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
+          <span class="search-trigger__text">{{SEARCH_PLACEHOLDER}}</span>
+          <kbd class="search-trigger__shortcut">⌘K</kbd>
+        </button>
+        <nav class="guide__nav">
+          {{SIDEBAR_NAV}}
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <article class="guide__content">
+        {{CONTENT}}
+      </article>
+    </div>
+  </main>
+
+  {{FOOTER}}
+
+  <!-- Scripts -->
+  <script src="{{ROOT_PATH}}i18n.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <!-- 搜尋索引（內嵌以支援 file:// 協議） -->
+  <script>window.SEARCH_INDEX = {{SEARCH_INDEX}};</script>
+  <script src="{{ROOT_PATH}}search.js"></script>
+  <script src="{{ROOT_PATH}}guide-theme.js"></script>
+  <script src="{{ROOT_PATH}}guide-lang.js"></script>
+</body>
+</html>
