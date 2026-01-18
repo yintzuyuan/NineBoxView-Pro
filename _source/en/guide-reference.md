@@ -121,14 +121,6 @@ Drag a glyph from the grid to the input area to quickly add reference characters
 2. Click "{{SAVE_REFERENCE_BUTTON|}}" to save to {{PRESETS_WINDOW_TITLE|}}
 3. Quickly load from {{PRESETS_WINDOW_TITLE|}} later
 
-### Observe Different Densities
-
-Try using characters with different stroke densities as references:
-
-```
-一二三 酬鷹鬱
-```
-
 ### Check Spacing
 
 To observe the arrangement of identical characters, simply enter a single character:
