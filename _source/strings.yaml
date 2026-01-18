@@ -1,0 +1,1073 @@
+# UI 詞彙對照表
+# 自動生成，請勿手動修改
+# 來源：NineBoxViewPro/*.lproj/Localizable.strings
+# 生成時間：2026-01-19T00:03:31.785607
+#
+# 使用方式：
+# 在來源 Markdown 中使用 {{KEY}} 語法引用詞彙
+# 例如：{{REFERENCE_PANEL_TITLE}} → "參考字" (zh-Hant)
+
+NINE_BOX_VIEW:
+  en: NineBoxView Pro
+  zh-Hant: 九宮格預覽 Pro
+  zh-Hans: 九宫格预览 Pro
+  ja: 九マスビュー Pro
+  ko: 나인박스뷰 Pro
+REFERENCE_INPUT_PLACEHOLDER:
+  en: ' Enter reference glyphs...'
+  zh-Hant: ' 輸入參考字符…'
+  zh-Hans: ' 输入参考字符形…'
+  ja: ' 参照グリフを入力…'
+  ko: ' 참조 글리프 입력…'
+SAVE_REFERENCE_BUTTON:
+  en: Save
+  zh-Hant: 儲存
+  zh-Hans: 保存
+  ja: 保存
+  ko: 저장
+SAVE_REFERENCE_TOOLTIP:
+  en: Save to reference presets
+  zh-Hant: 儲存到參考字組
+  zh-Hans: 保存到参考字组
+  ja: 参照プリセットに保存
+  ko: 참조 프리셋에 저장
+THEME_TOGGLE_LIGHT_TOOLTIP:
+  en: Switch to dark mode
+  zh-Hant: 切換至深色模式
+  zh-Hans: 切换至暗色模式
+  ja: ダークモードに切り替え
+  ko: 다크 모드로 전환
+THEME_TOGGLE_DARK_TOOLTIP:
+  en: Switch to light mode
+  zh-Hant: 切換至淺色模式
+  zh-Hans: 切换至浅色模式
+  ja: ライトモードに切り替え
+  ko: 라이트 모드로 전환
+REFERENCE_PANEL_SHOW_TOOLTIP:
+  en: Show Reference Panel
+  zh-Hant: 顯示參考字面板
+  zh-Hans: 显示参考字面板
+  ja: 参照パネルを表示
+  ko: 참조 패널 표시
+REFERENCE_PANEL_HIDE_TOOLTIP:
+  en: Hide Reference Panel
+  zh-Hant: 隱藏參考字面板
+  zh-Hans: 隐藏参考字面板
+  ja: 参照パネルを非表示
+  ko: 참조 패널 숨기기
+REFERENCE_PANEL_TITLE:
+  en: Reference
+  zh-Hant: 參考字
+  zh-Hans: 参考字
+  ja: 参照
+  ko: 참조
+LOCKED_PANEL_TITLE:
+  en: Locked
+  zh-Hant: 鎖定字
+  zh-Hans: 锁定字
+  ja: ロック
+  ko: 잠금
+PRESETS_TOGGLE_SHOW_TOOLTIP:
+  en: Show Presets Panel
+  zh-Hant: 顯示字組面板
+  zh-Hans: 显示字组面板
+  ja: プリセットパネルを表示
+  ko: 프리셋 패널 표시
+PRESETS_TOGGLE_HIDE_TOOLTIP:
+  en: Hide Presets Panel
+  zh-Hant: 隱藏字組面板
+  zh-Hans: 隐藏字组面板
+  ja: プリセットパネルを隠す
+  ko: 프리셋 패널 숨기기
+PRESETS_WINDOW_TITLE:
+  en: Presets
+  zh-Hant: 字組
+  zh-Hans: 字组
+  ja: プリセット
+  ko: 프리셋
+BLUR_SLIDER_TOOLTIP:
+  en: Blur intensity
+  zh-Hant: 模糊程度
+  zh-Hans: 模糊程度
+  ja: ぼかし強度
+  ko: 블러 강도
+GLYPH_PICKER_TITLE_LOCK:
+  en: Select Lock Glyph
+  zh-Hant: 選擇鎖定字符
+  zh-Hans: 选择锁定字符形
+  ja: ロックグリフを選択
+  ko: 잠금 글리프 선택
+GLYPH_PICKER_TITLE_REFERENCE:
+  en: Select Reference Glyphs
+  zh-Hant: 選擇參考字符
+  zh-Hans: 选择参考字符形
+  ja: 参照グリフを選択
+  ko: 참조 글리프 선택
+CONTEXT_MENU_GLYPH_PICKER:
+  en: Glyph Picker…
+  zh-Hant: 字符選擇器…
+  zh-Hans: 字符形选择器…
+  ja: グリフピッカー…
+  ko: 글리프 피커…
+TITLEBAR_MENU_TOOLTIP:
+  en: Menu
+  zh-Hant: 選單
+  zh-Hans: 菜单
+  ja: メニュー
+  ko: 메뉴
+INFO_MENU_HELP:
+  en: User Guide
+  zh-Hant: 使用說明
+  zh-Hans: 使用说明
+  ja: 使用ガイド
+  ko: 사용 설명서
+INFO_MENU_WEBSITE:
+  en: Website
+  zh-Hant: 官方網站
+  zh-Hans: 官方网站
+  ja: 公式サイト
+  ko: 공식 웹사이트
+INFO_MENU_FEEDBACK:
+  en: Feedback…
+  zh-Hant: 意見回饋…
+  zh-Hans: 意见反馈…
+  ja: フィードバック…
+  ko: 피드백…
+INFO_MENU_CONTACT_US:
+  en: Contact Us…
+  zh-Hant: 聯絡我們…
+  zh-Hans: 联系我们…
+  ja: お問い合わせ…
+  ko: 문의하기…
+INFO_MENU_PURCHASE:
+  en: Purchase…
+  zh-Hant: 購買…
+  zh-Hans: 购买…
+  ja: 購入…
+  ko: 구매…
+LOCK_TOGGLE_ENABLED_TOOLTIP:
+  en: Locked glyphs shown (Cmd to edit)
+  zh-Hant: 鎖定字符已顯示（按住 Cmd 編輯）
+  zh-Hans: 锁定字符形已显示（按住 Cmd 编辑）
+  ja: ロックグリフを表示中（Cmd で編集）
+  ko: 잠금 글리프 표시 중 (Cmd로 편집)
+LOCK_TOGGLE_DISABLED_TOOLTIP:
+  en: Locked glyphs hidden (Cmd to edit)
+  zh-Hant: 鎖定字符已隱藏（按住 Cmd 編輯）
+  zh-Hans: 锁定字符形已隐藏（按住 Cmd 编辑）
+  ja: ロックグリフを非表示（Cmd で編集）
+  ko: 잠금 글리프 숨김 (Cmd로 편집)
+CLEAR_LOCKED_BUTTON:
+  en: Clear
+  zh-Hant: 清除
+  zh-Hans: 清除
+  ja: クリア
+  ko: 지우기
+CLEAR_LOCKED_TOOLTIP:
+  en: Clear all locked glyphs
+  zh-Hant: 清除所有鎖定字
+  zh-Hans: 清除所有锁定字
+  ja: すべてのロックを解除
+  ko: 모든 잠금 지우기
+SAVE_LOCKED_BUTTON:
+  en: Save
+  zh-Hant: 儲存
+  zh-Hans: 保存
+  ja: 保存
+  ko: 저장
+SAVE_LOCKED_TOOLTIP:
+  en: Save to locked presets
+  zh-Hant: 儲存到鎖定字組
+  zh-Hans: 保存到锁定字组
+  ja: ロックプリセットに保存
+  ko: 잠금 프리셋에 저장
+LOCKED_PANEL_TOGGLE_SHOW:
+  en: Show Locked Panel
+  zh-Hant: 顯示鎖定字面板
+  zh-Hans: 显示锁定字面板
+  ja: ロックパネルを表示
+  ko: 잠금 패널 표시
+LOCKED_PANEL_TOGGLE_HIDE:
+  en: Hide Locked Panel
+  zh-Hant: 隱藏鎖定字面板
+  zh-Hans: 隐藏锁定字面板
+  ja: ロックパネルを隠す
+  ko: 잠금 패널 숨기기
+REFERENCE_INPUT_CANCEL:
+  en: Cancel
+  zh-Hant: 取消
+  zh-Hans: 取消
+  ja: キャンセル
+  ko: 취소
+Open Grid in New Tab:
+  en: Open Grid in New Tab
+  zh-Hant: 在新分頁中開啟九宮格
+  zh-Hans: 在新标签页打开九宫格
+  ja: グリッドを新しいタブで開く
+  ko: 새 탭에서 그리드 열기
+TOOLBAR_TOGGLE_HIDE_TOOLTIP:
+  en: Hide toolbar
+  zh-Hant: 隱藏工具列
+  zh-Hans: 隐藏工具栏
+  ja: ツールバーを隠す
+  ko: 도구 모음 숨기기
+TOOLBAR_TOGGLE_SHOW_TOOLTIP:
+  en: Show toolbar
+  zh-Hant: 顯示工具列
+  zh-Hans: 显示工具栏
+  ja: ツールバーを表示
+  ko: 도구 모음 표시
+LICENSE_TRIAL_REMAINING:
+  en: 'Trial: %ld days remaining'
+  zh-Hant: 試用期：剩餘 %ld 天
+  zh-Hans: 试用期：剩余 %ld 天
+  ja: 試用期間：残り %ld 日
+  ko: '체험 기간: %ld일 남음'
+LICENSE_TRIAL_DAYS:
+  en: '%ld days remaining'
+  zh-Hant: 剩餘 %ld 天
+  zh-Hans: 剩余 %ld 天
+  ja: 残り %ld 日
+  ko: '%ld일 남음'
+LICENSE_ACTIVATED:
+  en: 'Licensed to: %@'
+  zh-Hant: 授權給：%@
+  zh-Hans: 授权给：%@
+  ja: ライセンス所有者：%@
+  ko: '라이선스 소유자: %@'
+LICENSE_INPUT_TITLE:
+  en: Activate License
+  zh-Hant: 啟用授權
+  zh-Hans: 激活授权
+  ja: ライセンスを有効化
+  ko: 라이선스 활성화
+LICENSE_INPUT_CANCEL:
+  en: Cancel
+  zh-Hant: 取消
+  zh-Hans: 取消
+  ja: キャンセル
+  ko: 취소
+LICENSE_INPUT_BUY:
+  en: Purchase…
+  zh-Hant: 購買…
+  zh-Hans: 购买…
+  ja: 購入…
+  ko: 구매…
+LICENSE_INPUT_CONTACT:
+  en: Support
+  zh-Hant: 聯絡客服
+  zh-Hans: 联系客服
+  ja: サポート
+  ko: 고객 지원
+LICENSE_DROP_HINT:
+  en: Drop .license file here
+  zh-Hant: 將 .license 檔案拖曳至此
+  zh-Hans: 将 .license 文件拖放到此处
+  ja: .license ファイルをここにドロップ
+  ko: .license 파일을 여기에 놓으세요
+LICENSE_DROP_ACTIVE:
+  en: Release to activate
+  zh-Hant: 放開以啟用授權
+  zh-Hans: 释放以激活授权
+  ja: 放してライセンスを有効化
+  ko: 놓으면 활성화됩니다
+LICENSE_ERROR_INVALID_KEY:
+  en: Invalid license key.
+  zh-Hant: 序號無效。
+  zh-Hans: 序列号无效。
+  ja: ライセンスキーが無効です。
+  ko: 라이선스 키가 유효하지 않습니다.
+LICENSE_ERROR_INVALID_EMAIL:
+  en: Invalid email address.
+  zh-Hant: 無效的電子郵件。
+  zh-Hans: 无效的电子邮件。
+  ja: メールアドレスが無効です。
+  ko: 이메일 주소가 유효하지 않습니다.
+LICENSE_ERROR_INVALID_FILE:
+  en: Invalid license file.
+  zh-Hant: 無效的授權檔案。
+  zh-Hans: 无效的授权文件。
+  ja: 無効なライセンスファイルです。
+  ko: 유효하지 않은 라이선스 파일입니다.
+LICENSE_ERROR_WRONG_PRODUCT:
+  en: This license is not for NineBoxView.
+  zh-Hant: 此授權非 NineBoxView 專用。
+  zh-Hans: 此授权不适用于 NineBoxView。
+  ja: このライセンスは NineBoxView 用ではありません。
+  ko: 이 라이선스는 NineBoxView용이 아닙니다.
+LICENSE_ERROR_MISSING_FIELDS:
+  en: License file is incomplete.
+  zh-Hant: 授權檔案不完整。
+  zh-Hans: 授权文件不完整。
+  ja: ライセンスファイルが不完全です。
+  ko: 라이선스 파일이 불완전합니다.
+LICENSE_ERROR_REVOKED:
+  en: This license key has been revoked.
+  zh-Hant: 此序號已被撤銷。
+  zh-Hans: 此序列号已被吊销。
+  ja: このライセンスキーは取り消されました。
+  ko: 이 라이선스 키가 취소되었습니다.
+LICENSE_VERIFYING:
+  en: Verifying license...
+  zh-Hant: 正在驗證授權...
+  zh-Hans: 正在验证授权...
+  ja: ライセンスを確認中...
+  ko: 라이선스 확인 중...
+LICENSE_ACTIVATION_SUCCESS_TITLE:
+  en: License Activated
+  zh-Hant: 授權啟用成功
+  zh-Hans: 授权激活成功
+  ja: ライセンス有効化完了
+  ko: 라이선스 활성화 완료
+LICENSE_ACTIVATION_SUCCESS_OK:
+  en: OK
+  zh-Hant: 好
+  zh-Hans: 好
+  ja: OK
+  ko: 확인
+LICENSE_EXPIRED_WINDOW_TITLE:
+  en: NineBoxView Pro
+  zh-Hant: 九宮格預覽 Pro
+  zh-Hans: 九宫格预览 Pro
+  ja: 九マスビュー Pro
+  ko: 나인박스뷰 Pro
+LICENSE_EXPIRED_TITLE:
+  en: Trial Period Expired
+  zh-Hant: 試用期已結束
+  zh-Hans: 试用期已结束
+  ja: 試用期間が終了しました
+  ko: 체험 기간이 종료되었습니다
+LICENSE_EXPIRED_MESSAGE:
+  en: 'Your 14-day trial has ended.
+
+    Please purchase a license to continue using NineBoxView Pro.'
+  zh-Hant: '您的 14 天試用期已結束。
+
+    請購買授權以繼續使用九宮格預覽 Pro。'
+  zh-Hans: '您的 14 天试用期已结束。
+
+    请购买授权以继续使用九宫格预览 Pro。'
+  ja: '14日間の試用期間が終了しました。
+
+    九マスビュー Proを引き続きご利用いただくには、ライセンスをご購入ください。'
+  ko: '14일 체험 기간이 종료되었습니다.
+
+    나인박스뷰 Pro를 계속 사용하려면 라이선스를 구매해 주세요.'
+LICENSE_EXPIRED_PURCHASE:
+  en: Purchase License
+  zh-Hant: 購買授權
+  zh-Hans: 购买授权
+  ja: ライセンスを購入
+  ko: 라이선스 구매
+LICENSE_EXPIRED_ENTER_KEY:
+  en: Enter License Key
+  zh-Hant: 輸入序號
+  zh-Hans: 输入序列号
+  ja: ライセンスキーを入力
+  ko: 라이선스 키 입력
+LICENSE_EXPIRED_FREE_VERSION:
+  en: Use Free Version
+  zh-Hant: 使用免費版
+  zh-Hans: 使用免费版
+  ja: 無料版を使用
+  ko: 무료 버전 사용
+INFO_MENU_ENTER_LICENSE:
+  en: Enter License…
+  zh-Hant: 輸入授權碼…
+  zh-Hans: 输入授权码…
+  ja: ライセンスを入力…
+  ko: 라이선스 입력…
+LICENSE_WELCOME_TITLE:
+  en: Welcome to NineBoxView Pro
+  zh-Hant: 歡迎使用九宮格預覽 Pro
+  zh-Hans: 欢迎使用九宫格预览 Pro
+  ja: 九マスビュー Pro へようこそ
+  ko: 나인박스뷰 Pro에 오신 것을 환영합니다
+LICENSE_WELCOME_MESSAGE:
+  en: 'Experience powerful 9-grid preview for better glyph design decisions.
+
+
+    Your 14-day free trial starts when you click the button below.'
+  zh-Hant: '體驗強大的九宮格預覽功能，幫助您做出更好的字符設計決策。
+
+
+    點擊下方按鈕後，您的 14 天免費試用期將正式開始。'
+  zh-Hans: '体验强大的九宫格预览功能，帮助您做出更好的字符形设计决策。
+
+
+    点击下方按钮后，您的 14 天免费试用期将正式开始。'
+  ja: '強力な9マスプレビュー機能を体験して、より良いグリフデザインの決定を行いましょう。
+
+
+    下のボタンをクリックすると、14日間の無料トライアルが始まります。'
+  ko: '강력한 9칸 미리보기 기능을 체험하여 더 나은 글리프 디자인 결정을 내리세요.
+
+
+    아래 버튼을 클릭하면 14일 무료 체험이 시작됩니다.'
+LICENSE_WELCOME_START_TRIAL:
+  en: Start 14-Day Trial
+  zh-Hant: 開始 14 天試用
+  zh-Hans: 开始 14 天试用
+  ja: 14日間トライアルを開始
+  ko: 14일 체험 시작
+LICENSE_WELCOME_ENTER_KEY:
+  en: Enter License Key
+  zh-Hant: 輸入序號
+  zh-Hans: 输入序列号
+  ja: ライセンスキーを入力
+  ko: 라이선스 키 입력
+PALETTE_TAB_REFERENCE:
+  en: Reference
+  zh-Hant: 參考字
+  zh-Hans: 参考字
+  ja: 参照
+  ko: 참조
+PALETTE_TAB_LOCKED:
+  en: Locked
+  zh-Hant: 鎖定字
+  zh-Hans: 锁定字
+  ja: ロック
+  ko: 잠금
+PALETTE_MENU_PIN:
+  en: Pin
+  zh-Hant: 釘選
+  zh-Hans: 固定
+  ja: ピン留め
+  ko: 고정
+PALETTE_MENU_UNPIN:
+  en: Unpin
+  zh-Hant: 取消釘選
+  zh-Hans: 取消固定
+  ja: ピン留め解除
+  ko: 고정 해제
+PALETTE_MENU_RENAME:
+  en: Rename…
+  zh-Hant: 重新命名…
+  zh-Hans: 重命名…
+  ja: 名前を変更…
+  ko: 이름 변경…
+PALETTE_MENU_OVERWRITE:
+  en: Replace with Current
+  zh-Hant: 以當前取代
+  zh-Hans: 以当前替换
+  ja: 現在の内容で置換
+  ko: 현재 내용으로 대체
+PALETTE_MENU_DELETE:
+  en: Delete
+  zh-Hant: 刪除
+  zh-Hans: 删除
+  ja: 消去
+  ko: 삭제
+PALETTE_MENU_DELETE_MULTIPLE:
+  en: Delete %lu Items
+  zh-Hant: 刪除 %lu 個項目
+  zh-Hans: 删除 %lu 个项目
+  ja: '%lu 件を消去'
+  ko: '%lu개 항목 삭제'
+PALETTE_MENU_PIN_MULTIPLE:
+  en: Pin %lu Items
+  zh-Hant: 釘選 %lu 個項目
+  zh-Hans: 固定 %lu 个项目
+  ja: '%lu 件をピン留め'
+  ko: '%lu개 항목 고정'
+PALETTE_MENU_UNPIN_MULTIPLE:
+  en: Unpin %lu Items
+  zh-Hant: 取消釘選 %lu 個項目
+  zh-Hans: 取消固定 %lu 个项目
+  ja: '%lu 件のピン留め解除'
+  ko: '%lu개 항목 고정 해제'
+PALETTE_EMPTY_REFERENCE:
+  en: 'No reference presets
+
+    + to add'
+  zh-Hant: '尚無參考字組
+
+    + 新增'
+  zh-Hans: '尚无参考字组
+
+    + 添加'
+  ja: '参照プリセットなし
+
+    + で追加'
+  ko: '참조 프리셋 없음
+
+    + 로 추가'
+PALETTE_EMPTY_LOCKED:
+  en: 'No lock presets
+
+    + to add'
+  zh-Hant: '尚無鎖定字組
+
+    + 新增'
+  zh-Hans: '尚无锁定字组
+
+    + 添加'
+  ja: 'ロックプリセットなし
+
+    + で追加'
+  ko: '잠금 프리셋 없음
+
+    + 로 추가'
+PALETTE_OVERWRITE_CONFIRM_TITLE:
+  en: Confirm Overwrite
+  zh-Hant: 確認覆寫
+  zh-Hans: 确认覆盖
+  ja: 上書きの確認
+  ko: 덮어쓰기 확인
+PALETTE_OVERWRITE_CONFIRM_MESSAGE:
+  en: This will replace the preset content. This action cannot be undone.
+  zh-Hant: 這將覆寫字組內容，無法復原。
+  zh-Hans: 这将替换字组内容，无法撤销。
+  ja: プリセットの内容が置き換えられます。この操作は元に戻せません。
+  ko: 프리셋 내용이 대체됩니다. 이 작업은 되돌릴 수 없습니다.
+PALETTE_OVERWRITE_CONFIRM_OK:
+  en: Overwrite
+  zh-Hant: 覆寫
+  zh-Hans: 覆盖
+  ja: 上書き
+  ko: 덮어쓰기
+CONTEXT_MENU_SHOW_REFERENCE_INPUT:
+  en: Show Reference Panel
+  zh-Hant: 顯示參考字面板
+  zh-Hans: 显示参考字面板
+  ja: 参照パネルを表示
+  ko: 참조 패널 표시
+CONTEXT_MENU_HIDE_REFERENCE_INPUT:
+  en: Hide Reference Panel
+  zh-Hant: 隱藏參考字面板
+  zh-Hans: 隐藏参考字面板
+  ja: 参照パネルを隠す
+  ko: 참조 패널 숨기기
+CONTEXT_MENU_SHOW_LOCKED_PANEL:
+  en: Show Locked Panel
+  zh-Hant: 顯示鎖定字面板
+  zh-Hans: 显示锁定字面板
+  ja: ロックパネルを表示
+  ko: 잠금 패널 표시
+CONTEXT_MENU_HIDE_LOCKED_PANEL:
+  en: Hide Locked Panel
+  zh-Hant: 隱藏鎖定字面板
+  zh-Hans: 隐藏锁定字面板
+  ja: ロックパネルを隠す
+  ko: 잠금 패널 숨기기
+CONTEXT_MENU_SHOW_PRESETS:
+  en: Show Presets Panel
+  zh-Hant: 顯示字組面板
+  zh-Hans: 显示字组面板
+  ja: プリセットパネルを表示
+  ko: 프리셋 패널 표시
+CONTEXT_MENU_HIDE_PRESETS:
+  en: Hide Presets Panel
+  zh-Hant: 隱藏字組面板
+  zh-Hans: 隐藏字组面板
+  ja: プリセットパネルを隠す
+  ko: 프리셋 패널 숨기기
+CONTEXT_MENU_SHOW_TOOLBAR:
+  en: Show Toolbar
+  zh-Hant: 顯示工具列
+  zh-Hans: 显示工具栏
+  ja: ツールバーを表示
+  ko: 도구 모음 표시
+CONTEXT_MENU_HIDE_TOOLBAR:
+  en: Hide Toolbar
+  zh-Hant: 隱藏工具列
+  zh-Hans: 隐藏工具栏
+  ja: ツールバーを隠す
+  ko: 도구 모음 숨기기
+CONTEXT_MENU_LIGHT_MODE:
+  en: Light Mode
+  zh-Hant: 淺色模式
+  zh-Hans: 浅色模式
+  ja: ライトモード
+  ko: 라이트 모드
+CONTEXT_MENU_DARK_MODE:
+  en: Dark Mode
+  zh-Hant: 深色模式
+  zh-Hans: 暗色模式
+  ja: ダークモード
+  ko: 다크 모드
+CONTEXT_MENU_SHOW_GRID_LINES:
+  en: Show Grid Lines
+  zh-Hant: 顯示格線
+  zh-Hans: 显示网格
+  ja: グリッドを表示
+  ko: 그리드 표시
+CONTEXT_MENU_HIDE_GRID_LINES:
+  en: Hide Grid Lines
+  zh-Hant: 隱藏格線
+  zh-Hans: 隐藏网格
+  ja: グリッドを非表示
+  ko: 그리드 숨기기
+CONTEXT_MENU_INSERT_AT_CURSOR:
+  en: Insert at Cursor
+  zh-Hant: 插入當前分頁
+  zh-Hans: 插入当前标签页
+  ja: カーソル位置に挿入
+  ko: 커서 위치에 삽입
+CONTEXT_MENU_OPEN_IN_NEW_TAB:
+  en: Open in New Tab
+  zh-Hant: 在新分頁中打開
+  zh-Hans: 在新标签页中打开
+  ja: 新規タブで開く
+  ko: 새 탭에서 열기
+PRESETS_MENU_IMPORT:
+  en: Import…
+  zh-Hant: 匯入⋯
+  zh-Hans: 导入…
+  ja: 読み込み…
+  ko: 가져오기…
+PRESETS_MENU_EXPORT_SELECTED:
+  en: Export Selected…
+  zh-Hant: 匯出選取字組⋯
+  zh-Hans: 导出选中字组…
+  ja: 選択項目を出力…
+  ko: 선택 항목 내보내기…
+PRESETS_MENU_EXPORT_ALL:
+  en: Export All…
+  zh-Hant: 匯出所有字組⋯
+  zh-Hans: 导出所有字组…
+  ja: すべてを出力…
+  ko: 모두 내보내기…
+PRESETS_IMPORT_MODE_TITLE:
+  en: Import Presets
+  zh-Hant: 匯入字組
+  zh-Hans: 导入字组
+  ja: プリセットを読み込む
+  ko: 프리셋 가져오기
+PRESETS_IMPORT_MODE_MESSAGE:
+  en: Found %lu presets. How would you like to import them?
+  zh-Hant: 發現 %lu 個字組。要如何匯入？
+  zh-Hans: 发现 %lu 个字组。要如何导入？
+  ja: '%lu 個のプリセットが見つかりました。どのように読み込みますか？'
+  ko: '%lu개의 프리셋을 찾았습니다. 어떻게 가져올까요?'
+PRESETS_IMPORT_MODE_APPEND:
+  en: Append
+  zh-Hant: 追加
+  zh-Hans: 追加
+  ja: 追加
+  ko: 추가
+PRESETS_IMPORT_MODE_REPLACE:
+  en: Replace All
+  zh-Hant: 全部取代
+  zh-Hans: 全部替换
+  ja: すべて置き換え
+  ko: 모두 대체
+PRESETS_IMPORT_ERROR_TITLE:
+  en: Import Failed
+  zh-Hant: 匯入失敗
+  zh-Hans: 导入失败
+  ja: 読み込み失敗
+  ko: 가져오기 실패
+PRESETS_IMPORT_ERROR_INVALID_FORMAT:
+  en: The file format is invalid.
+  zh-Hant: 檔案格式無效。
+  zh-Hans: 文件格式无效。
+  ja: ファイル形式が無効です。
+  ko: 파일 형식이 올바르지 않습니다.
+PRESETS_IMPORT_ERROR_UNSUPPORTED_VERSION:
+  en: This file was created by a newer version. Please update the plugin.
+  zh-Hant: 此檔案由較新版本建立，請更新外掛。
+  zh-Hans: 此文件由较新版本创建，请更新插件。
+  ja: このファイルは新しいバージョンで作成されました。プラグインを更新してください。
+  ko: 이 파일은 새 버전에서 만들어졌습니다. 플러그인을 업데이트하세요.
+PRESETS_IMPORT_ERROR_TYPE_MISMATCH:
+  en: This file contains %@ presets, but you are on the %@ tab.
+  zh-Hant: 此檔案包含%@字組，但您目前在%@分頁。
+  zh-Hans: 此文件包含%@字组，但您当前在%@标签页。
+  ja: このファイルには%@プリセットが含まれていますが、現在%@タブにいます。
+  ko: 이 파일에는 %@ 프리셋이 있지만, 현재 %@ 탭에 있습니다.
+PRESETS_IMPORT_ERROR_EMPTY:
+  en: No valid presets found in this file.
+  zh-Hant: 此檔案中沒有有效的字組。
+  zh-Hans: 此文件中没有有效的字组。
+  ja: このファイルには有効なプリセットがありません。
+  ko: 이 파일에 유효한 프리셋이 없습니다.
+PRESETS_EXPORT_ERROR_TITLE:
+  en: Export Failed
+  zh-Hant: 匯出失敗
+  zh-Hans: 导出失败
+  ja: 出力失敗
+  ko: 내보내기 실패
+PRESETS_EXPORT_ERROR_MESSAGE:
+  en: 'Could not save the file: %@'
+  zh-Hant: 無法儲存檔案：%@
+  zh-Hans: 无法保存文件：%@
+  ja: ファイルを保存できませんでした：%@
+  ko: '파일을 저장할 수 없습니다: %@'
+PRESETS_TYPE_REFERENCE:
+  en: reference
+  zh-Hant: 參考字
+  zh-Hans: 参考字
+  ja: 参照
+  ko: 참조
+PRESETS_TYPE_LOCKED:
+  en: locked
+  zh-Hant: 鎖定字
+  zh-Hans: 锁定字
+  ja: ロック
+  ko: 잠금
+SEARCH_PRESETS_PLACEHOLDER:
+  en: Search presets…
+  zh-Hant: 搜尋字組…
+  zh-Hans: 搜索字组…
+  ja: プリセットを検索…
+  ko: 프리셋 검색…
+SEARCH_NO_RESULTS:
+  en: No results
+  zh-Hant: 找不到結果
+  zh-Hans: 无结果
+  ja: 結果なし
+  ko: 결과 없음
+SORT_NAME_AZ:
+  en: Name A → Z
+  zh-Hant: 名稱 A → Z
+  zh-Hans: 名称 A → Z
+  ja: 名前 A → Z
+  ko: 이름 A → Z
+SORT_NAME_ZA:
+  en: Name Z → A
+  zh-Hant: 名稱 Z → A
+  zh-Hans: 名称 Z → A
+  ja: 名前 Z → A
+  ko: 이름 Z → A
+SORT_DATE_NEWEST:
+  en: Date Added (Newest)
+  zh-Hant: 加入日期（新→舊）
+  zh-Hans: 添加日期（新→旧）
+  ja: 追加日（新しい順）
+  ko: 추가 날짜 (최신순)
+SORT_DATE_OLDEST:
+  en: Date Added (Oldest)
+  zh-Hant: 加入日期（舊→新）
+  zh-Hans: 添加日期（旧→新）
+  ja: 追加日（古い順）
+  ko: 추가 날짜 (오래된순)
+SORT_BUTTON_TOOLTIP:
+  en: Sort Order
+  zh-Hant: 排序方式
+  zh-Hans: 排序方式
+  ja: 並べ替え
+  ko: 정렬
+ABOUT_MENU_ITEM:
+  en: About NineBoxView Pro…
+  zh-Hant: 關於九宮格預覽 Pro…
+  zh-Hans: 关于九宫格预览 Pro…
+  ja: 九マスビュー Pro について…
+  ko: 나인박스뷰 Pro에 대하여…
+ABOUT_WINDOW_TITLE:
+  en: About
+  zh-Hant: 關於
+  zh-Hans: 关于
+  ja: 情報
+  ko: 정보
+ABOUT_LICENSED_TO:
+  en: 'Licensed to:'
+  zh-Hant: 授權給：
+  zh-Hans: 授权给：
+  ja: ライセンス所有者：
+  ko: '라이선스 소유자:'
+ABOUT_LINK_WEBSITE:
+  en: Website
+  zh-Hant: 官方網站
+  zh-Hans: 官方网站
+  ja: 公式サイト
+  ko: 공식 웹사이트
+ABOUT_LINK_HELP:
+  en: User Guide
+  zh-Hant: 使用說明
+  zh-Hans: 使用说明
+  ja: 使用ガイド
+  ko: 사용 설명서
+ABOUT_TRIAL_STATUS:
+  en: Trial
+  zh-Hant: 試用中
+  zh-Hans: 试用中
+  ja: 試用中
+  ko: 체험 중
+ABOUT_TRIAL_EXPIRED:
+  en: Trial Expired
+  zh-Hant: 試用過期
+  zh-Hans: 试用过期
+  ja: 試用期間終了
+  ko: 체험 기간 만료
+ABOUT_STATUS_LICENSED:
+  en: Licensed
+  zh-Hant: 已授權
+  zh-Hans: 已授权
+  ja: ライセンス認証済み
+  ko: 라이선스 인증됨
+ABOUT_STATUS_UNLICENSED:
+  en: Unlicensed
+  zh-Hant: 未授權
+  zh-Hans: 未授权
+  ja: 未認証
+  ko: 미인증
+ABOUT_DEACTIVATE_LICENSE:
+  en: Deactivate License
+  zh-Hant: 清除授權
+  zh-Hans: 清除授权
+  ja: ライセンスを解除
+  ko: 라이선스 해제
+ABOUT_DEACTIVATE_CONFIRM_TITLE:
+  en: Deactivate License?
+  zh-Hant: 確定要清除授權？
+  zh-Hans: 确定要清除授权？
+  ja: ライセンスを解除しますか？
+  ko: 라이선스를 해제하시겠습니까?
+ABOUT_DEACTIVATE_CONFIRM_MESSAGE:
+  en: Your license will be removed from this computer. You can reactivate it anytime with your license key.
+  zh-Hant: 授權資訊將從這台電腦移除。您可以隨時使用序號重新啟用。
+  zh-Hans: 授权信息将从这台电脑移除。您可以随时使用序列号重新激活。
+  ja: このコンピュータからライセンス情報が削除されます。ライセンスキーでいつでも再認証できます。
+  ko: 이 컴퓨터에서 라이선스 정보가 삭제됩니다. 라이선스 키로 언제든지 다시 인증할 수 있습니다.
+ABOUT_DEACTIVATE_CONFIRM_OK:
+  en: Deactivate
+  zh-Hant: 清除
+  zh-Hans: 清除
+  ja: 解除
+  ko: 해제
+ABOUT_DEACTIVATE_CONFIRM_CANCEL:
+  en: Cancel
+  zh-Hant: 取消
+  zh-Hans: 取消
+  ja: キャンセル
+  ko: 취소
+
+# 說明書專用變數（不在 Localizable.strings 中，手動維護）
+# =============================================================================
+
+ALERT_NOTE:
+  en: Note
+  zh-Hant: 備註
+  zh-Hans: 备注
+  ja: 注記
+  ko: 참고
+
+ALERT_TIP:
+  en: Tip
+  zh-Hant: 提示
+  zh-Hans: 提示
+  ja: ヒント
+  ko: 팁
+
+ALERT_CAUTION:
+  en: Caution
+  zh-Hant: 注意
+  zh-Hans: 注意
+  ja: 注意
+  ko: 주의
+
+ALERT_WARNING:
+  en: Warning
+  zh-Hant: 警告
+  zh-Hans: 警告
+  ja: 警告
+  ko: 경고
+
+GLYPHS_PLUGIN_MANAGER:
+  en: Plugin Manager
+  zh-Hant: 外掛程式管理員
+  zh-Hans: 插件管理器
+  ja: プラグインマネージャー
+  ko: 플러그인 관리자
+
+GLYPHS_VIEW_MENU:
+  en: View
+  zh-Hant: 顯示
+  zh-Hans: 视图
+  ja: 表示
+  ko: 보기
+
+GLYPHS_WINDOW_MENU:
+  en: Window
+  zh-Hant: 視窗
+  zh-Hans: 窗口
+  ja: ウインドウ
+  ko: 창
+
+GLYPHS_INSTALL:
+  en: Install
+  zh-Hant: 安裝
+  zh-Hans: 安装
+  ja: インストール
+  ko: 설치
+  
+LIGHT_TABLE:
+  en: Light Table
+  zh-Hant: 透寫台
+  zh-Hans: 透写台
+  ja: Light Table
+  ko: Light Table
+
+FILE_EXTENSION_REFERENCE:
+  en: .nineboxref
+  zh-Hant: .nineboxref
+  zh-Hans: .nineboxref
+  ja: .nineboxref
+  ko: .nineboxref
+
+FILE_EXTENSION_LOCKED:
+  en: .nineboxlock
+  zh-Hant: .nineboxlock
+  zh-Hans: .nineboxlock
+  ja: .nineboxlock
+  ko: .nineboxlock
+
+PALETTE_EMPTY_REFERENCE_LINE1:
+  en: No reference presets
+  zh-Hant: 尚無參考字組
+  zh-Hans: 尚无参考字组
+  ja: 参照プリセットなし
+  ko: 참조 프리셋 없음
+
+PALETTE_EMPTY_REFERENCE_LINE2:
+  en: + to add
+  zh-Hant: + 新增
+  zh-Hans: + 添加
+  ja: + で追加
+  ko: + 로 추가
+
+PALETTE_EMPTY_LOCKED_LINE1:
+  en: No lock presets
+  zh-Hant: 尚無鎖定字組
+  zh-Hans: 尚无锁定字组
+  ja: ロックプリセットなし
+  ko: 잠금 프리셋 없음
+
+PALETTE_EMPTY_LOCKED_LINE2:
+  en: + to add
+  zh-Hant: + 新增
+  zh-Hans: + 添加
+  ja: + で追加
+  ko: + 로 추가
+
+# 指南導覽列
+GUIDE_NAV_HOME:
+  en: Home
+  zh-Hant: 首頁
+  zh-Hans: 首页
+  ja: ホーム
+  ko: 홈
+
+GUIDE_NAV_REFERENCE:
+  en: Reference
+  zh-Hant: 參考字
+  zh-Hans: 参考字
+  ja: 参照
+  ko: 참조
+
+GUIDE_NAV_LOCK:
+  en: Lock
+  zh-Hant: 鎖定字
+  zh-Hans: 锁定字
+  ja: ロック
+  ko: 잠금
+
+GUIDE_NAV_PRESETS:
+  en: Presets
+  zh-Hant: 字組
+  zh-Hans: 字组
+  ja: プリセット
+  ko: 프리셋
+
+GUIDE_NAV_ADVANCED:
+  en: Advanced
+  zh-Hant: 進階功能
+  zh-Hans: 进阶功能
+  ja: 高度な機能
+  ko: 고급 기능
+
+GUIDE_NAV_LICENSE:
+  en: License
+  zh-Hant: 授權
+  zh-Hans: 授权
+  ja: ライセンス
+  ko: 라이선스
+
+GUIDE_NAV_FAQ:
+  en: FAQ
+  zh-Hant: 常見問題
+  zh-Hans: 常见问题
+  ja: よくある質問
+  ko: 자주 묻는 질문
+
+# 頁首導覽
+NAV_HOME:
+  en: Home
+  zh-Hant: 首頁
+  zh-Hans: 首页
+  ja: ホーム
+  ko: 홈
+
+NAV_GUIDE:
+  en: Guide
+  zh-Hant: 指南
+  zh-Hans: 指南
+  ja: ガイド
+  ko: 가이드
+
+# 頁尾
+FOOTER_NAME:
+  en: 殷慈遠
+  zh-Hant: 殷慈遠
+  zh-Hans: 殷慈遠
+  ja: 殷 慈遠
+  ko: 殷慈遠
+
+FOOTER_CONTACT:
+  en: Contact
+  zh-Hant: 聯絡
+  zh-Hans: 联系
+  ja: お問い合わせ
+  ko: 연락처
+
+FOOTER_PRIVACY:
+  en: Privacy
+  zh-Hant: 隱私權政策
+  zh-Hans: 隐私政策
+  ja: プライバシー
+  ko: 개인정보 보호
+
+FOOTER_TERMS:
+  en: Terms
+  zh-Hant: 使用條款
+  zh-Hans: 使用条款
+  ja: 利用規約
+  ko: 이용 약관
+
+# 格線相關術語
+GRID_EM_BOX:
+  en: em box
+  zh-Hant: 字身框
+  zh-Hans: 字身框
+  ja: 仮想ボディ
+  ko: 네모틀
+
+GRID_CENTER_LINE:
+  en: center line
+  zh-Hant: 中心線
+  zh-Hans: 中心线
+  ja: センターライン
+  ko: 중심선
+
+# 搜尋功能
+SEARCH_PLACEHOLDER:
+  en: Search guide...
+  zh-Hant: 搜尋說明書...
+  zh-Hans: 搜索说明书...
+  ja: ガイドを検索...
+  ko: 가이드 검색...
+
+# 無障礙標籤
+ARIA_SELECT_LANGUAGE:
+  en: Select language
+  zh-Hant: 選擇語言
+  zh-Hans: 选择语言
+  ja: 言語を選択
+  ko: 언어 선택
+ARIA_TOGGLE_THEME:
+  en: Toggle theme
+  zh-Hant: 切換主題
+  zh-Hans: 切换主题
+  ja: テーマを切り替え
+  ko: 테마 전환
