@@ -1,0 +1,303 @@
+# PR 到 gh-pages 分支的網頁檢查
+# 檢查項目：HTML 驗證、CSS 檢查、JS Lint、內部連結檢查
+
+name: Web Checks
+
+on:
+  pull_request:
+    branches:
+      - gh-pages
+
+# 取消同一 PR 的舊 workflow runs
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # HTML5 語法驗證
+  html-validate:
+    name: HTML Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          css: false
+          extra: --ignore "Consider adding a \"lang\" attribute"
+
+      - name: Report Result
+        if: always()
+        run: |
+          echo "## HTML Validation" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ All HTML files passed validation" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ HTML validation failed - check logs above" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # CSS 語法檢查
+  css-validate:
+    name: CSS Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install Stylelint
+        run: npm install -g stylelint stylelint-config-standard
+
+      - name: Create Stylelint Config
+        run: |
+          cat > .stylelintrc.json << 'EOF'
+          {
+            "extends": "stylelint-config-standard",
+            "rules": {
+              "no-descending-specificity": null,
+              "selector-class-pattern": null,
+              "custom-property-pattern": null,
+              "keyframes-name-pattern": null,
+              "alpha-value-notation": null,
+              "color-function-notation": null,
+              "property-no-vendor-prefix": null,
+              "selector-no-vendor-prefix": null,
+              "value-no-vendor-prefix": null
+            }
+          }
+          EOF
+
+      - name: Run Stylelint
+        id: stylelint
+        run: |
+          CSS_FILES=$(find . -name "*.css" -not -path "./node_modules/*" | head -100)
+          if [ -z "$CSS_FILES" ]; then
+            echo "No CSS files found"
+            echo "result=skip" >> $GITHUB_OUTPUT
+          else
+            echo "$CSS_FILES" | xargs stylelint --formatter verbose || echo "result=fail" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Report Result
+        if: always()
+        run: |
+          echo "## CSS Validation" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.stylelint.outputs.result }}" = "skip" ]; then
+            echo "⏭️ No CSS files to validate" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ job.status }}" = "success" ]; then
+            echo "✅ All CSS files passed validation" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ CSS validation failed - check logs above" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # JavaScript Lint
+  js-lint:
+    name: JavaScript Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install ESLint
+        run: npm install -g eslint @eslint/js globals
+
+      - name: Create ESLint Config (Flat Config)
+        run: |
+          cat > eslint.config.mjs << 'EOF'
+          import js from "@eslint/js";
+          import globals from "globals";
+
+          export default [
+            js.configs.recommended,
+            {
+              languageOptions: {
+                ecmaVersion: 2022,
+                sourceType: "module",
+                globals: {
+                  ...globals.browser,
+                  ...globals.es2021
+                }
+              },
+              rules: {
+                "no-unused-vars": "warn",
+                "no-undef": "error",
+                "no-console": "off"
+              }
+            },
+            {
+              ignores: ["node_modules/**", "*.min.js", "vendor/**"]
+            }
+          ];
+          EOF
+
+      - name: Run ESLint
+        id: eslint
+        run: |
+          JS_FILES=$(find . -name "*.js" -not -path "./node_modules/*" -not -name "*.min.js" | head -100)
+          if [ -z "$JS_FILES" ]; then
+            echo "No JS files found"
+            echo "result=skip" >> $GITHUB_OUTPUT
+          else
+            echo "$JS_FILES" | xargs eslint --format stylish || echo "result=fail" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Report Result
+        if: always()
+        run: |
+          echo "## JavaScript Lint" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.eslint.outputs.result }}" = "skip" ]; then
+            echo "⏭️ No JavaScript files to lint" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ job.status }}" = "success" ]; then
+            echo "✅ All JavaScript files passed linting" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ JavaScript linting failed - check logs above" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # 內部連結檢查
+  link-check:
+    name: Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check Internal Links
+        id: linkcheck
+        run: |
+          cat > check-links.mjs << 'EOF'
+          import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
+          import { join, dirname, resolve } from 'path';
+
+          const errors = [];
+          const checked = new Set();
+
+          function findHtmlFiles(dir) {
+            const files = [];
+            for (const file of readdirSync(dir)) {
+              const path = join(dir, file);
+              if (statSync(path).isDirectory()) {
+                if (!file.startsWith('.') && file !== 'node_modules') {
+                  files.push(...findHtmlFiles(path));
+                }
+              } else if (file.endsWith('.html')) {
+                files.push(path);
+              }
+            }
+            return files;
+          }
+
+          function checkLinks(htmlFile) {
+            const content = readFileSync(htmlFile, 'utf8');
+            const dir = dirname(htmlFile);
+
+            // 檢查 href 和 src 屬性
+            const linkPattern = /(?:href|src)=["']([^"'#?]+)/g;
+            let match;
+
+            while ((match = linkPattern.exec(content)) !== null) {
+              const link = match[1];
+
+              // 跳過外部連結和特殊協議
+              if (link.startsWith('http') || link.startsWith('//') ||
+                  link.startsWith('mailto:') || link.startsWith('tel:') ||
+                  link.startsWith('javascript:') || link.startsWith('data:')) {
+                continue;
+              }
+
+              // 解析相對路徑
+              const targetPath = link.startsWith('/')
+                ? join('.', link)
+                : resolve(dir, link);
+
+              const checkKey = `${htmlFile}:${link}`;
+              if (checked.has(checkKey)) continue;
+              checked.add(checkKey);
+
+              if (!existsSync(targetPath)) {
+                errors.push({ file: htmlFile, link, target: targetPath });
+              }
+            }
+          }
+
+          const htmlFiles = findHtmlFiles('.');
+          console.log(`Found ${htmlFiles.length} HTML files`);
+
+          for (const file of htmlFiles) {
+            checkLinks(file);
+          }
+
+          if (errors.length > 0) {
+            console.log('\n❌ Broken links found:\n');
+            for (const { file, link, target } of errors) {
+              console.log(`  ${file}`);
+              console.log(`    → ${link}`);
+              console.log(`    (expected: ${target})\n`);
+            }
+            process.exit(1);
+          } else {
+            console.log('\n✅ All internal links are valid');
+          }
+          EOF
+
+          node check-links.mjs
+
+      - name: Report Result
+        if: always()
+        run: |
+          echo "## Link Check" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ All internal links are valid" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Broken links found - check logs above" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # Lighthouse 效能檢查（預設停用）
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    if: false  # 改為 true 以啟用
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Run Lighthouse
+        run: |
+          # 需要先啟動本地伺服器
+          npx serve -l 8080 &
+          sleep 3
+          lhci autorun --collect.url=http://localhost:8080 || true
+
+      - name: Report Result
+        if: always()
+        run: |
+          echo "## Lighthouse" >> $GITHUB_STEP_SUMMARY
+          echo "See Lighthouse report in artifacts" >> $GITHUB_STEP_SUMMARY

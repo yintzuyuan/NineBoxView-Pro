@@ -1,0 +1,197 @@
+# PR 到 main 分支的 .glyphsPlugin Bundle 驗證
+# 檢查項目：Bundle 結構、Info.plist 必要欄位、可執行檔存在
+
+name: Plugin Bundle Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# 取消同一 PR 的舊 workflow runs
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # .glyphsPlugin Bundle 驗證
+  bundle-validation:
+    name: Validate .glyphsPlugin Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Find Plugin Bundles
+        id: find-bundles
+        run: |
+          BUNDLES=$(find . -name "*.glyphsPlugin" -type d | head -20)
+          if [ -z "$BUNDLES" ]; then
+            echo "No .glyphsPlugin bundles found"
+            echo "found=false" >> $GITHUB_OUTPUT
+          else
+            echo "Found bundles:"
+            echo "$BUNDLES"
+            echo "found=true" >> $GITHUB_OUTPUT
+            # 儲存到檔案供後續步驟使用
+            echo "$BUNDLES" > /tmp/bundle-list.txt
+          fi
+
+      - name: Validate Bundle Structure
+        if: steps.find-bundles.outputs.found == 'true'
+        id: structure
+        run: |
+          ERRORS=""
+          SUCCESS=0
+          FAIL=0
+
+          while IFS= read -r BUNDLE; do
+            echo "Checking: $BUNDLE"
+
+            # 檢查 Contents 目錄
+            if [ ! -d "$BUNDLE/Contents" ]; then
+              ERRORS="${ERRORS}\n❌ $BUNDLE: Missing Contents/ directory"
+              FAIL=$((FAIL + 1))
+              continue
+            fi
+
+            # 檢查 Info.plist
+            if [ ! -f "$BUNDLE/Contents/Info.plist" ]; then
+              ERRORS="${ERRORS}\n❌ $BUNDLE: Missing Contents/Info.plist"
+              FAIL=$((FAIL + 1))
+              continue
+            fi
+
+            # 檢查 MacOS 目錄（可執行檔位置）
+            if [ ! -d "$BUNDLE/Contents/MacOS" ]; then
+              ERRORS="${ERRORS}\n❌ $BUNDLE: Missing Contents/MacOS/ directory"
+              FAIL=$((FAIL + 1))
+              continue
+            fi
+
+            # 檢查 MacOS 目錄是否有檔案
+            EXEC_COUNT=$(find "$BUNDLE/Contents/MacOS" -type f | wc -l | tr -d ' ')
+            if [ "$EXEC_COUNT" -eq 0 ]; then
+              ERRORS="${ERRORS}\n❌ $BUNDLE: No executable found in Contents/MacOS/"
+              FAIL=$((FAIL + 1))
+              continue
+            fi
+
+            echo "✅ $BUNDLE: Structure valid"
+            SUCCESS=$((SUCCESS + 1))
+          done < /tmp/bundle-list.txt
+
+          echo "structure_success=$SUCCESS" >> $GITHUB_OUTPUT
+          echo "structure_fail=$FAIL" >> $GITHUB_OUTPUT
+
+          if [ $FAIL -gt 0 ]; then
+            echo -e "$ERRORS"
+            echo "errors<<EOF" >> $GITHUB_OUTPUT
+            echo -e "$ERRORS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Validate Info.plist
+        if: steps.find-bundles.outputs.found == 'true'
+        id: plist
+        run: |
+          ERRORS=""
+          SUCCESS=0
+          FAIL=0
+
+          # 必要欄位
+          REQUIRED_KEYS=(
+            "CFBundleIdentifier"
+            "CFBundleVersion"
+            "CFBundleName"
+          )
+
+          # Glyphs 特有欄位（建議但不強制）
+          RECOMMENDED_KEYS=(
+            "GlyphsSDKVersion"
+          )
+
+          while IFS= read -r BUNDLE; do
+            PLIST="$BUNDLE/Contents/Info.plist"
+            if [ ! -f "$PLIST" ]; then
+              continue
+            fi
+
+            echo "Checking: $PLIST"
+            BUNDLE_ERRORS=""
+
+            # 檢查必要欄位
+            for KEY in "${REQUIRED_KEYS[@]}"; do
+              if ! grep -q "<key>$KEY</key>" "$PLIST"; then
+                BUNDLE_ERRORS="${BUNDLE_ERRORS}\n  - Missing required key: $KEY"
+              fi
+            done
+
+            # 檢查建議欄位（僅警告）
+            for KEY in "${RECOMMENDED_KEYS[@]}"; do
+              if ! grep -q "<key>$KEY</key>" "$PLIST"; then
+                echo "  ⚠️ Missing recommended key: $KEY"
+              fi
+            done
+
+            if [ -n "$BUNDLE_ERRORS" ]; then
+              ERRORS="${ERRORS}\n❌ $BUNDLE:$BUNDLE_ERRORS"
+              FAIL=$((FAIL + 1))
+            else
+              echo "✅ $BUNDLE: Info.plist valid"
+              SUCCESS=$((SUCCESS + 1))
+            fi
+          done < /tmp/bundle-list.txt
+
+          echo "plist_success=$SUCCESS" >> $GITHUB_OUTPUT
+          echo "plist_fail=$FAIL" >> $GITHUB_OUTPUT
+
+          if [ $FAIL -gt 0 ]; then
+            echo -e "$ERRORS"
+            echo "errors<<EOF" >> $GITHUB_OUTPUT
+            echo -e "$ERRORS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Report Summary
+        if: always()
+        run: |
+          echo "## Plugin Bundle Validation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.find-bundles.outputs.found }}" != "true" ]; then
+            echo "⏭️ No .glyphsPlugin bundles found in this PR" >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+
+          echo "### Bundle Structure" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.structure.outcome }}" = "success" ]; then
+            echo "✅ All bundles have valid structure" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Structure validation failed:" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "${{ steps.structure.outputs.errors }}" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Info.plist Validation" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.plist.outcome }}" = "success" ]; then
+            echo "✅ All Info.plist files are valid" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Info.plist validation failed:" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "${{ steps.plist.outputs.errors }}" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Required Info.plist Keys" >> $GITHUB_STEP_SUMMARY
+          echo "- \`CFBundleIdentifier\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`CFBundleVersion\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`CFBundleName\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Recommended Keys (not enforced)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`GlyphsSDKVersion\`" >> $GITHUB_STEP_SUMMARY
