@@ -7,7 +7,7 @@
 function getBasePath() {
   const path = window.location.pathname;
   // 如果在語言子目錄中（如 /zh-Hant/），需要往上一層
-  if (path.includes('/zh-Hant/') || path.includes('/en/') || path.includes('/ja/') || path.includes('/ko/')) {
+  if (path.includes('/zh-Hant/') || path.includes('/zh-Hans/') || path.includes('/en/') || path.includes('/ja/') || path.includes('/ko/')) {
     return '..';
   }
   return '.';

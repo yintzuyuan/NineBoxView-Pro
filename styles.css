@@ -462,23 +462,21 @@ a:hover {
 }
 
 .cta--glyphs {
-  background-color: transparent;
-  color: var(--color-glyphs-dark);
+  background-color: var(--color-glyphs-dark); /* 深墨綠實心 */
+  color: var(--color-bg); /* 米白文字 */
   border: 1px solid var(--color-glyphs-dark);
-  /* 與卡片呼應的多層次陰影 */
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 2px 4px rgba(0, 0, 0, 0.04);
+    0 2px 4px rgba(44, 55, 42, 0.2),
+    0 4px 8px rgba(44, 55, 42, 0.15);
 }
 
 .cta--glyphs:hover {
-  background-color: var(--color-glyphs);
+  background-color: var(--color-glyphs); /* hover 變亮綠 */
   color: var(--color-glyphs-dark);
   border-color: var(--color-glyphs);
-  /* hover 時陰影加深 */
   box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.06),
-    0 4px 8px rgba(0, 0, 0, 0.06);
+    0 4px 8px rgba(135, 243, 45, 0.25),
+    0 6px 12px rgba(44, 55, 42, 0.15);
 }
 
 /* Coming Soon - visual hint but still clickable for testing */
@@ -489,6 +487,7 @@ a:hover {
 /* Dark mode: restore bright green for glyphs button + glow effect */
 @media (prefers-color-scheme: dark) {
   .cta--glyphs {
+    background-color: transparent; /* 深色模式維持透明 */
     color: var(--color-glyphs);
     border-color: var(--color-glyphs);
     /* 深色模式：Glyphs 綠色微光暈 */
