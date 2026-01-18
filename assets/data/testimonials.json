@@ -1,0 +1,22 @@
+{
+  "testimonials": [
+    {
+      "id": "user01",
+      "name": "灿飞",
+      "role": "字型制作人",
+      "company": "火山字型",
+      "lang": "zh-Hans",
+      "avatar": "user01.webp",
+      "quote": "九宫格预览很好地解决了中文字体的呈现特性，并让我在设计初始阶段就能直观地进行自我评审。"
+    },
+    {
+      "id": "user02",
+      "name": "Roy Chan 陳靖軒",
+      "role": "字體總監",
+      "company": "思緒俠造字",
+      "lang": "zh-Hant",
+      "avatar": "user02.webp",
+      "quote": "NineBoxView 對我的工作流程產生便利，封閉部件和開放部件製作時分開進行，有了它就可以馬上觀察到排字時的效果。"
+    }
+  ]
+}
