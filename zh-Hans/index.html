@@ -9,17 +9,19 @@
   <!-- Open Graph -->
   <meta property="og:title" content="NineBoxView Pro - 九宫格预览工具">
   <meta property="og:description" content="专为 Glyphs 3 打造的九宫格预览工具。">
+  <meta property="og:image" content="../assets/images/og-image.png">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@100..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="../styles.css">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
@@ -27,35 +29,37 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="nav">
-    <div class="container nav__inner">
-      <ul class="nav__links">
-        <li><a href="index.html" class="nav__link active">首页</a></li>
-        <li><a href="https://erikyin.net/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="../assets/logo-128.png" alt="NineBoxView Pro" class="nav__logo-img">
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link active">首页</a></li>
+      <li><a href="guide/index.html" class="nav__link">指南</a></li>
+    </ul>
+    <div class="lang-menu">
+      <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
+        <span class="lang-current">简</span>
+        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+      </button>
+      <ul class="lang-dropdown" role="listbox">
+        <li><a href="../zh-Hant/index.html">繁體中文</a></li>
+        <li><a href="../en/index.html">English</a></li>
+        <li><a href="index.html" aria-current="page">简体中文</a></li>
+        <li><a href="../ja/index.html">日本語</a></li>
+        <li><a href="../ko/index.html">한국어</a></li>
       </ul>
-      <div class="lang-menu">
-        <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
-          <span class="lang-current">简</span>
-          <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
-        </button>
-        <ul class="lang-dropdown" role="listbox">
-          <li><a href="../zh-Hant/index.html">繁體中文</a></li>
-          <li><a href="../en/index.html">English</a></li>
-          <li><a href="index.html" aria-current="page">简体中文</a></li>
-          <li><a href="../ja/index.html">日本語</a></li>
-          <li><a href="../ko/index.html">한국어</a></li>
-        </ul>
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <main>
     <!-- Hero Section -->
     <section class="section hero">
       <div class="container">
         <h1 class="hero__title">九宫格预览 Pro</h1>
-        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
-        <p class="hero__subtitle hero__subtitle--secondary">专为 Glyphs 3 打造的九宫格预览工具。</p>
+        <p class="hero__subtitle">专为 Glyphs 3 打造的九宫格预览工具。</p>
 
         <!-- Hero Image -->
         <img src="../assets/images/hero-zh-Hans.png" alt="NineBoxView Pro 界面展示" class="hero__image"
@@ -73,29 +77,53 @@
     <!-- Concept Explanation Section -->
     <section class="section concept-explain">
       <div class="container">
-        <h2>三层参考系统</h2>
-        <p class="concept-explain__intro">快速测试字符组合，一眼发现字距问题。</p>
+        <h2>三层预览系统</h2>
+        <p class="concept-explain__intro">快速测试字符组合，一眼发现视觉问题。</p>
 
+        <!-- 概念图互动展示 -->
         <div class="concept-showcase">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="400" height="480"
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 -60 485 330"
                role="img" aria-label="NineBoxView Pro 三层九宫格概念图" class="isometric-concept">
             <title>NineBoxView Pro 等角投影概念图</title>
-            <desc>展示三层堆叠的九宫格：编辑层、参考层、锁定层</desc>
+            <desc>三层堆叠九宫格：编辑字、参考字、锁定字</desc>
 
             <defs>
               <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
               </filter>
               <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
               </filter>
               <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+                <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
               </filter>
             </defs>
 
-            <g id="concept-diagram" transform="translate(270, 440)">
-              <g transform="translate(0, 0)" filter="url(#shadow-sm)">
+            <style>
+              .cell { stroke-width: 1.5; }
+              .cell-edit { fill: var(--layer-edit-fill, rgba(232, 228, 222, 0.92)); stroke: var(--layer-edit-stroke, #c4beb4); }
+              .cell-reference { fill: var(--layer-reference-fill, rgba(212, 207, 198, 0.88)); stroke: var(--layer-reference-stroke, #a8a298); }
+              .cell-locked { fill: var(--layer-locked-fill, rgba(191, 185, 173, 0.85)); stroke: var(--layer-locked-stroke, #8c867a); }
+              .glyph { font-size: 34px; text-anchor: middle; dominant-baseline: central; font-family: "Noto Serif SC", "Songti SC", Georgia, serif; }
+              .glyph-edit { fill: var(--glyph-edit, #9a9488); }
+              .glyph-reference { fill: var(--glyph-reference, #5c574d); }
+              .glyph-locked { fill: var(--glyph-locked, #2c2824); }
+              .layer-label { fill: var(--color-text-secondary, #6a6a6a); font-size: 12px; letter-spacing: 0.08em; font-family: var(--font-sans, system-ui); }
+              .layer-line { stroke: var(--color-text-secondary, #6a6a6a); stroke-width: 0.5; stroke-dasharray: 2, 3; opacity: 0.5; }
+              /* 分层动画 - 默认隐藏，等待触发 */
+              .layer-group { opacity: 0; transition: opacity 0.7s ease-out; }
+              .layer-group--edit { transition-delay: 0s; }
+              .layer-group--reference { transition-delay: 0.15s; }
+              .layer-group--locked { transition-delay: 0.3s; }
+              .labels { opacity: 0; transition: opacity 0.5s ease-out 0.45s; }
+              /* 触发后的状态 */
+              .is-animated .layer-group,
+              .is-animated .labels { opacity: 1; }
+            </style>
+
+            <g id="concept-diagram" transform="translate(225, 75)">
+              <!-- 第一层：编辑层（底部） -->
+              <g class="layer-group layer-group--edit" transform="translate(0, 0)" filter="url(#shadow-sm)">
                 <g id="layer-edit" class="layer" data-layer="edit" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
                   <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2"/>
@@ -118,13 +146,13 @@
                 </g>
               </g>
 
-              <g transform="translate(0, -50)" filter="url(#shadow-md)">
+              <!-- 第二层：参考层（中间） -->
+              <g class="layer-group layer-group--reference" transform="translate(0, -65)" filter="url(#shadow-md)">
                 <g id="layer-reference" class="layer" data-layer="reference" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
                   <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="54" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
@@ -140,13 +168,13 @@
                 </g>
               </g>
 
-              <g transform="translate(0, -100)" filter="url(#shadow-lg)">
+              <!-- 第三层：锁定层（顶部） -->
+              <g class="layer-group layer-group--locked" transform="translate(0, -130)" filter="url(#shadow-lg)">
                 <g id="layer-locked" class="layer" data-layer="locked" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
                   <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="54" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
@@ -157,133 +185,166 @@
                 </g>
               </g>
 
+              <!-- 层级标签 -->
               <g class="labels">
-                <line class="layer-line" x1="-145" y1="60" x2="-85" y2="60"/>
-                <text class="layer-label" x="-150" y="63">编辑层</text>
-                <line class="layer-line" x1="-145" y1="5" x2="-85" y2="5"/>
-                <text class="layer-label" x="-150" y="8">参考层</text>
-                <line class="layer-line" x1="-145" y1="-50" x2="-85" y2="-50"/>
-                <text class="layer-label" x="-150" y="-47">锁定层</text>
+                <!-- 编辑层 - pen-nib 图示 -->
+                <line class="layer-line" x1="-215" y1="65" x2="-105" y2="65"/>
+                <svg class="layer-icon" x="-232" y="57" width="16" height="16" viewBox="0 0 256 256" fill="var(--color-text-secondary, #6a6a6a)">
+                  <path d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z"/>
+                </svg>
+                <!-- 参考层 - article 图示 -->
+                <line class="layer-line" x1="-215" y1="0" x2="-105" y2="0"/>
+                <svg class="layer-icon" x="-232" y="-8" width="16" height="16" viewBox="0 0 256 256" fill="var(--color-text-secondary, #6a6a6a)">
+                  <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/>
+                </svg>
+                <!-- 锁定层 - lock 图示 -->
+                <line class="layer-line" x1="-215" y1="-65" x2="-105" y2="-65"/>
+                <svg class="layer-icon" x="-232" y="-73" width="16" height="16" viewBox="0 0 256 256" fill="var(--color-text-secondary, #6a6a6a)">
+                  <path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/>
+                </svg>
               </g>
             </g>
           </svg>
         </div>
 
+        <!-- 三层说明卡片 -->
         <div class="concept-layers">
           <div class="layer-card layer-card--edit">
-            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z"/></svg>编辑层</h3>
-            <p>当前编辑的字符，同步显示在九宫格的每一格</p>
+            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z"/></svg>编辑字</h3>
+            <p>当前编辑的字符，同步显示在九宫格每一格</p>
           </div>
           <div class="layer-card layer-card--reference">
-            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg>参考层</h3>
+            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg>参考字</h3>
             <p>随机排列的常用字，快速发现问题搭配</p>
           </div>
           <div class="layer-card layer-card--locked">
-            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>锁定层</h3>
+            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>锁定字</h3>
             <p>固定位置的特定字符，测试固定组合</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section features features--primary">
+    <!-- Feature Showcase #1: 参考字 -->
+    <section class="section feature-showcase">
       <div class="container">
-        <h2 class="features__title">核心功能</h2>
-        <p>快速测试字符组合，发现问题搭配</p>
-
-        <div class="features__grid">
-          <div class="feature">
-            <div class="feature__media">
-              <img src="../assets/images/feature-reference.gif" alt="参考字功能展示"
-                   onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">参考字 GIF</div>
-            </div>
-            <div class="feature__content">
-              <h3 class="feature__title">参考字</h3>
-              <p class="feature__desc">输入常用字，自动随机排列在周围。点击重新洗牌，快速发现问题组合。</p>
-            </div>
-          </div>
-
-          <div class="feature">
-            <div class="feature__media">
-              <img src="../assets/images/feature-lock.gif" alt="锁定字功能展示"
-                   onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">锁定字 GIF</div>
-            </div>
-            <div class="feature__content">
-              <h3 class="feature__title">锁定字</h3>
-              <p class="feature__desc">将特定字符固定在指定位置，测试固定搭配的字距。设置随文件保存，团队协作无缝衔接。</p>
-            </div>
-          </div>
+        <div class="feature-showcase__media">
+          <img src="../assets/images/feature-reference.gif" alt="参考字功能展示"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="feature-showcase__placeholder" style="display:none;">参考字 GIF (待替换)</div>
+        </div>
+        <div class="feature-showcase__content">
+          <span class="feature-showcase__label">核心功能</span>
+          <h2 class="feature-showcase__title">参考字</h2>
+          <p class="feature-showcase__desc">输入常用字，自动随机排列在周围。点击重新洗牌，快速发现问题组合。</p>
         </div>
       </div>
     </section>
 
-    <!-- Integration Section -->
-    <section class="section features">
+    <!-- Feature Showcase #2: 锁定字 -->
+    <section class="section feature-showcase">
       <div class="container">
-        <h2 class="features__title">高级整合</h2>
-        <p>与 Glyphs 生态系统无缝协作</p>
+        <div class="feature-showcase__media">
+          <img src="../assets/images/feature-lock.gif" alt="锁定字功能展示"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="feature-showcase__placeholder" style="display:none;">锁定字 GIF (待替换)</div>
+        </div>
+        <div class="feature-showcase__content">
+          <span class="feature-showcase__label">核心功能</span>
+          <h2 class="feature-showcase__title">锁定字</h2>
+          <p class="feature-showcase__desc">将特定字符固定在指定位置，测试固定的字符组合。设置随文件保存，团队协作无缝衔接。</p>
+        </div>
+      </div>
+    </section>
 
-        <div class="features__grid">
-          <div class="feature">
-            <div class="feature__media">
+    <!-- Feature Showcase #3: 字组 -->
+    <section class="section feature-showcase">
+      <div class="container">
+        <div class="feature-showcase__media">
+          <img src="../assets/images/feature-presets.gif" alt="字组功能展示"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="feature-showcase__placeholder" style="display:none;">字组 GIF (待替换)</div>
+        </div>
+        <div class="feature-showcase__content">
+          <span class="feature-showcase__label">核心功能</span>
+          <h2 class="feature-showcase__title">字组</h2>
+          <p class="feature-showcase__desc">保存常用的参考字或锁定字组合，快速切换不同测试情境。一键加载，提升工作效率。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid: 高级整合 -->
+    <section class="section bento">
+      <div class="container">
+        <h2 class="bento__title">高级整合</h2>
+        <p class="bento__subtitle">与 Glyphs 生态系无缝协作</p>
+
+        <div class="bento__grid">
+          <!-- 大卡片：原生 macOS 体验 -->
+          <div class="bento__card bento__card--large">
+            <div class="bento__media">
               <img src="../assets/images/feature-native.gif" alt="原生 macOS 体验展示"
-                   onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">原生体验 GIF</div>
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="bento__placeholder" style="display:none;">原生体验 GIF (待替换)</div>
             </div>
-            <div class="feature__content">
-              <h3 class="feature__title">原生 macOS 体验</h3>
-              <p class="feature__desc">拖放操作、字符选择器，与 Glyphs 工作流程无缝整合。</p>
+            <div class="bento__content">
+              <h3 class="bento__card-title">原生 macOS 体验</h3>
+              <p class="bento__card-desc">拖放操作、字符选择器，与 Glyphs 工作流程无缝整合。</p>
             </div>
           </div>
 
-          <div class="feature">
-            <div class="feature__media">
+          <!-- 中卡片：透写台同步 -->
+          <div class="bento__card bento__card--medium">
+            <div class="bento__media">
               <img src="../assets/images/feature-lighttable.gif" alt="透写台同步展示"
-                   onerror="this.parentElement.classList.add('img-error')">
-              <div class="feature__placeholder">透写台 GIF</div>
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="bento__placeholder" style="display:none;">透写台 GIF (待替换)</div>
             </div>
-            <div class="feature__content">
-              <h3 class="feature__title">透写台同步</h3>
-              <p class="feature__desc">按住 Shift 即时比较版本差异，与透写台无缝整合。</p>
+            <div class="bento__content">
+              <h3 class="bento__card-title">透写台同步</h3>
+              <p class="bento__card-desc">按住 Shift 即时比较版本差异。</p>
+            </div>
+          </div>
+
+          <!-- 小卡片：网格辅助 -->
+          <div class="bento__card bento__card--small">
+            <div class="bento__media">
+              <img src="../assets/images/feature-grid.gif" alt="网格辅助功能展示"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="bento__placeholder" style="display:none;">网格 GIF (待替换)</div>
+            </div>
+            <div class="bento__content">
+              <h3 class="bento__card-title">网格辅助</h3>
+              <p class="bento__card-desc">显示字身框、中心线等参考线，精准检查对齐与比例。</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Localization Section -->
-    <section class="section localization">
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
       <div class="container">
-        <h2>Speaking Your Language.</h2>
-        <p>原生界面，无缝接轨</p>
+        <h2 class="testimonials__title">用户怎么说</h2>
+        <p class="testimonials__subtitle">来自专业字体设计师的真实分享</p>
 
-        <img src="../assets/images/localization.png" alt="NineBoxView Pro 五语系界面展示" class="localization__image"
-             onerror="this.style.display='none'">
-      </div>
-    </section>
+        <div class="testimonials__ghost-wrapper">
+          <!-- 左侧堆叠假卡片 -->
+          <div class="testimonials__ghost testimonials__ghost--left-far" aria-hidden="true"></div>
+          <div class="testimonials__ghost testimonials__ghost--left-near" aria-hidden="true"></div>
 
-    <!-- Download Section -->
-    <section class="section download">
-      <div class="container">
-        <h2 class="download__title">准备好开始了吗？</h2>
+          <div class="testimonials__grid">
+            <!-- 由 JavaScript 动态加载 -->
+          </div>
 
-        <div class="hero__actions">
-          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
-            安装试用
-          </a>
+          <!-- 右侧堆叠假卡片 -->
+          <div class="testimonials__ghost testimonials__ghost--right-near" aria-hidden="true"></div>
+          <div class="testimonials__ghost testimonials__ghost--right-far" aria-hidden="true"></div>
         </div>
 
-        <p class="download__note--small">
-          也可从 <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a> 手动下载，但建议通过插件管理器安装以获得自动更新。
-        </p>
-
-        <div class="download__note">
-          <p>想要免费版本？</p>
-          <p>开源的 Python 版本仍可在 GitHub 获取。</p>
-          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView</a>
+        <!-- 「更多内容」暗示（仅视觉装饰） -->
+        <div class="testimonials__hint">
+          <span class="testimonials__dots" aria-hidden="true">• • •</span>
         </div>
       </div>
     </section>
@@ -312,36 +373,77 @@
       </div>
     </section>
 
-    <!-- Trust Section -->
-    <section class="section trust">
+    <!-- Final CTA（合并 Download + Trust） -->
+    <section class="section final-cta">
       <div class="container">
-        <h2>Built for my own workflow.</h2>
-        <p class="trust__story">这原本是我为了解决日常造字痛点而开发的工具。因为它极大提升了我的效率，现在整理为 Pro 版本，希望能帮助到同样追求细节的你。</p>
+        <h2 class="final-cta__title">准备好开始了吗？</h2>
+        <p class="final-cta__story">这原本是我为了解决日常造字痛点而开发的工具。因为它极大提升了我的效率，现在整理为 Pro 版本，希望能帮助到同样追求细节的你。</p>
 
-        <ul class="trust__features">
-          <li class="trust__feature">数据只存在本地 .glyphs 文件</li>
-          <li class="trust__feature">不上传任何字体数据到云端</li>
+        <ul class="final-cta__trust">
+          <li>✓ 数据只存在本地 .glyphs 文件</li>
+          <li>✓ 不上传任何字体数据到云端</li>
         </ul>
+
+        <div class="final-cta__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            安装试用
+          </a>
+        </div>
+
+        <p class="final-cta__note">
+          通过 Glyphs 插件管理器安装 · 14 天免费试用
+        </p>
+
+        <div class="final-cta__alternatives">
+          <p class="final-cta__alt-label">其他安装方式：</p>
+          <p>• 从 <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub 手动下载 Pro 版</a></p>
+
+          <p class="final-cta__alt-label">不需要付费功能？</p>
+          <p>• <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">开源 Python 版</a>（基础九宫格预览）</p>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 YTY Digital TypeFoundry</p>
-      <ul class="footer__links">
-        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">联系</a></li>
-        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">隐私政策</a></li>
-        <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">使用条款</a></li>
-      </ul>
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 YTY Digital TypeFoundry · <a href="https://erikyin.net/" target="_blank" rel="noopener noreferrer">殷慈远</a></p>
+    <ul class="footer__links">
+      <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">联系</a></li>
+      <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">隐私政策</a></li>
+      <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">使用条款</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <!-- FOUC Prevention & Section Visibility -->
+  <script>
+    document.body.classList.add('loaded');
+
+    // Intersection Observer for scroll animations
+    const sections = document.querySelectorAll('.section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // 概念图动画由 isometric-animation.js 处理
+  </script>
 
   <!-- Scripts -->
   <script src="../i18n.js"></script>
   <script src="../guide-lang.js"></script>
   <script src="../assets/js/isometric-animation.js"></script>
+  <script src="../assets/js/testimonials.js"></script>
+
+  <!-- Paddle.js SDK -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="../paddle-checkout.js"></script>
 </body>
 </html>
