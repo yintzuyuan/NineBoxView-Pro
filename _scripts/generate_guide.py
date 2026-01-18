@@ -758,6 +758,10 @@ def generate_for_locale(
 
 
 def main():
+    # 先生成概念圖 SVG
+    from generate_concept_svg import generate_all_svgs
+    generate_all_svgs()
+
     # 設定路徑（相對於 gh-pages 根目錄）
     script_dir = Path(__file__).parent
     gh_pages_root = script_dir.parent

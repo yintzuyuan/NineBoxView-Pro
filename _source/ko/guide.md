@@ -51,7 +51,11 @@
 {{NINE_BOX_VIEW}}는 3층 스택 디자인을 채택하여 다양한 컨텍스트에서 글자의 표현을 동시에 관찰할 수 있습니다:
 
 <figure class="concept-figure">
-  <img src="../../assets/images/concept-layers.svg" alt="3층 미리보기 시스템 개념도" />
+  <img class="concept-layers-img"
+       src="../../assets/images/concept-layers-ko-light.svg"
+       data-src-light="../../assets/images/concept-layers-ko-light.svg"
+       data-src-dark="../../assets/images/concept-layers-ko-dark.svg"
+       alt="3층 미리보기 시스템 개념도" />
 </figure>
 
 ### {{ICON_PEN_NIB}} 편집 글자 (최하층)

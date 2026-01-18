@@ -33,6 +33,19 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     updateButtonIcon(theme);
+    updateConceptImages(theme);
+  }
+
+  /**
+   * 更新概念圖圖片（根據主題切換 src）
+   */
+  function updateConceptImages(theme) {
+    document.querySelectorAll('.concept-layers-img').forEach(function(img) {
+      var src = theme === 'dark' ? img.dataset.srcDark : img.dataset.srcLight;
+      if (src && img.src !== src) {
+        img.src = src;
+      }
+    });
   }
 
   /**

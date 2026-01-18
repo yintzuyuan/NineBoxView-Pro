@@ -51,7 +51,11 @@ A 9-grid preview tool that allows type designers to preview the arrangement of a
 {{NINE_BOX_VIEW}} uses a three-layer stacking design, allowing you to observe how a glyph performs in different contexts simultaneously:
 
 <figure class="concept-figure">
-  <img src="../../assets/images/concept-layers.svg" alt="Three-layer preview system concept diagram" />
+  <img class="concept-layers-img"
+       src="../../assets/images/concept-layers-en-light.svg"
+       data-src-light="../../assets/images/concept-layers-en-light.svg"
+       data-src-dark="../../assets/images/concept-layers-en-dark.svg"
+       alt="Three-layer preview system concept diagram" />
 </figure>
 
 ### {{ICON_PEN_NIB}} Editing Glyph (Bottom Layer)

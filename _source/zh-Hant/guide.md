@@ -51,7 +51,11 @@
 {{NINE_BOX_VIEW}} 採用三層堆疊設計，讓你同時觀察字符在不同情境下的表現：
 
 <figure class="concept-figure">
-  <img src="../../assets/images/concept-layers.svg" alt="三層預覽系統概念圖" />
+  <img class="concept-layers-img"
+       src="../../assets/images/concept-layers-zh-Hant-light.svg"
+       data-src-light="../../assets/images/concept-layers-zh-Hant-light.svg"
+       data-src-dark="../../assets/images/concept-layers-zh-Hant-dark.svg"
+       alt="三層預覽系統概念圖" />
 </figure>
 
 ### {{ICON_PEN_NIB}} 編輯字（底層）

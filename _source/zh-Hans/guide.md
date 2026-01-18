@@ -51,7 +51,11 @@
 {{NINE_BOX_VIEW}} 采用三层堆叠设计，让你同时观察字符在不同情境下的表现：
 
 <figure class="concept-figure">
-  <img src="../../assets/images/concept-layers.svg" alt="三层预览系统概念图" />
+  <img class="concept-layers-img"
+       src="../../assets/images/concept-layers-zh-Hans-light.svg"
+       data-src-light="../../assets/images/concept-layers-zh-Hans-light.svg"
+       data-src-dark="../../assets/images/concept-layers-zh-Hans-dark.svg"
+       alt="三层预览系统概念图" />
 </figure>
 
 ### {{ICON_PEN_NIB}} 编辑字（底层）

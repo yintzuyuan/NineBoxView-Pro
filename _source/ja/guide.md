@@ -51,7 +51,11 @@
 {{NINE_BOX_VIEW}} は3層スタック設計を採用しており、異なるコンテキストでの文字の表現を同時に観察できます：
 
 <figure class="concept-figure">
-  <img src="../../assets/images/concept-layers.svg" alt="3層プレビューシステム概念図" />
+  <img class="concept-layers-img"
+       src="../../assets/images/concept-layers-ja-light.svg"
+       data-src-light="../../assets/images/concept-layers-ja-light.svg"
+       data-src-dark="../../assets/images/concept-layers-ja-dark.svg"
+       alt="3層プレビューシステム概念図" />
 </figure>
 
 ### {{ICON_PEN_NIB}} 編集文字（最下層）
