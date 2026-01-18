@@ -1618,3 +1618,380 @@ a:hover {
   transform: none;
 }
 
+
+/* ==================== Concept Diagram Section ==================== */
+/* Design: Letterpress Editorial - 活字印刷風格 */
+
+:root {
+  /* 概念圖層級色彩 - 受活字印刷鋅版啟發 */
+  --layer-edit-fill: rgba(232, 228, 222, 0.92);
+  --layer-edit-stroke: #c4beb4;
+  --layer-reference-fill: rgba(212, 207, 198, 0.88);
+  --layer-reference-stroke: #a8a298;
+  --layer-locked-fill: rgba(191, 185, 173, 0.85);
+  --layer-locked-stroke: #8c867a;
+
+  /* 概念圖文字色彩 - 墨色漸層 */
+  --glyph-edit: #9a9488;
+  --glyph-reference: #5c574d;
+  --glyph-locked: #2c2824;
+
+  /* 概念圖裝飾 */
+  --concept-bg: #f5f3ee;
+  --concept-accent: #8b7355;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 深色模式概念圖層級色彩 */
+    --layer-edit-fill: rgba(42, 40, 38, 0.92);
+    --layer-edit-stroke: #3d3a36;
+    --layer-reference-fill: rgba(58, 55, 51, 0.88);
+    --layer-reference-stroke: #524e48;
+    --layer-locked-fill: rgba(74, 70, 64, 0.85);
+    --layer-locked-stroke: #6a655c;
+
+    /* 深色模式文字色彩 - 反向墨色 */
+    --glyph-edit: #5c5850;
+    --glyph-reference: #a09888;
+    --glyph-locked: #d4cfc6;
+
+    /* 深色模式裝飾 */
+    --concept-bg: #1e1d1c;
+    --concept-accent: #c4a882;
+  }
+}
+
+/* 概念說明區塊 */
+.concept-explain {
+  background: var(--concept-bg);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.concept-explain h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.concept-explain__intro {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 3rem;
+}
+
+/* 概念圖容器 */
+.concept-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.concept-showcase svg.isometric-concept {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* SVG 內部樣式 */
+.isometric-concept .cell {
+  stroke-width: 1.5;
+}
+
+.isometric-concept .cell-edit {
+  fill: var(--layer-edit-fill);
+  stroke: var(--layer-edit-stroke);
+}
+
+.isometric-concept .cell-reference {
+  fill: var(--layer-reference-fill);
+  stroke: var(--layer-reference-stroke);
+}
+
+.isometric-concept .cell-locked {
+  fill: var(--layer-locked-fill);
+  stroke: var(--layer-locked-stroke);
+}
+
+.isometric-concept .glyph {
+  font-size: 26px;
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-family: "Noto Serif TC", "Songti TC", Georgia, serif;
+  transition: opacity 300ms ease-in-out;
+}
+
+.isometric-concept .glyph-edit {
+  fill: var(--glyph-edit);
+}
+
+.isometric-concept .glyph-reference {
+  fill: var(--glyph-reference);
+}
+
+.isometric-concept .glyph-locked {
+  fill: var(--glyph-locked);
+}
+
+.isometric-concept .glyph.fade-out {
+  opacity: 0;
+}
+
+.isometric-concept .layer-label {
+  fill: var(--color-text-secondary);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  letter-spacing: 0.08em;
+}
+
+.isometric-concept .layer-line {
+  stroke: var(--color-text-secondary);
+  stroke-width: 0.5;
+  stroke-dasharray: 2, 3;
+  opacity: 0.5;
+}
+
+/* 三層說明卡片 - 水平排列，呼應堆疊層次 */
+.concept-layers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.layer-card {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.layer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 4px 4px 0 0;
+}
+
+/* 層級色彩標記 */
+.layer-card--edit::before {
+  background: var(--layer-edit-stroke);
+}
+
+.layer-card--reference::before {
+  background: var(--layer-reference-stroke);
+}
+
+.layer-card--locked::before {
+  background: var(--layer-locked-stroke);
+}
+
+/* 層級高度差異 - 呼應等角投影的層疊效果 */
+.layer-card--edit {
+  transform: translateY(8px);
+}
+
+.layer-card--reference {
+  transform: translateY(0);
+}
+
+.layer-card--locked {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.layer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.layer-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.layer-card p {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* 響應式：小螢幕改為垂直排列 */
+@media (max-width: 768px) {
+  .concept-layers {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .layer-card--edit,
+  .layer-card--reference,
+  .layer-card--locked {
+    transform: translateY(0);
+  }
+
+  .concept-showcase svg.isometric-concept {
+    max-width: 400px;
+  }
+}
+
+/* 多語言字型支援 */
+[lang="zh-Hant"] .isometric-concept .glyph {
+  font-family: "Noto Serif TC", "Songti TC", serif;
+}
+
+[lang="zh-Hans"] .isometric-concept .glyph {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+}
+
+[lang="ja"] .isometric-concept .glyph {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+}
+
+[lang="ko"] .isometric-concept .glyph {
+  font-family: "Noto Serif KR", "Batang", serif;
+}
+
+/* ==================== Concept Diagram - 大膽設計優化 ==================== */
+
+/* 重寫概念說明區塊 - 更緊湊、更大膽 */
+.concept-explain {
+  background: var(--concept-bg);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 3rem 0 4rem;
+}
+
+.concept-explain .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.concept-explain h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.concept-explain__intro {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem; /* 更緊湊 */
+}
+
+/* 概念圖容器 - 更大、更突出 */
+.concept-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.concept-showcase svg.isometric-concept {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  /* 移除 min-height 讓 SVG 自然依照 viewBox 比例顯示 */
+}
+
+/* 三層說明卡片 - 更精緻的設計 */
+.concept-layers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.layer-card {
+  position: relative;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* 層級色彩裝飾條 - 左側垂直線 */
+.layer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+}
+
+.layer-card--edit::before { background: linear-gradient(180deg, var(--layer-edit-stroke), transparent); }
+.layer-card--reference::before { background: linear-gradient(180deg, var(--layer-reference-stroke), transparent); }
+.layer-card--locked::before { background: linear-gradient(180deg, var(--layer-locked-stroke), transparent); }
+
+/* 移除高度差異，改用 hover 效果 */
+.layer-card--edit,
+.layer-card--reference,
+.layer-card--locked {
+  transform: translateY(0);
+}
+
+.layer-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: var(--concept-accent);
+}
+
+.layer-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.layer-card p {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+  .concept-layers {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 400px;
+  }
+
+  .concept-showcase svg.isometric-concept {
+    max-width: 100%;
+    min-height: 280px;
+  }
+
+  .concept-explain h2 {
+    font-size: 1.5rem;
+  }
+}
