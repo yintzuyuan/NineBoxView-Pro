@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NineBoxView Pro - 九宫格预览工具 | Glyphs 插件</title>
+  <meta name="description" content="专为 Glyphs 3 打造的九宫格预览工具。原生性能、60fps 流畅体验、五语系界面支持。">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NineBoxView Pro - 九宫格预览工具">
+  <meta property="og:description" content="专为 Glyphs 3 打造的九宫格预览工具。">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@100..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link active">首页</a></li>
+        <li><a href="https://erikyin.net/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+      </ul>
+      <div class="lang-menu">
+        <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
+          <span class="lang-current">简</span>
+          <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+        </button>
+        <ul class="lang-dropdown" role="listbox">
+          <li><a href="../zh-Hant/index.html">繁體中文</a></li>
+          <li><a href="../en/index.html">English</a></li>
+          <li><a href="index.html" aria-current="page">简体中文</a></li>
+          <li><a href="../ja/index.html">日本語</a></li>
+          <li><a href="../ko/index.html">한국어</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title">九宫格预览 Pro</h1>
+        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">专为 Glyphs 3 打造的九宫格预览工具。</p>
+
+        <!-- Hero Image -->
+        <img src="../assets/images/hero-zh-Hans.png" alt="NineBoxView Pro 界面展示" class="hero__image"
+             onerror="this.style.display='none'">
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            安装试用
+          </a>
+        </div>
+        <p class="hero__note">通过 Glyphs 插件管理器安装 · 14 天免费试用</p>
+      </div>
+    </section>
+
+    <!-- Concept Explanation Section -->
+    <section class="section concept-explain">
+      <div class="container">
+        <h2>三层参考系统</h2>
+        <p class="concept-explain__intro">快速测试字符组合，一眼发现字距问题。</p>
+
+        <div class="concept-showcase">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="400" height="480"
+               role="img" aria-label="NineBoxView Pro 三层九宫格概念图" class="isometric-concept">
+            <title>NineBoxView Pro 等角投影概念图</title>
+            <desc>展示三层堆叠的九宫格：编辑层、参考层、锁定层</desc>
+
+            <defs>
+              <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+              </filter>
+              <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+              </filter>
+              <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+
+            <g id="concept-diagram" transform="translate(270, 440)">
+              <g transform="translate(0, 0)" filter="url(#shadow-sm)">
+                <g id="layer-edit" class="layer" data-layer="edit" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="0" x="26" y="26">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="1" x="80" y="26">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="2" x="134" y="26">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="3" x="26" y="80">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="4" x="80" y="80">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="5" x="134" y="80">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="6" x="26" y="134">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="7" x="80" y="134">永</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="8" x="134" y="134">永</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -50)" filter="url(#shadow-md)">
+                <g id="layer-reference" class="layer" data-layer="reference" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="0" x="26" y="26">云</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="1" x="80" y="26">雨</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="2" x="134" y="26">风</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="3" x="26" y="80">雷</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="5" x="134" y="80">书</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="6" x="26" y="134">飞</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="7" x="80" y="134">画</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="8" x="134" y="134">诗</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -100)" filter="url(#shadow-lg)">
+                <g id="layer-locked" class="layer" data-layer="locked" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="0" x="26" y="26">鑫</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="2" x="134" y="26">龙</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="7" x="80" y="134">国</text>
+                </g>
+              </g>
+
+              <g class="labels">
+                <line class="layer-line" x1="-145" y1="60" x2="-85" y2="60"/>
+                <text class="layer-label" x="-150" y="63">编辑层</text>
+                <line class="layer-line" x1="-145" y1="5" x2="-85" y2="5"/>
+                <text class="layer-label" x="-150" y="8">参考层</text>
+                <line class="layer-line" x1="-145" y1="-50" x2="-85" y2="-50"/>
+                <text class="layer-label" x="-150" y="-47">锁定层</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="concept-layers">
+          <div class="layer-card layer-card--edit">
+            <h3>编辑层</h3>
+            <p>当前编辑的字符，同步显示在九宫格的每一格</p>
+          </div>
+          <div class="layer-card layer-card--reference">
+            <h3>参考层</h3>
+            <p>随机排列的常用字，快速发现问题搭配</p>
+          </div>
+          <div class="layer-card layer-card--locked">
+            <h3>锁定层</h3>
+            <p>固定位置的特定字符，测试固定组合</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features features--primary">
+      <div class="container">
+        <h2 class="features__title">核心功能</h2>
+        <p>快速测试字符组合，发现问题搭配</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-reference.gif" alt="参考字功能展示"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">参考字 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">参考字</h3>
+              <p class="feature__desc">输入常用字，自动随机排列在周围。点击重新洗牌，快速发现问题组合。</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lock.gif" alt="锁定字功能展示"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">锁定字 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">锁定字</h3>
+              <p class="feature__desc">将特定字符固定在指定位置，测试固定搭配的字距。设置随文件保存，团队协作无缝衔接。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="features__title">高级整合</h2>
+        <p>与 Glyphs 生态系统无缝协作</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-native.gif" alt="原生 macOS 体验展示"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">原生体验 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">原生 macOS 体验</h3>
+              <p class="feature__desc">拖放操作、字符选择器，与 Glyphs 工作流程无缝整合。</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lighttable.gif" alt="透写台同步展示"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">透写台 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">透写台同步</h3>
+              <p class="feature__desc">按住 Shift 即时比较版本差异，与透写台无缝整合。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section localization">
+      <div class="container">
+        <h2>Speaking Your Language.</h2>
+        <p>原生界面，无缝接轨</p>
+
+        <img src="../assets/images/localization.png" alt="NineBoxView Pro 五语系界面展示" class="localization__image"
+             onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download">
+      <div class="container">
+        <h2 class="download__title">准备好开始了吗？</h2>
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            安装试用
+          </a>
+        </div>
+
+        <p class="download__note--small">
+          也可从 <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a> 手动下载，但建议通过插件管理器安装以获得自动更新。
+        </p>
+
+        <div class="download__note">
+          <p>想要免费版本？</p>
+          <p>开源的 Python 版本仍可在 GitHub 获取。</p>
+          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+      <div class="container">
+        <h2>常见问题</h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt>买断还是订阅？</dt>
+            <dd>一次购买，永久使用。</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>可以装几台电脑？</dt>
+            <dd>单一用户授权 — 您可以在自己的所有 Mac 上使用。</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>有试用吗？</dt>
+            <dd>有，免费试用 14 天。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section trust">
+      <div class="container">
+        <h2>Built for my own workflow.</h2>
+        <p class="trust__story">这原本是我为了解决日常造字痛点而开发的工具。因为它极大提升了我的效率，现在整理为 Pro 版本，希望能帮助到同样追求细节的你。</p>
+
+        <ul class="trust__features">
+          <li class="trust__feature">数据只存在本地 .glyphs 文件</li>
+          <li class="trust__feature">不上传任何字体数据到云端</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 YTY Digital TypeFoundry</p>
+      <ul class="footer__links">
+        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">联系</a></li>
+        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">隐私政策</a></li>
+        <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">使用条款</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../i18n.js"></script>
+  <script src="../guide-lang.js"></script>
+  <script src="../assets/js/isometric-animation.js"></script>
+</body>
+</html>

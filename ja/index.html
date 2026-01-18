@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NineBoxView Pro - 九宮格プレビューツール | Glyphs プラグイン</title>
+  <meta name="description" content="Glyphs 3 専用の九宮格プレビューツール。ネイティブパフォーマンス、60fps のスムーズな体験、5 言語インターフェース対応。">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NineBoxView Pro - 九宮格プレビューツール">
+  <meta property="og:description" content="Glyphs 3 専用の九宮格プレビューツール。">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@100..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link active">ホーム</a></li>
+        <li><a href="https://erikyin.net/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+      </ul>
+      <div class="lang-menu">
+        <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="言語を選択">
+          <span class="lang-current">日</span>
+          <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+        </button>
+        <ul class="lang-dropdown" role="listbox">
+          <li><a href="../zh-Hant/index.html">繁體中文</a></li>
+          <li><a href="../en/index.html">English</a></li>
+          <li><a href="../zh-Hans/index.html">简体中文</a></li>
+          <li><a href="index.html" aria-current="page">日本語</a></li>
+          <li><a href="../ko/index.html">한국어</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title">NineBoxView Pro</h1>
+        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">Glyphs 3 専用の九宮格プレビューツール。</p>
+
+        <!-- Hero Image -->
+        <img src="../assets/images/hero-ja.png" alt="NineBoxView Pro インターフェース" class="hero__image"
+             onerror="this.style.display='none'">
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            試用版をインストール
+          </a>
+        </div>
+        <p class="hero__note">Glyphs プラグインマネージャーからインストール · 14 日間無料トライアル</p>
+      </div>
+    </section>
+
+    <!-- Concept Explanation Section -->
+    <section class="section concept-explain">
+      <div class="container">
+        <h2>3 層リファレンスシステム</h2>
+        <p class="concept-explain__intro">字間の問題を瞬時に発見。文字の組み合わせを素早くテスト。</p>
+
+        <div class="concept-showcase">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="400" height="480"
+               role="img" aria-label="NineBoxView Pro 三層九宮格コンセプト図" class="isometric-concept">
+            <title>NineBoxView Pro 等角投影コンセプト図</title>
+            <desc>三層に積み重なった九宮格：編集レイヤー、参照レイヤー、ロックレイヤー</desc>
+
+            <defs>
+              <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+              </filter>
+              <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+              </filter>
+              <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+
+            <g id="concept-diagram" transform="translate(270, 440)">
+              <g transform="translate(0, 0)" filter="url(#shadow-sm)">
+                <g id="layer-edit" class="layer" data-layer="edit" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="0" x="26" y="26">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="1" x="80" y="26">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="2" x="134" y="26">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="3" x="26" y="80">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="4" x="80" y="80">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="5" x="134" y="80">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="6" x="26" y="134">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="7" x="80" y="134">あ</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="8" x="134" y="134">あ</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -50)" filter="url(#shadow-md)">
+                <g id="layer-reference" class="layer" data-layer="reference" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="0" x="26" y="26">い</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="1" x="80" y="26">う</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="2" x="134" y="26">え</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="3" x="26" y="80">お</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="5" x="134" y="80">か</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="6" x="26" y="134">き</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="7" x="80" y="134">く</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="8" x="134" y="134">け</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -100)" filter="url(#shadow-lg)">
+                <g id="layer-locked" class="layer" data-layer="locked" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="0" x="26" y="26">ア</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="2" x="134" y="26">イ</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="7" x="80" y="134">ウ</text>
+                </g>
+              </g>
+
+              <g class="labels">
+                <line class="layer-line" x1="-145" y1="60" x2="-85" y2="60"/>
+                <text class="layer-label" x="-150" y="63">編集</text>
+                <line class="layer-line" x1="-145" y1="5" x2="-85" y2="5"/>
+                <text class="layer-label" x="-150" y="8">参照</text>
+                <line class="layer-line" x1="-145" y1="-50" x2="-85" y2="-50"/>
+                <text class="layer-label" x="-150" y="-47">ロック</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="concept-layers">
+          <div class="layer-card layer-card--edit">
+            <h3>編集レイヤー</h3>
+            <p>現在編集中のグリフが九宮格の全セルに同期表示</p>
+          </div>
+          <div class="layer-card layer-card--reference">
+            <h3>参照レイヤー</h3>
+            <p>ランダムに配置された一般的な文字で問題のある組み合わせを素早く発見</p>
+          </div>
+          <div class="layer-card layer-card--locked">
+            <h3>ロックレイヤー</h3>
+            <p>特定の位置に固定された文字で固定の組み合わせをテスト</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features features--primary">
+      <div class="container">
+        <h2 class="features__title">主要機能</h2>
+        <p>文字の組み合わせを素早くテスト。問題のあるペアリングを発見。</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-reference.gif" alt="参照文字機能"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">参照 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">参照文字</h3>
+              <p class="feature__desc">よく使う文字を入力すると、自動的に周囲にランダム配置。クリックでシャッフルし、問題のある組み合わせを素早く発見。</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lock.gif" alt="ロック文字機能"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">ロック GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">ロック文字</h3>
+              <p class="feature__desc">特定の文字を指定位置に固定し、固定の字間ペアをテスト。設定はファイルと共に保存され、チームでのシームレスな連携が可能。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="features__title">高度な統合</h2>
+        <p>Glyphs エコシステムとシームレスに連携</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-native.gif" alt="ネイティブ macOS 体験"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">ネイティブ GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">ネイティブ macOS 体験</h3>
+              <p class="feature__desc">ドラッグ＆ドロップ、文字ピッカー、Glyphs ワークフローとシームレスに統合。</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lighttable.gif" alt="ライトテーブル同期"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">ライトテーブル GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">ライトテーブル同期</h3>
+              <p class="feature__desc">Shift を押しながらバージョンの違いを即座に比較。ライトテーブルとシームレスに統合。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section localization">
+      <div class="container">
+        <h2>Speaking Your Language.</h2>
+        <p>ネイティブインターフェース、シームレスな統合</p>
+
+        <img src="../assets/images/localization.png" alt="NineBoxView Pro 5 言語インターフェース" class="localization__image"
+             onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download">
+      <div class="container">
+        <h2 class="download__title">始める準備はできましたか？</h2>
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            試用版をインストール
+          </a>
+        </div>
+
+        <p class="download__note--small">
+          <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a> から手動ダウンロードも可能ですが、自動更新のためプラグインマネージャーからのインストールを推奨します。
+        </p>
+
+        <div class="download__note">
+          <p>無料版をお探しですか？</p>
+          <p>オープンソースの Python 版は GitHub で引き続き利用可能です。</p>
+          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+      <div class="container">
+        <h2>よくある質問</h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt>買い切りですか？サブスクリプションですか？</dt>
+            <dd>一度の購入で永久にご使用いただけます。</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>何台のコンピュータにインストールできますか？</dt>
+            <dd>シングルユーザーライセンス — ご自身のすべての Mac でご使用いただけます。</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>試用版はありますか？</dt>
+            <dd>はい、14 日間の無料トライアルがあります。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section trust">
+      <div class="container">
+        <h2>Built for my own workflow.</h2>
+        <p class="trust__story">これは元々、私自身の日々の書体デザインの悩みを解決するために開発したツールです。効率が大幅に向上したため、同じように細部にこだわる方々のお役に立てればと Pro 版として整理しました。</p>
+
+        <ul class="trust__features">
+          <li class="trust__feature">データはローカルの .glyphs ファイルにのみ保存</li>
+          <li class="trust__feature">フォントデータはクラウドにアップロードされません</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 YTY Digital TypeFoundry</p>
+      <ul class="footer__links">
+        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">お問い合わせ</a></li>
+        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+        <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">利用規約</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../i18n.js"></script>
+  <script src="../guide-lang.js"></script>
+  <script src="../assets/js/isometric-animation.js"></script>
+</body>
+</html>

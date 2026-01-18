@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NineBoxView Pro - Nine-grid Preview Tool | Glyphs Plugin</title>
+  <meta name="description" content="A nine-grid preview tool built for Glyphs 3. Native performance, 60fps smooth experience, five-language interface support.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NineBoxView Pro - Nine-grid Preview Tool">
+  <meta property="og:description" content="A nine-grid preview tool built for Glyphs 3.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link active">Home</a></li>
+        <li><a href="https://erikyin.net/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+      </ul>
+      <div class="lang-menu">
+        <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
+          <span class="lang-current">EN</span>
+          <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+        </button>
+        <ul class="lang-dropdown" role="listbox">
+          <li><a href="../zh-Hant/index.html">繁體中文</a></li>
+          <li><a href="index.html" aria-current="page">English</a></li>
+          <li><a href="../zh-Hans/index.html">简体中文</a></li>
+          <li><a href="../ja/index.html">日本語</a></li>
+          <li><a href="../ko/index.html">한국어</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title">NineBoxView Pro</h1>
+        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">A nine-grid preview tool built for Glyphs 3.</p>
+
+        <!-- Hero Image -->
+        <img src="../assets/images/hero-en.png" alt="NineBoxView Pro Interface" class="hero__image"
+             onerror="this.style.display='none'">
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            Install Trial
+          </a>
+        </div>
+        <p class="hero__note">Install via Glyphs Plugin Manager · 14-day free trial</p>
+      </div>
+    </section>
+
+    <!-- Concept Explanation Section -->
+    <section class="section concept-explain">
+      <div class="container">
+        <h2>Three-Layer Reference System</h2>
+        <p class="concept-explain__intro">Quickly test character combinations. Spot spacing issues at a glance.</p>
+
+        <!-- 概念圖互動展示 -->
+        <div class="concept-showcase">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="400" height="480"
+               role="img" aria-label="NineBoxView Pro Three-layer Nine-grid Concept" class="isometric-concept">
+            <title>NineBoxView Pro Isometric Concept</title>
+            <desc>Three stacked nine-grids: Edit Layer, Reference Layer, Locked Layer</desc>
+
+            <defs>
+              <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+              </filter>
+              <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+              </filter>
+              <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+
+            <g id="concept-diagram" transform="translate(270, 440)">
+              <g transform="translate(0, 0)" filter="url(#shadow-sm)">
+                <g id="layer-edit" class="layer" data-layer="edit" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="0" x="26" y="26">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="1" x="80" y="26">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="2" x="134" y="26">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="3" x="26" y="80">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="4" x="80" y="80">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="5" x="134" y="80">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="6" x="26" y="134">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="7" x="80" y="134">A</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="8" x="134" y="134">A</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -50)" filter="url(#shadow-md)">
+                <g id="layer-reference" class="layer" data-layer="reference" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="0" x="26" y="26">H</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="1" x="80" y="26">O</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="2" x="134" y="26">n</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="3" x="26" y="80">d</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="5" x="134" y="80">v</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="6" x="26" y="134">b</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="7" x="80" y="134">p</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="8" x="134" y="134">q</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -100)" filter="url(#shadow-lg)">
+                <g id="layer-locked" class="layer" data-layer="locked" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="0" x="26" y="26">W</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="2" x="134" y="26">M</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="7" x="80" y="134">@</text>
+                </g>
+              </g>
+
+              <g class="labels">
+                <line class="layer-line" x1="-145" y1="60" x2="-85" y2="60"/>
+                <text class="layer-label" x="-150" y="63">Edit</text>
+                <line class="layer-line" x1="-145" y1="5" x2="-85" y2="5"/>
+                <text class="layer-label" x="-150" y="8">Reference</text>
+                <line class="layer-line" x1="-145" y1="-50" x2="-85" y2="-50"/>
+                <text class="layer-label" x="-150" y="-47">Locked</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="concept-layers">
+          <div class="layer-card layer-card--edit">
+            <h3>Edit Layer</h3>
+            <p>The currently editing glyph, displayed in every cell of the nine-grid</p>
+          </div>
+          <div class="layer-card layer-card--reference">
+            <h3>Reference Layer</h3>
+            <p>Randomly arranged common characters to quickly spot problematic combinations</p>
+          </div>
+          <div class="layer-card layer-card--locked">
+            <h3>Locked Layer</h3>
+            <p>Fixed characters at specific positions for testing fixed combinations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features features--primary">
+      <div class="container">
+        <h2 class="features__title">Core Features</h2>
+        <p>Quickly test character combinations. Spot problematic pairings.</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-reference.gif" alt="Reference Characters Feature"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Reference GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Reference Characters</h3>
+              <p class="feature__desc">Enter common characters, automatically arranged around the center. Click to shuffle and quickly discover problematic combinations.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lock.gif" alt="Locked Characters Feature"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Lock GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Locked Characters</h3>
+              <p class="feature__desc">Fix specific characters at designated positions for testing fixed spacing pairs. Settings are saved with the file for seamless team collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="features__title">Advanced Integration</h2>
+        <p>Seamlessly integrates with the Glyphs ecosystem</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-native.gif" alt="Native macOS Experience"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Native GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Native macOS Experience</h3>
+              <p class="feature__desc">Drag and drop, character picker, seamlessly integrated with Glyphs workflow.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lighttable.gif" alt="Light Table Sync"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">Light Table GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">Light Table Sync</h3>
+              <p class="feature__desc">Hold Shift to instantly compare version differences, seamlessly integrated with the light table.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section localization">
+      <div class="container">
+        <h2>Speaking Your Language.</h2>
+        <p>Native interface, seamless integration</p>
+
+        <img src="../assets/images/localization.png" alt="NineBoxView Pro Five-language Interface" class="localization__image"
+             onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download">
+      <div class="container">
+        <h2 class="download__title">Ready to get started?</h2>
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            Install Trial
+          </a>
+        </div>
+
+        <p class="download__note--small">
+          Also available from <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a>, but we recommend installing via Plugin Manager for automatic updates.
+        </p>
+
+        <div class="download__note">
+          <p>Want a free version?</p>
+          <p>The open-source Python version is still available on GitHub.</p>
+          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+      <div class="container">
+        <h2>FAQ</h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt>One-time purchase or subscription?</dt>
+            <dd>One-time purchase, use forever.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>How many computers can I install it on?</dt>
+            <dd>Single-user license - you can use it on all your Macs.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>Is there a trial?</dt>
+            <dd>Yes, 14-day free trial.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section trust">
+      <div class="container">
+        <h2>Built for my own workflow.</h2>
+        <p class="trust__story">This was originally a tool I developed to solve my own daily type design pain points. Because it greatly improved my efficiency, I've now packaged it as a Pro version, hoping to help others who pursue the same level of detail.</p>
+
+        <ul class="trust__features">
+          <li class="trust__feature">Data stays local in your .glyphs file</li>
+          <li class="trust__feature">No font data uploaded to the cloud</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 YTY Digital TypeFoundry</p>
+      <ul class="footer__links">
+        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">Contact</a></li>
+        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../i18n.js"></script>
+  <script src="../guide-lang.js"></script>
+  <script src="../assets/js/isometric-animation.js"></script>
+</body>
+</html>

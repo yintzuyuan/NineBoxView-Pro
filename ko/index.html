@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NineBoxView Pro - 구궁격 미리보기 도구 | Glyphs 플러그인</title>
+  <meta name="description" content="Glyphs 3 전용 구궁격 미리보기 도구. 네이티브 성능, 60fps 부드러운 경험, 5개 언어 인터페이스 지원.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NineBoxView Pro - 구궁격 미리보기 도구">
+  <meta property="og:description" content="Glyphs 3 전용 구궁격 미리보기 도구.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@100..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link active">홈</a></li>
+        <li><a href="https://erikyin.net/" class="nav__link" target="_blank" rel="noopener noreferrer">erikyin.net</a></li>
+      </ul>
+      <div class="lang-menu">
+        <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="언어 선택">
+          <span class="lang-current">한</span>
+          <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+        </button>
+        <ul class="lang-dropdown" role="listbox">
+          <li><a href="../zh-Hant/index.html">繁體中文</a></li>
+          <li><a href="../en/index.html">English</a></li>
+          <li><a href="../zh-Hans/index.html">简体中文</a></li>
+          <li><a href="../ja/index.html">日本語</a></li>
+          <li><a href="index.html" aria-current="page">한국어</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="hero__title">NineBoxView Pro</h1>
+        <p class="hero__subtitle">Nine-grid preview for Glyphs.</p>
+        <p class="hero__subtitle hero__subtitle--secondary">Glyphs 3 전용 구궁격 미리보기 도구.</p>
+
+        <!-- Hero Image -->
+        <img src="../assets/images/hero-ko.png" alt="NineBoxView Pro 인터페이스" class="hero__image"
+             onerror="this.style.display='none'">
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            평가판 설치
+          </a>
+        </div>
+        <p class="hero__note">Glyphs 플러그인 관리자에서 설치 · 14일 무료 체험</p>
+      </div>
+    </section>
+
+    <!-- Concept Explanation Section -->
+    <section class="section concept-explain">
+      <div class="container">
+        <h2>3단계 참조 시스템</h2>
+        <p class="concept-explain__intro">글자 조합을 빠르게 테스트하고, 자간 문제를 한눈에 발견하세요.</p>
+
+        <div class="concept-showcase">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="400" height="480"
+               role="img" aria-label="NineBoxView Pro 3층 구궁격 개념도" class="isometric-concept">
+            <title>NineBoxView Pro 등각 투영 개념도</title>
+            <desc>3층으로 쌓인 구궁격: 편집 레이어, 참조 레이어, 잠금 레이어</desc>
+
+            <defs>
+              <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+              </filter>
+              <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+              </filter>
+              <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+
+            <g id="concept-diagram" transform="translate(270, 440)">
+              <g transform="translate(0, 0)" filter="url(#shadow-sm)">
+                <g id="layer-edit" class="layer" data-layer="edit" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-edit" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="0" x="26" y="26">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="1" x="80" y="26">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="2" x="134" y="26">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="3" x="26" y="80">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="4" x="80" y="80">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="5" x="134" y="80">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="6" x="26" y="134">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="7" x="80" y="134">한</text>
+                  <text class="glyph glyph-edit" data-layer="edit" data-position="8" x="134" y="134">한</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -50)" filter="url(#shadow-md)">
+                <g id="layer-reference" class="layer" data-layer="reference" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="0" x="26" y="26">가</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="1" x="80" y="26">나</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="2" x="134" y="26">다</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="3" x="26" y="80">라</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="5" x="134" y="80">마</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="6" x="26" y="134">바</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="7" x="80" y="134">사</text>
+                  <text class="glyph glyph-reference" data-layer="reference" data-position="8" x="134" y="134">아</text>
+                </g>
+              </g>
+
+              <g transform="translate(0, -100)" filter="url(#shadow-lg)">
+                <g id="layer-locked" class="layer" data-layer="locked" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                  <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
+                  <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="0" x="26" y="26">글</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="2" x="134" y="26">힘</text>
+                  <text class="glyph glyph-locked" data-layer="locked" data-position="7" x="80" y="134">빛</text>
+                </g>
+              </g>
+
+              <g class="labels">
+                <line class="layer-line" x1="-145" y1="60" x2="-85" y2="60"/>
+                <text class="layer-label" x="-150" y="63">편집</text>
+                <line class="layer-line" x1="-145" y1="5" x2="-85" y2="5"/>
+                <text class="layer-label" x="-150" y="8">참조</text>
+                <line class="layer-line" x1="-145" y1="-50" x2="-85" y2="-50"/>
+                <text class="layer-label" x="-150" y="-47">잠금</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="concept-layers">
+          <div class="layer-card layer-card--edit">
+            <h3>편집 레이어</h3>
+            <p>현재 편집 중인 글리프가 구궁격의 모든 셀에 동기화 표시</p>
+          </div>
+          <div class="layer-card layer-card--reference">
+            <h3>참조 레이어</h3>
+            <p>무작위로 배치된 일반 문자로 문제가 있는 조합을 빠르게 발견</p>
+          </div>
+          <div class="layer-card layer-card--locked">
+            <h3>잠금 레이어</h3>
+            <p>특정 위치에 고정된 문자로 고정 조합 테스트</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features features--primary">
+      <div class="container">
+        <h2 class="features__title">핵심 기능</h2>
+        <p>글자 조합을 빠르게 테스트. 문제가 있는 짝을 발견.</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-reference.gif" alt="참조 문자 기능"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">참조 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">참조 문자</h3>
+              <p class="feature__desc">자주 사용하는 문자를 입력하면 주변에 자동으로 무작위 배치. 클릭하여 셔플하고 문제가 있는 조합을 빠르게 발견.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lock.gif" alt="잠금 문자 기능"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">잠금 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">잠금 문자</h3>
+              <p class="feature__desc">특정 문자를 지정된 위치에 고정하여 고정 자간 쌍을 테스트. 설정은 파일과 함께 저장되어 팀과의 원활한 협업이 가능.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section features">
+      <div class="container">
+        <h2 class="features__title">고급 통합</h2>
+        <p>Glyphs 생태계와 원활하게 통합</p>
+
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-native.gif" alt="네이티브 macOS 경험"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">네이티브 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">네이티브 macOS 경험</h3>
+              <p class="feature__desc">드래그 앤 드롭, 문자 선택기, Glyphs 워크플로우와 원활하게 통합.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__media">
+              <img src="../assets/images/feature-lighttable.gif" alt="라이트 테이블 동기화"
+                   onerror="this.parentElement.classList.add('img-error')">
+              <div class="feature__placeholder">라이트 테이블 GIF</div>
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">라이트 테이블 동기화</h3>
+              <p class="feature__desc">Shift를 누르고 버전 차이를 즉시 비교. 라이트 테이블과 원활하게 통합.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section localization">
+      <div class="container">
+        <h2>Speaking Your Language.</h2>
+        <p>네이티브 인터페이스, 원활한 통합</p>
+
+        <img src="../assets/images/localization.png" alt="NineBoxView Pro 5개 언어 인터페이스" class="localization__image"
+             onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download">
+      <div class="container">
+        <h2 class="download__title">시작할 준비가 되셨나요?</h2>
+
+        <div class="hero__actions">
+          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+            평가판 설치
+          </a>
+        </div>
+
+        <p class="download__note--small">
+          <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub</a>에서 수동 다운로드도 가능하지만, 자동 업데이트를 위해 플러그인 관리자를 통한 설치를 권장합니다.
+        </p>
+
+        <div class="download__note">
+          <p>무료 버전을 찾으시나요?</p>
+          <p>오픈 소스 Python 버전은 GitHub에서 계속 사용할 수 있습니다.</p>
+          <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">github.com/yintzuyuan/NineBoxView</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+      <div class="container">
+        <h2>자주 묻는 질문</h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt>일회성 구매인가요, 구독인가요?</dt>
+            <dd>한 번 구매하면 영구적으로 사용할 수 있습니다.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>몇 대의 컴퓨터에 설치할 수 있나요?</dt>
+            <dd>단일 사용자 라이선스 — 본인의 모든 Mac에서 사용할 수 있습니다.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt>평가판이 있나요?</dt>
+            <dd>네, 14일 무료 체험이 있습니다.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section trust">
+      <div class="container">
+        <h2>Built for my own workflow.</h2>
+        <p class="trust__story">이것은 원래 제 일상적인 서체 디자인 문제를 해결하기 위해 개발한 도구입니다. 제 효율성이 크게 향상되었기 때문에, 같은 수준의 세부 사항을 추구하는 분들에게 도움이 되기를 바라며 Pro 버전으로 정리했습니다.</p>
+
+        <ul class="trust__features">
+          <li class="trust__feature">데이터는 로컬 .glyphs 파일에만 저장</li>
+          <li class="trust__feature">폰트 데이터는 클라우드에 업로드되지 않음</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 YTY Digital TypeFoundry</p>
+      <ul class="footer__links">
+        <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">연락처</a></li>
+        <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">개인정보 보호정책</a></li>
+        <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">이용약관</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../i18n.js"></script>
+  <script src="../guide-lang.js"></script>
+  <script src="../assets/js/isometric-animation.js"></script>
+</body>
+</html>
