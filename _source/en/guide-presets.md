@@ -23,21 +23,12 @@ There are two ways to open the {{PRESETS_WINDOW_TITLE|}}:
 
 The {{PRESETS_WINDOW_TITLE|}} contains two tabs:
 
-### {{PALETTE_TAB_REFERENCE|}} Tab
+| Tab | Stores |
+|-----|--------|
+| {{PALETTE_TAB_REFERENCE|}} | Reference glyph combinations |
+| {{PALETTE_TAB_LOCKED|}} | Locked glyph position configurations |
 
-Stores reference glyph combinations. Each preset contains:
-
-- Preset name
-- Reference content (glyph list)
-- Pin status
-
-### {{PALETTE_TAB_LOCKED|}}
-
-Stores locked glyph position configurations. Each preset contains:
-
-- Preset name
-- Locked glyph for each position
-- Pin status
+Each preset contains a name, content, and pin status.
 
 ## Search and Sort
 
@@ -69,180 +60,65 @@ Click the sort button at the bottom of the panel to choose a sort order:
 
 ## Creating Presets
 
-### Creating {{PALETTE_TAB_REFERENCE|}} Presets
+After setting up reference glyphs or locked glyphs, save them as presets through:
 
-**Method 1: Save from {{REFERENCE_PANEL_TITLE|}}**
+| Entry Point | {{PALETTE_TAB_REFERENCE|}} | {{PALETTE_TAB_LOCKED|}} |
+|-----|--------|--------|
+| Dedicated Panel | Click "{{SAVE_REFERENCE_BUTTON|}}" button | Click "{{SAVE_LOCKED_BUTTON|}}" button |
+| {{PRESETS_WINDOW_TITLE|}} | Switch to tab, click {{ICON_PLUS}} | Switch to tab, click {{ICON_PLUS}} |
+| Shortcut | — | ⌘ + ⇧ + Click center cell |
 
-1. Enter characters in the {{REFERENCE_PANEL_TITLE|}}
-2. Click the "{{SAVE_REFERENCE_BUTTON|}}" button
-3. The preset is named after the reference content
-
-**Method 2: Add from {{PRESETS_WINDOW_TITLE|}}**
-
-1. Switch to the "{{PALETTE_TAB_REFERENCE|}}" tab
-2. Click the {{ICON_PLUS}} button at the bottom of the panel
-3. Current reference glyphs are saved as a new preset
-
-### Creating {{PALETTE_TAB_LOCKED|}} Presets
-
-**Method 1: Quick action**
-
-1. Set up your locked glyph configuration
-2. Hold **Cmd + Option**
-3. Click the center cell
-4. Current lock configuration is saved as a new preset
-
-**Method 2: Add from {{PRESETS_WINDOW_TITLE|}}**
-
-1. Switch to the "{{PALETTE_TAB_LOCKED|}}" tab
-2. Click the {{ICON_PLUS}} button at the bottom of the panel
-3. Current locked configuration is saved as a new preset
+> [!TIP]
+> New presets are auto-named by content. You can rename them later.
 
 ## Managing Presets
 
-### Load Preset
+| Action | Shortcut | Context Menu |
+|--------|----------|--------------|
+| Load | Double-click preset | — |
+| Rename | Select, press Enter | {{PALETTE_MENU_RENAME|}} |
+| Overwrite | — | {{PALETTE_MENU_OVERWRITE|}} |
+| Delete | Select, press Delete | {{PALETTE_MENU_DELETE|}} |
 
-Double-click any preset in the {{PRESETS_WINDOW_TITLE|}} to load its content.
-
-### Rename
-
-**Method 1: Keyboard shortcut**
-
-1. Select a preset
-2. Press **Enter** to enter edit mode
-3. Type the new name
-
-**Method 2: Context menu**
-
-1. Right-click on a preset
-2. Select "{{PALETTE_MENU_RENAME|}}"
-3. Type the new name
-
-### Overwrite Preset
-
-1. Modify current reference or locked configuration
-2. Right-click on the preset to overwrite
-3. Select "{{PALETTE_MENU_OVERWRITE|}}"
-4. Confirm overwrite
+> [!TIP]
+> Multi-select: ⌘ + click (toggle) or ⇧ + click (range).
 
 > [!CAUTION]
 > Overwrite cannot be undone. Please confirm before proceeding.
 
-### Delete Preset
-
-**Method 1: Keyboard shortcut**
-
-1. Select preset(s) (single or multiple)
-2. Press **Delete** key
-
-**Method 2: Context menu**
-
-- **Single delete**: Right-click on a preset, select "{{PALETTE_MENU_DELETE|}}"
-- **Batch delete**: Select multiple presets (Cmd + click or Shift + click), right-click and select "{{PALETTE_MENU_DELETE_MULTIPLE|}}"
-
-### Context Menu
-
-| Item | Description |
-|------|-------------|
-| {{PALETTE_MENU_PIN|}} / {{PALETTE_MENU_UNPIN|}} | Pin or unpin |
-| {{PALETTE_MENU_RENAME|}} | Rename preset |
-| {{PALETTE_MENU_OVERWRITE|}} | Replace with current content |
-| {{PALETTE_MENU_DELETE|}} | Delete preset |
-
 ## Pin Feature
 
-Pinned presets are fixed at the top of the list for quick access.
+Pinned presets are fixed at the top of the list.
 
-### Pinning
+| Action | Context Menu |
+|--------|--------------|
+| Pin | {{PALETTE_MENU_PIN|}} |
+| Batch pin | {{PALETTE_MENU_PIN_MULTIPLE|}} |
+| Unpin | {{PALETTE_MENU_UNPIN|}} |
 
-**Single pin**:
-
-1. Right-click on a preset
-2. Select "{{PALETTE_MENU_PIN|}}"
-
-**Batch pin**:
-
-1. Select multiple presets
-2. Right-click and select "{{PALETTE_MENU_PIN_MULTIPLE|}}"
-
-### Unpinning
-
-1. Right-click on a pinned preset
-2. Select "{{PALETTE_MENU_UNPIN|}}"
-
-### Sort Rules
-
-The preset list follows these sorting rules:
-
-1. **Pinned presets**: Always displayed at the top
-2. **Unpinned presets**: Sorted according to sort settings
-
-Use the sort button to switch between four sort modes. Within each group (pinned/unpinned), presets are sorted according to the selected order.
+Pinned presets always appear at the top; unpinned presets follow the sort settings.
 
 ## Import and Export
 
-### Export Presets
+Click the **{{ICON_MORE}}** button at the bottom of the panel:
 
-**Export selected presets**:
+| Action | Menu Item |
+|--------|-----------|
+| Export selected | {{PRESETS_MENU_EXPORT_SELECTED|}} |
+| Export all | {{PRESETS_MENU_EXPORT_ALL|}} |
+| Import | {{PRESETS_MENU_IMPORT|}} |
 
-1. Select presets to export
-2. Click the **{{ICON_MORE}}** button at the bottom of the panel
-3. Select "{{PRESETS_MENU_EXPORT_SELECTED|}}"
-4. Choose save location
+### File Format
 
-**Export all presets**:
+| Tab | Extension |
+|-----|-----------|
+| {{PALETTE_TAB_REFERENCE|}} | `{{FILE_EXTENSION_REFERENCE|}}` |
+| {{PALETTE_TAB_LOCKED|}} | `{{FILE_EXTENSION_LOCKED|}}` |
 
-1. Click the **{{ICON_MORE}}** button at the bottom of the panel
-2. Select "{{PRESETS_MENU_EXPORT_ALL|}}"
-3. Choose save location
-
-### Export Format
-
-Exported files are in JSON format with different extensions by preset type:
-
-- **{{PALETTE_TAB_REFERENCE|}}**: `{{FILE_EXTENSION_REFERENCE|}}`
-- **{{PALETTE_TAB_LOCKED|}}**: `{{FILE_EXTENSION_LOCKED|}}`
-
-File contents include:
-
-- Format marker
-- ID numbers
-- Preset data
+When importing, choose append ({{PRESETS_IMPORT_MODE_APPEND|}}) or replace ({{PRESETS_IMPORT_MODE_REPLACE|}}) existing presets.
 
 > [!NOTE]
-> Pin status is not preserved during export.
-
-### Import Presets
-
-1. Click the **{{ICON_MORE}}** button at the bottom of the panel
-2. Select "{{PRESETS_MENU_IMPORT|}}"
-3. Choose the file to import
-4. Select import mode:
-    - **{{PRESETS_IMPORT_MODE_APPEND|}}**: Append to existing presets
-    - **{{PRESETS_IMPORT_MODE_REPLACE|}}**: Replace all existing presets
-
-### Import Notes
-
-The import dialog automatically filters file types based on the current tab:
-
-- On {{PALETTE_TAB_REFERENCE|}} tab, only `{{FILE_EXTENSION_REFERENCE|}}` files are shown
-- On {{PALETTE_TAB_LOCKED|}} tab, only `{{FILE_EXTENSION_LOCKED|}}` files are shown
-
-### Import Error Messages
-
-| Error | Description |
-|-------|-------------|
-| {{PRESETS_IMPORT_ERROR_INVALID_FORMAT|}} | Invalid file format |
-| {{PRESETS_IMPORT_ERROR_UNSUPPORTED_VERSION|}} | File version too new, please update the plugin |
-| {{PRESETS_IMPORT_ERROR_TYPE_MISMATCH|}} | File type doesn't match current tab |
-| {{PRESETS_IMPORT_ERROR_EMPTY|}} | No valid presets found in file |
-
-## Empty State
-
-When a tab has no presets, a prompt message is displayed:
-
-- **{{PALETTE_TAB_REFERENCE|}} tab**: "{{PALETTE_EMPTY_REFERENCE_LINE1|}} {{PALETTE_EMPTY_REFERENCE_LINE2|}}"
-- **{{PALETTE_TAB_LOCKED|}} tab**: "{{PALETTE_EMPTY_LOCKED_LINE1|}} {{PALETTE_EMPTY_LOCKED_LINE2|}}"
+> Pin status is not preserved during export. The import dialog automatically filters files by the current tab type.
 
 ## Usage Tips
 
