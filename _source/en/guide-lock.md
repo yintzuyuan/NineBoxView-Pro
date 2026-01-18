@@ -5,10 +5,9 @@ The {{GUIDE_NAV_LOCK}} feature allows you to fix a specific glyph at a designate
 ## Table of Contents
 
 - [Basic Concepts](#basic-concepts)
-- [Understanding ⌘ Mode](#understanding-mode)
 - [⌘ Mode Operations](#mode-operations)
-- [Center Cell Protection](#center-cell-protection)
-- [Other Drag Operations](#other-drag-operations)
+- [Center Cell](#center-cell)
+- [Locked Glyph Panel](#locked-glyph-panel)
 - [Display Control](#display-control)
 - [Usage Tips](#usage-tips)
 
@@ -33,25 +32,9 @@ The {{GUIDE_NAV_LOCK}} feature allows you to fix a specific glyph at a designate
 | Random arrangement | Not affected | Rearranged on each click |
 | Storage method | Saved by position | Saved as glyph list |
 
-## Understanding ⌘ Mode
-
-All lock operations follow one simple rule: **hold the ⌘ (Cmd) key**.
-
-We call this "⌘ Mode" — remember this concept and you'll master all lock operations:
-
-| Mnemonic | Description |
-|----------|-------------|
-| **⌘ = Lock** | Hold ⌘ key = enter lock editing mode |
-| **⌘ + click** | Lock/unlock that position |
-| **⌘ + drag** | Move or create locked glyph |
-| **⌘ + Option** | Advanced operations (picker, save preset) |
-
-> [!TIP]
-> When entering ⌘ mode, locked cells are highlighted with the system accent color for quick identification.
-
 ## ⌘ Mode Operations
 
-Hold **⌘** to enter lock editing mode. All lock/unlock operations are performed in this mode.
+Hold **⌘** to enter lock editing mode. All lock/unlock operations are performed in this mode. When entering, locked cells are highlighted with the system accent color.
 
 ### Click Operations
 
@@ -59,9 +42,10 @@ Hold **⌘** to enter lock editing mode. All lock/unlock operations are performe
 |--------|-----------------|--------|
 | ⌘ + click | Unlocked position | Lock the reference glyph at that position |
 | ⌘ + click | Locked position | Unlock that position |
-| ⌘ + click | Center cell | Clear all locks |
+| ⌘ + click | Center cell | Toggle lock feature on/off |
 | ⌘ + ⌥ + click | Any position | Open {{GLYPH_PICKER_TITLE_LOCK|}} picker |
-| ⌘ + ⌥ + click | Center cell | Save current locks to {{PRESETS_WINDOW_TITLE|}} |
+| ⌘ + ⌥ + click | Center cell | Clear all locks |
+| ⌘ + ⇧ + click | Center cell | Save current locks to {{PRESETS_WINDOW_TITLE|}} |
 
 ### Drag Operations
 
@@ -71,49 +55,42 @@ Hold **⌘** to enter lock editing mode. All lock/unlock operations are performe
 | ⌘ + drag | Locked position | Move locked glyph |
 | ⌘ + ⌥ + drag | Any position | Copy lock (source preserved) |
 
-## Center Cell Protection
+## Center Cell
 
-The center cell (position 4) has special protection mechanisms:
+The center cell (position 4) always displays the current editing glyph and **cannot be locked**.
 
-### Cannot Be Locked
+> [!TIP]
+> Use **⌘ + drag** to copy the center cell glyph to another position, creating a locked glyph of the current editing character.
 
-The center cell always displays the current editing glyph and cannot be locked. This ensures you can always see the glyph you're editing.
+## Locked Glyph Panel
 
-### Drag Restrictions
+The Locked Glyph Panel is an independent floating window dedicated to displaying and managing locked glyphs.
 
-- **Normal drag**: Center cell glyph cannot be dragged to other grid positions
-- **Drag outside**: Can drag center cell glyph to Glyphs edit view for insertion
-- **⌘ mode drag**: When center cell is the source, only copy operation is supported
+### Opening the Panel
 
-> [!NOTE]
-> When attempting an invalid drag from the center cell, the drag icon shows a prohibition symbol ({{ICON_PROHIBIT}}).
+- **Toolbar**: Click the lock button ({{ICON_LOCK}})
+- **Context menu**: Right-click in the grid content area and select "{{CONTEXT_MENU_SHOW_LOCKED_PANEL|}}"
 
-## Other Drag Operations
+### Panel Operations
 
-Besides ⌘ mode drag operations, the following drag methods are available:
+The panel displays all locked glyph configurations in a 3×3 grid:
 
-| Modifier Key | Drag Icon | Effect |
-|--------------|-----------|--------|
-| None | {{ICON_SWAP}} / {{ICON_INSERT}} | Swap positions / Insert to edit view |
-| ⌥ | {{ICON_COPY}} | Copy reference glyph (source preserved) |
-| ⇧ | {{ICON_GRID}} | Open grid in new tab |
+| Action | Effect |
+|--------|--------|
+| Click | Select the cell |
+| Double-click | Open glyph picker to modify that position |
+| ⌘ + click | Multi-select (toggle selection) |
+| ⇧ + click | Rectangle selection |
+| ⌘ + A | Select all locked positions |
+| Delete | Remove all selected locked glyphs |
+| Enter | Open glyph picker to batch modify selected positions |
 
-### Normal Drag
+### Center Cell Toggle
 
-Without any modifier keys:
+The panel's center cell shows a lock icon. Click to toggle the lock feature on/off:
 
-- **Within grid**: Swap contents of two positions
-- **To edit view**: Insert character at cursor position
-
-### ⌥ + Drag
-
-- Copy reference glyph to target position
-- Source position retains original content
-
-### ⇧ + Drag
-
-- Open the entire grid content in a new tab
-- Convenient for previewing in text edit view
+- **Enabled**: Shows locked icon ({{ICON_LOCK}})
+- **Disabled**: Shows unlocked icon ({{ICON_LOCK_OPEN}})
 
 ## Display Control
 
@@ -143,9 +120,10 @@ Lock multiple completed characters to ensure new designs maintain consistent sty
 
 ### Quick Save Configuration
 
-1. Set up your locked glyph configuration
-2. **⌘ + ⌥ + click** the center cell
-3. Configuration is saved to {{PRESETS_WINDOW_TITLE|}}
+After setting up your locked glyph configuration, save to {{PRESETS_WINDOW_TITLE|}} via:
+
+- **⌘ + ⇧ + click** the grid center cell
+- Click the **save button** in the Locked Glyph Panel
 
 ## Related Features
 
