@@ -51,8 +51,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
       - name: Install Stylelint
         run: npm install -g stylelint stylelint-config-standard
@@ -111,8 +109,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
       - name: Install ESLint
         run: npm install -g eslint @eslint/js globals
@@ -192,12 +188,15 @@ jobs:
           const errors = [];
           const checked = new Set();
 
+          // 排除的目錄（模板、建置產物等）
+          const EXCLUDED_DIRS = ['_templates', '_scripts', 'node_modules'];
+
           function findHtmlFiles(dir) {
             const files = [];
             for (const file of readdirSync(dir)) {
               const path = join(dir, file);
               if (statSync(path).isDirectory()) {
-                if (!file.startsWith('.') && file !== 'node_modules') {
+                if (!file.startsWith('.') && !EXCLUDED_DIRS.includes(file)) {
                   files.push(...findHtmlFiles(path));
                 }
               } else if (file.endsWith('.html')) {
@@ -218,10 +217,11 @@ jobs:
             while ((match = linkPattern.exec(content)) !== null) {
               const link = match[1];
 
-              // 跳過外部連結和特殊協議
+              // 跳過外部連結、特殊協議、模板變數
               if (link.startsWith('http') || link.startsWith('//') ||
                   link.startsWith('mailto:') || link.startsWith('tel:') ||
-                  link.startsWith('javascript:') || link.startsWith('data:')) {
+                  link.startsWith('javascript:') || link.startsWith('data:') ||
+                  link.includes('{{')) {
                 continue;
               }
 
