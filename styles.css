@@ -386,44 +386,9 @@ a:hover {
 
 .hero__image {
   max-width: 100%;
-  /* 統一圓角風格 */
   border-radius: 20px;
   margin: var(--spacing-md) 0;
-  /* 多層次陰影 */
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 4px 8px rgba(0, 0, 0, 0.06),
-    0 8px 16px rgba(0, 0, 0, 0.06),
-    0 16px 32px rgba(0, 0, 0, 0.04);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.hero__image:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 16px 32px rgba(0, 0, 0, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.06);
-}
-
-@media (prefers-color-scheme: dark) {
-  .hero__image {
-    /* 深色模式：柔和的多層次陰影 */
-    box-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.2),
-      0 4px 8px rgba(0, 0, 0, 0.15),
-      0 8px 16px rgba(0, 0, 0, 0.1),
-      0 16px 32px rgba(0, 0, 0, 0.08);
-  }
-
-  .hero__image:hover {
-    box-shadow:
-      0 4px 8px rgba(0, 0, 0, 0.25),
-      0 8px 16px rgba(0, 0, 0, 0.2),
-      0 16px 32px rgba(0, 0, 0, 0.15),
-      0 24px 48px rgba(0, 0, 0, 0.1);
-  }
+  /* 圖片本身已含陰影效果，不需額外 box-shadow */
 }
 
 /* ==================== CTA Button ==================== */
@@ -1802,10 +1767,15 @@ a:hover {
 .layer-card {
   position: relative;
   padding: 1.5rem;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* 與便當卡片統一樣式 */
+  background: color-mix(in srgb, var(--color-bg) 50%, var(--color-text) 3%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .layer-card::before {
@@ -1814,8 +1784,8 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  border-radius: 4px 4px 0 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
 }
 
 /* 層級色彩標記 */
@@ -1831,23 +1801,12 @@ a:hover {
   background: var(--layer-locked-stroke);
 }
 
-/* 層級高度差異 - 呼應等角投影的層疊效果 */
-.layer-card--edit {
-  transform: translateY(8px);
-}
-
-.layer-card--reference {
-  transform: translateY(0);
-}
-
-.layer-card--locked {
-  transform: translateY(-8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
 .layer-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.06);
 }
 
 .layer-card h3 {
@@ -1869,12 +1828,6 @@ a:hover {
   .concept-layers {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  .layer-card--edit,
-  .layer-card--reference,
-  .layer-card--locked {
-    transform: translateY(0);
   }
 
   .concept-showcase svg.isometric-concept {
@@ -1948,11 +1901,11 @@ a:hover {
   /* 移除 min-height 讓 SVG 自然依照 viewBox 比例顯示 */
 }
 
-/* 三層說明卡片 - 更精緻的設計 */
+/* 三層說明卡片 - 與便當卡片統一樣式 */
 .concept-layers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
   max-width: 800px;
   width: 100%;
 }
@@ -1960,39 +1913,38 @@ a:hover {
 .layer-card {
   position: relative;
   padding: 1.25rem 1.5rem;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* 與便當卡片統一樣式 */
+  background: color-mix(in srgb, var(--color-bg) 50%, var(--color-text) 3%);
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-/* 層級色彩裝飾條 - 左側垂直線 */
+/* 層級色彩裝飾條 - 頂部橫條 */
 .layer-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 100%;
-  border-radius: 6px 0 0 6px;
+  right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
 }
 
-.layer-card--edit::before { background: linear-gradient(180deg, var(--layer-edit-stroke), transparent); }
-.layer-card--reference::before { background: linear-gradient(180deg, var(--layer-reference-stroke), transparent); }
-.layer-card--locked::before { background: linear-gradient(180deg, var(--layer-locked-stroke), transparent); }
-
-/* 移除高度差異，改用 hover 效果 */
-.layer-card--edit,
-.layer-card--reference,
-.layer-card--locked {
-  transform: translateY(0);
-}
+.layer-card--edit::before { background: var(--layer-edit-stroke); }
+.layer-card--reference::before { background: var(--layer-reference-stroke); }
+.layer-card--locked::before { background: var(--layer-locked-stroke); }
 
 .layer-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border-color: var(--concept-accent);
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.06);
 }
 
 .layer-card h3 {
@@ -2011,15 +1963,32 @@ a:hover {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  fill: var(--color-text-secondary);
 }
 
-.layer-card h3 .layer-icon { fill: var(--color-text-secondary); }
-
 .layer-card p {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 0;
+}
+
+/* 深色模式：與便當卡片統一 */
+@media (prefers-color-scheme: dark) {
+  .layer-card {
+    background: color-mix(in srgb, var(--color-bg) 90%, var(--color-text) 10%);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.15),
+      0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .layer-card:hover {
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.25),
+      0 8px 16px rgba(0, 0, 0, 0.2),
+      0 16px 32px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /* 響應式 */
