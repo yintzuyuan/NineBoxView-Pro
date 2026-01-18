@@ -4,3 +4,6 @@ guide/search-index.json
 
 # macOS
 .DS_Store
+
+# Claude Code 記憶體（軟連結到私有儲存庫）
+CLAUDE.md

@@ -23,10 +23,11 @@ from pathlib import Path
 from collections import OrderedDict
 
 
-# 設定路徑（相對於腳本位置）
+# 設定路徑
 SCRIPT_DIR = Path(__file__).parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
-STRINGS_DIR = PROJECT_ROOT / "NineBoxViewPro" / "NineBoxViewPro"
+# 使用環境變數，fallback 到預設路徑
+NINEBOXVIEW_DEV = Path(os.getenv('NINEBOXVIEW_DEV', os.path.expanduser('~/code/dev/NineBoxView-dev')))
+STRINGS_DIR = NINEBOXVIEW_DEV / "NineBoxViewPro" / "NineBoxViewPro"
 OUTPUT_FILE = SCRIPT_DIR.parent / "_source" / "strings.yaml"
 
 # 支援的語言

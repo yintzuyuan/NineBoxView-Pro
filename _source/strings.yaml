@@ -1,7 +1,7 @@
 # UI 詞彙對照表
 # 自動生成，請勿手動修改
 # 來源：NineBoxViewPro/*.lproj/Localizable.strings
-# 生成時間：2025-12-21T22:27:21.492701
+# 生成時間：2026-01-18T13:02:00.752605
 #
 # 使用方式：
 # 在來源 Markdown 中使用 {{KEY}} 語法引用詞彙
@@ -19,18 +19,6 @@ REFERENCE_INPUT_PLACEHOLDER:
   zh-Hans: ' 输入参考字符形…'
   ja: ' 参照グリフを入力…'
   ko: ' 참조 글리프 입력…'
-PASTE_AND_REPLACE_BUTTON:
-  en: Replace
-  zh-Hant: 取代貼上
-  zh-Hans: 替换粘贴
-  ja: 置換
-  ko: 대체
-PASTE_AND_REPLACE_TOOLTIP:
-  en: Clear and paste from clipboard
-  zh-Hant: 清除並貼上剪貼簿內容
-  zh-Hans: 清除并粘贴剪贴板内容
-  ja: クリアしてクリップボードから貼り付け
-  ko: 지우고 클립보드에서 붙여넣기
 SAVE_REFERENCE_BUTTON:
   en: Save
   zh-Hant: 儲存
@@ -68,11 +56,17 @@ REFERENCE_PANEL_HIDE_TOOLTIP:
   ja: 参照パネルを非表示
   ko: 참조 패널 숨기기
 REFERENCE_PANEL_TITLE:
-  en: Reference Panel
-  zh-Hant: 參考字面板
-  zh-Hans: 参考字面板
-  ja: 参照パネル
-  ko: 참조 패널
+  en: Reference
+  zh-Hant: 參考字
+  zh-Hans: 参考字
+  ja: 参照
+  ko: 참조
+LOCKED_PANEL_TITLE:
+  en: Locked
+  zh-Hant: 鎖定字
+  zh-Hans: 锁定字
+  ja: ロック
+  ko: 잠금
 PRESETS_TOGGLE_SHOW_TOOLTIP:
   en: Show Presets Panel
   zh-Hant: 顯示字組面板
@@ -86,11 +80,11 @@ PRESETS_TOGGLE_HIDE_TOOLTIP:
   ja: プリセットパネルを隠す
   ko: 프리셋 패널 숨기기
 PRESETS_WINDOW_TITLE:
-  en: Presets Panel
-  zh-Hant: 字組面板
-  zh-Hans: 字组面板
-  ja: プリセットパネル
-  ko: 프리셋 패널
+  en: Presets
+  zh-Hant: 字組
+  zh-Hans: 字组
+  ja: プリセット
+  ko: 프리셋
 BLUR_SLIDER_TOOLTIP:
   en: Blur intensity
   zh-Hant: 模糊程度
@@ -115,36 +109,6 @@ CONTEXT_MENU_GLYPH_PICKER:
   zh-Hans: 字符形选择器…
   ja: グリフピッカー…
   ko: 글리프 피커…
-CONTEXT_MENU_APPEND_TO_END:
-  en: Append to End
-  zh-Hant: 插入到尾端
-  zh-Hans: 插入到末尾
-  ja: 末尾に追加
-  ko: 끝에 추가
-CONTEXT_MENU_PASTE_AND_REPLACE:
-  en: Replace
-  zh-Hant: 取代貼上
-  zh-Hans: 替换粘贴
-  ja: 置換
-  ko: 대체
-CONTEXT_MENU_CLEAR_ALL:
-  en: Clear All
-  zh-Hant: 清空全部
-  zh-Hans: 全部清空
-  ja: すべてクリア
-  ko: 모두 지우기
-CONTEXT_MENU_INSERT_AT_CURSOR:
-  en: Insert at Cursor
-  zh-Hant: 插入當前分頁
-  zh-Hans: 插入当前标签页
-  ja: カーソル位置に挿入
-  ko: 커서 위치에 삽입
-CONTEXT_MENU_OPEN_IN_NEW_TAB:
-  en: Open in New Tab
-  zh-Hant: 在新分頁中打開
-  zh-Hans: 在新标签页中打开
-  ja: 新規タブで開く
-  ko: 새 탭에서 열기
 TITLEBAR_MENU_TOOLTIP:
   en: Menu
   zh-Hant: 選單
@@ -193,6 +157,30 @@ LOCK_TOGGLE_DISABLED_TOOLTIP:
   zh-Hans: 锁定字符形已隐藏（按住 Cmd 编辑）
   ja: ロックグリフを非表示（Cmd で編集）
   ko: 잠금 글리프 숨김 (Cmd로 편집)
+CLEAR_LOCKED_BUTTON:
+  en: Clear
+  zh-Hant: 清除
+  zh-Hans: 清除
+  ja: クリア
+  ko: 지우기
+CLEAR_LOCKED_TOOLTIP:
+  en: Clear all locked glyphs
+  zh-Hant: 清除所有鎖定字
+  zh-Hans: 清除所有锁定字
+  ja: すべてのロックを解除
+  ko: 모든 잠금 지우기
+SAVE_LOCKED_BUTTON:
+  en: Save
+  zh-Hant: 儲存
+  zh-Hans: 保存
+  ja: 保存
+  ko: 저장
+SAVE_LOCKED_TOOLTIP:
+  en: Save to locked presets
+  zh-Hant: 儲存到鎖定字組
+  zh-Hans: 保存到锁定字组
+  ja: ロックプリセットに保存
+  ko: 잠금 프리셋에 저장
 LOCKED_PANEL_TOGGLE_SHOW:
   en: Show Locked Panel
   zh-Hant: 顯示鎖定字面板
@@ -200,18 +188,6 @@ LOCKED_PANEL_TOGGLE_SHOW:
   ja: ロックパネルを表示
   ko: 잠금 패널 표시
 LOCKED_PANEL_TOGGLE_HIDE:
-  en: Hide Locked Panel
-  zh-Hant: 隱藏鎖定字面板
-  zh-Hans: 隐藏锁定字面板
-  ja: ロックパネルを隠す
-  ko: 잠금 패널 숨기기
-CONTEXT_MENU_SHOW_LOCKED_PANEL:
-  en: Show Locked Panel
-  zh-Hant: 顯示鎖定字面板
-  zh-Hans: 显示锁定字面板
-  ja: ロックパネルを表示
-  ko: 잠금 패널 표시
-CONTEXT_MENU_HIDE_LOCKED_PANEL:
   en: Hide Locked Panel
   zh-Hant: 隱藏鎖定字面板
   zh-Hans: 隐藏锁定字面板
@@ -416,7 +392,7 @@ LICENSE_WELCOME_MESSAGE:
 
 
     點擊下方按鈕後，您的 14 天免費試用期將正式開始。'
-  zh-Hans: '体验强大的九宫格预览功能，帮助您做出更好的字符设计决策。
+  zh-Hans: '体验强大的九宫格预览功能，帮助您做出更好的字符形设计决策。
 
 
     点击下方按钮后，您的 14 天免费试用期将正式开始。'
@@ -562,6 +538,18 @@ CONTEXT_MENU_HIDE_REFERENCE_INPUT:
   zh-Hans: 隐藏参考字面板
   ja: 参照パネルを隠す
   ko: 참조 패널 숨기기
+CONTEXT_MENU_SHOW_LOCKED_PANEL:
+  en: Show Locked Panel
+  zh-Hant: 顯示鎖定字面板
+  zh-Hans: 显示锁定字面板
+  ja: ロックパネルを表示
+  ko: 잠금 패널 표시
+CONTEXT_MENU_HIDE_LOCKED_PANEL:
+  en: Hide Locked Panel
+  zh-Hant: 隱藏鎖定字面板
+  zh-Hans: 隐藏锁定字面板
+  ja: ロックパネルを隠す
+  ko: 잠금 패널 숨기기
 CONTEXT_MENU_SHOW_PRESETS:
   en: Show Presets Panel
   zh-Hant: 顯示字組面板
@@ -610,6 +598,18 @@ CONTEXT_MENU_HIDE_GRID_LINES:
   zh-Hans: 隐藏网格
   ja: グリッドを非表示
   ko: 그리드 숨기기
+CONTEXT_MENU_INSERT_AT_CURSOR:
+  en: Insert at Cursor
+  zh-Hant: 插入當前分頁
+  zh-Hans: 插入当前标签页
+  ja: カーソル位置に挿入
+  ko: 커서 위치에 삽입
+CONTEXT_MENU_OPEN_IN_NEW_TAB:
+  en: Open in New Tab
+  zh-Hant: 在新分頁中打開
+  zh-Hans: 在新标签页中打开
+  ja: 新規タブで開く
+  ko: 새 탭에서 열기
 PRESETS_MENU_IMPORT:
   en: Import…
   zh-Hant: 匯入⋯
@@ -802,6 +802,36 @@ ABOUT_STATUS_UNLICENSED:
   zh-Hans: 未授权
   ja: 未認証
   ko: 미인증
+ABOUT_DEACTIVATE_LICENSE:
+  en: Deactivate License
+  zh-Hant: 清除授權
+  zh-Hans: 清除授权
+  ja: ライセンスを解除
+  ko: 라이선스 해제
+ABOUT_DEACTIVATE_CONFIRM_TITLE:
+  en: Deactivate License?
+  zh-Hant: 確定要清除授權？
+  zh-Hans: 确定要清除授权？
+  ja: ライセンスを解除しますか？
+  ko: 라이선스를 해제하시겠습니까?
+ABOUT_DEACTIVATE_CONFIRM_MESSAGE:
+  en: Your license will be removed from this computer. You can reactivate it anytime with your license key.
+  zh-Hant: 授權資訊將從這台電腦移除。您可以隨時使用序號重新啟用。
+  zh-Hans: 授权信息将从这台电脑移除。您可以随时使用序列号重新激活。
+  ja: このコンピュータからライセンス情報が削除されます。ライセンスキーでいつでも再認証できます。
+  ko: 이 컴퓨터에서 라이선스 정보가 삭제됩니다. 라이선스 키로 언제든지 다시 인증할 수 있습니다.
+ABOUT_DEACTIVATE_CONFIRM_OK:
+  en: Deactivate
+  zh-Hant: 清除
+  zh-Hans: 清除
+  ja: 解除
+  ko: 해제
+ABOUT_DEACTIVATE_CONFIRM_CANCEL:
+  en: Cancel
+  zh-Hant: 取消
+  zh-Hans: 取消
+  ja: キャンセル
+  ko: 취소
 
 # 說明書專用變數（不在 Localizable.strings 中，手動維護）
 # =============================================================================
