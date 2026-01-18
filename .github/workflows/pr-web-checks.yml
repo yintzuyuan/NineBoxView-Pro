@@ -217,11 +217,11 @@ jobs:
             while ((match = linkPattern.exec(content)) !== null) {
               const link = match[1];
 
-              // 跳過外部連結、特殊協議、模板變數
+              // 跳過外部連結、特殊協議、模板變數、自訂 URL scheme
               if (link.startsWith('http') || link.startsWith('//') ||
                   link.startsWith('mailto:') || link.startsWith('tel:') ||
                   link.startsWith('javascript:') || link.startsWith('data:') ||
-                  link.includes('{{')) {
+                  link.startsWith('glyphsapp') || link.includes('{{')) {
                 continue;
               }
 
