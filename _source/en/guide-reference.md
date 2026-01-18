@@ -83,9 +83,8 @@ Right-click in the {{REFERENCE_PANEL_TITLE|}} input area to open the context men
 | Item | Description |
 |------|-------------|
 | {{CONTEXT_MENU_GLYPH_PICKER|}} | Open glyph picker for multi-selection |
-| {{CONTEXT_MENU_APPEND_TO_END|}} | Append clipboard content to the end |
-| {{CONTEXT_MENU_PASTE_AND_REPLACE|}} | Clear and paste clipboard content |
-| {{CONTEXT_MENU_CLEAR_ALL|}} | Clear all input text |
+| {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | Insert reference text at cursor in Glyphs edit view |
+| {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | Open reference text in a new tab |
 
 ### Glyph Picker
 
@@ -103,12 +102,17 @@ Drag a glyph from inside the grid to another location:
 
 | Action | Effect |
 |--------|--------|
-| Normal drag | Swap positions (within grid) or insert (Glyphs edit view) |
+| Normal drag | Swap positions |
 | Option + drag | Copy reference glyph (source preserved) |
 
 ### Drag to Glyphs Edit View
 
-Drag a glyph from the grid to Glyphs' text edit view to insert the character at the cursor position.
+Drag a glyph from the grid to Glyphs' edit view:
+
+| Action | Effect |
+|--------|--------|
+| Normal drag | Insert character at cursor position |
+| Option + drag | Open the glyph in a new tab |
 
 ### Drag to {{REFERENCE_PANEL_TITLE|}}
 

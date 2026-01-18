@@ -81,7 +81,6 @@
 | {{CONTEXT_MENU_GLYPH_PICKER|}} | 開啟字符選擇器，可多選字符插入 |
 | {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | 將參考字插入到 Glyphs 編輯視圖的游標位置 |
 | {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | 將參考字在新分頁中開啟 |
-| {{CONTEXT_MENU_APPEND_TO_END|}} | 將剪貼簿內容追加到文字末尾 |
 
 ## 拖曳功能
 
@@ -91,12 +90,17 @@
 
 | 操作 | 效果 |
 |-----|------|
-| 普通拖曳 | 交換位置（九宮格內）或插入（Glyphs 編輯視圖） |
+| 普通拖曳 | 交換位置 |
 | Option + 拖曳 | 複製參考字（來源保留） |
 
 ### 拖曳到 Glyphs 編輯視圖
 
-將九宮格內的字符拖曳到 Glyphs 的文字編輯視圖，字符會插入到游標位置。
+將九宮格內的字符拖曳到 Glyphs 的編輯視圖：
+
+| 操作 | 效果 |
+|-----|------|
+| 普通拖曳 | 字符插入到游標位置 |
+| Option + 拖曳 | 在新分頁中開啟該字符 |
 
 ### 拖曳到{{REFERENCE_PANEL_TITLE|}}
 

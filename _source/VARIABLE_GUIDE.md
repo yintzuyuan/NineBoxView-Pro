@@ -30,9 +30,8 @@
 | 變數 | 繁中 | 英文 |
 |-----|------|------|
 | `{{CONTEXT_MENU_GLYPH_PICKER}}` | 字符選擇器… | Glyph Picker… |
-| `{{CONTEXT_MENU_APPEND_TO_END}}` | 插入到尾端 | Append to End |
-| `{{CONTEXT_MENU_PASTE_AND_REPLACE}}` | 取代貼上 | Replace |
-| `{{CONTEXT_MENU_CLEAR_ALL}}` | 清空全部 | Clear All |
+| `{{CONTEXT_MENU_INSERT_AT_CURSOR}}` | 插入當前分頁 | Insert at Cursor |
+| `{{CONTEXT_MENU_OPEN_IN_NEW_TAB}}` | 在新分頁中打開 | Open in New Tab |
 | `{{CONTEXT_MENU_SHOW_REFERENCE_INPUT}}` | 顯示參考字輸入區 | Show Reference Input |
 | `{{CONTEXT_MENU_HIDE_REFERENCE_INPUT}}` | 隱藏參考字輸入區 | Hide Reference Input |
 | `{{CONTEXT_MENU_SHOW_PRESETS}}` | 顯示字組面板 | Show Presets Panel |

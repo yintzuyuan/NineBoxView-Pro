@@ -83,9 +83,8 @@
 | 项目 | 说明 |
 |-----|------|
 | {{CONTEXT_MENU_GLYPH_PICKER|}} | 打开字符选择器，可多选字符插入 |
-| {{CONTEXT_MENU_APPEND_TO_END|}} | 将剪贴板内容追加到文字末尾 |
-| {{CONTEXT_MENU_PASTE_AND_REPLACE|}} | 清空并粘贴剪贴板内容 |
-| {{CONTEXT_MENU_CLEAR_ALL|}} | 清空所有输入文字 |
+| {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | 将参考字插入到 Glyphs 编辑视图的光标位置 |
+| {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | 将参考字在新分页中打开 |
 
 ### 字符选择器
 
@@ -103,12 +102,17 @@
 
 | 操作 | 效果 |
 |-----|------|
-| 普通拖曳 | 交换位置（九宫格内）或插入（Glyphs 编辑视图） |
+| 普通拖曳 | 交换位置 |
 | Option + 拖曳 | 复制参考字（来源保留） |
 
 ### 拖曳到 Glyphs 编辑视图
 
-将九宫格内的字符拖曳到 Glyphs 的文字编辑视图，字符会插入到光标位置。
+将九宫格内的字符拖曳到 Glyphs 的编辑视图：
+
+| 操作 | 效果 |
+|-----|------|
+| 普通拖曳 | 字符插入到光标位置 |
+| Option + 拖曳 | 在新分页中打开该字符 |
 
 ### 拖曳到{{REFERENCE_PANEL_TITLE|}}
 
