@@ -1625,11 +1625,11 @@ a:hover {
 
 :root {
   /* 概念圖層級色彩 - 毛玻璃效果（底部重、頂部輕） */
-  --layer-edit-fill: rgba(180, 175, 165, 0.85);
+  --layer-edit-fill: rgba(220, 216, 208, 0.85);
   --layer-edit-stroke: rgba(74, 74, 74, 0.4);
-  --layer-reference-fill: rgba(210, 205, 195, 0.8);
+  --layer-reference-fill: rgba(230, 226, 218, 0.8);
   --layer-reference-stroke: rgba(74, 74, 74, 0.3);
-  --layer-locked-fill: rgba(235, 232, 225, 0.75);
+  --layer-locked-fill: rgba(248, 246, 242, 0.75);
   --layer-locked-stroke: rgba(74, 74, 74, 0.2);
 
   /* 概念圖文字色彩 - 墨灰漸層（底部深、頂部淺） */
@@ -1757,6 +1757,38 @@ a:hover {
   stroke-width: 0.5;
   stroke-dasharray: 2, 3;
   opacity: 0.5;
+}
+
+/* 圖層 hover 強調效果 */
+.isometric-concept .layer-group {
+  transition: opacity 0.3s ease;
+}
+
+.isometric-concept.highlight-edit .layer-group--reference,
+.isometric-concept.highlight-edit .layer-group--locked {
+  opacity: 0.25;
+}
+
+.isometric-concept.highlight-reference .layer-group--edit,
+.isometric-concept.highlight-reference .layer-group--locked {
+  opacity: 0.25;
+}
+
+.isometric-concept.highlight-locked .layer-group--edit,
+.isometric-concept.highlight-locked .layer-group--reference {
+  opacity: 0.25;
+}
+
+/* 深色模式需要更低透明度來增加對比 */
+@media (prefers-color-scheme: dark) {
+  .isometric-concept.highlight-edit .layer-group--reference,
+  .isometric-concept.highlight-edit .layer-group--locked,
+  .isometric-concept.highlight-reference .layer-group--edit,
+  .isometric-concept.highlight-reference .layer-group--locked,
+  .isometric-concept.highlight-locked .layer-group--edit,
+  .isometric-concept.highlight-locked .layer-group--reference {
+    opacity: 0.15;
+  }
 }
 
 /* 三層說明卡片 - 水平排列，呼應堆疊層次 */
@@ -1897,7 +1929,7 @@ a:hover {
   color: var(--color-text-secondary);
   font-size: 1rem;
   letter-spacing: 0.02em;
-  margin-bottom: 0.5rem; /* 更緊湊 */
+  margin-bottom: 1.5rem; /* 增加與概念圖的間距 */
 }
 
 /* 概念圖容器 - 更大、更突出 */
@@ -1906,7 +1938,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem; /* 減少與字卡的間距 */
   width: 100%;
 }
 
@@ -1921,7 +1953,7 @@ a:hover {
 .concept-layers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
   max-width: 800px;
   width: 100%;
 }
@@ -1965,12 +1997,24 @@ a:hover {
 }
 
 .layer-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   margin-bottom: 0.4rem;
   color: var(--color-text);
 }
+
+/* 標籤圖示 - Phosphor 風格 */
+.layer-card h3 .layer-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.layer-card h3 .layer-icon { fill: var(--color-text-secondary); }
 
 .layer-card p {
   font-size: 0.8rem;

@@ -20,11 +20,11 @@
   <style>
     /* 層級色彩 - 受活字印刷鋅版啟發，帶微透明 */
     :root {
-      --layer-edit-fill: rgba(232, 228, 222, 0.92);
+      --layer-edit-fill: rgba(238, 234, 226, 0.92);
       --layer-edit-stroke: #c4beb4;
-      --layer-reference-fill: rgba(212, 207, 198, 0.88);
+      --layer-reference-fill: rgba(218, 213, 203, 0.88);
       --layer-reference-stroke: #a8a298;
-      --layer-locked-fill: rgba(191, 185, 173, 0.85);
+      --layer-locked-fill: rgba(165, 159, 147, 0.85);
       --layer-locked-stroke: #8c867a;
       --glyph-edit: #9a9488;
       --glyph-reference: #5c574d;

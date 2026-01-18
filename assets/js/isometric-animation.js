@@ -254,6 +254,30 @@
   }
 
   /**
+   * 設置字卡 hover 強調對應圖層
+   */
+  function setupLayerHighlight(svg) {
+    const layerCards = document.querySelectorAll('.layer-card');
+
+    layerCards.forEach(card => {
+      const layerType = card.classList.contains('layer-card--edit') ? 'edit'
+        : card.classList.contains('layer-card--reference') ? 'reference'
+        : card.classList.contains('layer-card--locked') ? 'locked'
+        : null;
+
+      if (!layerType) return;
+
+      card.addEventListener('mouseenter', () => {
+        svg.classList.add(`highlight-${layerType}`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        svg.classList.remove(`highlight-${layerType}`);
+      });
+    });
+  }
+
+  /**
    * 初始化所有概念圖 SVG
    */
   function init() {
@@ -266,6 +290,7 @@
       svg.dataset.animationInitialized = 'true';
 
       setupObserver(svg);
+      setupLayerHighlight(svg);
     });
   }
 
