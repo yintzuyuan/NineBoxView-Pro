@@ -1589,11 +1589,11 @@ a:hover {
 
 :root {
   /* 概念圖層級色彩 - 毛玻璃效果（底部重、頂部輕） */
-  --layer-edit-fill: rgba(220, 216, 208, 0.85);
+  --layer-edit-fill: rgba(221, 219, 214, 0.85);
   --layer-edit-stroke: rgba(74, 74, 74, 0.4);
-  --layer-reference-fill: rgba(230, 226, 218, 0.8);
+  --layer-reference-fill: rgba(231, 229, 223, 0.8);
   --layer-reference-stroke: rgba(74, 74, 74, 0.3);
-  --layer-locked-fill: rgba(248, 246, 242, 0.75);
+  --layer-locked-fill: rgba(243, 241, 235, 0.75);
   --layer-locked-stroke: rgba(74, 74, 74, 0.2);
 
   /* 概念圖文字色彩 - 墨灰漸層（底部深、頂部淺） */
@@ -1609,11 +1609,11 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   :root {
     /* 深色模式概念圖層級色彩 - 毛玻璃效果（底部重、頂部輕） */
-    --layer-edit-fill: rgba(75, 72, 68, 0.9);
+    --layer-edit-fill: rgba(70, 69, 67, 0.9);
     --layer-edit-stroke: rgba(232, 230, 224, 0.35);
-    --layer-reference-fill: rgba(55, 52, 48, 0.85);
+    --layer-reference-fill: rgba(51, 51, 49, 0.85);
     --layer-reference-stroke: rgba(232, 230, 224, 0.25);
-    --layer-locked-fill: rgba(40, 38, 35, 0.8);
+    --layer-locked-fill: rgba(37, 37, 36, 0.8);
     --layer-locked-stroke: rgba(232, 230, 224, 0.15);
 
     /* 深色模式文字色彩 - 淺色漸層（底部亮、頂部暗） */
