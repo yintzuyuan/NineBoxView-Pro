@@ -1,12 +1,11 @@
 # Advanced Features
 
-This section covers advanced features of {{NINE_BOX_VIEW}}, including {{LIGHT_TABLE}} integration, keyboard shortcut overview, and modifier key monitoring.
+This section covers advanced features of {{NINE_BOX_VIEW}}, including {{LIGHT_TABLE}} integration, keyboard shortcuts, and grid lines.
 
 ## Table of Contents
 
 - [{{LIGHT_TABLE}} Integration](#light-table-integration)
 - [Keyboard Shortcuts](#keyboard-shortcuts)
-- [Modifier Key Monitoring](#modifier-key-monitoring)
 - [Grid Lines](#grid-lines)
 - [Advanced Drag Operations](#advanced-drag-operations)
 - [Special Layer Support](#special-layer-support)
@@ -38,7 +37,7 @@ To display comparison versions in the grid, the following conditions must be met
 ![Light Table comparison effect](../assets/images/feature-lighttable.gif)
 
 > [!NOTE]
-> **Shift key behavior**: If {{LIGHT_TABLE}} is not installed or its tool is not active, holding Shift enters Solo mode, temporarily hiding reference and locked glyphs.
+> **Shift key behavior**: If {{LIGHT_TABLE}} is not installed or its tool is not active, holding Shift enters **Solo mode**, temporarily hiding reference and locked glyphs, showing only the current editing glyph to help quickly compare the overlay effect with the glyph itself.
 
 ## Keyboard Shortcuts
 
@@ -48,9 +47,10 @@ To display comparison versions in the grid, the following conditions must be met
 |----------|--------|-------------|
 | Click | Random arrange | Randomly rearrange reference glyphs |
 | Cmd + click | Lock/unlock | Toggle lock state at that position |
-| Cmd + click center | Clear all locks | Clear locks at all positions |
+| Cmd + click center | Toggle lock feature | Enable/disable the lock feature |
 | Cmd + Option + click | Glyph picker | Open glyph picker to set locked glyph |
-| Cmd + Option + click center | Save lock preset | Save current lock configuration to {{PRESETS_WINDOW_TITLE|}} |
+| Cmd + Option + click center | Clear all locks | Clear locks at all positions |
+| Cmd + Shift + click center | Save lock preset | Save current lock configuration to {{PRESETS_WINDOW_TITLE|}} |
 
 ### Drag Operations
 
@@ -58,7 +58,7 @@ To display comparison versions in the grid, the following conditions must be met
 |----------|-------------|
 | None | Swap positions (within grid) / Insert (edit view) |
 | Cmd | Lock operations (move or lock) |
-| Option | Copy reference glyph (source preserved) |
+| Option | Within grid: Copy reference glyph; To edit view: Open glyph in new tab |
 | Shift | Open grid in new tab |
 | Cmd + Option | Copy locked glyph (source preserved) |
 
@@ -66,45 +66,12 @@ To display comparison versions in the grid, the following conditions must be met
 
 Toolbar buttons are triggered by clicking. Some buttons show tooltips on hover:
 
-| Button | Tooltip |
-|--------|---------|
-| {{ICON_LOCK}} (open) | {{LOCKED_PANEL_TOGGLE_HIDE|}} |
-| {{ICON_LOCK}} (closed) | {{LOCKED_PANEL_TOGGLE_SHOW|}} |
-| {{ICON_SUN}} | {{THEME_TOGGLE_LIGHT_TOOLTIP|}} |
-| {{ICON_MOON}} | {{THEME_TOGGLE_DARK_TOOLTIP|}} |
-| {{ICON_PRESETS}} (open) | {{PRESETS_TOGGLE_HIDE_TOOLTIP|}} |
-| {{ICON_PRESETS}} (closed) | {{PRESETS_TOGGLE_SHOW_TOOLTIP|}} |
-| {{ICON_REFERENCE}} (open) | {{REFERENCE_PANEL_HIDE_TOOLTIP|}} |
-| {{ICON_REFERENCE}} (closed) | {{REFERENCE_PANEL_SHOW_TOOLTIP|}} |
-
-## Modifier Key Monitoring
-
-{{NINE_BOX_VIEW}} monitors keyboard modifier key states in real-time and provides visual feedback.
-
-### Monitored Modifier Keys
-
-| Modifier | Function |
-|----------|----------|
-| Shift | Solo mode (temporarily hide reference and locked glyphs); triggers comparison mode if {{LIGHT_TABLE}} tool is active |
-| Option | Copy during drag (consistent with macOS standard behavior) |
-| Command | Enter locked glyph editing mode |
-
-> [!TIP]
-> **Option key**: Hold Option during drag to copy instead of move, consistent with macOS standard behavior.
-
-### Solo Mode
-
-When holding Shift, the grid temporarily hides all reference and locked glyphs, showing only the current editing glyph. This helps quickly compare the overlay effect with the glyph itself.
-
-- **Activation**: Mouse inside grid window, {{LIGHT_TABLE}} tool not active
-- **Deactivation**: Release Shift, or move mouse outside window
-
-> [!TIP]
-> If you have {{LIGHT_TABLE}} installed and its comparison tool active, Shift will prioritize version comparison.
-
-### Cmd Mode Visual Feedback
-
-When holding Cmd, the lock button in the toolbar shows visual feedback indicating you're in lock editing mode.
+| Button | Function |
+|--------|----------|
+| {{ICON_SUN}} / {{ICON_MOON}} | Toggle dark/light mode |
+| {{ICON_PRESETS}} | Show/hide {{PRESETS_WINDOW_TITLE|}} panel |
+| {{ICON_LOCK}} | Show/hide {{LOCKED_PANEL_TITLE|}} panel |
+| {{ICON_REFERENCE}} | Show/hide {{REFERENCE_PANEL_TITLE|}} panel |
 
 ## Grid Lines
 
@@ -132,37 +99,9 @@ Grid lines show the following guides:
 
 ## Advanced Drag Operations
 
-### Dynamic Icon System
-
-During dragging, the system dynamically updates the drag icon based on position and modifier key states:
-
-| Scenario | Icon |
-|----------|------|
-| Swap within grid | {{ICON_SWAP}} |
-| Drag to edit view | {{ICON_INSERT}} |
-| Prohibited action | {{ICON_PROHIBIT}} |
-| Shift mode | {{ICON_GRID}} |
-| Cmd mode | {{ICON_PIN}} or {{ICON_ADD}} |
-| Option mode | {{ICON_COPY}} |
-
-### Multi-Region Detection
-
-During drag, the system detects three regions:
-
-1. **Within grid**: Action determined by target position
-2. **Glyphs edit view**: Character insertion allowed
-3. **Other areas**: Prohibition icon shown
-
 ### Shift + Drag to Open New Tab
 
-Holding Shift while dragging opens the entire grid content in a new tab:
-
-1. Hold **Shift**
-2. Start dragging from any position in the grid
-3. Drag to the Glyphs window area
-4. Release to open grid text in a new tab
-
-This is convenient for previewing the grid arrangement in text edit view.
+Holding **Shift** while dragging from the grid to a Glyphs window opens the entire grid content in a new tab, convenient for quickly previewing the arrangement in edit view.
 
 ## Special Layer Support
 
@@ -173,43 +112,15 @@ When editing a non-master layer in Glyphs, surrounding grid cells automatically 
 
 ## Data Persistence
 
-### Storage Locations
-
 {{NINE_BOX_VIEW}} data is stored in two locations:
 
-**Within font file (saved with file)**:
+| Storage Location | Content | Description |
+|------------------|---------|-------------|
+| Font file | Reference glyphs, locked glyphs | Saved with file, not shared across files |
+| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE|}}, theme, etc. | Global settings, usable across files |
 
-- Reference input content
-- Locked glyph configuration
-
-**Application settings (global)**:
-
-- Window size and position (main window, {{REFERENCE_PANEL_TITLE|}}, {{PRESETS_WINDOW_TITLE|}})
-- {{REFERENCE_PANEL_TITLE|}} visibility
-- {{PRESETS_WINDOW_TITLE|}} visibility
-- Toolbar visibility
-- Locked glyph display state
-- Theme mode
-- Blur intensity
-- Grid line display state
-- Preset data
-- Preset sort order
-- Preset tab selection
-
-### Data Format
-
-Font file data is stored in `GSFont.userData`:
-
-| Key | Content |
-|-----|---------|
-| `com.YinTzuYuan.NineBoxViewPro.ReferenceInput` | Reference input text |
-| `com.YinTzuYuan.NineBoxViewPro.LockedGlyphs` | Locked configuration (position → glyph) |
-
-### Cross-File Sharing
-
-- Reference and locked data is bound to the font file and doesn't share across files
-- {{PRESETS_WINDOW_TITLE|}} is stored in application settings and can be used across files
-- Use import/export to share {{PRESETS_WINDOW_TITLE|}} between computers
+> [!TIP]
+> Use the import/export feature to share {{PRESETS_WINDOW_TITLE|}} between computers.
 
 ## Related Features
 

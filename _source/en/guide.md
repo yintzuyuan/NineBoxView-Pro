@@ -6,6 +6,7 @@ A 9-grid preview tool that allows type designers to preview the arrangement of a
 
 - [Installation](#installation)
 - [Quick Start](#quick-start)
+- [Core Concept: Three-Layer Preview System](#core-concept-three-layer-preview-system)
 - [Interface Overview](#interface-overview)
 - [Grid Position Definition](#grid-position-definition)
 - [Features](#features)
@@ -44,6 +45,29 @@ A 9-grid preview tool that allows type designers to preview the arrangement of a
 
 > [!TIP]
 > Hold **Shift** to enter Solo mode, temporarily hiding reference and locked glyphs.
+
+## Core Concept: Three-Layer Preview System
+
+{{NINE_BOX_VIEW}} uses a three-layer stacking design, allowing you to observe how a glyph performs in different contexts simultaneously:
+
+<figure class="concept-figure">
+  <img src="../../assets/images/concept-layers.svg" alt="Three-layer preview system concept diagram" />
+</figure>
+
+### Editing Glyph (Bottom Layer)
+
+The glyph currently being edited, synchronized in real-time across all cells of the grid. This is your work focus.
+
+### Reference Glyphs (Middle Layer)
+
+Randomly arranged common characters that help you quickly identify problematic pairings. Click inside the grid to reshuffle.
+
+### Locked Glyphs (Top Layer)
+
+Characters fixed at designated positions, establishing a stable comparison baseline. Settings are saved with the file.
+
+> [!NOTE]
+> The three layers are stacked from bottom to top. Locked glyphs take priority over reference glyphs and will cover the reference glyph at that position.
 
 ## Interface Overview
 
@@ -113,9 +137,11 @@ The grid positions are numbered as follows:
 
 ## Features
 
-{{NINE_BOX_VIEW}} provides three core features:
+### Preview Layer Features
 
-### [{{REFERENCE_PANEL_TITLE|}} Feature](guide-reference)
+#### [{{REFERENCE_PANEL_TITLE|}} Feature](guide-reference)
+
+> Reference glyphs are the "middle layer" of the three-layer preview system, positioned above the editing glyph.
 
 Enter a set of reference characters to display around the grid, helping you observe the visual effect of a glyph in different contexts.
 
@@ -125,7 +151,9 @@ Enter a set of reference characters to display around the grid, helping you obse
 - Check character spacing and visual balance
 - Simulate real typesetting scenarios
 
-### [{{PALETTE_TAB_LOCKED|}} Feature](guide-lock)
+#### [{{PALETTE_TAB_LOCKED|}} Feature](guide-lock)
+
+> Locked glyphs are the "top layer" of the three-layer preview system, taking priority over reference glyphs.
 
 Fix a specific glyph at a designated position to establish a stable comparison baseline.
 
@@ -135,7 +163,9 @@ Fix a specific glyph at a designated position to establish a stable comparison b
 - Create glyph pairing comparisons
 - Track design consistency
 
-### [{{PRESETS_WINDOW_TITLE|}} Feature](guide-presets)
+### Productivity Tools
+
+#### [{{PRESETS_WINDOW_TITLE|}} Feature](guide-presets)
 
 Save commonly used reference glyph combinations or locked configurations for quick switching between different testing scenarios.
 

@@ -19,15 +19,11 @@ This page compiles the most frequently asked questions and answers when using {{
 
 ### Can't find the plugin after installation?
 
-Please confirm:
-
-1. You restarted Glyphs after installation
-2. Look for {{NINE_BOX_VIEW}} in the **{{GLYPHS_VIEW_MENU}}** menu
-3. If still not found, go to **{{GLYPHS_WINDOW_MENU}} > {{GLYPHS_PLUGIN_MANAGER}}** to confirm the plugin is properly installed
+Please confirm you restarted Glyphs after installation, then look for {{NINE_BOX_VIEW}} in the **{{GLYPHS_VIEW_MENU}}** menu.
 
 ### Can I install both free and Pro versions?
 
-Yes, but we recommend keeping only one version to avoid confusion. Data from both versions is stored separately and won't interfere with each other.
+Yes, data from both versions is stored separately and won't interfere with each other.
 
 ## Reference Glyphs
 
@@ -52,19 +48,7 @@ The following formats are supported:
 
 Random arrangement distributes reference glyphs randomly to non-locked empty positions. The center cell (position 4) always displays the current editing glyph and won't be replaced by reference glyphs.
 
-### How to quickly clear reference glyphs?
-
-Right-click in the {{REFERENCE_PANEL_TITLE|}} and select "{{CONTEXT_MENU_CLEAR_ALL|}}".
-
 ## Locked Glyphs
-
-### When should I use locked glyphs?
-
-Locked glyphs are suitable for:
-
-- **Establishing comparison baseline**: Fix a standard character (e.g., "永") to observe how other characters pair with it
-- **Checking design consistency**: Lock completed characters to ensure new designs maintain consistent style
-- **Preserving specific configuration**: Keep important position configurations during testing
 
 ### Why can't the center cell be locked?
 
@@ -72,7 +56,7 @@ The center cell (position 4) always displays the current editing glyph — this 
 
 ### How to clear all locks at once?
 
-Hold **Cmd** and click the center cell to clear all position locks.
+Hold **Cmd+Opt** and click the center cell to clear all position locks.
 
 ### Where is locked glyph data stored?
 
@@ -130,67 +114,21 @@ Contact the developer via "{{INFO_MENU_CONTACT_US|}}" with the email address use
 
 Yes, you need to re-enter the license key on a new computer. The license key never expires and can be used unlimited times.
 
-### What's the difference between free and Pro versions?
-
-| Feature | Free | Pro |
-|---------|------|-----|
-| Basic 9-grid preview | {{ICON_CHECK}} | {{ICON_CHECK}} |
-| Reference feature | {{ICON_CHECK}} | {{ICON_CHECK}} |
-| Lock feature | {{ICON_CHECK}} | {{ICON_CHECK}} |
-| Drag and drop | {{ICON_X}} | {{ICON_CHECK}} |
-| {{PRESETS_WINDOW_TITLE|}} feature | {{ICON_X}} | {{ICON_CHECK}} |
-| Import/Export | {{ICON_X}} | {{ICON_CHECK}} |
-| {{LIGHT_TABLE}} integration | {{ICON_CHECK}} | {{ICON_CHECK}} |
-
 ## Other Questions
-
-### Can the grid window be resized?
-
-Yes, you can drag the window edges to resize. Window size is remembered and restored when reopened.
-
-### How to switch between dark/light mode?
-
-Two methods:
-
-1. Click the theme toggle button in the toolbar ({{ICON_SUN}}/{{ICON_MOON}})
-2. Right-click in the grid and select "{{CONTEXT_MENU_LIGHT_MODE|}}" or "{{CONTEXT_MENU_DARK_MODE|}}"
 
 ### What is the blur feature for?
 
-> [!TIP]
-> The blur feature applies a blur effect to the entire grid window, allowing you to check the overall gray distribution of all characters without being distracted by individual stroke details.
-
-### How to enable {{LIGHT_TABLE}} integration?
-
-The following conditions must be met:
-
-1. Install [{{LIGHT_TABLE}}](https://formkunft.com/light-table/) plugin (from {{GLYPHS_PLUGIN_MANAGER}})
-2. Select the {{LIGHT_TABLE}} comparison tool in the Glyphs toolbar
-3. Choose a comparison version in the {{LIGHT_TABLE}} panel
-4. Hold **Shift** — the grid will show the comparison version
-
-If {{LIGHT_TABLE}} is not installed or its tool is not active, holding Shift enters Solo mode, temporarily hiding reference and locked glyphs.
+The blur feature applies a blur effect to the entire grid window, allowing you to check the overall gray distribution of all characters without being distracted by individual stroke details.
 
 ### Reference glyphs disappeared when holding Shift?
 
-This is normal behavior. Holding Shift enters Solo mode, temporarily hiding reference and locked glyphs, making it easy to compare the current glyph with the overlay effect. Release Shift to restore display.
+This is normal behavior (Solo mode). Release Shift to restore.
 
-If you have {{LIGHT_TABLE}} installed and its comparison tool active, Shift will instead trigger version comparison.
+If you have [{{LIGHT_TABLE}}](https://formkunft.com/light-table/) installed and its comparison tool active, Shift will instead trigger version comparison.
 
 ### How to report issues?
 
-1. Click "{{INFO_MENU_FEEDBACK|}}" in the info menu
-2. Describe the issue you encountered, including:
-    - Steps to reproduce
-    - Expected vs actual results
-    - macOS and Glyphs versions
-3. If possible, attach screenshots
-
-### Where can I get more help?
-
-- **User Guide**: Click "{{INFO_MENU_HELP|}}" to open this document
-- **Official Website**: Click "{{INFO_MENU_WEBSITE|}}" for more resources
-- **Contact Developer**: Click "{{INFO_MENU_CONTACT_US|}}" to send an email
+Click "{{INFO_MENU_FEEDBACK|}}" in the info menu, describe the issue along with your macOS and Glyphs versions.
 
 ## Related Features
 

@@ -65,10 +65,6 @@
 
 输入完成后，点击「{{SAVE_REFERENCE_BUTTON|}}」按钮保存到{{PRESETS_WINDOW_TITLE|}}。
 
-### 替换粘贴
-
-点击「{{PASTE_AND_REPLACE_BUTTON|}}」按钮会清空输入区并粘贴剪贴板内容。
-
 ### 随机排列
 
 在九宫格内容区点击（不按任何辅助键），参考字会随机重新排列到周围位置。
@@ -85,14 +81,6 @@
 | {{CONTEXT_MENU_GLYPH_PICKER|}} | 打开字符选择器，可多选字符插入 |
 | {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | 将参考字插入到 Glyphs 编辑视图的光标位置 |
 | {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | 将参考字在新分页中打开 |
-
-### 字符选择器
-
-选择「{{CONTEXT_MENU_GLYPH_PICKER|}}」会打开 Glyphs 内置的字符选择器：
-
-1. 在选择器中选取一个或多个字符
-2. 确认后，字符会以 glyph name 格式插入到输入区
-3. 插入时会自动在前后加入空格分隔
 
 ## 拖曳功能
 

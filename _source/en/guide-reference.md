@@ -65,10 +65,6 @@ You can mix different formats:
 
 After entering glyphs, click the "{{SAVE_REFERENCE_BUTTON|}}" button to save to {{PRESETS_WINDOW_TITLE|}}.
 
-### Paste and Replace
-
-Click the "{{PASTE_AND_REPLACE_BUTTON|}}" button to clear the input area and paste clipboard content.
-
 ### Random Arrangement
 
 Click inside the grid area (without any modifier keys) to randomly rearrange the reference glyphs.
@@ -85,14 +81,6 @@ Right-click in the {{REFERENCE_PANEL_TITLE|}} input area to open the context men
 | {{CONTEXT_MENU_GLYPH_PICKER|}} | Open glyph picker for multi-selection |
 | {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | Insert reference text at cursor in Glyphs edit view |
 | {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | Open reference text in a new tab |
-
-### Glyph Picker
-
-Selecting "{{CONTEXT_MENU_GLYPH_PICKER|}}" opens Glyphs' built-in glyph picker:
-
-1. Select one or more glyphs in the picker
-2. After confirmation, glyphs are inserted in glyph name format
-3. Spaces are automatically added around inserted content
 
 ## Drag and Drop
 
