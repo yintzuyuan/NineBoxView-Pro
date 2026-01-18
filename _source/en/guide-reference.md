@@ -49,8 +49,7 @@ Multiple Unicode input methods are supported:
 |--------|---------|-------------|
 | `/uniXXXX` | `/uni6C38` | 4-digit hexadecimal (official format) |
 | `/uXXXXX` | `/u06C38` | 5-digit hexadecimal |
-| `/uXXXXXX` | `/u006C38` | 6-digit hexadecimal |
-| `/XXXX` | `/6C38` | Pure 4-6 digit number (shorthand) |
+| `/XXXX` | `/6C38` | Pure 4-5 digit number (shorthand) |
 
 ### Mixed Input
 

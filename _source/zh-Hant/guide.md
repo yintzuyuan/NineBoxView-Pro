@@ -6,6 +6,7 @@
 
 - [安裝方式](#安裝方式)
 - [快速開始](#快速開始)
+- [核心概念：三層預覽系統](#核心概念三層預覽系統)
 - [介面總覽](#介面總覽)
 - [九宮格位置定義](#九宮格位置定義)
 - [功能說明](#功能說明)
@@ -18,7 +19,7 @@
 > 建議使用{{GLYPHS_PLUGIN_MANAGER}}安裝，可獲得自動更新。
 
 1. 在 Glyphs 中開啟 **{{GLYPHS_WINDOW_MENU}} > {{GLYPHS_PLUGIN_MANAGER}}**
-2. 搜尋「NineBoxView Pro」
+2. 搜尋「{{NINE_BOX_VIEW|}}」
 3. 點擊「{{GLYPHS_INSTALL}}」
 
 ### 手動安裝
@@ -45,6 +46,29 @@
 > [!TIP]
 > 按住 **Shift** 鍵可進入 Solo 模式，暫時隱藏參考字和鎖定字。
 
+## 核心概念：三層預覽系統
+
+{{NINE_BOX_VIEW}} 採用三層堆疊設計，讓你同時觀察字符在不同情境下的表現：
+
+<figure class="concept-figure">
+  <img src="../../assets/images/concept-layers.svg" alt="三層預覽系統概念圖" />
+</figure>
+
+### 編輯字（底層）
+
+當前正在編輯的字符，即時同步顯示在九宮格每一格。這是你的工作焦點。
+
+### 參考字（中層）
+
+隨機排列的常用字符，幫助你快速發現問題搭配。點擊九宮格可重新洗牌。
+
+### 鎖定字（頂層）
+
+固定在指定位置的字符，建立穩定的比較基準。設定會隨檔案保存。
+
+> [!NOTE]
+> 三層由下往上疊加顯示。鎖定字優先於參考字，會覆蓋該位置的參考字。
+
 ## 介面總覽
 
 ### 主視窗
@@ -58,11 +82,11 @@
 ### 工具列按鈕
 
 | 按鈕 | 功能 | 說明 |
-|-----|------|------|
-| {{ICON_LOCK}} | 鎖定字顯示 | 切換鎖定字符的顯示狀態 |
+|------|------|------|
 | {{ICON_SUN}}/{{ICON_MOON}} | 主題切換 | 切換淺色/深色模式 |
 | 滑桿 | 模糊程度 | 調整整個九宮格視窗的模糊程度，用於檢視整體灰度分佈 |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | 開啟/關閉字組管理面板 |
+| {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | 開啟/關閉鎖定字面板 |
 | {{ICON_REFERENCE}} | {{REFERENCE_PANEL_TITLE|}} | 開啟/關閉參考字輸入面板 |
 | {{ICON_MENU}} | {{TITLEBAR_MENU_TOOLTIP|}} | 開啟資訊選單 |
 
@@ -88,14 +112,15 @@
 在九宮格內容區按右鍵可開啟快捷選單：
 
 | 項目 | 說明 |
-|-----|------|
-| {{CONTEXT_MENU_SHOW_TOOLBAR|}} / {{CONTEXT_MENU_HIDE_TOOLBAR|}} | 切換工具列 |
-| {{CONTEXT_MENU_SHOW_REFERENCE_INPUT|}} / {{CONTEXT_MENU_HIDE_REFERENCE_INPUT|}} | 切換{{REFERENCE_PANEL_TITLE|}} |
-| {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | 切換{{PRESETS_WINDOW_TITLE|}} |
-| {{CONTEXT_MENU_SHOW_LOCKED_PANEL|}} / {{CONTEXT_MENU_HIDE_LOCKED_PANEL|}} | 切換鎖定字面板 |
+|------|------|
+| {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | 將九宮格內容插入到 Glyphs 編輯視圖的游標位置 |
+| {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | 將九宮格內容在新分頁中開啟 |
+| {{CONTEXT_MENU_SHOW_TOOLBAR|}} / {{CONTEXT_MENU_HIDE_TOOLBAR|}} | 切換工具列顯示 |
+| {{CONTEXT_MENU_SHOW_REFERENCE_INPUT|}} / {{CONTEXT_MENU_HIDE_REFERENCE_INPUT|}} | 切換{{REFERENCE_PANEL_TITLE|}}顯示 |
+| {{CONTEXT_MENU_SHOW_LOCKED_PANEL|}} / {{CONTEXT_MENU_HIDE_LOCKED_PANEL|}} | 切換{{LOCKED_PANEL_TITLE|}}顯示 |
+| {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | 切換{{PRESETS_WINDOW_TITLE|}}顯示 |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | 切換主題模式 |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | 切換格線顯示 |
-| {{Open Grid in New Tab|}} | 在新分頁中開啟九宮格 |
 
 ## 九宮格位置定義
 
@@ -112,9 +137,11 @@
 
 ## 功能說明
 
-{{NINE_BOX_VIEW}} 提供三大核心功能：
+### 預覽層功能
 
-### [{{REFERENCE_PANEL_TITLE|}}功能](guide-reference)
+#### [{{REFERENCE_PANEL_TITLE|}}功能](guide-reference)
+
+> 參考字是三層預覽系統的「中層」，位於編輯字之上。
 
 輸入一組參考字符，在九宮格周圍顯示，幫助觀察字符在不同上下文中的視覺效果。
 
@@ -124,7 +151,9 @@
 - 檢查字符間距與視覺平衡
 - 模擬真實排版情境
 
-### [{{PALETTE_TAB_LOCKED|}}功能](guide-lock)
+#### [{{PALETTE_TAB_LOCKED|}}功能](guide-lock)
+
+> 鎖定字是三層預覽系統的「頂層」，優先於參考字顯示。
 
 將特定位置固定顯示某個字符，建立穩定的比較基準。
 
@@ -134,7 +163,9 @@
 - 建立字符配對比較
 - 追蹤設計一致性
 
-### [{{PRESETS_WINDOW_TITLE|}}功能](guide-presets)
+### 效率工具
+
+#### [{{PRESETS_WINDOW_TITLE|}}功能](guide-presets)
 
 儲存常用的參考字組合或鎖定字配置，快速切換不同測試情境。
 

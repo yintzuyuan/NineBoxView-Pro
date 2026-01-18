@@ -18,7 +18,7 @@
 > 建议使用{{GLYPHS_PLUGIN_MANAGER}}安装，可获得自动更新。
 
 1. 在 Glyphs 中打开 **{{GLYPHS_WINDOW_MENU}} > {{GLYPHS_PLUGIN_MANAGER}}**
-2. 搜索「NineBoxView Pro」
+2. 搜索「{{NINE_BOX_VIEW|}}」
 3. 点击「{{GLYPHS_INSTALL}}」
 
 ### 手动安装
@@ -58,11 +58,11 @@
 ### 工具栏按钮
 
 | 按钮 | 功能 | 说明 |
-|-----|------|------|
-| {{ICON_LOCK}} | 锁定字显示 | 切换锁定字符的显示状态 |
+|------|------|------|
 | {{ICON_SUN}}/{{ICON_MOON}} | 主题切换 | 切换浅色/深色模式 |
 | 滑块 | 模糊程度 | 调整整个九宫格窗口的模糊程度，用于检视整体灰度分布 |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | 打开/关闭字组管理面板 |
+| {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | 打开/关闭锁定字面板 |
 | {{ICON_REFERENCE}} | {{REFERENCE_PANEL_TITLE|}} | 打开/关闭参考字输入面板 |
 | {{ICON_MENU}} | {{TITLEBAR_MENU_TOOLTIP|}} | 打开信息菜单 |
 
@@ -88,10 +88,13 @@
 在九宫格内容区按右键可打开快捷菜单：
 
 | 项目 | 说明 |
-|-----|------|
-| {{CONTEXT_MENU_SHOW_TOOLBAR|}} / {{CONTEXT_MENU_HIDE_TOOLBAR|}} | 切换工具栏 |
-| {{CONTEXT_MENU_SHOW_REFERENCE_INPUT|}} / {{CONTEXT_MENU_HIDE_REFERENCE_INPUT|}} | 切换{{REFERENCE_PANEL_TITLE|}} |
-| {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | 切换{{PRESETS_WINDOW_TITLE|}} |
+|------|------|
+| {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | 将九宫格内容插入到 Glyphs 编辑视图的光标位置 |
+| {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | 将九宫格内容在新标签页中打开 |
+| {{CONTEXT_MENU_SHOW_TOOLBAR|}} / {{CONTEXT_MENU_HIDE_TOOLBAR|}} | 切换工具栏显示 |
+| {{CONTEXT_MENU_SHOW_REFERENCE_INPUT|}} / {{CONTEXT_MENU_HIDE_REFERENCE_INPUT|}} | 切换{{REFERENCE_PANEL_TITLE|}}显示 |
+| {{CONTEXT_MENU_SHOW_LOCKED_PANEL|}} / {{CONTEXT_MENU_HIDE_LOCKED_PANEL|}} | 切换{{LOCKED_PANEL_TITLE|}}显示 |
+| {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | 切换{{PRESETS_WINDOW_TITLE|}}显示 |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | 切换主题模式 |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | 切换网格显示 |
 

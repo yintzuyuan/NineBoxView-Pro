@@ -113,7 +113,7 @@ ICONS = {
     'ICON_SUN': 'sun',
     'ICON_MOON': 'moon',
     'ICON_PRESETS': 'cards-three',
-    'ICON_REFERENCE': 'textbox',
+    'ICON_REFERENCE': 'article',
     'ICON_MENU': 'list',
     # 拖曳圖示
     'ICON_SWAP': 'arrows-clockwise',

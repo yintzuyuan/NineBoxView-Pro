@@ -68,8 +68,8 @@ Toolbar buttons are triggered by clicking. Some buttons show tooltips on hover:
 
 | Button | Tooltip |
 |--------|---------|
-| {{ICON_LOCK}} (enabled) | {{LOCK_TOGGLE_ENABLED_TOOLTIP|}} |
-| {{ICON_LOCK}} (disabled) | {{LOCK_TOGGLE_DISABLED_TOOLTIP|}} |
+| {{ICON_LOCK}} (open) | {{LOCKED_PANEL_TOGGLE_HIDE|}} |
+| {{ICON_LOCK}} (closed) | {{LOCKED_PANEL_TOGGLE_SHOW|}} |
 | {{ICON_SUN}} | {{THEME_TOGGLE_LIGHT_TOOLTIP|}} |
 | {{ICON_MOON}} | {{THEME_TOGGLE_DARK_TOOLTIP|}} |
 | {{ICON_PRESETS}} (open) | {{PRESETS_TOGGLE_HIDE_TOOLTIP|}} |

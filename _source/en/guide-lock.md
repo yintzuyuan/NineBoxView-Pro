@@ -117,15 +117,12 @@ Without any modifier keys:
 
 ## Display Control
 
-### Toggle Locked Glyph Display
+### Toggle Locked Glyph Panel
 
-The lock button ({{ICON_LOCK}}) in the toolbar controls locked glyph visibility:
+The lock button ({{ICON_LOCK}}) in the toolbar controls the Locked Glyph Panel visibility:
 
-- **Enabled**: All locked glyphs shown, tooltip shows "{{LOCK_TOGGLE_ENABLED_TOOLTIP|}}"
-- **Disabled**: Locked glyphs hidden, tooltip shows "{{LOCK_TOGGLE_DISABLED_TOOLTIP|}}"
-
-> [!NOTE]
-> Hiding locked glyphs only affects visibility; lock data is preserved.
+- **Open**: Panel is shown, tooltip displays "{{LOCKED_PANEL_TOGGLE_HIDE|}}"
+- **Closed**: Panel is hidden, tooltip displays "{{LOCKED_PANEL_TOGGLE_SHOW|}}"
 
 ### Lock Data Persistence
 

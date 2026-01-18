@@ -18,7 +18,7 @@ A 9-grid preview tool that allows type designers to preview the arrangement of a
 > We recommend installing via {{GLYPHS_PLUGIN_MANAGER}} for automatic updates.
 
 1. In Glyphs, open **{{GLYPHS_WINDOW_MENU}} > {{GLYPHS_PLUGIN_MANAGER}}**
-2. Search for "NineBoxView Pro"
+2. Search for "{{NINE_BOX_VIEW|}}"
 3. Click "{{GLYPHS_INSTALL}}"
 
 ### Manual Installation
@@ -59,10 +59,10 @@ The 9-grid main window is a floating panel that contains:
 
 | Button | Function | Description |
 |--------|----------|-------------|
-| {{ICON_LOCK}} | Lock display | Toggle visibility of locked glyphs |
 | {{ICON_SUN}}/{{ICON_MOON}} | Theme toggle | Switch between light/dark mode |
 | Slider | Blur intensity | Adjust blur level for the entire grid window to check overall gray distribution |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | Open/close the presets panel |
+| {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | Open/close the Locked Glyph Panel |
 | {{ICON_REFERENCE}} | {{REFERENCE_PANEL_TITLE|}} | Open/close the reference input panel |
 | {{ICON_MENU}} | {{TITLEBAR_MENU_TOOLTIP|}} | Open the info menu |
 
@@ -89,9 +89,12 @@ Right-click inside the grid area to open the context menu:
 
 | Item | Description |
 |------|-------------|
-| {{CONTEXT_MENU_SHOW_TOOLBAR|}} / {{CONTEXT_MENU_HIDE_TOOLBAR|}} | Toggle toolbar |
-| {{CONTEXT_MENU_SHOW_REFERENCE_INPUT|}} / {{CONTEXT_MENU_HIDE_REFERENCE_INPUT|}} | Toggle {{REFERENCE_PANEL_TITLE|}} |
-| {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | Toggle {{PRESETS_WINDOW_TITLE|}} |
+| {{CONTEXT_MENU_INSERT_AT_CURSOR|}} | Insert grid content at cursor position in Glyphs edit view |
+| {{CONTEXT_MENU_OPEN_IN_NEW_TAB|}} | Open grid content in a new tab |
+| {{CONTEXT_MENU_SHOW_TOOLBAR|}} / {{CONTEXT_MENU_HIDE_TOOLBAR|}} | Toggle toolbar visibility |
+| {{CONTEXT_MENU_SHOW_REFERENCE_INPUT|}} / {{CONTEXT_MENU_HIDE_REFERENCE_INPUT|}} | Toggle {{REFERENCE_PANEL_TITLE|}} visibility |
+| {{CONTEXT_MENU_SHOW_LOCKED_PANEL|}} / {{CONTEXT_MENU_HIDE_LOCKED_PANEL|}} | Toggle {{LOCKED_PANEL_TITLE|}} visibility |
+| {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | Toggle {{PRESETS_WINDOW_TITLE|}} visibility |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | Toggle theme mode |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | Toggle grid lines |
 

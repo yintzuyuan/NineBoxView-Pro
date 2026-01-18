@@ -46,7 +46,7 @@ The following formats are supported:
 |--------|---------|
 | `/uniXXXX` | `/uni6C38` (official format) |
 | `/uXXXXX` | `/u06C38` (5-digit) |
-| `/XXXX` | `/6C38` (pure 4-6 digit number) |
+| `/XXXX` | `/6C38` (pure 4-5 digit number) |
 
 ### Is there a pattern to random arrangement?
 

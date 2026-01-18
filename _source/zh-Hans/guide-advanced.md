@@ -68,8 +68,8 @@
 
 | 按钮 | 工具提示 |
 |-----|---------|
-| {{ICON_LOCK}}（已启用） | {{LOCK_TOGGLE_ENABLED_TOOLTIP|}} |
-| {{ICON_LOCK}}（已停用） | {{LOCK_TOGGLE_DISABLED_TOOLTIP|}} |
+| {{ICON_LOCK}}（已打开） | {{LOCKED_PANEL_TOGGLE_HIDE|}} |
+| {{ICON_LOCK}}（已关闭） | {{LOCKED_PANEL_TOGGLE_SHOW|}} |
 | {{ICON_SUN}} | {{THEME_TOGGLE_LIGHT_TOOLTIP|}} |
 | {{ICON_MOON}} | {{THEME_TOGGLE_DARK_TOOLTIP|}} |
 | {{ICON_PRESETS}}（已打开） | {{PRESETS_TOGGLE_HIDE_TOOLTIP|}} |
