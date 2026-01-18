@@ -161,6 +161,7 @@ a:hover {
   height: 28px;
   width: auto;
   transition: opacity var(--transition-fast);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .nav__logo:hover .nav__logo-img {
@@ -1623,42 +1624,42 @@ a:hover {
 /* Design: Letterpress Editorial - 活字印刷風格 */
 
 :root {
-  /* 概念圖層級色彩 - 受活字印刷鋅版啟發 */
-  --layer-edit-fill: rgba(232, 228, 222, 0.92);
-  --layer-edit-stroke: #c4beb4;
-  --layer-reference-fill: rgba(212, 207, 198, 0.88);
-  --layer-reference-stroke: #a8a298;
-  --layer-locked-fill: rgba(191, 185, 173, 0.85);
-  --layer-locked-stroke: #8c867a;
+  /* 概念圖層級色彩 - 毛玻璃效果（底部重、頂部輕） */
+  --layer-edit-fill: rgba(180, 175, 165, 0.85);
+  --layer-edit-stroke: rgba(74, 74, 74, 0.4);
+  --layer-reference-fill: rgba(210, 205, 195, 0.8);
+  --layer-reference-stroke: rgba(74, 74, 74, 0.3);
+  --layer-locked-fill: rgba(235, 232, 225, 0.75);
+  --layer-locked-stroke: rgba(74, 74, 74, 0.2);
 
-  /* 概念圖文字色彩 - 墨色漸層 */
-  --glyph-edit: #9a9488;
-  --glyph-reference: #5c574d;
-  --glyph-locked: #2c2824;
+  /* 概念圖文字色彩 - 墨灰漸層（底部深、頂部淺） */
+  --glyph-edit: rgba(74, 74, 74, 0.9);
+  --glyph-reference: rgba(74, 74, 74, 0.55);
+  --glyph-locked: rgba(74, 74, 74, 0.3);
 
   /* 概念圖裝飾 */
   --concept-bg: #f5f3ee;
-  --concept-accent: #8b7355;
+  --concept-accent: #4a4a4a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* 深色模式概念圖層級色彩 */
-    --layer-edit-fill: rgba(42, 40, 38, 0.92);
-    --layer-edit-stroke: #3d3a36;
-    --layer-reference-fill: rgba(58, 55, 51, 0.88);
-    --layer-reference-stroke: #524e48;
-    --layer-locked-fill: rgba(74, 70, 64, 0.85);
-    --layer-locked-stroke: #6a655c;
+    /* 深色模式概念圖層級色彩 - 毛玻璃效果（底部重、頂部輕） */
+    --layer-edit-fill: rgba(75, 72, 68, 0.9);
+    --layer-edit-stroke: rgba(232, 230, 224, 0.35);
+    --layer-reference-fill: rgba(55, 52, 48, 0.85);
+    --layer-reference-stroke: rgba(232, 230, 224, 0.25);
+    --layer-locked-fill: rgba(40, 38, 35, 0.8);
+    --layer-locked-stroke: rgba(232, 230, 224, 0.15);
 
-    /* 深色模式文字色彩 - 反向墨色 */
-    --glyph-edit: #5c5850;
-    --glyph-reference: #a09888;
-    --glyph-locked: #d4cfc6;
+    /* 深色模式文字色彩 - 淺色漸層（底部亮、頂部暗） */
+    --glyph-edit: rgba(232, 230, 224, 0.9);
+    --glyph-reference: rgba(232, 230, 224, 0.55);
+    --glyph-locked: rgba(232, 230, 224, 0.3);
 
     /* 深色模式裝飾 */
     --concept-bg: #1e1d1c;
-    --concept-accent: #c4a882;
+    --concept-accent: #e8e6e0;
   }
 }
 

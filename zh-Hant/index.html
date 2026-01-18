@@ -32,10 +32,7 @@
 <nav class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="nav__logo">
-      <picture>
-        <source srcset="../assets/logo-128.png" media="(prefers-color-scheme: dark)">
-        <img src="../assets/logo-dark-128.png" alt="NineBoxView Pro" class="nav__logo-img">
-      </picture>
+      <img src="../assets/logo-128.png" alt="NineBoxView Pro" class="nav__logo-img">
     </a>
     <ul class="nav__links">
       <li><a href="index.html" class="nav__link active">首頁</a></li>
@@ -157,7 +154,6 @@
                   <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="54" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
                   <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
@@ -180,7 +176,6 @@
                   <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="54" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
                   <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
@@ -497,21 +492,7 @@
     }, { threshold: 0.1 });
     sections.forEach(section => sectionObserver.observe(section));
 
-    // 概念圖分層動畫
-    const conceptSvg = document.querySelector('.isometric-concept');
-    if (conceptSvg) {
-      const conceptObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // 加入 is-animated class 觸發 CSS transition
-            const diagram = entry.target.querySelector('#concept-diagram');
-            if (diagram) diagram.classList.add('is-animated');
-            conceptObserver.unobserve(entry.target); // 只觸發一次
-          }
-        });
-      }, { threshold: 0.3 });
-      conceptObserver.observe(conceptSvg);
-    }
+    // 概念圖動畫由 isometric-animation.js 處理
   </script>
 
   <!-- Scripts -->

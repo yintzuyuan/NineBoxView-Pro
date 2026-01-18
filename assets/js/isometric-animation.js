@@ -41,12 +41,14 @@
 
   // ========== 設定 ==========
   const CONFIG = {
-    animationDuration: 300,    // 單次淡入淡出時間 (ms)
-    staggerDelay: 100,         // 鎖定層依序動畫延遲 (ms)
-    layerDelay: 600,           // 層間動畫延遲 (ms)
+    animationDuration: 200,    // 單次淡入淡出時間 (ms)
+    staggerDelay: 60,          // 鎖定層依序動畫延遲 (ms)
+    layerDelay: 400,           // 層間動畫延遲 (ms)
     observerThreshold: 0.5,    // 視窗觸發閾值
     referencePositions: [0, 1, 2, 3, 5, 6, 7, 8], // 參考層有字的位置（排除中央 4）
-    lockedCount: 3             // 鎖定層顯示的字數
+    lockedCount: 3,            // 鎖定層顯示的字數
+    lockedRepeat: 3,           // 鎖定層動畫重複次數
+    lockedRepeatDelay: 1000    // 鎖定層每次重複間隔 (ms)
   };
 
   // ========== 工具函數 ==========
@@ -217,27 +219,35 @@
     // 參考字層動畫
     shuffleReferenceLayer(svg, pool);
 
-    // 鎖定字層動畫（延遲執行）
-    setTimeout(() => {
-      animateLockedLayer(svg, pool);
-    }, CONFIG.layerDelay);
+    // 鎖定字層動畫（延遲執行，重複多次）
+    for (let i = 0; i < CONFIG.lockedRepeat; i++) {
+      const delay = CONFIG.layerDelay + (i * CONFIG.lockedRepeatDelay);
+      setTimeout(() => {
+        animateLockedLayer(svg, pool);
+      }, delay);
+    }
   }
 
   // ========== 初始化 ==========
 
   /**
-   * 設置 Intersection Observer
+   * 設置動畫觸發器（每次進入視窗都觸發）
    */
   function setupObserver(svg) {
+    const diagram = svg.querySelector('#concept-diagram');
+    if (!diagram) return null;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // 確保 CSS 動畫 class 存在
+          if (!diagram.classList.contains('is-animated')) {
+            diagram.classList.add('is-animated');
+          }
           playAnimation(svg);
         }
       });
-    }, {
-      threshold: CONFIG.observerThreshold
-    });
+    }, { threshold: 0.3 });
 
     observer.observe(svg);
     return observer;
