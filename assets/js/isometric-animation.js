@@ -46,10 +46,20 @@
     layerDelay: 400,           // 層間動畫延遲 (ms)
     observerThreshold: 0.5,    // 視窗觸發閾值
     referencePositions: [0, 1, 2, 3, 5, 6, 7, 8], // 參考層有字的位置（排除中央 4）
-    lockedCount: 3,            // 鎖定層顯示的字數
     lockedRepeat: 3,           // 鎖定層動畫重複次數
     lockedRepeatDelay: 1000    // 鎖定層每次重複間隔 (ms)
   };
+
+  // ========== 鎖定層固定組合 ==========
+  // 9 宮格位置對應：0|1|2 / 3|4|5 / 6|7|8（位置 4 是中央，不使用）
+  const LOCKED_PATTERNS = {
+    vertical: [1, 7],           // 上下
+    horizontal: [3, 5],         // 左右
+    cross: [1, 3, 5, 7],        // 十字
+    corners: [0, 2, 6, 8]       // 四個角落
+  };
+
+  const PATTERN_KEYS = Object.keys(LOCKED_PATTERNS);
 
   // ========== 工具函數 ==========
 
@@ -89,6 +99,14 @@
   function getRandomPositions(count, exclude = []) {
     const available = [0, 1, 2, 3, 4, 5, 6, 7, 8].filter(p => !exclude.includes(p));
     return getRandomElements(available, count);
+  }
+
+  /**
+   * 隨機選擇一種鎖定字固定組合
+   */
+  function getRandomPattern() {
+    const key = PATTERN_KEYS[Math.floor(Math.random() * PATTERN_KEYS.length)];
+    return LOCKED_PATTERNS[key];
   }
 
   // ========== 動畫函數 ==========
@@ -168,9 +186,9 @@
     const fadeOutDuration = CONFIG.animationDuration + (existingGlyphs.length * CONFIG.staggerDelay);
 
     setTimeout(() => {
-      // 取得新的隨機位置和文字
-      const newPositions = getRandomPositions(CONFIG.lockedCount, [4]); // 排除中央
-      const newChars = getRandomElements(pool.locked, CONFIG.lockedCount);
+      // 取得新的固定組合位置和對應文字
+      const newPositions = getRandomPattern();
+      const newChars = getRandomElements(pool.locked, newPositions.length);
 
       // 移除舊文字
       existingGlyphs.forEach(g => g.remove());
