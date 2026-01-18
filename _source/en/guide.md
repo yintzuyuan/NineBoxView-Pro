@@ -54,15 +54,15 @@ A 9-grid preview tool that allows type designers to preview the arrangement of a
   <img src="../../assets/images/concept-layers.svg" alt="Three-layer preview system concept diagram" />
 </figure>
 
-### Editing Glyph (Bottom Layer)
+### {{ICON_PEN_NIB}} Editing Glyph (Bottom Layer)
 
 The glyph currently being edited, synchronized in real-time across all cells of the grid. This is your work focus.
 
-### Reference Glyphs (Middle Layer)
+### {{ICON_ARTICLE}} Reference Glyphs (Middle Layer)
 
 Randomly arranged common characters that help you quickly identify problematic pairings. Click inside the grid to reshuffle.
 
-### Locked Glyphs (Top Layer)
+### {{ICON_LOCK}} Locked Glyphs (Top Layer)
 
 Characters fixed at designated positions, establishing a stable comparison baseline. Settings are saved with the file.
 

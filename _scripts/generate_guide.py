@@ -133,6 +133,9 @@ ICONS = {
     'ICON_INFO': 'info',
     'ICON_LIGHTBULB': 'lightbulb',
     'ICON_WARNING': 'warning',
+    # 核心概念
+    'ICON_PEN_NIB': 'pen-nib',
+    'ICON_ARTICLE': 'article',
 }
 
 # SVG 圖示快取（避免重複讀取檔案）
