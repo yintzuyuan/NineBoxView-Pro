@@ -50,9 +50,10 @@ function createTestimonialCard(t, basePath) {
   source.srcset = `${basePath}/assets/avatars/${t.avatar}`;
   source.type = 'image/webp';
 
-  // Fallback image（根據 id 判斷原始格式）
+  // Fallback image（根據 id 查詢原始格式）
   const img = document.createElement('img');
-  const fallbackExt = t.id === 'user01' ? 'png' : 'jpg';
+  const fallbackExtMap = { user01: 'png' };
+  const fallbackExt = fallbackExtMap[t.id] || 'jpg';
   img.src = `${basePath}/assets/avatars/${t.id}.${fallbackExt}`;
   img.alt = t.name;
   img.className = 'testimonial__avatar';
