@@ -1,449 +1,575 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>나인박스뷰 Pro - 9칸 미리보기 도구 | Glyphs 플러그인</title>
-  <meta name="description" content="Glyphs 3 전용 9칸 미리보기 도구. 네이티브 성능, 60fps 부드러운 경험, 5개 언어 인터페이스 지원.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나인박스뷰 Pro - 9칸 미리보기 도구 | Glyphs 플러그인</title>
+    <meta name="description" content="Glyphs 3 전용 9칸 미리보기 도구. 네이티브 성능, 60fps 부드러운 경험, 5개 언어 인터페이스 지원.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="나인박스뷰 Pro - 9칸 미리보기 도구">
-  <meta property="og:description" content="Glyphs 3 전용 9칸 미리보기 도구.">
-  <meta property="og:image" content="../assets/images/og-image.png">
-  <meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:title" content="나인박스뷰 Pro - 9칸 미리보기 도구">
+    <meta property="og:description" content="Glyphs 3 전용 9칸 미리보기 도구.">
+    <meta property="og:image" content="../assets/images/og-image.png">
+    <meta property="og:type" content="website">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;600&display=swap"
+        rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="../styles.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-  <link rel="shortcut icon" href="../assets/favicon.ico">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
 </head>
+
 <body>
-  <!-- Navigation -->
-<nav class="nav">
-  <div class="container nav__inner">
-    <a href="index.html" class="nav__logo">
-      <img src="../assets/logo-128.png" alt="NineBoxView Pro" class="nav__logo-img">
-    </a>
-    <ul class="nav__links">
-      <li><a href="index.html" class="nav__link active">홈</a></li>
-      <li><a href="guide/index.html" class="nav__link">가이드</a></li>
-    </ul>
-    <div class="lang-menu">
-      <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
-        <span class="lang-current">한</span>
-        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
-      </button>
-      <ul class="lang-dropdown" role="listbox">
-        <li><a href="../zh-Hant/index.html">繁體中文</a></li>
-        <li><a href="../en/index.html">English</a></li>
-        <li><a href="../zh-Hans/index.html">简体中文</a></li>
-        <li><a href="../ja/index.html">日本語</a></li>
-        <li><a href="index.html" aria-current="page">한국어</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="section hero">
-      <div class="container">
-        <h1 class="hero__title">나인박스뷰 Pro</h1>
-        <p class="hero__subtitle">Glyphs 3 전용 9칸 미리보기 도구.</p>
-
-        <!-- Hero Image -->
-        <img src="../assets/images/hero-ko.png" alt="NineBoxView Pro 인터페이스" class="hero__image"
-             onerror="this.style.display='none'">
-
-        <div class="hero__actions">
-          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
-            설치하기
-          </a>
-        </div>
-        <p class="hero__note">Glyphs 플러그인 관리자에서 설치 · 14일 무료 체험</p>
-      </div>
-    </section>
-
-    <!-- Concept Explanation Section -->
-    <section class="section concept-explain">
-      <div class="container">
-        <h2>3단계 참조 시스템</h2>
-        <p class="concept-explain__intro">문자 조합을 빠르게 테스트. 시각적 문제를 한눈에 발견.</p>
-
-        <!-- 개념도 인터랙티브 표시 -->
-        <div class="concept-showcase">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 -60 485 330"
-               role="img" aria-label="NineBoxView Pro 3단계 구궁격 개념" class="isometric-concept">
-            <title>NineBoxView Pro 아이소메트릭 개념</title>
-            <desc>3단계 구궁격: 편집, 참조, 잠금</desc>
-
-            <defs>
-              <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
-              </filter>
-              <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
-              </filter>
-              <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
-              </filter>
-            </defs>
-
-            <style>
-              .cell { stroke-width: 1.5; }
-              .cell-edit { fill: var(--layer-edit-fill, rgba(232, 228, 222, 0.92)); stroke: var(--layer-edit-stroke, #c4beb4); }
-              .cell-reference { fill: var(--layer-reference-fill, rgba(212, 207, 198, 0.88)); stroke: var(--layer-reference-stroke, #a8a298); }
-              .cell-locked { fill: var(--layer-locked-fill, rgba(191, 185, 173, 0.85)); stroke: var(--layer-locked-stroke, #8c867a); }
-              .glyph { font-size: 34px; text-anchor: middle; dominant-baseline: central; font-family: "Noto Serif KR", "Batang", Georgia, serif; }
-              .glyph-edit { fill: var(--glyph-edit, #9a9488); }
-              .glyph-reference { fill: var(--glyph-reference, #5c574d); }
-              .glyph-locked { fill: var(--glyph-locked, #2c2824); }
-              .layer-label { fill: var(--color-text-secondary, #6a6a6a); font-size: 12px; letter-spacing: 0.08em; font-family: var(--font-sans, system-ui); }
-              .layer-line { stroke: var(--color-text-secondary, #6a6a6a); stroke-width: 0.5; stroke-dasharray: 2, 3; opacity: 0.5; }
-              /* 레이어 애니메이션 - 기본 숨김, 트리거 대기 */
-              .layer-group { opacity: 0; transition: opacity 0.7s ease-out; }
-              .layer-group--edit { transition-delay: 0s; }
-              .layer-group--reference { transition-delay: 0.15s; }
-              .layer-group--locked { transition-delay: 0.3s; }
-              .labels { opacity: 0; transition: opacity 0.5s ease-out 0.45s; }
-              /* 트리거 후 상태 */
-              .is-animated .layer-group,
-              .is-animated .labels { opacity: 1; }
-            </style>
-
-            <g id="concept-diagram" transform="translate(225, 75)">
-              <!-- 1단계: 편집 레이어 (하단) -->
-              <g class="layer-group layer-group--edit" transform="translate(0, 0)" filter="url(#shadow-sm)">
-                <g id="layer-edit" class="layer" data-layer="edit" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
-                  <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="108" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="54" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="108" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="0" y="108" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="54" y="108" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-edit" x="108" y="108" width="52" height="52" rx="2"/>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="0" x="26" y="26">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="1" x="80" y="26">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="2" x="134" y="26">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="3" x="26" y="80">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="4" x="80" y="80">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="5" x="134" y="80">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="6" x="26" y="134">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="7" x="80" y="134">한</text>
-                  <text class="glyph glyph-edit" data-layer="edit" data-position="8" x="134" y="134">한</text>
-                </g>
-              </g>
-
-              <!-- 2단계: 참조 레이어 (중간) -->
-              <g class="layer-group layer-group--reference" transform="translate(0, -65)" filter="url(#shadow-md)">
-                <g id="layer-reference" class="layer" data-layer="reference" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
-                  <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="0" x="26" y="26">가</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="1" x="80" y="26">나</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="2" x="134" y="26">다</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="3" x="26" y="80">라</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="5" x="134" y="80">마</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="6" x="26" y="134">바</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="7" x="80" y="134">사</text>
-                  <text class="glyph glyph-reference" data-layer="reference" data-position="8" x="134" y="134">아</text>
-                </g>
-              </g>
-
-              <!-- 3단계: 잠금 레이어 (상단) -->
-              <g class="layer-group layer-group--locked" transform="translate(0, -130)" filter="url(#shadow-lg)">
-                <g id="layer-locked" class="layer" data-layer="locked" transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
-                  <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
-                  <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
-                  <text class="glyph glyph-locked" data-layer="locked" data-position="0" x="26" y="26">글</text>
-                  <text class="glyph glyph-locked" data-layer="locked" data-position="2" x="134" y="26">힘</text>
-                  <text class="glyph glyph-locked" data-layer="locked" data-position="7" x="80" y="134">빛</text>
-                </g>
-              </g>
-
-              <!-- 레이어 라벨 -->
-              <g class="labels">
-                <!-- 편집 레이어 - pen-nib 아이콘 -->
-                <line class="layer-line" x1="-215" y1="65" x2="-105" y2="65"/>
-                <svg class="layer-icon" x="-232" y="57" width="16" height="16" viewBox="0 0 256 256" fill="var(--color-text-secondary, #6a6a6a)">
-                  <path d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z"/>
-                </svg>
-                <!-- 참조 레이어 - article 아이콘 -->
-                <line class="layer-line" x1="-215" y1="0" x2="-105" y2="0"/>
-                <svg class="layer-icon" x="-232" y="-8" width="16" height="16" viewBox="0 0 256 256" fill="var(--color-text-secondary, #6a6a6a)">
-                  <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/>
-                </svg>
-                <!-- 잠금 레이어 - lock 아이콘 -->
-                <line class="layer-line" x1="-215" y1="-65" x2="-105" y2="-65"/>
-                <svg class="layer-icon" x="-232" y="-73" width="16" height="16" viewBox="0 0 256 256" fill="var(--color-text-secondary, #6a6a6a)">
-                  <path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/>
-                </svg>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- 3단계 설명 카드 -->
-        <div class="concept-layers">
-          <div class="layer-card layer-card--edit">
-            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z"/></svg>편집</h3>
-            <p>현재 편집 중인 글리프, 구궁격의 모든 셀에 동기 표시</p>
-          </div>
-          <div class="layer-card layer-card--reference">
-            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg>참조</h3>
-            <p>랜덤 배치된 상용 문자로 문제 조합을 빠르게 발견</p>
-          </div>
-          <div class="layer-card layer-card--locked">
-            <h3><svg class="layer-icon" viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>잠금</h3>
-            <p>특정 위치에 고정된 문자로 고정 조합 테스트</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feature Showcase #1: 참조 -->
-    <section class="section feature-showcase">
-      <div class="container">
-        <div class="feature-showcase__media">
-          <img src="../assets/images/feature-reference.gif" alt="참조 기능 데모"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="feature-showcase__placeholder" style="display:none;">참조 GIF (준비 중)</div>
-        </div>
-        <div class="feature-showcase__content">
-          <span class="feature-showcase__label">핵심 기능</span>
-          <h2 class="feature-showcase__title">참조</h2>
-          <p class="feature-showcase__desc">상용 문자를 입력하면 자동으로 주변에 랜덤 배치. 클릭하여 셔플하고 문제 조합을 빠르게 발견.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feature Showcase #2: 잠금 -->
-    <section class="section feature-showcase">
-      <div class="container">
-        <div class="feature-showcase__media">
-          <img src="../assets/images/feature-lock.gif" alt="잠금 기능 데모"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="feature-showcase__placeholder" style="display:none;">잠금 GIF (준비 중)</div>
-        </div>
-        <div class="feature-showcase__content">
-          <span class="feature-showcase__label">핵심 기능</span>
-          <h2 class="feature-showcase__title">잠금</h2>
-          <p class="feature-showcase__desc">특정 문자를 지정 위치에 고정하여 고정 문자 조합을 테스트. 설정은 파일과 함께 저장되어 팀 협업도 원활.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feature Showcase #3: 프리셋 -->
-    <section class="section feature-showcase">
-      <div class="container">
-        <div class="feature-showcase__media">
-          <img src="../assets/images/feature-presets.gif" alt="프리셋 기능 데모"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="feature-showcase__placeholder" style="display:none;">프리셋 GIF (준비 중)</div>
-        </div>
-        <div class="feature-showcase__content">
-          <span class="feature-showcase__label">핵심 기능</span>
-          <h2 class="feature-showcase__title">프리셋</h2>
-          <p class="feature-showcase__desc">자주 사용하는 참조 또는 잠금 문자 조합을 저장하고 다양한 테스트 시나리오를 빠르게 전환. 원클릭 로드로 작업 효율 향상.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bento Grid: 고급 통합 -->
-    <section class="section bento">
-      <div class="container">
-        <h2 class="bento__title">고급 통합</h2>
-        <p class="bento__subtitle">Glyphs 생태계와 완벽하게 연동</p>
-
-        <div class="bento__grid">
-          <!-- 대형 카드: 네이티브 macOS 경험 -->
-          <div class="bento__card bento__card--large">
-            <div class="bento__media">
-              <img src="../assets/images/feature-native.gif" alt="네이티브 macOS 경험 데모"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="bento__placeholder" style="display:none;">네이티브 GIF (준비 중)</div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="index.html" class="nav__logo">
+                <img src="../assets/logo-128.png" alt="NineBoxView Pro" class="nav__logo-img">
+            </a>
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link active">홈</a></li>
+                <li><a href="guide/index.html" class="nav__link">가이드</a></li>
+            </ul>
+            <div class="lang-menu">
+                <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox"
+                    aria-label="Select language">
+                    <span class="lang-current">한</span>
+                    <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
+                        <path
+                            d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" />
+                    </svg>
+                </button>
+                <ul class="lang-dropdown" role="listbox">
+                    <li><a href="../zh-Hant/index.html">繁體中文</a></li>
+                    <li><a href="../en/index.html">English</a></li>
+                    <li><a href="../zh-Hans/index.html">简体中文</a></li>
+                    <li><a href="../ja/index.html">日本語</a></li>
+                    <li><a href="index.html" aria-current="page">한국어</a></li>
+                </ul>
             </div>
-            <div class="bento__content">
-              <h3 class="bento__card-title">네이티브 macOS 경험</h3>
-              <p class="bento__card-desc">드래그 앤 드롭, 문자 피커, Glyphs 워크플로우와 완벽하게 통합.</p>
-            </div>
-          </div>
-
-          <!-- 중형 카드: Light Table 동기화 -->
-          <div class="bento__card bento__card--medium">
-            <div class="bento__media">
-              <img src="../assets/images/feature-lighttable.gif" alt="Light Table 동기화 데모"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="bento__placeholder" style="display:none;">Light Table GIF (준비 중)</div>
-            </div>
-            <div class="bento__content">
-              <h3 class="bento__card-title">Light Table 동기화</h3>
-              <p class="bento__card-desc">Shift를 누르고 버전 차이를 즉시 비교.</p>
-            </div>
-          </div>
-
-          <!-- 소형 카드: 그리드 헬퍼 -->
-          <div class="bento__card bento__card--small">
-            <div class="bento__media">
-              <img src="../assets/images/feature-grid.gif" alt="그리드 헬퍼 기능 데모"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="bento__placeholder" style="display:none;">그리드 GIF (준비 중)</div>
-            </div>
-            <div class="bento__content">
-              <h3 class="bento__card-title">그리드 헬퍼</h3>
-              <p class="bento__card-desc">네모틀, 중심선 등의 가이드를 표시하여 정렬과 비율을 정확하게 확인.</p>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-      <div class="container">
-        <h2 class="testimonials__title">사용자의 목소리</h2>
-        <p class="testimonials__subtitle">전문 서체 디자이너의 실제 후기</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="section hero">
+            <div class="container">
+                <h1 class="hero__title">나인박스뷰 Pro</h1>
+                <p class="hero__subtitle">Glyphs 3 전용 9칸 미리보기 도구.</p>
 
-        <div class="testimonials__ghost-wrapper">
-          <!-- 왼쪽 스택 가짜 카드 -->
-          <div class="testimonials__ghost testimonials__ghost--left-far" aria-hidden="true"></div>
-          <div class="testimonials__ghost testimonials__ghost--left-near" aria-hidden="true"></div>
+                <!-- Hero Image -->
+                <img src="../assets/images/hero-ko.png" alt="NineBoxView Pro 인터페이스" class="hero__image"
+                    onerror="this.style.display='none'">
 
-          <div class="testimonials__grid">
-            <!-- JavaScript로 동적 로드 -->
-          </div>
+                <div class="hero__actions">
+                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+                        설치하기
+                    </a>
+                </div>
+                <p class="hero__note">Glyphs 플러그인 관리자에서 설치 · 14일 무료 체험</p>
+            </div>
+        </section>
 
-          <!-- 오른쪽 스택 가짜 카드 -->
-          <div class="testimonials__ghost testimonials__ghost--right-near" aria-hidden="true"></div>
-          <div class="testimonials__ghost testimonials__ghost--right-far" aria-hidden="true"></div>
+        <!-- Concept Explanation Section -->
+        <section class="section concept-explain">
+            <div class="container">
+                <h2>3단계 참조 시스템</h2>
+                <p class="concept-explain__intro">문자 조합을 빠르게 테스트. 시각적 문제를 한눈에 발견.</p>
+
+                <!-- 개념도 인터랙티브 표시 -->
+                <div class="concept-showcase">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 -60 485 330" role="img"
+                        aria-label="NineBoxView Pro 3단계 구궁격 개념" class="isometric-concept">
+                        <title>NineBoxView Pro 아이소메트릭 개념</title>
+                        <desc>3단계 구궁격: 편집, 참조, 잠금</desc>
+
+                        <defs>
+                            <filter id="shadow-sm" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.1" />
+                            </filter>
+                            <filter id="shadow-md" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.15" />
+                            </filter>
+                            <filter id="shadow-lg" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.2" />
+                            </filter>
+                        </defs>
+
+                        <style>
+                            .cell {
+                                stroke-width: 1.5;
+                            }
+
+                            .cell-edit {
+                                fill: var(--layer-edit-fill, rgba(232, 228, 222, 0.92));
+                                stroke: var(--layer-edit-stroke, #c4beb4);
+                            }
+
+                            .cell-reference {
+                                fill: var(--layer-reference-fill, rgba(212, 207, 198, 0.88));
+                                stroke: var(--layer-reference-stroke, #a8a298);
+                            }
+
+                            .cell-locked {
+                                fill: var(--layer-locked-fill, rgba(191, 185, 173, 0.85));
+                                stroke: var(--layer-locked-stroke, #8c867a);
+                            }
+
+                            .glyph {
+                                font-size: 34px;
+                                text-anchor: middle;
+                                dominant-baseline: central;
+                                font-family: "Noto Serif KR", "Batang", Georgia, serif;
+                            }
+
+                            .glyph-edit {
+                                fill: var(--glyph-edit, #9a9488);
+                            }
+
+                            .glyph-reference {
+                                fill: var(--glyph-reference, #5c574d);
+                            }
+
+                            .glyph-locked {
+                                fill: var(--glyph-locked, #2c2824);
+                            }
+
+                            .layer-label {
+                                fill: var(--color-text-secondary, #6a6a6a);
+                                font-size: 12px;
+                                letter-spacing: 0.08em;
+                                font-family: var(--font-sans, system-ui);
+                            }
+
+                            .layer-line {
+                                stroke: var(--color-text-secondary, #6a6a6a);
+                                stroke-width: 0.5;
+                                stroke-dasharray: 2, 3;
+                                opacity: 0.5;
+                            }
+
+                            /* 레이어 애니메이션 - 기본 숨김, 트리거 대기 */
+                            .layer-group {
+                                opacity: 0;
+                                transition: opacity 0.7s ease-out;
+                            }
+
+                            .layer-group--edit {
+                                transition-delay: 0s;
+                            }
+
+                            .layer-group--reference {
+                                transition-delay: 0.15s;
+                            }
+
+                            .layer-group--locked {
+                                transition-delay: 0.3s;
+                            }
+
+                            .labels {
+                                opacity: 0;
+                                transition: opacity 0.5s ease-out 0.45s;
+                            }
+
+                            /* 트리거 후 상태 */
+                            .is-animated .layer-group,
+                            .is-animated .labels {
+                                opacity: 1;
+                            }
+                        </style>
+
+                        <g id="concept-diagram" transform="translate(225, 75)">
+                            <!-- 1단계: 편집 레이어 (하단) -->
+                            <g class="layer-group layer-group--edit" transform="translate(0, 0)"
+                                filter="url(#shadow-sm)">
+                                <g id="layer-edit" class="layer" data-layer="edit"
+                                    transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                                    <rect class="cell cell-edit" x="0" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="54" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="108" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="0" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="54" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="108" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="0" y="108" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="54" y="108" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-edit" x="108" y="108" width="52" height="52" rx="2" />
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="0" x="26"
+                                        y="26">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="1" x="80"
+                                        y="26">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="2" x="134"
+                                        y="26">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="3" x="26"
+                                        y="80">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="4" x="80"
+                                        y="80">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="5" x="134"
+                                        y="80">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="6" x="26"
+                                        y="134">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="7" x="80"
+                                        y="134">한</text>
+                                    <text class="glyph glyph-edit" data-layer="edit" data-position="8" x="134"
+                                        y="134">한</text>
+                                </g>
+                            </g>
+
+                            <!-- 2단계: 참조 레이어 (중간) -->
+                            <g class="layer-group layer-group--reference" transform="translate(0, -65)"
+                                filter="url(#shadow-md)">
+                                <g id="layer-reference" class="layer" data-layer="reference"
+                                    transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                                    <rect class="cell cell-reference" x="0" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="54" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="108" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="0" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="108" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2" />
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="0" x="26"
+                                        y="26">가</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="1" x="80"
+                                        y="26">나</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="2" x="134"
+                                        y="26">다</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="3" x="26"
+                                        y="80">라</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="5" x="134"
+                                        y="80">마</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="6" x="26"
+                                        y="134">바</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="7" x="80"
+                                        y="134">사</text>
+                                    <text class="glyph glyph-reference" data-layer="reference" data-position="8" x="134"
+                                        y="134">아</text>
+                                </g>
+                            </g>
+
+                            <!-- 3단계: 잠금 레이어 (상단) -->
+                            <g class="layer-group layer-group--locked" transform="translate(0, -130)"
+                                filter="url(#shadow-lg)">
+                                <g id="layer-locked" class="layer" data-layer="locked"
+                                    transform="matrix(1, 0.5, -1, 0.5, 0, 0)">
+                                    <rect class="cell cell-locked" x="0" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="54" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="108" y="0" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="0" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="108" y="54" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2" />
+                                    <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2" />
+                                    <text class="glyph glyph-locked" data-layer="locked" data-position="0" x="26"
+                                        y="26">글</text>
+                                    <text class="glyph glyph-locked" data-layer="locked" data-position="2" x="134"
+                                        y="26">힘</text>
+                                    <text class="glyph glyph-locked" data-layer="locked" data-position="7" x="80"
+                                        y="134">빛</text>
+                                </g>
+                            </g>
+
+                            <!-- 레이어 라벨 -->
+                            <g class="labels">
+                                <!-- 편집 레이어 - pen-nib 아이콘 -->
+                                <line class="layer-line" x1="-215" y1="65" x2="-105" y2="65" />
+                                <svg class="layer-icon" x="-232" y="57" width="16" height="16" viewBox="0 0 256 256"
+                                    fill="var(--color-text-secondary, #6a6a6a)">
+                                    <path
+                                        d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z" />
+                                </svg>
+                                <!-- 참조 레이어 - article 아이콘 -->
+                                <line class="layer-line" x1="-215" y1="0" x2="-105" y2="0" />
+                                <svg class="layer-icon" x="-232" y="-8" width="16" height="16" viewBox="0 0 256 256"
+                                    fill="var(--color-text-secondary, #6a6a6a)">
+                                    <path
+                                        d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z" />
+                                </svg>
+                                <!-- 잠금 레이어 - lock 아이콘 -->
+                                <line class="layer-line" x1="-215" y1="-65" x2="-105" y2="-65" />
+                                <svg class="layer-icon" x="-232" y="-73" width="16" height="16" viewBox="0 0 256 256"
+                                    fill="var(--color-text-secondary, #6a6a6a)">
+                                    <path
+                                        d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z" />
+                                </svg>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- 3단계 설명 카드 -->
+                <div class="concept-layers">
+                    <div class="layer-card layer-card--edit">
+                        <h3><svg class="layer-icon" viewBox="0 0 256 256">
+                                <path
+                                    d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z" />
+                            </svg>편집</h3>
+                        <p>현재 편집 중인 글리프, 구궁격의 모든 셀에 동기 표시</p>
+                    </div>
+                    <div class="layer-card layer-card--reference">
+                        <h3><svg class="layer-icon" viewBox="0 0 256 256">
+                                <path
+                                    d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z" />
+                            </svg>참조</h3>
+                        <p>랜덤 배치된 상용 문자로 문제 조합을 빠르게 발견</p>
+                    </div>
+                    <div class="layer-card layer-card--locked">
+                        <h3><svg class="layer-icon" viewBox="0 0 256 256">
+                                <path
+                                    d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z" />
+                            </svg>잠금</h3>
+                        <p>특정 위치에 고정된 문자로 고정 조합 테스트</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase #1: 참조 -->
+        <section class="section feature-showcase">
+            <div class="container">
+                <div class="feature-showcase__media">
+                    <video src="../assets/images/feature-reference.webm" autoplay loop muted playsinline
+                        aria-label="참조 기능 데모">
+                        브라우저가 동영상 재생을 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="feature-showcase__content">
+                    <span class="feature-showcase__label">핵심 기능</span>
+                    <h2 class="feature-showcase__title">참조</h2>
+                    <p class="feature-showcase__desc">상용 문자를 입력하면 자동으로 주변에 랜덤 배치. 클릭하여 셔플하고 문제 조합을 빠르게 발견.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase #2: 잠금 -->
+        <section class="section feature-showcase">
+            <div class="container">
+                <div class="feature-showcase__media">
+                    <video src="../assets/images/feature-lock.webm" autoplay loop muted playsinline
+                        aria-label="잠금 기능 데모">
+                        브라우저가 동영상 재생을 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="feature-showcase__content">
+                    <span class="feature-showcase__label">핵심 기능</span>
+                    <h2 class="feature-showcase__title">잠금</h2>
+                    <p class="feature-showcase__desc">특정 문자를 지정 위치에 고정하여 고정 문자 조합을 테스트. 설정은 파일과 함께 저장되어 팀 협업도 원활.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase #3: 프리셋 -->
+        <section class="section feature-showcase">
+            <div class="container">
+                <div class="feature-showcase__media">
+                    <video src="../assets/images/feature-presets.webm" autoplay loop muted playsinline
+                        aria-label="프리셋 기능 데모">
+                        브라우저가 동영상 재생을 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="feature-showcase__content">
+                    <span class="feature-showcase__label">핵심 기능</span>
+                    <h2 class="feature-showcase__title">프리셋</h2>
+                    <p class="feature-showcase__desc">자주 사용하는 참조 또는 잠금 문자 조합을 저장하고 다양한 테스트 시나리오를 빠르게 전환. 원클릭 로드로 작업 효율
+                        향상.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid: 고급 통합 -->
+        <section class="section bento">
+            <div class="container">
+                <h2 class="bento__title">고급 통합</h2>
+                <p class="bento__subtitle">Glyphs 생태계와 완벽하게 연동</p>
+
+                <div class="bento__grid">
+                    <!-- 대형 카드: 네이티브 macOS 경험 -->
+                    <div class="bento__card bento__card--large">
+                        <div class="bento__media">
+                            <video src="../assets/images/feature-native.webm" autoplay loop muted playsinline
+                                aria-label="네이티브 macOS 경험 데모">
+                                브라우저가 동영상 재생을 지원하지 않습니다.
+                            </video>
+                        </div>
+                        <div class="bento__content">
+                            <h3 class="bento__card-title">네이티브 macOS 경험</h3>
+                            <p class="bento__card-desc">드래그 앤 드롭, 문자 피커, Glyphs 워크플로우와 완벽하게 통합.</p>
+                        </div>
+                    </div>
+
+                    <!-- 중형 카드: Light Table 동기화 -->
+                    <div class="bento__card bento__card--medium">
+                        <div class="bento__media">
+                            <video src="../assets/images/feature-lighttable.webm" autoplay loop muted playsinline
+                                aria-label="Light Table 동기화 데모">
+                                브라우저가 동영상 재생을 지원하지 않습니다.
+                            </video>
+                        </div>
+                        <div class="bento__content">
+                            <h3 class="bento__card-title">Light Table 동기화</h3>
+                            <p class="bento__card-desc">Shift를 누르고 버전 차이를 즉시 비교.</p>
+                        </div>
+                    </div>
+
+                    <!-- 소형 카드: 그리드 헬퍼 -->
+                    <div class="bento__card bento__card--small">
+                        <div class="bento__media">
+                            <video src="../assets/images/feature-grid.webm" autoplay loop muted playsinline
+                                aria-label="그리드 헬퍼 기능 데모">
+                                브라우저가 동영상 재생을 지원하지 않습니다.
+                            </video>
+                        </div>
+                        <div class="bento__content">
+                            <h3 class="bento__card-title">그리드 헬퍼</h3>
+                            <p class="bento__card-desc">네모틀, 중심선 등의 가이드를 표시하여 정렬과 비율을 정확하게 확인.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials">
+            <div class="container">
+                <h2 class="testimonials__title">사용자의 목소리</h2>
+                <p class="testimonials__subtitle">전문 서체 디자이너의 실제 후기</p>
+
+                <div class="testimonials__ghost-wrapper">
+                    <!-- 왼쪽 스택 가짜 카드 -->
+                    <div class="testimonials__ghost testimonials__ghost--left-far" aria-hidden="true"></div>
+                    <div class="testimonials__ghost testimonials__ghost--left-near" aria-hidden="true"></div>
+
+                    <div class="testimonials__grid">
+                        <!-- JavaScript로 동적 로드 -->
+                    </div>
+
+                    <!-- 오른쪽 스택 가짜 카드 -->
+                    <div class="testimonials__ghost testimonials__ghost--right-near" aria-hidden="true"></div>
+                    <div class="testimonials__ghost testimonials__ghost--right-far" aria-hidden="true"></div>
+                </div>
+
+                <!-- "더 보기" 암시 (시각 장식만) -->
+                <div class="testimonials__hint">
+                    <span class="testimonials__dots" aria-hidden="true">• • •</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq">
+            <div class="container">
+                <h2>자주 묻는 질문</h2>
+
+                <dl class="faq__list">
+                    <div class="faq__item">
+                        <dt>일회성 구매인가요, 구독인가요?</dt>
+                        <dd>한 번 구매하면 영구적으로 사용 가능합니다.</dd>
+                    </div>
+
+                    <div class="faq__item">
+                        <dt>몇 대의 컴퓨터에 설치할 수 있나요?</dt>
+                        <dd>단일 사용자 라이선스 — 모든 Mac에서 사용 가능합니다.</dd>
+                    </div>
+
+                    <div class="faq__item">
+                        <dt>체험판이 있나요?</dt>
+                        <dd>네, 14일 무료 체험이 있습니다.</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- Final CTA (Download + Trust 통합) -->
+        <section class="section final-cta">
+            <div class="container">
+                <h2 class="final-cta__title">시작할 준비가 되셨나요?</h2>
+                <p class="final-cta__story">이것은 원래 일상적인 서체 디자인의 불편함을 해결하기 위해 개발한 도구였습니다. 효율이 크게 향상되어 Pro 버전으로 정리했습니다. 같은
+                    수준의 디테일을 추구하는 분들께 도움이 되길 바랍니다.</p>
+
+                <ul class="final-cta__trust">
+                    <li>✓ 데이터는 로컬 .glyphs 파일에만 저장</li>
+                    <li>✓ 폰트 데이터를 클라우드에 업로드하지 않음</li>
+                </ul>
+
+                <div class="final-cta__actions">
+                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+                        설치하기
+                    </a>
+                </div>
+
+                <p class="final-cta__note">
+                    Glyphs 플러그인 관리자에서 설치 · 14일 무료 체험
+                </p>
+
+                <div class="final-cta__alternatives">
+                    <p class="final-cta__alt-label">기타 설치 방법:</p>
+                    <p>• <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank"
+                            rel="noopener noreferrer">GitHub에서 Pro 버전 다운로드</a></p>
+
+                    <p class="final-cta__alt-label">유료 기능이 필요 없으신가요?</p>
+                    <p>• <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank"
+                            rel="noopener noreferrer">오픈소스 Python 버전</a> (기본 구궁격 미리보기)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 YTY Digital TypeFoundry · <a href="https://erikyin.net/" target="_blank"
+                    rel="noopener noreferrer">殷慈遠</a></p>
+            <ul class="footer__links">
+                <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">문의</a></li>
+                <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">개인정보 처리방침</a></li>
+                <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">이용약관</a></li>
+            </ul>
         </div>
+    </footer>
 
-        <!-- "더 보기" 암시 (시각 장식만) -->
-        <div class="testimonials__hint">
-          <span class="testimonials__dots" aria-hidden="true">• • •</span>
-        </div>
-      </div>
-    </section>
+    <!-- FOUC Prevention & Section Visibility -->
+    <script>
+        document.body.classList.add('loaded');
 
-    <!-- FAQ Section -->
-    <section class="section faq">
-      <div class="container">
-        <h2>자주 묻는 질문</h2>
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('.section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => sectionObserver.observe(section));
 
-        <dl class="faq__list">
-          <div class="faq__item">
-            <dt>일회성 구매인가요, 구독인가요?</dt>
-            <dd>한 번 구매하면 영구적으로 사용 가능합니다.</dd>
-          </div>
+        // 개념도 애니메이션은 isometric-animation.js에서 처리
+    </script>
 
-          <div class="faq__item">
-            <dt>몇 대의 컴퓨터에 설치할 수 있나요?</dt>
-            <dd>단일 사용자 라이선스 — 모든 Mac에서 사용 가능합니다.</dd>
-          </div>
+    <!-- Scripts -->
+    <script src="../i18n.js"></script>
+    <script src="../guide-lang.js"></script>
+    <script src="../assets/js/isometric-animation.js"></script>
+    <script src="../assets/js/testimonials.js"></script>
+    <script src="../assets/js/bento-video-hover.js"></script>
 
-          <div class="faq__item">
-            <dt>체험판이 있나요?</dt>
-            <dd>네, 14일 무료 체험이 있습니다.</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- Final CTA (Download + Trust 통합) -->
-    <section class="section final-cta">
-      <div class="container">
-        <h2 class="final-cta__title">시작할 준비가 되셨나요?</h2>
-        <p class="final-cta__story">이것은 원래 일상적인 서체 디자인의 불편함을 해결하기 위해 개발한 도구였습니다. 효율이 크게 향상되어 Pro 버전으로 정리했습니다. 같은 수준의 디테일을 추구하는 분들께 도움이 되길 바랍니다.</p>
-
-        <ul class="final-cta__trust">
-          <li>✓ 데이터는 로컬 .glyphs 파일에만 저장</li>
-          <li>✓ 폰트 데이터를 클라우드에 업로드하지 않음</li>
-        </ul>
-
-        <div class="final-cta__actions">
-          <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
-            설치하기
-          </a>
-        </div>
-
-        <p class="final-cta__note">
-          Glyphs 플러그인 관리자에서 설치 · 14일 무료 체험
-        </p>
-
-        <div class="final-cta__alternatives">
-          <p class="final-cta__alt-label">기타 설치 방법:</p>
-          <p>• <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer">GitHub에서 Pro 버전 다운로드</a></p>
-
-          <p class="final-cta__alt-label">유료 기능이 필요 없으신가요?</p>
-          <p>• <a href="https://github.com/yintzuyuan/NineBoxView" target="_blank" rel="noopener noreferrer">오픈소스 Python 버전</a> (기본 구궁격 미리보기)</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 YTY Digital TypeFoundry · <a href="https://erikyin.net/" target="_blank" rel="noopener noreferrer">殷慈遠</a></p>
-    <ul class="footer__links">
-      <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">문의</a></li>
-      <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank" rel="noopener noreferrer">개인정보 처리방침</a></li>
-      <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank" rel="noopener noreferrer">이용약관</a></li>
-    </ul>
-  </div>
-</footer>
-
-  <!-- FOUC Prevention & Section Visibility -->
-  <script>
-    document.body.classList.add('loaded');
-
-    // Intersection Observer for scroll animations
-    const sections = document.querySelectorAll('.section');
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    sections.forEach(section => sectionObserver.observe(section));
-
-    // 개념도 애니메이션은 isometric-animation.js에서 처리
-  </script>
-
-  <!-- Scripts -->
-  <script src="../i18n.js"></script>
-  <script src="../guide-lang.js"></script>
-  <script src="../assets/js/isometric-animation.js"></script>
-  <script src="../assets/js/testimonials.js"></script>
-
-  <!-- Paddle.js SDK -->
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-  <script src="../paddle-checkout.js"></script>
+    <!-- Paddle.js SDK -->
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script src="../paddle-checkout.js"></script>
 </body>
+
 </html>
