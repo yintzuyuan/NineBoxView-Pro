@@ -73,6 +73,19 @@ Characters fixed at designated positions, establishing a stable comparison basel
 > [!NOTE]
 > The three layers are stacked from bottom to top. Locked glyphs take priority over reference glyphs and will cover the reference glyph at that position.
 
+### Drag Relationships
+
+Drag operations between the three layers have different restrictions:
+
+| Layer | Can Receive Drag | Can Output Drag | Description |
+|-------|-----------------|-----------------|-------------|
+| {{ICON_PEN_NIB}} Editing Glyph | ✗ | ✓ | Center cell can only output, cannot be a drop target |
+| {{ICON_ARTICLE}} Reference Glyphs | Between references only | ✓ | From fixed glyph pool, can only swap positions, cannot add from other layers |
+| {{ICON_LOCK}} Locked Glyphs | ✓ | ✓ | Can be added from editing or reference layers via ⌘ + drag |
+
+> [!TIP]
+> To fix the current editing glyph at a specific position, use **⌘ + drag** from the center cell to the target position to create a locked glyph.
+
 ## Interface Overview
 
 ### Main Window

@@ -73,6 +73,19 @@ Toolbar buttons are triggered by clicking. Some buttons show tooltips on hover:
 | {{ICON_LOCK}} | Show/hide {{LOCKED_PANEL_TITLE|}} panel |
 | {{ICON_REFERENCE}} | Show/hide {{REFERENCE_PANEL_TITLE|}} panel |
 
+### Panel Snapping
+
+Hold **Option** and click a panel button to snap the panel to the side of the main window:
+
+| Button | Option + Click Effect |
+|--------|----------------------|
+| {{ICON_PRESETS}} | Snap to **left side** of main window |
+| {{ICON_REFERENCE}} | Snap to **upper right** of main window |
+| {{ICON_LOCK}} | Snap to **lower right** of main window |
+
+> [!TIP]
+> The snapping feature lets you quickly rearrange scattered panels around the main window, creating a tidy workspace layout.
+
 ## Grid Lines
 
 The grid lines feature displays guides in the grid to help check glyph alignment and proportions.
