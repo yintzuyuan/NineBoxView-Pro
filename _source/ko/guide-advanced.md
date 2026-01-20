@@ -34,7 +34,7 @@
 3. **Shift** 키 누르고 있기
 4. 9칸 내의 글자가 비교 버전으로 전환됨
 
-![Light Table 비교 효과](../assets/images/feature-lighttable.gif)
+<video src="../../assets/images/feature-lighttable.webm" autoplay loop muted playsinline></video>
 
 > [!NOTE]
 > **Shift 키 동작**: {{LIGHT_TABLE}}가 설치되지 않았거나 도구가 활성화되지 않은 경우 Shift를 누르고 있으면 **Solo 모드**로 들어가 참조 글자와 잠금 글자가 일시적으로 숨겨지고 현재 편집 중인 글자만 표시됩니다. 주변 셀의 오버레이 효과와 현재 글자 자체의 차이를 빠르게 비교하는 데 편리합니다.

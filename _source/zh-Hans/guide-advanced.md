@@ -34,7 +34,7 @@
 3. 按住 **Shift** 键
 4. 九宫格中的字符会切换为比较版本
 
-![Light Table 比较效果](../assets/images/feature-lighttable.gif)
+<video src="../../assets/images/feature-lighttable.webm" autoplay loop muted playsinline></video>
 
 > [!NOTE]
 > **Shift 键行为**：若 {{LIGHT_TABLE}} 未安装或工具未启用，按住 Shift 会进入 **Solo 模式**，暂时隐藏参考字和锁定字，只显示当前编辑的字符，方便快速对比周围格叠加效果与当前字符本身的差异。

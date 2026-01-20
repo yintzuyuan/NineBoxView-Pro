@@ -34,7 +34,7 @@ To display comparison versions in the grid, the following conditions must be met
 3. Hold the **Shift** key
 4. Glyphs in the grid will switch to the comparison version
 
-![Light Table comparison effect](../assets/images/feature-lighttable.gif)
+<video src="../../assets/images/feature-lighttable.webm" autoplay loop muted playsinline></video>
 
 > [!NOTE]
 > **Shift key behavior**: If {{LIGHT_TABLE}} is not installed or its tool is not active, holding Shift enters **Solo mode**, temporarily hiding reference and locked glyphs, showing only the current editing glyph to help quickly compare the overlay effect with the glyph itself.
@@ -43,45 +43,45 @@ To display comparison versions in the grid, the following conditions must be met
 
 ### Grid Operations
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| Click | Random arrange | Randomly rearrange reference glyphs |
-| Cmd + click | Lock/unlock | Toggle lock state at that position |
-| Cmd + click center | Toggle lock feature | Enable/disable the lock feature |
-| Cmd + Option + click | Glyph picker | Open glyph picker to set locked glyph |
-| Cmd + Option + click center | Clear all locks | Clear locks at all positions |
-| Cmd + Shift + click center | Save lock preset | Save current lock configuration to {{PRESETS_WINDOW_TITLE|}} |
+| Shortcut                    | Action              | Description                                               |
+| --------------------------- | ------------------- | --------------------------------------------------------- |
+| Click                       | Random arrange      | Randomly rearrange reference glyphs                       |
+| Cmd + click                 | Lock/unlock         | Toggle lock state at that position                        |
+| Cmd + click center          | Toggle lock feature | Enable/disable the lock feature                           |
+| Cmd + Option + click        | Glyph picker        | Open glyph picker to set locked glyph                     |
+| Cmd + Option + click center | Clear all locks     | Clear locks at all positions                              |
+| Cmd + Shift + click center  | Save lock preset    | Save current lock configuration to {{PRESETS_WINDOW_TITLE | }} |
 
 ### Drag Operations
 
-| Shortcut | Drag Effect |
-|----------|-------------|
-| None | Swap positions (within grid) / Insert (edit view) |
-| Cmd | Lock operations (move or lock) |
-| Option | Within grid: Copy reference glyph; To edit view: Open glyph in new tab |
-| Shift | Open grid in new tab |
-| Cmd + Option | Copy locked glyph (source preserved) |
+| Shortcut     | Drag Effect                                                            |
+| ------------ | ---------------------------------------------------------------------- |
+| None         | Swap positions (within grid) / Insert (edit view)                      |
+| Cmd          | Lock operations (move or lock)                                         |
+| Option       | Within grid: Copy reference glyph; To edit view: Open glyph in new tab |
+| Shift        | Open grid in new tab                                                   |
+| Cmd + Option | Copy locked glyph (source preserved)                                   |
 
 ### Toolbar Operations
 
 Toolbar buttons are triggered by clicking. Some buttons show tooltips on hover:
 
-| Button | Function |
-|--------|----------|
-| {{ICON_SUN}} / {{ICON_MOON}} | Toggle dark/light mode |
-| {{ICON_PRESETS}} | Show/hide {{PRESETS_WINDOW_TITLE|}} panel |
-| {{ICON_LOCK}} | Show/hide {{LOCKED_PANEL_TITLE|}} panel |
-| {{ICON_REFERENCE}} | Show/hide {{REFERENCE_PANEL_TITLE|}} panel |
+| Button                       | Function                          |
+| ---------------------------- | --------------------------------- |
+| {{ICON_SUN}} / {{ICON_MOON}} | Toggle dark/light mode            |
+| {{ICON_PRESETS}}             | Show/hide {{PRESETS_WINDOW_TITLE  | }} panel |
+| {{ICON_LOCK}}                | Show/hide {{LOCKED_PANEL_TITLE    | }} panel |
+| {{ICON_REFERENCE}}           | Show/hide {{REFERENCE_PANEL_TITLE | }} panel |
 
 ### Panel Snapping
 
 Hold **Option** and click a panel button to snap the panel to the side of the main window:
 
-| Button | Option + Click Effect |
-|--------|----------------------|
-| {{ICON_PRESETS}} | Snap to **left side** of main window |
+| Button             | Option + Click Effect                  |
+| ------------------ | -------------------------------------- |
+| {{ICON_PRESETS}}   | Snap to **left side** of main window   |
 | {{ICON_REFERENCE}} | Snap to **upper right** of main window |
-| {{ICON_LOCK}} | Snap to **lower right** of main window |
+| {{ICON_LOCK}}      | Snap to **lower right** of main window |
 
 > [!TIP]
 > The snapping feature lets you quickly rearrange scattered panels around the main window, creating a tidy workspace layout.
@@ -127,10 +127,10 @@ When editing a non-master layer in Glyphs, surrounding grid cells automatically 
 
 {{NINE_BOX_VIEW}} data is stored in two locations:
 
-| Storage Location | Content | Description |
-|------------------|---------|-------------|
-| Font file | Reference glyphs, locked glyphs | Saved with file, not shared across files |
-| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE|}}, theme, etc. | Global settings, usable across files |
+| Storage Location     | Content                                      | Description                              |
+| -------------------- | -------------------------------------------- | ---------------------------------------- |
+| Font file            | Reference glyphs, locked glyphs              | Saved with file, not shared across files |
+| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE | }}, theme, etc.                          | Global settings, usable across files |
 
 > [!TIP]
 > Use the import/export feature to share {{PRESETS_WINDOW_TITLE|}} between computers.

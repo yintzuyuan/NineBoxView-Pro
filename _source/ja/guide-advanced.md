@@ -34,7 +34,7 @@
 3. **Shift** キーを押し続ける
 4. 9マス内の文字が比較バージョンに切り替わる
 
-![Light Table 比較効果](../assets/images/feature-lighttable.gif)
+<video src="../../assets/images/feature-lighttable.webm" autoplay loop muted playsinline></video>
 
 > [!NOTE]
 > **Shiftキーの動作**：{{LIGHT_TABLE}} がインストールされていないか、ツールが有効化されていない場合、Shiftを押し続けると **Soloモード** になり、参照文字とロック文字が一時的に非表示になり、現在編集中の文字のみが表示されます。周囲のセルの重ね合わせ効果と現在の文字自体の違いを素早く比較するのに便利です。
