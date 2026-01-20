@@ -37,7 +37,7 @@
       --color-bg: #f8f6f0;
       --color-text: #4a4a4a;
       --color-text-secondary: #6a6a6a;
-      --color-border: #d4d4d4;
+      --color-border: rgba(74, 74, 74, 0.15);
       --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
     }
 
@@ -58,6 +58,21 @@
       justify-content: center;
       padding: 2rem;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Subtle nine-box grid texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: -1;
     }
 
     .checkout-container {
@@ -85,9 +100,14 @@
     .paddle-checkout-frame {
       width: 100%;
       min-height: 450px;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
+      border: 1px solid rgba(74, 74, 74, 0.12);
+      border-radius: 16px;
       background: var(--color-bg);
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.03),
+        0 2px 4px rgba(0, 0, 0, 0.03),
+        0 4px 8px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
     }
 
     .checkout-footer {
@@ -109,6 +129,27 @@
     .checkout-loading {
       padding: 3rem;
       color: var(--color-text-secondary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .checkout-loading::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--color-border);
+      border-top-color: var(--color-text-secondary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
