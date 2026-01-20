@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用体験を共有 - NineBoxView Pro</title>
+    <meta name="description" content="NineBoxView Pro の使用体験を共有して、他のタイプデザイナーにこのツールを紹介しましょう。">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="使用体験を共有 - NineBoxView Pro">
+    <meta property="og:description" content="NineBoxView Pro の使用体験を共有してください。">
+    <meta property="og:image" content="../../assets/images/og-image.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../assets/css/testimonial.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../assets/favicon.ico">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="../index.html" class="nav__logo">
+                <img src="../../assets/logo-128.png" alt="NineBoxView Pro" class="nav__logo-img">
+            </a>
+            <ul class="nav__links">
+                <li><a href="../index.html" class="nav__link">ホーム</a></li>
+                <li><a href="../guide/index.html" class="nav__link">ガイド</a></li>
+            </ul>
+            <div class="lang-menu">
+                <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox"
+                    aria-label="言語を選択">
+                    <span class="lang-current">日</span>
+                    <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
+                        <path
+                            d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" />
+                    </svg>
+                </button>
+                <ul class="lang-dropdown" role="listbox">
+                    <li><a href="../../zh-Hant/testimonial/index.html">繁體中文</a></li>
+                    <li><a href="../../en/testimonial/index.html">English</a></li>
+                    <li><a href="../../zh-Hans/testimonial/index.html">简体中文</a></li>
+                    <li><a href="index.html" aria-current="page">日本語</a></li>
+                    <li><a href="../../ko/testimonial/index.html">한국어</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section testimonial-form-section">
+            <div class="container">
+                <h1 class="testimonial-form__title">使用体験を共有</h1>
+                <p class="testimonial-form__subtitle">NineBoxView Pro をご利用いただきありがとうございます！<br>使用体験を共有して、他のタイプデザイナーにこのツールを紹介しましょう。</p>
+
+                <form id="testimonial-form" class="testimonial-form" novalidate>
+                    <!-- Preview Card -->
+                    <div class="testimonial-card">
+                        <!-- Avatar Upload -->
+                        <div class="testimonial-card__avatar-wrapper">
+                            <label for="avatar-input" class="testimonial-card__avatar-label">
+                                <div class="testimonial-card__avatar-preview" id="avatar-preview">
+                                    <svg class="testimonial-card__avatar-icon" viewBox="0 0 256 256" fill="currentColor">
+                                        <path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"/>
+                                    </svg>
+                                    <span class="testimonial-card__avatar-text">アップロード</span>
+                                </div>
+                                <input type="file" id="avatar-input" name="avatar" accept="image/jpeg,image/png" class="testimonial-card__avatar-input" required>
+                            </label>
+                        </div>
+
+                        <!-- Quote -->
+                        <div class="testimonial-card__quote-wrapper">
+                            <span class="testimonial-card__quote-mark">"</span>
+                            <textarea
+                                id="quote-input"
+                                name="quote"
+                                class="testimonial-card__quote-input"
+                                placeholder="使用体験をここに入力してください..."
+                                
+                                
+                                required
+                            ></textarea>
+                            <div class="testimonial-card__quote-counter">
+                                <span id="quote-count">0</span>/<span id="quote-max">150</span> 文字
+                            </div>
+                        </div>
+
+                        <!-- Author Info -->
+                        <div class="testimonial-card__author">
+                            <input
+                                type="text"
+                                id="name-input"
+                                name="name"
+                                class="testimonial-card__name-input"
+                                placeholder="お名前"
+                                
+                                required
+                            >
+                            <div class="testimonial-card__meta">
+                                <input
+                                    type="text"
+                                    id="role-input"
+                                    name="role"
+                                    class="testimonial-card__role-input"
+                                    placeholder="役職（任意）"
+                                    
+                                >
+                                <input
+                                    type="text"
+                                    id="company-input"
+                                    name="company"
+                                    class="testimonial-card__company-input"
+                                    placeholder="会社/スタジオ（任意）"
+                                    
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email (outside card) -->
+                    <div class="testimonial-form__field">
+                        <label for="email-input" class="testimonial-form__label">
+                            メールアドレス
+                            <span class="testimonial-form__label-note">（連絡用のみ、公開されません）</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="email-input"
+                            name="email"
+                            class="testimonial-form__input"
+                            placeholder="your@email.com"
+                            required
+                        >
+                    </div>
+
+                    <!-- Hidden language field -->
+                    <input type="hidden" id="lang-input" name="lang" value="ja">
+
+                    <!-- Error message -->
+                    <div id="form-error" class="testimonial-form__error" hidden></div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="cta testimonial-form__submit" id="submit-btn">
+                        送信する
+                    </button>
+
+                    <p class="testimonial-form__note">
+                        送信後、内容を確認し、承認されたらウェブサイトに掲載されます。<br>
+                        ご質問は <a href="mailto:yintzuyuan@erikyin.net">yintzuyuan@erikyin.net</a> までお問い合わせください
+                    </p>
+                </form>
+
+                <!-- Success message -->
+                <div id="success-message" class="testimonial-form__success" hidden>
+                    <div class="testimonial-form__success-icon">
+                        <svg viewBox="0 0 256 256" fill="currentColor">
+                            <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="testimonial-form__success-title">ご共有ありがとうございます！</h2>
+                    <p class="testimonial-form__success-text">
+                        ご感想を受け取りました。承認後、ウェブサイトに掲載されます。<br>
+                        NineBoxView Pro をご支援いただきありがとうございます！
+                    </p>
+                    <a href="../index.html" class="cta cta--secondary">ホームに戻る</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 YTY Digital TypeFoundry · <a href="https://erikyin.net/" target="_blank"
+                    rel="noopener noreferrer">殷慈遠</a></p>
+            <ul class="footer__links">
+                <li><a href="mailto:yintzuyuan@erikyin.net" class="footer__link">お問い合わせ</a></li>
+                <li><a href="https://github.com/yintzuyuan" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://erikyin.net/privacy.html" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">プライバシーポリシー</a></li>
+                <li><a href="https://erikyin.net/terms.html" class="footer__link" target="_blank"
+                        rel="noopener noreferrer">利用規約</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- FOUC Prevention & Section Visibility -->
+    <script>
+        document.body.classList.add('loaded');
+
+        // Make sections visible (matching homepage behavior)
+        const sections = document.querySelectorAll('.section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => sectionObserver.observe(section));
+    </script>
+
+    <!-- Scripts -->
+    <script src="../../i18n.js"></script>
+    <script src="../../guide-lang.js"></script>
+    <script src="../../assets/js/testimonial.js"></script>
+</body>
+
+</html>
