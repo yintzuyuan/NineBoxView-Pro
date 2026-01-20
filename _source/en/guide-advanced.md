@@ -56,9 +56,9 @@ To display comparison versions in the grid, the following conditions must be met
 
 | Shortcut     | Drag Effect                                                            |
 | ------------ | ---------------------------------------------------------------------- |
-| None         | Swap positions (within grid) / Insert (edit view)                      |
+| None         | Swap visible top-layer glyphs (within grid) / Insert (edit view)       |
 | Cmd          | Lock operations (move or lock)                                         |
-| Option       | Within grid: Copy reference glyph; To edit view: Open glyph in new tab |
+| Option       | Within grid: Copy glyph (clears lock if target is locked); To edit view: Open glyph in new tab |
 | Shift        | Open grid in new tab                                                   |
 | Cmd + Option | Copy locked glyph (source preserved)                                   |
 

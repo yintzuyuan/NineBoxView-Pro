@@ -80,7 +80,7 @@ Drag operations between the three layers have different restrictions:
 | Layer | Can Receive Drag | Can Output Drag | Description |
 |-------|-----------------|-----------------|-------------|
 | {{ICON_PEN_NIB}} Editing Glyph | ✗ | ✓ | Center cell can only output, cannot be a drop target |
-| {{ICON_ARTICLE}} Reference Glyphs | Between references only | ✓ | From fixed glyph pool, can only swap positions, cannot add from other layers |
+| {{ICON_ARTICLE}} Reference Glyphs | ✓ (visible layer) | ✓ | Can swap with visible top-layer glyphs |
 | {{ICON_LOCK}} Locked Glyphs | ✓ | ✓ | Can be added from editing or reference layers via ⌘ + drag |
 
 > [!TIP]
@@ -119,6 +119,7 @@ Click the **{{ICON_MENU}}** button in the title bar to open:
 | {{INFO_MENU_HELP|}} | Open user guide (this document) |
 | {{INFO_MENU_WEBSITE|}} | Go to official website |
 | {{INFO_MENU_FEEDBACK|}} | Submit feedback (GitHub Issues) |
+| {{INFO_MENU_TESTIMONIAL|}} | Share your experience on social media |
 | {{INFO_MENU_CONTACT_US|}} | Contact developer (email) |
 
 > [!NOTE]

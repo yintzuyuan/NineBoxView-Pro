@@ -81,6 +81,8 @@ The panel displays all locked glyph configurations in a 3×3 grid:
 | Double-click | Open glyph picker to modify that position |
 | ⌘ + click | Multi-select (toggle selection) |
 | ⇧ + click | Rectangle selection |
+| Arrow keys | Navigate selection between cells |
+| ⇧ + Arrow keys | Extend selection (Finder-style) |
 | ⌘ + A | Select all locked positions |
 | Delete | Remove all selected locked glyphs |
 | Enter | Open glyph picker to batch modify selected positions |
