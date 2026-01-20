@@ -77,11 +77,14 @@
    * 初始化
    */
   function init() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || getInitialTheme();
+
+    // 初始化時更新概念圖（即使沒有切換按鈕也要執行）
+    updateConceptImages(currentTheme);
+
     const btn = document.getElementById('theme-toggle');
     if (btn) {
       btn.addEventListener('click', toggleTheme);
-      // 設定初始圖示
-      const currentTheme = document.documentElement.getAttribute('data-theme') || getInitialTheme();
       updateButtonIcon(currentTheme);
     }
   }
