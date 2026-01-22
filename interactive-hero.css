@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   CSS Variables for Theming
+   Container & CSS Variables
    -------------------------------------------------------------------------- */
 .interactive-hero {
     /* Light Mode (Default) */
@@ -12,10 +12,24 @@
     --hero-text: #1a1a1a;
     --hero-grid-line: rgba(0, 0, 0, 0.1);
     --hero-slider-track: rgba(0, 0, 0, 0.15);
-    --hero-slider-thumb: #aaaaaa;
+    --hero-slider-thumb: #ffffff;
     --hero-icon-fill: #aaaaaa;
-    /* 單個格子的尺寸 */
     --cell-size: min(28vw, 160px);
+    --blur-amount: 0px;
+
+    /* Container - 模擬視窗外框 */
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+    background: var(--hero-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.06),
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    min-height: calc(var(--cell-size) * 3 + 80px);
 }
 
 .interactive-hero[data-theme="dark"] {
@@ -24,36 +38,12 @@
     --hero-text: #ffffff;
     --hero-grid-line: rgba(255, 255, 255, 0.1);
     --hero-slider-track: rgba(255, 255, 255, 0.2);
-    --hero-slider-thumb: #666666;
-    --hero-icon-fill: #666666;
-    /* 深色模式：加強陰影 */
+    --hero-slider-thumb: #888888;
+    --hero-icon-fill: #888888;
     box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.3),
         0 4px 8px rgba(0, 0, 0, 0.25),
         0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* --------------------------------------------------------------------------
-   Container - 模擬視窗外框
-   -------------------------------------------------------------------------- */
-.interactive-hero {
-    --blur-amount: 0px;
-
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto var(--spacing-md);
-    background: var(--hero-bg);
-    /* 與頁面卡片統一的圓角 */
-    border-radius: 20px;
-    overflow: hidden;
-    /* 加強陰影效果，更立體 */
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.06),
-        0 4px 8px rgba(0, 0, 0, 0.08),
-        0 8px 16px rgba(0, 0, 0, 0.1);
-    /* 最小高度為九宮格 + 邊距 + 控制列 */
-    min-height: calc(var(--cell-size) * 3 + 80px);
 }
 
 /* --------------------------------------------------------------------------
@@ -139,10 +129,6 @@
     padding-bottom: 0.2em;
 }
 
-/* Center cell - 無特殊效果 */
-.interactive-hero__cell--center {
-    font-weight: 400;
-}
 
 /* --------------------------------------------------------------------------
    Controls Bar - 底部控制列（視窗左下角）
@@ -206,6 +192,17 @@
     fill: var(--hero-icon-fill);
 }
 
+/* Control Hover Effects */
+.interactive-hero__theme-toggle,
+.interactive-hero__icon-btn {
+    transition: opacity 0.15s ease;
+}
+
+.interactive-hero__theme-toggle:hover,
+.interactive-hero__icon-btn:hover {
+    opacity: 0.7;
+}
+
 /* Show/hide sun/moon icons based on theme */
 .interactive-hero .icon-sun {
     display: block;
@@ -240,19 +237,21 @@
 .interactive-hero__blur-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     background: var(--hero-slider-thumb);
     border-radius: 50%;
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
 .interactive-hero__blur-slider::-moz-range-thumb {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     background: var(--hero-slider-thumb);
     border: none;
     border-radius: 50%;
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
