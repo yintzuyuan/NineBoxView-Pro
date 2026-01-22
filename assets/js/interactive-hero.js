@@ -61,9 +61,10 @@
         const blurSlider = container.querySelector('.interactive-hero__blur-slider');
 
         // Get character data for this language
+        // Fallback to zh-Hant if language not found (e.g., English uses Traditional Chinese characters)
         const charData = (typeof HERO_CHARACTERS !== 'undefined' && HERO_CHARACTERS[lang])
             ? HERO_CHARACTERS[lang]
-            : { center: '東', pool: ['永', '風', '雲', '龍', '鳳', '國', '書', '畫'] };
+            : HERO_CHARACTERS['zh-Hant'];
 
         const centerChar = charData.center;
         const charPool = charData.pool;
