@@ -27,9 +27,10 @@
         // Toolbar toggle buttons
         const toggleButtons = workspace.querySelectorAll('[data-toggle]');
 
-        // Current state
+        // Current state - 分開追蹤兩個分頁的選取索引
         let currentTab = 'ref';
-        let selectedPresetIndex = 0;
+        let selectedRefIndex = 0;
+        let selectedLockedIndex = 0;
         let lockedVisible = true;
 
         /**
@@ -46,10 +47,11 @@
                 list.removeChild(list.firstChild);
             }
 
+            const currentIndex = currentTab === 'ref' ? selectedRefIndex : selectedLockedIndex;
             items.forEach((item, index) => {
                 const li = document.createElement('div');
                 li.className = 'hero-panel__list-item';
-                if (index === selectedPresetIndex) {
+                if (index === currentIndex) {
                     li.classList.add('hero-panel__list-item--selected');
                 }
 
@@ -62,23 +64,40 @@
                     li.textContent = positions.join('');
                 }
 
-                li.addEventListener('click', () => selectPreset(index));
+                // 單擊：選取項目（高亮）
+                li.addEventListener('click', () => highlightPreset(index));
+                // 雙擊：套用到主視窗
+                li.addEventListener('dblclick', () => applyPreset(index));
                 list.appendChild(li);
             });
         }
 
         /**
-         * Select a preset and update panels
+         * Highlight a preset (single click) - 只高亮，不更新面板
          * @param {number} index - Preset index
          */
-        function selectPreset(index) {
-            selectedPresetIndex = index;
-            populatePresetList();
-
+        function highlightPreset(index) {
             if (currentTab === 'ref') {
+                selectedRefIndex = index;
+            } else {
+                selectedLockedIndex = index;
+            }
+            populatePresetList();
+        }
+
+        /**
+         * Apply a preset (double click) - 更新面板和主視窗
+         * @param {number} index - Preset index
+         */
+        function applyPreset(index) {
+            if (currentTab === 'ref') {
+                selectedRefIndex = index;
+                populatePresetList();
                 updateReferencePanel();
                 updateMainGridReference();
             } else {
+                selectedLockedIndex = index;
+                populatePresetList();
                 updateLockedPanel();
                 updateMainGridLocked();
             }
@@ -91,7 +110,7 @@
             const textarea = referencePanel.querySelector('.hero-panel__textarea');
             if (!textarea) return;
 
-            const preset = presetData.reference[selectedPresetIndex];
+            const preset = presetData.reference[selectedRefIndex];
             if (preset) {
                 textarea.value = preset.chars.join('');
             }
@@ -104,7 +123,7 @@
             const miniGrid = lockedPanel.querySelector('.hero-panel__mini-grid');
             if (!miniGrid) return;
 
-            const preset = presetData.locked[selectedPresetIndex];
+            const preset = presetData.locked[selectedLockedIndex];
             if (!preset) return;
 
             // Update non-center cells
@@ -122,43 +141,53 @@
         }
 
         /**
-         * Update main grid with reference characters
+         * Update main grid with reference characters (base layer)
          */
         function updateMainGridReference() {
             if (!heroComponent) return;
 
-            const preset = presetData.reference[selectedPresetIndex];
+            const preset = presetData.reference[selectedRefIndex];
             if (!preset) return;
 
             const cells = heroComponent.querySelectorAll('.interactive-hero__cell:not(.interactive-hero__cell--center)');
             cells.forEach((cell, index) => {
                 if (preset.chars[index]) {
-                    cell.textContent = preset.chars[index];
+                    // 設定參考字為 data 屬性，作為基底層
+                    cell.dataset.refChar = preset.chars[index];
+                    // 如果沒有鎖定字，顯示參考字
+                    if (!cell.dataset.lockedChar) {
+                        cell.textContent = preset.chars[index];
+                    }
                 }
             });
         }
 
         /**
-         * Update main grid with locked characters
+         * Update main grid with locked characters (overlay on top of reference)
          */
         function updateMainGridLocked() {
             if (!heroComponent) return;
 
-            const preset = presetData.locked[selectedPresetIndex];
+            const preset = presetData.locked[selectedLockedIndex];
             if (!preset) return;
 
             // Update cells based on locked positions
-            const cells = heroComponent.querySelectorAll('.interactive-hero__cell');
+            const cells = heroComponent.querySelectorAll('.interactive-hero__cell:not(.interactive-hero__cell--center)');
             cells.forEach(cell => {
                 const pos = parseInt(cell.dataset.position, 10);
-                // Skip center cell (position 4)
-                if (pos === 4) return;
 
                 if (preset.positions[pos]) {
+                    // 設定鎖定字，覆蓋參考字
+                    cell.dataset.lockedChar = preset.positions[pos];
                     cell.textContent = preset.positions[pos];
                     cell.classList.add('interactive-hero__cell--locked');
                 } else {
+                    // 移除鎖定字，恢復顯示參考字
+                    delete cell.dataset.lockedChar;
                     cell.classList.remove('interactive-hero__cell--locked');
+                    if (cell.dataset.refChar) {
+                        cell.textContent = cell.dataset.refChar;
+                    }
                 }
             });
         }
@@ -169,7 +198,6 @@
          */
         function switchTab(tab) {
             currentTab = tab;
-            selectedPresetIndex = 0;
 
             // Update tab buttons
             const tabs = presetsPanel.querySelectorAll('.hero-panel__tab');
@@ -177,14 +205,8 @@
                 t.classList.toggle('hero-panel__tab--active', t.dataset.tab === tab);
             });
 
+            // 重新填充列表（保留各自的選取狀態）
             populatePresetList();
-
-            // Update corresponding panel
-            if (tab === 'ref') {
-                updateReferencePanel();
-            } else {
-                updateLockedPanel();
-            }
         }
 
         /**
@@ -286,10 +308,8 @@
             }
         });
 
-        // Initial population
+        // Initial population (只填充列表，不自動套用到面板)
         populatePresetList();
-        updateReferencePanel();
-        updateLockedPanel();
 
         // Set initial focus to presets panel
         if (presetsPanel) {

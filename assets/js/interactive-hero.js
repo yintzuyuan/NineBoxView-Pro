@@ -90,15 +90,35 @@
 
         /**
          * Shuffle surrounding characters (no animation)
+         * Respects locked characters - they remain fixed
          */
         function shuffleChars() {
-            const surroundingChars = getRandomChars(charPool, 8);
+            // Count non-locked cells that need new characters
+            // Check both dataset.lockedChar and --locked class for robustness
+            let nonLockedCount = 0;
+            cells.forEach((cell, index) => {
+                if (index !== 4) {
+                    const isLocked = cell.dataset.lockedChar || cell.classList.contains('interactive-hero__cell--locked');
+                    if (!isLocked) {
+                        nonLockedCount++;
+                    }
+                }
+            });
+
+            // Get random characters only for non-locked cells
+            const surroundingChars = getRandomChars(charPool, nonLockedCount);
             let surroundingIndex = 0;
 
             cells.forEach((cell, index) => {
                 if (index !== 4) {
-                    // Update character immediately without animation
+                    // Skip cells with locked characters (check both attribute and class)
+                    const isLocked = cell.dataset.lockedChar || cell.classList.contains('interactive-hero__cell--locked');
+                    if (isLocked) {
+                        return;
+                    }
+                    // Update character and refChar data attribute
                     cell.textContent = surroundingChars[surroundingIndex];
+                    cell.dataset.refChar = surroundingChars[surroundingIndex];
                     surroundingIndex++;
                 }
             });
