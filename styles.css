@@ -398,20 +398,20 @@ a:hover {
   background-color: var(--color-text);
   color: var(--color-bg);
   text-decoration: none;
+  cursor: pointer;
   /* 與卡片呼應的圓角 */
   border-radius: 10px;
   font-weight: 500;
   font-size: 1rem;
   /* 數字使用等寬，確保按鈕文字對齊 */
   font-variant-numeric: tabular-nums;
-  transition: transform var(--transition-fast), opacity var(--transition-fast), font-weight var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .cta:hover {
   opacity: 0.9;
   transform: translateY(-1px);
-  /* 可變字型：hover 時字重微增，增加視覺回饋 */
-  font-weight: 550;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cta--secondary {

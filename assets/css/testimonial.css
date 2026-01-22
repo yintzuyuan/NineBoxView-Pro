@@ -1,0 +1,459 @@
+/* Testimonial Form Styles
+   Design: "Input as Preview" - users fill in directly on a simulated final card
+   Follows Eastern Minimalism design language
+*/
+
+/* ==================== Form Section ==================== */
+.testimonial-form-section {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Subtle nine-box grid texture (matches checkout page) */
+.testimonial-form-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.testimonial-form__title {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.testimonial-form__subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+/* ==================== Preview Card ==================== */
+.testimonial-card {
+  max-width: 420px;
+  margin: 0 auto var(--space-lg);
+  padding: var(--space-lg);
+  background: color-mix(in srgb, var(--color-bg) 50%, var(--color-text) 3%);
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .testimonial-card {
+    background: color-mix(in srgb, var(--color-bg) 90%, var(--color-text) 10%);
+  }
+}
+
+/* ==================== Avatar Upload ==================== */
+.testimonial-card__avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-card__avatar-label {
+  cursor: pointer;
+}
+
+.testimonial-card__avatar-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--color-bg);
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-card__avatar-preview:hover {
+  border-color: var(--color-text-secondary);
+  transform: scale(1.02);
+}
+
+.testimonial-card__avatar-preview.has-image {
+  border-style: solid;
+  border-color: transparent;
+}
+
+/* Drag and drop state */
+.testimonial-card__avatar-preview.drag-over {
+  border-color: var(--color-text);
+  border-style: dashed;
+  transform: scale(1.05);
+  background: rgba(74, 74, 74, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .testimonial-card__avatar-preview.drag-over {
+    background: rgba(248, 246, 240, 0.05);
+  }
+}
+
+.testimonial-card__avatar-preview.has-image:hover::after {
+  content: '更換';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 0.75rem;
+}
+
+.testimonial-card__avatar-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-secondary);
+}
+
+.testimonial-card__avatar-text {
+  font-size: 0.625rem;
+  color: var(--color-text-secondary);
+}
+
+.testimonial-card__avatar-preview.has-image .testimonial-card__avatar-icon,
+.testimonial-card__avatar-preview.has-image .testimonial-card__avatar-text {
+  display: none;
+}
+
+.testimonial-card__avatar-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.testimonial-card__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================== Quote Input ==================== */
+.testimonial-card__quote-wrapper {
+  position: relative;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-card__quote-mark {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-text-secondary);
+  opacity: 0.3;
+  font-family: Georgia, 'Times New Roman', serif;
+  pointer-events: none;
+}
+
+.testimonial-card__quote-input {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-sm);
+  padding-left: var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--color-border);
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+}
+
+.testimonial-card__quote-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.testimonial-card__quote-input:hover {
+  border-bottom-color: var(--color-text-secondary);
+}
+
+.testimonial-card__quote-input:focus {
+  outline: none;
+  border-bottom-color: transparent;
+}
+
+.testimonial-card__quote-counter {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.testimonial-card__quote-counter.warning {
+  color: #e67e22;
+}
+
+.testimonial-card__quote-counter.error {
+  color: #e74c3c;
+}
+
+/* ==================== Author Info ==================== */
+.testimonial-card__author {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-md);
+}
+
+.testimonial-card__name-input,
+.testimonial-card__role-input,
+.testimonial-card__company-input {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--color-border);
+  padding: var(--space-xs) 0;
+  width: 100%;
+  transition: border-color var(--transition-fast);
+}
+
+.testimonial-card__name-input {
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.testimonial-card__role-input,
+.testimonial-card__company-input {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.testimonial-card__name-input::placeholder,
+.testimonial-card__role-input::placeholder,
+.testimonial-card__company-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+.testimonial-card__name-input:hover,
+.testimonial-card__role-input:hover,
+.testimonial-card__company-input:hover {
+  border-bottom-color: var(--color-text-secondary);
+}
+
+.testimonial-card__name-input:focus,
+.testimonial-card__role-input:focus,
+.testimonial-card__company-input:focus {
+  outline: none;
+  border-bottom-color: transparent;
+}
+
+.testimonial-card__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+/* ==================== Email Field ==================== */
+.testimonial-form__field {
+  max-width: 420px;
+  margin: 0 auto var(--space-lg);
+}
+
+.testimonial-form__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.testimonial-form__label-note {
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.testimonial-form__input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.testimonial-form__input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.testimonial-form__input:hover {
+  border-color: var(--color-text-secondary);
+}
+
+.testimonial-form__input:focus {
+  outline: none;
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 2px rgba(74, 74, 74, 0.1);
+}
+
+/* ==================== Error Message ==================== */
+.testimonial-form__error {
+  max-width: 420px;
+  margin: 0 auto var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: 8px;
+  color: #c0392b;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .testimonial-form__error {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+  }
+}
+
+/* ==================== Submit Button ==================== */
+.testimonial-form__submit {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto var(--space-md);
+}
+
+.testimonial-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.testimonial-form__note {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ==================== Success State ==================== */
+.testimonial-form__success {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.testimonial-form__success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md);
+  background: rgba(39, 174, 96, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-form__success-icon svg {
+  width: 32px;
+  height: 32px;
+  color: #27ae60;
+}
+
+.testimonial-form__success-title {
+  margin-bottom: var(--space-sm);
+}
+
+.testimonial-form__success-text {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* ==================== Validation States ==================== */
+.testimonial-card__name-input:invalid:not(:placeholder-shown),
+.testimonial-card__quote-input:invalid:not(:placeholder-shown),
+.testimonial-form__input:invalid:not(:placeholder-shown) {
+  border-color: rgba(231, 76, 60, 0.5);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 640px) {
+  .testimonial-card {
+    padding: var(--space-md);
+  }
+
+  .testimonial-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card__quote-mark {
+    font-size: 2rem;
+    top: -0.25rem;
+    left: -0.25rem;
+  }
+
+  .testimonial-card__quote-input {
+    padding-left: var(--space-md);
+  }
+}
+
+/* ==================== Loading State ==================== */
+.testimonial-form__submit.loading {
+  position: relative;
+  color: transparent;
+}
+
+.testimonial-form__submit.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--color-bg);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== Form Hidden State ==================== */
+.testimonial-form[hidden] {
+  display: none;
+}
