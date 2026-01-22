@@ -14,22 +14,22 @@
     --hero-slider-track: rgba(0, 0, 0, 0.15);
     --hero-slider-thumb: #ffffff;
     --hero-icon-fill: #aaaaaa;
-    --cell-size: min(28vw, 160px);
+    --cell-size: min(28vw, 120px);
     --blur-amount: 0px;
 
     /* Container - 模擬視窗外框 */
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     margin: 0 auto var(--spacing-md);
     background: var(--hero-bg);
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.06),
         0 4px 8px rgba(0, 0, 0, 0.08),
         0 8px 16px rgba(0, 0, 0, 0.1);
-    min-height: calc(var(--cell-size) * 3 + 80px);
+    min-height: calc(var(--cell-size) * 3 + 70px);
 }
 
 .interactive-hero[data-theme="dark"] {
@@ -98,10 +98,10 @@
     justify-content: center;
     align-content: center;
     /* 九宮格垂直居中，有邊距 */
-    padding: 0px 20px 30px 20px;
+    padding: 0px 16px 24px 16px;
     cursor: pointer;
     user-select: none;
-    min-height: calc(var(--cell-size) * 3 + 90px);
+    min-height: calc(var(--cell-size) * 3 + 70px);
 }
 
 /* --------------------------------------------------------------------------

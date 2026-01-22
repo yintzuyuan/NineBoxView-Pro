@@ -182,7 +182,7 @@
         }
 
         /**
-         * Toggle panel visibility
+         * Toggle panel visibility (use class to preserve layout)
          * @param {string} panelType - 'presets', 'locked', or 'reference'
          */
         function togglePanel(panelType) {
@@ -200,13 +200,13 @@
             }
 
             if (panel) {
-                const isVisible = panel.style.display !== 'none';
-                panel.style.display = isVisible ? 'none' : '';
+                const isHidden = panel.classList.contains('hero-panel--hidden');
+                panel.classList.toggle('hero-panel--hidden', !isHidden);
 
                 // Update toggle button state
                 const btn = workspace.querySelector(`[data-toggle="${panelType}"]`);
                 if (btn) {
-                    btn.classList.toggle('interactive-hero__icon-btn--active', !isVisible);
+                    btn.classList.toggle('interactive-hero__icon-btn--active', isHidden);
                 }
             }
         }
