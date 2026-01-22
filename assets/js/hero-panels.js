@@ -142,8 +142,25 @@
          * Update main grid with locked characters
          */
         function updateMainGridLocked() {
-            // For demo purposes, locked characters overlay on the main grid
-            // In real app, this would be handled differently
+            if (!heroComponent) return;
+
+            const preset = presetData.locked[selectedPresetIndex];
+            if (!preset) return;
+
+            // Update cells based on locked positions
+            const cells = heroComponent.querySelectorAll('.interactive-hero__cell');
+            cells.forEach(cell => {
+                const pos = parseInt(cell.dataset.position, 10);
+                // Skip center cell (position 4)
+                if (pos === 4) return;
+
+                if (preset.positions[pos]) {
+                    cell.textContent = preset.positions[pos];
+                    cell.classList.add('interactive-hero__cell--locked');
+                } else {
+                    cell.classList.remove('interactive-hero__cell--locked');
+                }
+            });
         }
 
         /**
