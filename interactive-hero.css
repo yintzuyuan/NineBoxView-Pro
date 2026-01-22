@@ -1,0 +1,290 @@
+/* ==========================================================================
+   Interactive Hero Component
+   九宮格互動 Hero 元件樣式 - 完全復刻原版設計
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container & CSS Variables
+   -------------------------------------------------------------------------- */
+.interactive-hero {
+    /* Light Mode (Default) */
+    --hero-bg: #f8f8f8;
+    --hero-text: #1a1a1a;
+    --hero-grid-line: rgba(0, 0, 0, 0.1);
+    --hero-slider-track: rgba(0, 0, 0, 0.15);
+    --hero-slider-thumb: #ffffff;
+    --hero-icon-fill: #aaaaaa;
+    --cell-size: min(28vw, 160px);
+    --blur-amount: 0px;
+
+    /* Container - 模擬視窗外框 */
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+    background: var(--hero-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.06),
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    min-height: calc(var(--cell-size) * 3 + 80px);
+}
+
+.interactive-hero[data-theme="dark"] {
+    /* Dark Mode */
+    --hero-bg: #0a0a0a;
+    --hero-text: #ffffff;
+    --hero-grid-line: rgba(255, 255, 255, 0.1);
+    --hero-slider-track: rgba(255, 255, 255, 0.2);
+    --hero-slider-thumb: #888888;
+    --hero-icon-fill: #888888;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.25),
+        0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   Title Bar - Mac 視窗標題列
+   -------------------------------------------------------------------------- */
+.interactive-hero__titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: var(--hero-bg);
+}
+
+/* Mac Traffic Lights (非聚焦狀態 - 三個灰色圓點) */
+.interactive-hero__traffic-lights {
+    display: flex;
+    gap: 6px;
+}
+
+.interactive-hero__traffic-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--hero-grid-line);
+}
+
+/* Hamburger Menu Icon */
+.interactive-hero__menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.interactive-hero__menu-line {
+    width: 100%;
+    height: 1.5px;
+    background: var(--hero-icon-fill);
+    border-radius: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   Grid Wrapper - 九宮格外層，提供邊距
+   -------------------------------------------------------------------------- */
+.interactive-hero__grid {
+    display: grid;
+    grid-template-columns: repeat(3, var(--cell-size));
+    grid-template-rows: repeat(3, var(--cell-size));
+    justify-content: center;
+    align-content: center;
+    /* 九宮格垂直居中，有邊距 */
+    padding: 0px 20px 30px 20px;
+    cursor: pointer;
+    user-select: none;
+    min-height: calc(var(--cell-size) * 3 + 90px);
+}
+
+/* --------------------------------------------------------------------------
+   Grid Cell - 字身框 (em square)
+   文字完全填滿格子，font-size = 格子寬度
+   -------------------------------------------------------------------------- */
+.interactive-hero__cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 格線效果 */
+    outline: 0px solid var(--hero-grid-line);
+    /* 字體設定 - 尺寸 = 格子寬度 (完全填滿字身框) */
+    font-family: "Noto Serif TC", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", serif;
+    font-size: var(--cell-size);
+    font-weight: 400;
+    /* 調整 line-height 讓中文字垂直居中 */
+    line-height: 1;
+    color: var(--hero-text);
+    filter: blur(var(--blur-amount));
+    overflow: hidden;
+    /* 微調垂直位置，補償 CJK 字體的 baseline 偏移 */
+    padding-bottom: 0.2em;
+}
+
+
+/* --------------------------------------------------------------------------
+   Controls Bar - 底部控制列（視窗左下角）
+   -------------------------------------------------------------------------- */
+.interactive-hero__controls {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+}
+
+/* Toolbar Icons Container */
+.interactive-hero__toolbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+}
+
+/* Toolbar Icon Buttons */
+.interactive-hero__icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.interactive-hero__icon-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--hero-icon-fill);
+}
+
+/* --------------------------------------------------------------------------
+   Theme Toggle Button
+   -------------------------------------------------------------------------- */
+.interactive-hero__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.interactive-hero__theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--hero-icon-fill);
+}
+
+/* Control Hover Effects */
+.interactive-hero__theme-toggle,
+.interactive-hero__icon-btn {
+    transition: opacity 0.15s ease;
+}
+
+.interactive-hero__theme-toggle:hover,
+.interactive-hero__icon-btn:hover {
+    opacity: 0.7;
+}
+
+/* Show/hide sun/moon icons based on theme */
+.interactive-hero .icon-sun {
+    display: block;
+}
+
+.interactive-hero .icon-moon {
+    display: none;
+}
+
+.interactive-hero[data-theme="dark"] .icon-sun {
+    display: none;
+}
+
+.interactive-hero[data-theme="dark"] .icon-moon {
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Blur Slider - 原版風格
+   -------------------------------------------------------------------------- */
+.interactive-hero__blur-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 2px;
+    background: var(--hero-slider-track);
+    border-radius: 1px;
+    outline: none;
+    cursor: pointer;
+}
+
+.interactive-hero__blur-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--hero-slider-thumb);
+    border-radius: 50%;
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.interactive-hero__blur-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: var(--hero-slider-thumb);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+    .interactive-hero {
+        --cell-size: 28vw;
+        border-radius: 8px;
+    }
+
+    .interactive-hero__grid {
+        padding: 15px 15px 45px 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .interactive-hero {
+        --cell-size: 27vw;
+    }
+
+    .interactive-hero__grid {
+        padding: 12px 12px 40px 12px;
+    }
+
+    .interactive-hero__controls {
+        bottom: 6px;
+        left: 8px;
+        gap: 4px;
+    }
+
+    .interactive-hero__blur-slider {
+        width: 40px;
+    }
+}
