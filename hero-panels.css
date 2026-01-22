@@ -1,0 +1,406 @@
+/* ==========================================================================
+   Hero Panels Component
+   子面板樣式 - macOS 原生視窗風格 + Eastern Minimalism
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero Workspace - 三欄佈局容器
+   -------------------------------------------------------------------------- */
+.hero-workspace {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-md);
+    /* 允許面板超出容器邊界 */
+    overflow: visible;
+}
+
+/* 中央主視窗容器 */
+.hero-workspace__main {
+    flex-shrink: 0;
+}
+
+/* 左側面板區域 */
+.hero-workspace__left {
+    flex-shrink: 0;
+    width: 180px;
+}
+
+/* 右側面板區域（堆疊 Reference + Locked） */
+.hero-workspace__right {
+    flex-shrink: 0;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Panel - 基礎面板樣式
+   -------------------------------------------------------------------------- */
+.hero-panel {
+    /* 面板背景 - 跟隨網頁主題 */
+    --panel-bg: color-mix(in srgb, var(--color-bg) 92%, var(--color-text) 8%);
+    --panel-border: color-mix(in srgb, var(--color-text) 15%, transparent);
+    --panel-text: var(--color-text);
+    --panel-text-secondary: var(--color-text-secondary);
+    --panel-highlight: color-mix(in srgb, var(--color-bg) 85%, var(--color-text) 15%);
+
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.04),
+        0 4px 8px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--panel-text);
+    user-select: none;
+}
+
+/* 面板聚焦狀態 */
+.hero-panel--focused {
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.06),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Panel Title Bar - Mac 視窗標題列
+   -------------------------------------------------------------------------- */
+.hero-panel__titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--panel-highlight);
+    border-bottom: 1px solid var(--panel-border);
+}
+
+/* Mac Traffic Lights */
+.hero-panel__traffic-lights {
+    display: flex;
+    gap: 5px;
+}
+
+.hero-panel__traffic-light {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-text) 20%, transparent);
+    transition: background 0.15s ease;
+}
+
+/* 聚焦狀態的彩色流量燈 */
+.hero-panel--focused .hero-panel__traffic-light--close {
+    background: #ff5f56;
+}
+
+.hero-panel--focused .hero-panel__traffic-light--minimize {
+    background: #ffbd2e;
+}
+
+.hero-panel--focused .hero-panel__traffic-light--maximize {
+    background: #27ca40;
+}
+
+/* 標題文字 */
+.hero-panel__title {
+    flex: 1;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--panel-text-secondary);
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Panel Content Area
+   -------------------------------------------------------------------------- */
+.hero-panel__content {
+    padding: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Presets Panel - 字組面板
+   -------------------------------------------------------------------------- */
+
+/* 分頁切換 */
+.hero-panel__tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.hero-panel__tab {
+    flex: 1;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    color: var(--panel-text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.hero-panel__tab:hover {
+    background: var(--panel-highlight);
+}
+
+.hero-panel__tab--active {
+    background: var(--panel-text);
+    color: var(--panel-bg);
+    border-color: var(--panel-text);
+}
+
+/* 搜尋框 */
+.hero-panel__search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    background: var(--panel-highlight);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.hero-panel__search-icon {
+    width: 12px;
+    height: 12px;
+    fill: var(--panel-text-secondary);
+    flex-shrink: 0;
+}
+
+.hero-panel__search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    color: var(--panel-text);
+    outline: none;
+}
+
+.hero-panel__search-input::placeholder {
+    color: var(--panel-text-secondary);
+}
+
+/* 字組列表 */
+.hero-panel__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.hero-panel__list-item {
+    padding: 6px 8px;
+    font-size: 11px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    /* 顯示字元內容 */
+    letter-spacing: 0.15em;
+    font-family: "Noto Serif TC", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", serif;
+}
+
+.hero-panel__list-item:hover {
+    background: var(--panel-highlight);
+    border-color: var(--panel-border);
+}
+
+.hero-panel__list-item--selected {
+    background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+    border-color: var(--color-accent);
+}
+
+/* 工具列 */
+.hero-panel__toolbar {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--panel-border);
+}
+
+.hero-panel__toolbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    color: var(--panel-text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.hero-panel__toolbar-btn:hover {
+    background: var(--panel-highlight);
+}
+
+.hero-panel__toolbar-btn svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Reference Panel - 參考字面板
+   -------------------------------------------------------------------------- */
+.hero-panel__textarea-wrapper {
+    position: relative;
+}
+
+.hero-panel__textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    font-size: 14px;
+    font-family: "Noto Serif TC", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", serif;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+    background: var(--panel-highlight);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    color: var(--panel-text);
+    resize: none;
+    outline: none;
+    cursor: text;
+}
+
+.hero-panel__textarea:focus {
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+}
+
+.hero-panel__textarea[readonly] {
+    cursor: default;
+}
+
+/* Save 按鈕 */
+.hero-panel__save-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 8px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    color: var(--panel-text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.hero-panel__save-btn:hover {
+    background: var(--panel-highlight);
+}
+
+/* --------------------------------------------------------------------------
+   Locked Panel - 鎖定字面板
+   -------------------------------------------------------------------------- */
+.hero-panel__mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 8px;
+    background: var(--panel-highlight);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+}
+
+.hero-panel__mini-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: "Noto Serif TC", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", serif;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 3px;
+    color: var(--panel-text);
+}
+
+/* 中央鎖頭格 */
+.hero-panel__mini-cell--center {
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.hero-panel__mini-cell--center:hover {
+    background: var(--panel-highlight);
+}
+
+.hero-panel__mini-cell--center svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--panel-text-secondary);
+}
+
+/* 空格子 */
+.hero-panel__mini-cell--empty {
+    background: transparent;
+    border-color: transparent;
+}
+
+/* 鎖定字隱藏狀態 */
+.hero-panel__mini-grid--hidden .hero-panel__mini-cell:not(.hero-panel__mini-cell--center) {
+    color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Hero Toolbar Icons - 開關面板按鈕狀態
+   -------------------------------------------------------------------------- */
+.interactive-hero__icon-btn--active svg {
+    fill: #007AFF;
+}
+
+/* Dark mode adjustment */
+@media (prefers-color-scheme: dark) {
+    .interactive-hero__icon-btn--active svg {
+        fill: #0A84FF;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+
+/* 平板及以下：隱藏子面板 */
+@media (max-width: 900px) {
+    .hero-workspace {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-workspace__left,
+    .hero-workspace__right {
+        display: none;
+    }
+
+    /* 隱藏工具列的面板開關按鈕 */
+    .interactive-hero__toolbar-icons {
+        display: none;
+    }
+}
+
+/* 窄螢幕：調整間距 */
+@media (max-width: 600px) {
+    .hero-workspace {
+        gap: 12px;
+    }
+}

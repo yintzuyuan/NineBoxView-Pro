@@ -23,6 +23,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../interactive-hero.css">
+    <link rel="stylesheet" href="../hero-panels.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -70,61 +71,122 @@
                 <h1 class="hero__title">九宫格预览 Pro</h1>
                 <p class="hero__subtitle">专为 Glyphs 3 打造的九宫格预览工具。</p>
 
-                <!-- Interactive Hero Component -->
-                <div class="interactive-hero" data-lang="zh-Hans" data-theme="light">
-                    <!-- Mac Window Title Bar -->
-                    <div class="interactive-hero__titlebar">
-                        <div class="interactive-hero__traffic-lights">
-                            <span class="interactive-hero__traffic-light"></span>
-                            <span class="interactive-hero__traffic-light"></span>
-                            <span class="interactive-hero__traffic-light"></span>
-                        </div>
-                        <div class="interactive-hero__menu-icon">
-                            <span class="interactive-hero__menu-line"></span>
-                            <span class="interactive-hero__menu-line"></span>
-                            <span class="interactive-hero__menu-line"></span>
+                <!-- Hero Workspace: 三欄佈局 -->
+                <div class="hero-workspace" data-lang="zh-Hans">
+                    <!-- 左側：Presets 面板 -->
+                    <div class="hero-workspace__left">
+                        <div class="hero-panel hero-panel--presets" data-panel="presets">
+                            <div class="hero-panel__titlebar">
+                                <div class="hero-panel__traffic-lights">
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--close"></span>
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--minimize"></span>
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--maximize"></span>
+                                </div>
+                                <span class="hero-panel__title">字组</span>
+                            </div>
+                            <div class="hero-panel__content">
+                                <div class="hero-panel__tabs">
+                                    <button class="hero-panel__tab hero-panel__tab--active" data-tab="ref">Ref</button>
+                                    <button class="hero-panel__tab" data-tab="locked">Locked</button>
+                                </div>
+                                <div class="hero-panel__search">
+                                    <svg class="hero-panel__search-icon" viewBox="0 0 256 256">
+                                        <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
+                                    </svg>
+                                    <input type="text" class="hero-panel__search-input" placeholder="搜索字组..." readonly>
+                                </div>
+                                <div class="hero-panel__list" data-list="ref"></div>
+                                <div class="hero-panel__toolbar">
+                                    <button class="hero-panel__toolbar-btn" aria-label="新增"><svg viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></button>
+                                    <button class="hero-panel__toolbar-btn" aria-label="删除"><svg viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg></button>
+                                    <button class="hero-panel__toolbar-btn" aria-label="更多"><svg viewBox="0 0 256 256"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z"/></svg></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="interactive-hero__grid">
-                        <div class="interactive-hero__cell" data-position="0"></div>
-                        <div class="interactive-hero__cell" data-position="1"></div>
-                        <div class="interactive-hero__cell" data-position="2"></div>
-                        <div class="interactive-hero__cell" data-position="3"></div>
-                        <div class="interactive-hero__cell interactive-hero__cell--center" data-position="4"></div>
-                        <div class="interactive-hero__cell" data-position="5"></div>
-                        <div class="interactive-hero__cell" data-position="6"></div>
-                        <div class="interactive-hero__cell" data-position="7"></div>
-                        <div class="interactive-hero__cell" data-position="8"></div>
+
+                    <!-- 中央：主視窗 -->
+                    <div class="hero-workspace__main">
+                        <div class="interactive-hero" data-lang="zh-Hans" data-theme="light">
+                            <div class="interactive-hero__titlebar">
+                                <div class="interactive-hero__traffic-lights">
+                                    <span class="interactive-hero__traffic-light"></span>
+                                    <span class="interactive-hero__traffic-light"></span>
+                                    <span class="interactive-hero__traffic-light"></span>
+                                </div>
+                                <div class="interactive-hero__menu-icon">
+                                    <span class="interactive-hero__menu-line"></span>
+                                    <span class="interactive-hero__menu-line"></span>
+                                    <span class="interactive-hero__menu-line"></span>
+                                </div>
+                            </div>
+                            <div class="interactive-hero__grid">
+                                <div class="interactive-hero__cell" data-position="0"></div>
+                                <div class="interactive-hero__cell" data-position="1"></div>
+                                <div class="interactive-hero__cell" data-position="2"></div>
+                                <div class="interactive-hero__cell" data-position="3"></div>
+                                <div class="interactive-hero__cell interactive-hero__cell--center" data-position="4"></div>
+                                <div class="interactive-hero__cell" data-position="5"></div>
+                                <div class="interactive-hero__cell" data-position="6"></div>
+                                <div class="interactive-hero__cell" data-position="7"></div>
+                                <div class="interactive-hero__cell" data-position="8"></div>
+                            </div>
+                            <div class="interactive-hero__controls">
+                                <button class="interactive-hero__theme-toggle" aria-label="切换明暗模式">
+                                    <svg class="icon-sun" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+                                    <svg class="icon-moon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
+                                </button>
+                                <input type="range" class="interactive-hero__blur-slider" min="0" max="10" value="0" aria-label="模糊程度">
+                                <div class="interactive-hero__toolbar-icons">
+                                    <button class="interactive-hero__icon-btn interactive-hero__icon-btn--active" data-toggle="presets" aria-label="字组"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,88H48a16,16,0,0,0-16,16v96a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V104A16,16,0,0,0,208,88Zm0,112H48V104H208v96ZM48,64a8,8,0,0,1,8-8H200a8,8,0,0,1,0,16H56A8,8,0,0,1,48,64ZM64,32a8,8,0,0,1,8-8H184a8,8,0,0,1,0,16H72A8,8,0,0,1,64,32Z"/></svg></button>
+                                    <button class="interactive-hero__icon-btn interactive-hero__icon-btn--active" data-toggle="locked" aria-label="锁定字"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg></button>
+                                    <button class="interactive-hero__icon-btn interactive-hero__icon-btn--active" data-toggle="reference" aria-label="参考字"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="interactive-hero__controls">
-                        <button class="interactive-hero__theme-toggle" aria-label="切换明暗模式">
-                            <svg class="icon-sun" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z" />
-                            </svg>
-                            <svg class="icon-moon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z" />
-                            </svg>
-                        </button>
-                        <input type="range" class="interactive-hero__blur-slider" min="0" max="10" value="0"
-                            aria-label="模糊程度">
-                        <div class="interactive-hero__toolbar-icons">
-                            <button class="interactive-hero__icon-btn" aria-label="字組"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
-                                    <path
-                                        d="M208,88H48a16,16,0,0,0-16,16v96a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V104A16,16,0,0,0,208,88Zm0,112H48V104H208v96ZM48,64a8,8,0,0,1,8-8H200a8,8,0,0,1,0,16H56A8,8,0,0,1,48,64ZM64,32a8,8,0,0,1,8-8H184a8,8,0,0,1,0,16H72A8,8,0,0,1,64,32Z" />
-                                </svg></button>
-                            <button class="interactive-hero__icon-btn" aria-label="鎖定字"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
-                                    <path
-                                        d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z" />
-                                </svg></button>
-                            <button class="interactive-hero__icon-btn" aria-label="參考字"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
-                                    <path
-                                        d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z" />
-                                </svg></button>
+
+                    <!-- 右側面板 -->
+                    <div class="hero-workspace__right">
+                        <div class="hero-panel hero-panel--reference" data-panel="reference">
+                            <div class="hero-panel__titlebar">
+                                <div class="hero-panel__traffic-lights">
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--close"></span>
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--minimize"></span>
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--maximize"></span>
+                                </div>
+                                <span class="hero-panel__title">参考字</span>
+                            </div>
+                            <div class="hero-panel__content">
+                                <div class="hero-panel__textarea-wrapper">
+                                    <textarea class="hero-panel__textarea" readonly>天地玄黄宇宙洪荒</textarea>
+                                </div>
+                                <button class="hero-panel__save-btn">保存</button>
+                            </div>
+                        </div>
+                        <div class="hero-panel hero-panel--locked" data-panel="locked">
+                            <div class="hero-panel__titlebar">
+                                <div class="hero-panel__traffic-lights">
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--close"></span>
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--minimize"></span>
+                                    <span class="hero-panel__traffic-light hero-panel__traffic-light--maximize"></span>
+                                </div>
+                                <span class="hero-panel__title">锁定字</span>
+                            </div>
+                            <div class="hero-panel__content">
+                                <div class="hero-panel__mini-grid">
+                                    <div class="hero-panel__mini-cell" data-position="0">东</div>
+                                    <div class="hero-panel__mini-cell hero-panel__mini-cell--empty" data-position="1"></div>
+                                    <div class="hero-panel__mini-cell" data-position="2">西</div>
+                                    <div class="hero-panel__mini-cell hero-panel__mini-cell--empty" data-position="3"></div>
+                                    <div class="hero-panel__mini-cell hero-panel__mini-cell--center" data-position="4"><svg viewBox="0 0 256 256"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg></div>
+                                    <div class="hero-panel__mini-cell hero-panel__mini-cell--empty" data-position="5"></div>
+                                    <div class="hero-panel__mini-cell" data-position="6">南</div>
+                                    <div class="hero-panel__mini-cell hero-panel__mini-cell--empty" data-position="7"></div>
+                                    <div class="hero-panel__mini-cell" data-position="8">北</div>
+                                </div>
+                                <button class="hero-panel__save-btn">保存</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -622,6 +684,7 @@
     <script src="../assets/js/bento-video-hover.js"></script>
     <script src="../assets/data/hero-characters.js"></script>
     <script src="../assets/js/interactive-hero.js"></script>
+    <script src="../assets/js/hero-panels.js"></script>
 
     <!-- Paddle.js SDK -->
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
