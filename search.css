@@ -163,6 +163,13 @@
   }
 }
 
+/* 手機版隱藏 ESC 提示 */
+@media (max-width: 768px) {
+  .search-modal__shortcut {
+    display: none;
+  }
+}
+
 /* === Results Area === */
 .search-modal__results {
   flex: 1;

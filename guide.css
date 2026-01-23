@@ -606,12 +606,14 @@ td .icon {
   justify-content: center;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   z-index: 60;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
-.mobile-nav-toggle:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg);
+/* 僅在支援 hover 的裝置上顯示 hover 效果 */
+@media (hover: hover) {
+  .mobile-nav-toggle:hover {
+    border-color: var(--color-text-secondary);
+  }
 }
 
 .mobile-nav-toggle:active {
@@ -645,50 +647,56 @@ td .icon {
     gap: var(--spacing-md);
   }
 
-  .guide__sidebar {
+  /* 手機版導航遮罩（獨立元素） */
+  .mobile-nav-backdrop {
     position: fixed;
     top: 60px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-bg);
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    z-index: 55;
+    pointer-events: none;
+  }
+
+  .mobile-nav-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .guide__sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 280px;
+    max-width: 85vw;
+    bottom: 0;
+    background-color: #f8f6f0;
     border-bottom: none;
     padding: var(--spacing-md);
     margin-bottom: 0;
     max-height: calc(100vh - 60px);
     overflow-y: auto;
     transform: translateX(-100%);
-    opacity: 0;
     visibility: hidden;
-    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
-    z-index: 55;
+    transition: transform var(--transition-normal), visibility var(--transition-normal);
+    z-index: 60;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   }
 
   .guide__sidebar.is-open {
     transform: translateX(0);
-    opacity: 1;
     visibility: visible;
   }
 
-  /* 側邊欄開啟時的背景遮罩 */
-  .guide__sidebar::before {
-    content: '';
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-normal), visibility var(--transition-normal);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .guide__sidebar.is-open::before {
-    opacity: 1;
-    visibility: visible;
+  /* 深色模式下的側邊欄背景 */
+  [data-theme="dark"] .guide__sidebar {
+    background-color: #1a1a1a;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
   }
 
   .guide__nav {
@@ -1015,10 +1023,11 @@ td .icon {
   transform: translateY(0);
 }
 
-.back-to-top:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  border-color: var(--color-text);
+/* 僅在支援 hover 的裝置上顯示 hover 效果 */
+@media (hover: hover) {
+  .back-to-top:hover {
+    border-color: var(--color-text-secondary);
+  }
 }
 
 .back-to-top:focus-visible {

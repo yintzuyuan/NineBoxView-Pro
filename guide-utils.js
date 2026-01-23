@@ -176,18 +176,21 @@
   function initMobileNav() {
     var toggle = document.getElementById('mobile-nav-toggle');
     var sidebar = document.getElementById('guide-sidebar');
+    var backdrop = document.getElementById('mobile-nav-backdrop');
 
     if (!toggle || !sidebar) return;
 
     function openNav() {
       toggle.setAttribute('aria-expanded', 'true');
       sidebar.classList.add('is-open');
+      if (backdrop) backdrop.classList.add('is-visible');
       document.body.style.overflow = 'hidden';
     }
 
     function closeNav() {
       toggle.setAttribute('aria-expanded', 'false');
       sidebar.classList.remove('is-open');
+      if (backdrop) backdrop.classList.remove('is-visible');
       document.body.style.overflow = '';
     }
 
@@ -208,13 +211,12 @@
       });
     });
 
-    // 點擊側邊欄外部區域（遮罩）關閉選單
-    sidebar.addEventListener('click', function(e) {
-      // 只有點擊 sidebar 本身（遮罩區域）才關閉，點擊內容不關閉
-      if (e.target === sidebar) {
+    // 點擊遮罩關閉選單
+    if (backdrop) {
+      backdrop.addEventListener('click', function() {
         closeNav();
-      }
-    });
+      });
+    }
 
     // ESC 鍵關閉選單
     document.addEventListener('keydown', function(e) {

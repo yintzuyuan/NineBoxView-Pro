@@ -45,9 +45,9 @@
   --overlay-medium: rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode */
+/* Dark mode - 系統偏好 */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-bg: #1a1a1a;
     --color-text: #e8e6e0;
     --color-text-secondary: #b0b0b0;
@@ -56,9 +56,32 @@
   }
 
   /* 深色模式字重補償 */
-  h1, h2, h3, h4, h5, h6 {
+  :root:not([data-theme="light"]) h1,
+  :root:not([data-theme="light"]) h2,
+  :root:not([data-theme="light"]) h3,
+  :root:not([data-theme="light"]) h4,
+  :root:not([data-theme="light"]) h5,
+  :root:not([data-theme="light"]) h6 {
     font-weight: 650;
   }
+}
+
+/* Dark mode - 手動切換 */
+[data-theme="dark"] {
+  --color-bg: #1a1a1a;
+  --color-text: #e8e6e0;
+  --color-text-secondary: #b0b0b0;
+  --color-border: rgba(248, 246, 240, 0.2);
+  --color-accent: #9ca3af;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  font-weight: 650;
 }
 
 /* ==================== Reset & Base ==================== */
