@@ -598,27 +598,4 @@
    Responsive Design
    -------------------------------------------------------------------------- */
 
-/* 平板及以下：隱藏子面板 */
-@media (max-width: 900px) {
-    .hero-workspace {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-workspace__left,
-    .hero-workspace__right {
-        display: none;
-    }
-
-    /* 隱藏工具列的面板開關按鈕 */
-    .interactive-hero__toolbar-icons {
-        display: none;
-    }
-}
-
-/* 窄螢幕：調整間距 */
-@media (max-width: 600px) {
-    .hero-workspace {
-        gap: 12px;
-    }
-}
+/* 響應式：面板保持顯示，允許裁切（模擬真實應用程式視窗） */

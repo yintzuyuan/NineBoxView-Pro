@@ -14,7 +14,7 @@
     --hero-slider-track: rgba(0, 0, 0, 0.15);
     --hero-slider-thumb: #ffffff;
     --hero-icon-fill: #aaaaaa;
-    --cell-size: min(28vw, 120px);
+    --cell-size: 120px;
     --blur-amount: 0px;
 
     /* Container - 模擬視窗外框 */
@@ -250,36 +250,4 @@
     cursor: pointer;
 }
 
-/* --------------------------------------------------------------------------
-   Responsive Design
-   -------------------------------------------------------------------------- */
-@media (max-width: 600px) {
-    .interactive-hero {
-        --cell-size: 28vw;
-        border-radius: 8px;
-    }
-
-    .interactive-hero__grid {
-        padding: 15px 15px 45px 15px;
-    }
-}
-
-@media (max-width: 400px) {
-    .interactive-hero {
-        --cell-size: 27vw;
-    }
-
-    .interactive-hero__grid {
-        padding: 12px 12px 40px 12px;
-    }
-
-    .interactive-hero__controls {
-        bottom: 6px;
-        left: 8px;
-        gap: 4px;
-    }
-
-    .interactive-hero__blur-slider {
-        width: 40px;
-    }
-}
+/* 響應式設計已移除：工具模擬保持固定尺寸，允許裁切 */
