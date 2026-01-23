@@ -1506,7 +1506,7 @@ a:hover {
 
 .faq__item dt {
   font-weight: 500;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-sm) 0;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -1544,7 +1544,7 @@ a:hover {
 .faq__item.open dd {
   max-height: 200px;
   opacity: 1;
-  padding-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
 }
 
 /* ==================== Scroll-triggered Animations ==================== */
