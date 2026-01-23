@@ -1107,6 +1107,12 @@ a:hover {
     font-size: 1rem;
   }
 
+  .feature-showcase__media {
+    width: 84%;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+
   /* Final CTA */
   .final-cta__title {
     font-size: 1.5rem;
