@@ -417,8 +417,10 @@
             }
         });
 
-        // Initial population (只填充列表，不自動套用到面板)
+        // Initial population
         populatePresetList();
+        // 同步更新參考字面板（與字組列表選中項目一致）
+        updateReferencePanel();
 
         // Initialize locked button state
         initLockedButtonState();
