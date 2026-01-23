@@ -18,7 +18,7 @@
    * 統一字池來源，避免重複定義
    *
    * 轉換規則：
-   * - reference: reference[0].chars 前 8 字（去除空格）
+   * - reference: 合併所有 reference 組的字元（去除空格和重複）
    * - locked: 保留三組完整結構（與展示工具一致）
    * - center: HERO_CHARACTERS[locale].center
    */
@@ -30,9 +30,15 @@
       const preset = HERO_PRESETS[locale];
       const hero = HERO_CHARACTERS[locale];
 
-      // reference: 從第一組 reference 的 chars 取前 8 字（去除空格）
-      const refChars = preset.reference[0].chars.replace(/\s/g, '');
-      const reference = refChars.slice(0, 8).split('');
+      // reference: 合併所有 reference 組的字元（去除空格和重複）
+      const allRefChars = new Set();
+      preset.reference.forEach(group => {
+        const chars = group.chars.replace(/\s/g, '');
+        for (const char of chars) {
+          allRefChars.add(char);
+        }
+      });
+      const reference = Array.from(allRefChars);
 
       // locked: 保留三組完整結構（每組包含 positions 物件）
       const locked = preset.locked;
