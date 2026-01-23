@@ -439,6 +439,31 @@ def add_heading_ids(html: str) -> str:
     return re.sub(r'<h([2-6])>([^<]+)</h\1>', add_id, html)
 
 
+def add_lazy_loading(html: str) -> str:
+    """為 img 標籤添加 lazy loading 屬性以優化效能"""
+    def add_attrs(match):
+        # 取得原始 img 標籤
+        img_tag = match.group(0)
+        # 如果已經有 loading 屬性，不重複添加
+        if 'loading=' in img_tag:
+            return img_tag
+        # 在 <img 後面插入 loading 和 decoding 屬性
+        return img_tag.replace('<img ', '<img loading="lazy" decoding="async" ')
+
+    return re.sub(r'<img\s+[^>]+>', add_attrs, html)
+
+
+def wrap_tables(html: str) -> str:
+    """為表格添加響應式包裝容器"""
+    # 將 <table> 包裝在 <div class="table-wrapper"> 中
+    return re.sub(
+        r'(<table[^>]*>.*?</table>)',
+        r'<div class="table-wrapper">\1</div>',
+        html,
+        flags=re.DOTALL
+    )
+
+
 def convert_markdown_to_html(content: str) -> str:
     """
     將 Markdown 轉換為 HTML
@@ -454,6 +479,10 @@ def convert_markdown_to_html(content: str) -> str:
     html = md.convert(content)
     # 為標題添加 id 屬性
     html = add_heading_ids(html)
+    # 為圖片添加 lazy loading 屬性
+    html = add_lazy_loading(html)
+    # 為表格添加響應式包裝
+    html = wrap_tables(html)
     return html
 
 
