@@ -59,7 +59,6 @@
   function getTextPools() {
     if (!textPools) {
       if (typeof HERO_PRESETS === 'undefined' || typeof HERO_CHARACTERS === 'undefined') {
-        console.warn('HERO_PRESETS 或 HERO_CHARACTERS 尚未載入，使用備用字池');
         // 備用字池（三組結構，與 HERO_PRESETS 一致）
         return {
           'zh-Hant': {

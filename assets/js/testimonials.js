@@ -110,7 +110,6 @@ function createTestimonialCard(t, basePath) {
 function renderTestimonials(testimonials, basePath) {
   const grid = document.querySelector('.testimonials__grid');
   if (!grid) {
-    console.error('找不到 .testimonials__grid 容器');
     return;
   }
 
@@ -153,7 +152,6 @@ async function loadTestimonials() {
     renderTestimonials(selected, basePath);
 
   } catch (error) {
-    console.error('載入證言失敗:', error);
     // 載入失敗時保留原有 HTML 內容（如果有的話）
   }
 }

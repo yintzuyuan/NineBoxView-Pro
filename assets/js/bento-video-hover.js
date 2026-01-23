@@ -13,8 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 滑鼠移入時播放
             card.addEventListener('mouseenter', () => {
-                video.play().catch(err => {
-                    console.log('Video play failed:', err);
+                // 支援 lazy loading：如果 src 尚未設定，從 data-src 載入
+                if (!video.src && video.dataset.src) {
+                    video.src = video.dataset.src;
+                    video.removeAttribute('data-src');
+                }
+                video.play().catch(() => {
+                    // 靜默處理播放失敗
                 });
             });
 

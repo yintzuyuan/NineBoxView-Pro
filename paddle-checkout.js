@@ -22,18 +22,11 @@ const LOCALE_MAP = {
 // 初始化 Paddle
 function initPaddle() {
   if (typeof Paddle === 'undefined') {
-    console.error('Paddle.js not loaded');
     return;
   }
   Paddle.Environment.set(PADDLE_CONFIG.environment);
   Paddle.Initialize({
-    token: PADDLE_CONFIG.token,
-    eventCallback: function(event) {
-      console.log('Paddle Event:', event.name, event.data);
-      if (event.name === 'checkout.warning' || event.name === 'checkout.error') {
-        console.error('Paddle Error Details:', event);
-      }
-    }
+    token: PADDLE_CONFIG.token
   });
 }
 

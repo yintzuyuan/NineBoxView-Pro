@@ -10,14 +10,23 @@
     <!-- Open Graph -->
     <meta property="og:title" content="NineBoxView Pro - 九宫格预览工具">
     <meta property="og:description" content="专为 Glyphs 3 打造的九宫格预览工具。">
-    <meta property="og:image" content="../assets/images/og-image.png">
+    <meta property="og:image" content="https://yintzuyuan.github.io/NineBoxView-Pro/assets/images/og-image.png">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yintzuyuan.github.io/NineBoxView-Pro/zh-Hans/">
+
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="zh-Hant" href="https://yintzuyuan.github.io/NineBoxView-Pro/zh-Hant/">
+    <link rel="alternate" hreflang="en" href="https://yintzuyuan.github.io/NineBoxView-Pro/en/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://yintzuyuan.github.io/NineBoxView-Pro/zh-Hans/">
+    <link rel="alternate" hreflang="ja" href="https://yintzuyuan.github.io/NineBoxView-Pro/ja/">
+    <link rel="alternate" hreflang="ko" href="https://yintzuyuan.github.io/NineBoxView-Pro/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://yintzuyuan.github.io/NineBoxView-Pro/">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
@@ -32,8 +41,44 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
     <link rel="shortcut icon" href="../assets/favicon.ico">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "NineBoxView Pro",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "macOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "14 天免费试用"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "TzuYuan Yin",
+            "url": "https://erikyin.net"
+        },
+        "description": "专为 Glyphs 3 打造的九宫格预览工具。原生性能、60fps 流畅体验、五语系界面支持。",
+        "softwareVersion": "1.0",
+        "applicationSubCategory": "Font Design Tool",
+        "featureList": [
+            "九宫格预览",
+            "参考字随机排列",
+            "锁定字固定位置",
+            "字组快速切换",
+            "透写台同步",
+            "格线辅助"
+        ]
+    }
+    </script>
+
     <!-- Platform Detection (must be in head for immediate class application) -->
     <script src="../assets/js/platform-detect.js"></script>
+
+    <!-- Video Lazy Loading -->
+    <script src="../assets/js/video-lazy-load.js"></script>
 </head>
 
 <body>
@@ -51,7 +96,7 @@
                 <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="listbox"
                     aria-label="Select language">
                     <span class="lang-current">简</span>
-                    <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor">
+                    <svg class="lang-chevron" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
                         <path
                             d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" />
                     </svg>
@@ -93,7 +138,7 @@
                                     <button class="hero-panel__tab" data-tab="locked">锁定</button>
                                 </div>
                                 <div class="hero-panel__search">
-                                    <svg class="hero-panel__search-icon" viewBox="0 0 256 256">
+                                    <svg class="hero-panel__search-icon" viewBox="0 0 256 256" aria-hidden="true">
                                         <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
                                     </svg>
                                     <input type="text" class="hero-panel__search-input" placeholder="搜索字组..." readonly>
@@ -453,21 +498,21 @@
                 <!-- 三层说明卡片 -->
                 <div class="concept-layers">
                     <div class="layer-card layer-card--edit">
-                        <h3><svg class="layer-icon" viewBox="0 0 256 256">
+                        <h3><svg class="layer-icon" viewBox="0 0 256 256" aria-hidden="true">
                                 <path
                                     d="M240,100.68a15.86,15.86,0,0,0-4.69-11.31L166.63,20.68a16,16,0,0,0-22.63,0L115.57,49.11l-58,21.77A16.06,16.06,0,0,0,47.35,83.23L24.11,222.68A8,8,0,0,0,32,232a8.4,8.4,0,0,0,1.32-.11l139.44-23.24a16,16,0,0,0,12.35-10.17l21.77-58L235.31,112A15.87,15.87,0,0,0,240,100.68Zm-69.87,92.19L55.32,212l47.37-47.37a28,28,0,1,0-11.32-11.32L44,200.7,63.13,85.86,118,65.29,190.7,138ZM104,140a12,12,0,1,1,12,12A12,12,0,0,1,104,140Zm96-15.32L131.31,56l24-24L224,100.68Z" />
                             </svg>编辑字</h3>
                         <p>当前编辑的字符，同步显示在九宫格每一格</p>
                     </div>
                     <div class="layer-card layer-card--reference">
-                        <h3><svg class="layer-icon" viewBox="0 0 256 256">
+                        <h3><svg class="layer-icon" viewBox="0 0 256 256" aria-hidden="true">
                                 <path
                                     d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z" />
                             </svg>参考字</h3>
                         <p>随机排列的常用字，快速发现问题搭配</p>
                     </div>
                     <div class="layer-card layer-card--locked">
-                        <h3><svg class="layer-icon" viewBox="0 0 256 256">
+                        <h3><svg class="layer-icon" viewBox="0 0 256 256" aria-hidden="true">
                                 <path
                                     d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z" />
                             </svg>锁定字</h3>
@@ -481,7 +526,7 @@
         <section class="section feature-showcase">
             <div class="container">
                 <div class="feature-showcase__media">
-                    <video src="../assets/images/feature-reference.webm" autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
+                    <video data-src="../assets/images/feature-reference.webm" data-autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
                         aria-label="参考字功能展示">
                         您的浏览器不支持视频播放。
                     </video>
@@ -498,7 +543,7 @@
         <section class="section feature-showcase">
             <div class="container">
                 <div class="feature-showcase__media">
-                    <video src="../assets/images/feature-lock.webm" autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
+                    <video data-src="../assets/images/feature-lock.webm" data-autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
                         aria-label="锁定字功能展示">
                         您的浏览器不支持视频播放。
                     </video>
@@ -515,7 +560,7 @@
         <section class="section feature-showcase">
             <div class="container">
                 <div class="feature-showcase__media">
-                    <video src="../assets/images/feature-presets.webm" autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
+                    <video data-src="../assets/images/feature-presets.webm" data-autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
                         aria-label="字组功能展示">
                         您的浏览器不支持视频播放。
                     </video>
@@ -538,7 +583,7 @@
                     <!-- 大卡片：原生 macOS 体验 -->
                     <div class="bento__card bento__card--large">
                         <div class="bento__media">
-                            <video src="../assets/images/feature-native.webm" autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
+                            <video data-src="../assets/images/feature-native.webm" loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
                                 aria-label="原生 macOS 体验展示">
                                 您的浏览器不支持视频播放。
                             </video>
@@ -552,7 +597,7 @@
                     <!-- 中卡片：透写台同步 -->
                     <div class="bento__card bento__card--medium">
                         <div class="bento__media">
-                            <video src="../assets/images/feature-lighttable.webm" autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
+                            <video data-src="../assets/images/feature-lighttable.webm" loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
                                 aria-label="透写台同步展示">
                                 您的浏览器不支持视频播放。
                             </video>
@@ -566,7 +611,7 @@
                     <!-- 小卡片：网格辅助 -->
                     <div class="bento__card bento__card--small">
                         <div class="bento__media">
-                            <video src="../assets/images/feature-grid.webm" autoplay loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
+                            <video data-src="../assets/images/feature-grid.webm" loop muted playsinline controlsList="nodownload" oncontextmenu="return false;"
                                 aria-label="网格辅助功能展示">
                                 您的浏览器不支持视频播放。
                             </video>

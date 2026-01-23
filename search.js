@@ -112,11 +112,8 @@
     const data = window.SEARCH_INDEX;
 
     if (!data || !Array.isArray(data)) {
-      console.warn('[Search] No search index found');
       return;
     }
-
-    console.log('[Search] Loaded', data.length, 'entries');
 
     // 初始化 Fuse.js
     fuse = new Fuse(data, {
@@ -128,8 +125,6 @@
       ignoreLocation: true,
       includeMatches: true
     });
-
-    console.log('[Search] Fuse.js initialized');
   }
 
   /**

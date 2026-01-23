@@ -39,6 +39,10 @@
   /* Transitions - 與 erikyin.net 統一 */
   --transition-fast: 150ms ease;
   --transition-normal: 200ms ease;
+
+  /* Overlay colors */
+  --overlay-light: rgba(0, 0, 0, 0.05);
+  --overlay-medium: rgba(0, 0, 0, 0.1);
 }
 
 /* Dark mode */
@@ -186,22 +190,22 @@ a:hover {
 
 .nav__link:hover {
   color: var(--color-text);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
   opacity: 1;
 }
 
 .nav__link.active {
   color: var(--color-text);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--overlay-medium);
 }
 
 /* 淺色模式（明確設定） */
 [data-theme="light"] .nav__link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
 }
 
 [data-theme="light"] .nav__link.active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--overlay-medium);
 }
 
 /* 暗色模式 */
@@ -246,12 +250,12 @@ a:hover {
 .lang-trigger:hover {
   color: var(--color-text);
   border-color: var(--color-text);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
 }
 
 /* 淺色模式（明確設定） */
 [data-theme="light"] .lang-trigger:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
 }
 
 /* 暗色模式 */
@@ -314,13 +318,13 @@ a:hover {
 
 .lang-dropdown a:hover {
   color: var(--color-text);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
   opacity: 1;
 }
 
 /* 淺色模式（明確設定） */
 [data-theme="light"] .lang-dropdown a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
 }
 
 /* 暗色模式 */
@@ -992,13 +996,13 @@ a:hover {
 
 .footer__link:hover {
   color: var(--color-text);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
   opacity: 1;
 }
 
 /* 淺色模式（明確設定） */
 [data-theme="light"] .footer__link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--overlay-light);
 }
 
 /* 暗色模式 */

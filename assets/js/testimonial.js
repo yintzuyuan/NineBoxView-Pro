@@ -363,17 +363,6 @@
 
     // Check webhook URL
     if (!CONFIG.webhookUrl) {
-      console.warn('Webhook URL not configured. Form data:');
-      console.log({
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        quote: quoteInput.value.trim(),
-        role: roleInput.value.trim(),
-        company: companyInput.value.trim(),
-        lang: langInput.value,
-        avatar: selectedFile ? selectedFile.name : null
-      });
-
       // Show success for demo purposes
       showSuccess();
       return;
@@ -407,7 +396,6 @@
       // Show success
       showSuccess();
     } catch (error) {
-      console.error('Submission error:', error);
       showError(getMessage('submitError'));
       submitBtn.disabled = false;
       submitBtn.classList.remove('loading');
@@ -430,7 +418,6 @@
    */
   function init() {
     if (!form) {
-      console.warn('Testimonial form not found');
       return;
     }
 
@@ -454,8 +441,6 @@
 
     // Initialize counter
     updateQuoteCounter();
-
-    console.log('Testimonial form initialized');
   }
 
   // Initialize when DOM is ready
