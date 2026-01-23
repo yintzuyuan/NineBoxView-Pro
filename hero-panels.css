@@ -224,6 +224,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: clip;    /* 完全禁止滾動，防止 Tab 導航時偏移 */
+    min-width: 0;      /* 允許 flex 子元素收縮 */
 }
 
 /* --------------------------------------------------------------------------
@@ -332,7 +334,7 @@
     flex-direction: column;
     gap: 2px;
     flex: 1;
-    overflow-y: auto;
+    overflow: clip auto;  /* x 完全禁止滾動，y 自動滾動 */
 }
 
 .hero-panel__list-item {
@@ -350,6 +352,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;  /* 防止 flex 子元素撐開容器 */
 }
 
 .hero-panel__list-item:hover {
