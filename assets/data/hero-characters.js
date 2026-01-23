@@ -27,8 +27,12 @@ const HERO_CHARACTERS = {
 const HERO_PRESETS = {
     'zh-Hant': {
         reference: [
-            { id: 'common', chars: '酬鷹靈 南去經 三來' },
-            { id: 'complex', chars: '鑫龍鸚 鷺鬱纖 靄鑼' }
+            { id: '1', chars: '南去經三國 東來過五湖' },
+            { id: '2', chars: '曾經滄海難為水 除卻巫山不是雲' },
+            { id: '3', chars: '問君能有幾多愁 恰似一江春水向東流' },
+            { id: '4', chars: '風急天高猿嘯哀 渚清沙白鳥飛回' },
+            { id: '5', chars: '人生自古誰無死 留取丹心照汗青' },
+            { id: '6', chars: '美麗島上經 散播了無限種子 自由的花 平等的樹' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '國', 2: '東', 6: '我', 8: '今' } },
@@ -38,8 +42,12 @@ const HERO_PRESETS = {
 
     'zh-Hans': {
         reference: [
-            { id: 'common', chars: '天地玄 黄宇宙 洪荒' },
-            { id: 'complex', chars: '龙凤麟 龟鹤鹏 鸾雀' }
+            { id: '1', chars: '天地玄黄 宇宙洪荒' },
+            { id: '2', chars: '滚滚长江东逝水 浪花淘尽英雄' },
+            { id: '3', chars: '落霞与孤鹜齐飞 秋水共长天一色' },
+            { id: '4', chars: '大江东去 浪淘尽 千古风流人物' },
+            { id: '5', chars: '在我的后园 可以看见墙外有两株树 一株是枣树 还有一株也是枣树' },
+            { id: '6', chars: '横眉冷对千夫指 俯首甘为孺子牛' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '东', 2: '西', 6: '南', 8: '北' } },
@@ -49,8 +57,12 @@ const HERO_PRESETS = {
 
     'ja': {
         reference: [
-            { id: 'hiragana', chars: 'いうえ おかき くさ' },
-            { id: 'kanji', chars: '風林火 山雪月 花鳥' }
+            { id: '1', chars: 'いろはにほへと ちりぬるを わかよたれそ つねならむ うゐのおくやま けふこえて あさきゆめみし ゑひもせす' },
+            { id: '2', chars: '愛のあるユニークで豊かな書体' },
+            { id: '3', chars: '山路を登りながら こう考えた 智に働けば角が立つ' },
+            { id: '4', chars: '吾輩は猫である 名前はまだ無い どこで生れたかとんと見当がつかぬ' },
+            { id: '5', chars: 'デジタル文字は美しく進化する' },
+            { id: '6', chars: 'あたらしい朝が来た希望の朝だ' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '東', 2: '西', 6: '南', 8: '北' } },
@@ -60,8 +72,12 @@ const HERO_PRESETS = {
 
     'ko': {
         reference: [
-            { id: 'hangul', chars: '가나다 라마바 사아' },
-            { id: 'hanja', chars: '天地人 山水火 風雷' }
+            { id: '1', chars: '다람쥐 헌 쳇바퀴에 타고파' },
+            { id: '2', chars: '키스의 고유 조건은 입술끼리 만나야 하고 특별한 기술은 필요치 않다' },
+            { id: '3', chars: '정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날' },
+            { id: '4', chars: '콩고물과 우유가 들어간 빙수는 차게 먹어야 특별한 맛이 잘 표현된다' },
+            { id: '5', chars: '덧글은 통신 예절 지키면서 표현 자유 추구하는 방향으로' },
+            { id: '6', chars: '야 니들 밥에 쵸코우유 토핑해 먹었쪄' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '東', 2: '西', 6: '南', 8: '北' } },

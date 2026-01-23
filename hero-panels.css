@@ -346,6 +346,10 @@
     text-align: left;
     letter-spacing: 0.05em;
     font-family: inherit;
+    /* 單行顯示，超過顯示刪節號 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hero-panel__list-item:hover {

@@ -7,6 +7,20 @@
     'use strict';
 
     /**
+     * Fisher-Yates Shuffle Algorithm
+     * @param {Array} array - Array to shuffle
+     * @returns {Array} - Shuffled array (new array, does not mutate original)
+     */
+    function shuffle(array) {
+        const result = [...array];
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [result[i], result[j]] = [result[j], result[i]];
+        }
+        return result;
+    }
+
+    /**
      * Initialize hero panels for a workspace
      * @param {HTMLElement} workspace - The .hero-workspace element
      */
@@ -179,13 +193,15 @@
 
             const cells = heroComponent.querySelectorAll('.interactive-hero__cell:not(.interactive-hero__cell--center)');
             const charsArray = preset.chars.replace(/\s/g, '').split('');
+            // 取前 8 個字並亂數排列
+            const shuffledChars = shuffle(charsArray.slice(0, 8));
             cells.forEach((cell, index) => {
-                if (charsArray[index]) {
+                if (shuffledChars[index]) {
                     // 設定參考字為 data 屬性，作為基底層
-                    cell.dataset.refChar = charsArray[index];
+                    cell.dataset.refChar = shuffledChars[index];
                     // 如果沒有鎖定字，顯示參考字
                     if (!cell.dataset.lockedChar) {
-                        cell.textContent = charsArray[index];
+                        cell.textContent = shuffledChars[index];
                     }
                 }
             });
