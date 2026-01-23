@@ -7,7 +7,7 @@
  * - 周圍八格的字池改為使用 HERO_PRESETS.reference[0].chars（第一組參考字）
  *
  * HERO_PRESETS 說明：
- * - reference: 參考字字組陣列，每組 8 個字（第一組同時作為亂數排列的字池）
+ * - reference: 參考字字組字串，空格會被忽略（可用於視覺分組），第一組同時作為亂數排列的字池
  * - locked: 鎖定字預設組合，使用 positions 物件指定位置（0-8，跳過中央 4）
  */
 
@@ -27,8 +27,8 @@ const HERO_CHARACTERS = {
 const HERO_PRESETS = {
     'zh-Hant': {
         reference: [
-            { id: 'common', chars: ['酬', '鷹', '靈', '南', '去', '經', '三', '來'] },
-            { id: 'complex', chars: ['鑫', '龍', '鸚', '鷺', '鬱', '纖', '靄', '鑼'] }
+            { id: 'common', chars: '酬鷹靈 南去經 三來' },
+            { id: 'complex', chars: '鑫龍鸚 鷺鬱纖 靄鑼' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '國', 2: '東', 6: '我', 8: '今' } },
@@ -38,8 +38,8 @@ const HERO_PRESETS = {
 
     'zh-Hans': {
         reference: [
-            { id: 'common', chars: ['天', '地', '玄', '黄', '宇', '宙', '洪', '荒'] },
-            { id: 'complex', chars: ['龙', '凤', '麟', '龟', '鹤', '鹏', '鸾', '雀'] }
+            { id: 'common', chars: '天地玄 黄宇宙 洪荒' },
+            { id: 'complex', chars: '龙凤麟 龟鹤鹏 鸾雀' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '东', 2: '西', 6: '南', 8: '北' } },
@@ -49,8 +49,8 @@ const HERO_PRESETS = {
 
     'ja': {
         reference: [
-            { id: 'hiragana', chars: ['い', 'う', 'え', 'お', 'か', 'き', 'く', 'さ'] },
-            { id: 'kanji', chars: ['風', '林', '火', '山', '雪', '月', '花', '鳥'] }
+            { id: 'hiragana', chars: 'いうえ おかき くさ' },
+            { id: 'kanji', chars: '風林火 山雪月 花鳥' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '東', 2: '西', 6: '南', 8: '北' } },
@@ -60,8 +60,8 @@ const HERO_PRESETS = {
 
     'ko': {
         reference: [
-            { id: 'hangul', chars: ['가', '나', '다', '라', '마', '바', '사', '아'] },
-            { id: 'hanja', chars: ['天', '地', '人', '山', '水', '火', '風', '雷'] }
+            { id: 'hangul', chars: '가나다 라마바 사아' },
+            { id: 'hanja', chars: '天地人 山水火 風雷' }
         ],
         locked: [
             { id: 'corners', positions: { 0: '東', 2: '西', 6: '南', 8: '北' } },

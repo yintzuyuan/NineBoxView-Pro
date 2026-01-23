@@ -71,8 +71,8 @@
             : HERO_PRESETS['zh-Hant'];
 
         const centerChar = charData.center;
-        // 使用第一組參考字作為字池
-        const charPool = presetData.reference[0].chars;
+        // 使用第一組參考字作為字池（移除空格後轉為陣列）
+        const charPool = presetData.reference[0].chars.replace(/\s/g, '').split('');
 
         /**
          * Populate the grid with characters

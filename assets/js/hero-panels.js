@@ -57,7 +57,7 @@
 
                 // Display character content (not names) using textContent
                 if (currentTab === 'ref') {
-                    li.textContent = item.chars.join('');
+                    li.textContent = item.chars;
                 } else {
                     // For locked presets, format: 第一行·第二行·第三行，空位用 □，跳過中央(4)
                     const rows = [
@@ -119,7 +119,7 @@
 
             const preset = presetData.reference[selectedRefIndex];
             if (preset) {
-                textarea.value = preset.chars.join('');
+                textarea.value = preset.chars;
             }
         }
 
@@ -178,13 +178,14 @@
             if (!preset) return;
 
             const cells = heroComponent.querySelectorAll('.interactive-hero__cell:not(.interactive-hero__cell--center)');
+            const charsArray = preset.chars.replace(/\s/g, '').split('');
             cells.forEach((cell, index) => {
-                if (preset.chars[index]) {
+                if (charsArray[index]) {
                     // 設定參考字為 data 屬性，作為基底層
-                    cell.dataset.refChar = preset.chars[index];
+                    cell.dataset.refChar = charsArray[index];
                     // 如果沒有鎖定字，顯示參考字
                     if (!cell.dataset.lockedChar) {
-                        cell.textContent = preset.chars[index];
+                        cell.textContent = charsArray[index];
                     }
                 }
             });
