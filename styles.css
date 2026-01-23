@@ -2018,3 +2018,29 @@ a:hover {
     font-size: 1.5rem;
   }
 }
+
+/* ==================== Platform Detection ==================== */
+/* Default: hide non-Mac elements */
+[data-show="non-mac"] {
+  display: none !important;
+}
+
+/* Non-Mac: swap visibility */
+.platform-non-mac [data-show="mac"] {
+  display: none !important;
+}
+
+.platform-non-mac [data-show="non-mac"] {
+  display: block !important;
+}
+
+/* GitHub button variant */
+.cta--github {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.cta--github:hover {
+  background: var(--color-text-secondary);
+  transform: translateY(-2px);
+}

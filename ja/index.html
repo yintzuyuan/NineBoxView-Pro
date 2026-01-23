@@ -31,6 +31,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
     <link rel="shortcut icon" href="../assets/favicon.ico">
+
+    <!-- Platform Detection (must be in head for immediate class application) -->
+    <script src="../assets/js/platform-detect.js"></script>
 </head>
 
 <body>
@@ -205,11 +208,17 @@
                 </div>
 
                 <div class="hero__actions">
-                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+                    <!-- Mac: Glyphs Plugin Manager -->
+                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs" data-show="mac">
                         インストール
                     </a>
+                    <!-- Non-Mac: GitHub -->
+                    <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer" class="cta cta--github" data-show="non-mac">
+                        GitHub で見る
+                    </a>
                 </div>
-                <p class="hero__note">Glyphs プラグインマネージャーからインストール · 14日間無料トライアル</p>
+                <p class="hero__note" data-show="mac">Glyphs プラグインマネージャーからインストール · 14日間無料トライアル</p>
+                <p class="hero__note" data-show="non-mac">macOS と Glyphs 3 が必要です</p>
             </div>
         </section>
 
@@ -635,13 +644,21 @@
                 </ul>
 
                 <div class="final-cta__actions">
-                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+                    <!-- Mac: Glyphs Plugin Manager -->
+                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs" data-show="mac">
                         インストール
+                    </a>
+                    <!-- Non-Mac: GitHub -->
+                    <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer" class="cta cta--github" data-show="non-mac">
+                        GitHub で見る
                     </a>
                 </div>
 
-                <p class="final-cta__note">
+                <p class="final-cta__note" data-show="mac">
                     Glyphs プラグインマネージャーからインストール · 14日間無料トライアル
+                </p>
+                <p class="final-cta__note" data-show="non-mac">
+                    macOS と Glyphs 3 が必要です
                 </p>
 
                 <div class="final-cta__alternatives">

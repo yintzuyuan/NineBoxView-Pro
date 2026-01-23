@@ -31,6 +31,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
     <link rel="shortcut icon" href="../assets/favicon.ico">
+
+    <!-- Platform Detection (must be in head for immediate class application) -->
+    <script src="../assets/js/platform-detect.js"></script>
 </head>
 
 <body>
@@ -230,11 +233,17 @@
                 </div>
 
                 <div class="hero__actions">
-                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+                    <!-- Mac: Glyphs Plugin Manager -->
+                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs" data-show="mac">
                         安裝試用
                     </a>
+                    <!-- Non-Mac: GitHub -->
+                    <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer" class="cta cta--github" data-show="non-mac">
+                        在 GitHub 查看
+                    </a>
                 </div>
-                <p class="hero__note">透過 Glyphs 外掛程式管理員安裝 · 14 天免費試用</p>
+                <p class="hero__note" data-show="mac">透過 Glyphs 外掛程式管理員安裝 · 14 天免費試用</p>
+                <p class="hero__note" data-show="non-mac">此外掛需要 macOS 與 Glyphs 3</p>
             </div>
         </section>
 
@@ -659,13 +668,21 @@
                 </ul>
 
                 <div class="final-cta__actions">
-                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs">
+                    <!-- Mac: Glyphs Plugin Manager -->
+                    <a href="glyphsapp3://showplugin/NineBoxView%20Pro" class="cta cta--glyphs" data-show="mac">
                         安裝試用
+                    </a>
+                    <!-- Non-Mac: GitHub -->
+                    <a href="https://github.com/yintzuyuan/NineBoxView-Pro" target="_blank" rel="noopener noreferrer" class="cta cta--github" data-show="non-mac">
+                        在 GitHub 查看
                     </a>
                 </div>
 
-                <p class="final-cta__note">
+                <p class="final-cta__note" data-show="mac">
                     透過 Glyphs 外掛程式管理員安裝 · 14 天免費試用
+                </p>
+                <p class="final-cta__note" data-show="non-mac">
+                    此外掛需要 macOS 與 Glyphs 3
                 </p>
 
                 <div class="final-cta__alternatives">
