@@ -100,7 +100,9 @@
          */
         function shuffleChars() {
             // Check if locked mode is enabled by checking the lock button state
-            const lockButton = document.querySelector('.hero-panel__mini-cell--center');
+            // Scope to current workspace to avoid cross-workspace interference
+            const workspace = container.closest('.hero-workspace');
+            const lockButton = workspace ? workspace.querySelector('.hero-panel__mini-cell--center') : null;
             const lockedEnabled = lockButton && lockButton.classList.contains('hero-panel__mini-cell--locked');
 
             // Collect current reference characters from non-locked cells
