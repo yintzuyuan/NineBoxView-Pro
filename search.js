@@ -19,6 +19,8 @@
   let fuse = null;
   let isModalOpen = false;
   let selectedIndex = 0;
+  let isComposing = false; // IME 組合狀態
+  let searchTimer = null;  // 搜尋 debounce 計時器
 
   // DOM 元素
   let modal, input, resultsList, noResults;
@@ -167,8 +169,41 @@
 
     // 綁定事件
     modal.querySelector('.search-modal__backdrop').addEventListener('click', closeModal);
-    input.addEventListener('input', debounce(handleInput, CONFIG.debounceMs));
+    input.addEventListener('input', () => {
+      if (!isComposing) {
+        scheduleSearch();
+      }
+    });
     input.addEventListener('keydown', handleResultNavigation);
+
+    // IME composition 事件處理
+    input.addEventListener('compositionstart', () => {
+      isComposing = true;
+      // 清除待處理的搜尋，避免在組合過程中觸發
+      if (searchTimer) {
+        clearTimeout(searchTimer);
+        searchTimer = null;
+      }
+    });
+    input.addEventListener('compositionend', () => {
+      isComposing = false;
+      scheduleSearch();
+    });
+  }
+
+  /**
+   * 排程搜尋（帶 debounce）
+   */
+  function scheduleSearch() {
+    if (searchTimer) {
+      clearTimeout(searchTimer);
+    }
+    searchTimer = setTimeout(() => {
+      if (!isComposing) {
+        handleInput({ target: input });
+      }
+      searchTimer = null;
+    }, CONFIG.debounceMs);
   }
 
   /**
@@ -240,6 +275,9 @@
    * 鍵盤導航
    */
   function handleResultNavigation(e) {
+    // IME 組合中不處理鍵盤導航
+    if (isComposing || e.isComposing) return;
+
     const results = resultsList.querySelectorAll('.search-result');
     if (results.length === 0) return;
 
