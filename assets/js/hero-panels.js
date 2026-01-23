@@ -379,6 +379,20 @@
             }
         });
 
+        // Event: Traffic light close button (red) - hide panel
+        [presetsPanel, referencePanel, lockedPanel].forEach(panel => {
+            if (panel) {
+                const closeBtn = panel.querySelector('.hero-panel__traffic-light--close');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const panelType = panel.dataset.panel;
+                        togglePanel(panelType);
+                    });
+                }
+            }
+        });
+
         // Event: Click outside panels to remove focus
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.hero-panel')) {
@@ -398,10 +412,6 @@
         // 監聽系統深淺模式變化，自動更新鎖定格背景色
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateLockedPanelColors);
 
-        // Set initial focus to presets panel
-        if (presetsPanel) {
-            presetsPanel.classList.add('hero-panel--focused');
-        }
     }
 
     /**

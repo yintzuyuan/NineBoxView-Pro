@@ -157,7 +157,37 @@
     }
 }
 
-/* 聚焦狀態的彩色流量燈（僅紅綠，黃燈保持灰色） */
+/* 紅綠燈 hover 圖示 */
+.hero-panel__traffic-light--close,
+.hero-panel__traffic-light--maximize {
+    position: relative;
+}
+
+.hero-panel__traffic-light--close::before,
+.hero-panel__traffic-light--maximize::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.hero-panel__traffic-light--close::before {
+    content: '×';
+    color: #4d0000;
+}
+
+.hero-panel__traffic-light--maximize::before {
+    content: '+';
+    color: #006400;
+}
+
+/* 聚焦狀態：紅綠燈永遠有顏色 */
 .hero-panel--focused .hero-panel__traffic-light--close {
     background: #ff5f57;
     border-color: #e0443e;
@@ -166,6 +196,23 @@
 .hero-panel--focused .hero-panel__traffic-light--maximize {
     background: #28c840;
     border-color: #1aab29;
+}
+
+/* 非聚焦狀態：hover 整個紅綠燈區塊時顯示顏色 */
+.hero-panel__traffic-lights:hover .hero-panel__traffic-light--close {
+    background: #ff5f57;
+    border-color: #e0443e;
+}
+
+.hero-panel__traffic-lights:hover .hero-panel__traffic-light--maximize {
+    background: #28c840;
+    border-color: #1aab29;
+}
+
+/* hover 時顯示圖示 */
+.hero-panel__traffic-light--close:hover::before,
+.hero-panel__traffic-light--maximize:hover::before {
+    opacity: 1;
 }
 
 
@@ -217,7 +264,6 @@
     border: none;
     border-radius: 4px;
     color: var(--panel-text-secondary);
-    cursor: pointer;
     transition: all 0.12s ease;
 }
 
@@ -295,7 +341,6 @@
     background: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
-    cursor: pointer;
     transition: all 0.1s ease;
     /* 顯示字元內容 - 靠左對齊 */
     text-align: left;
@@ -341,7 +386,6 @@
     border: none;
     border-radius: 4px;
     color: var(--panel-text-secondary);
-    cursor: pointer;
     transition: all 0.12s ease;
 }
 
@@ -425,7 +469,6 @@
     border: 1px solid var(--panel-border);
     border-radius: 4px;
     color: var(--panel-text-secondary);
-    cursor: pointer;
     transition: all 0.12s ease;
 }
 
@@ -478,7 +521,6 @@
 
 /* 中央鎖頭格 */
 .hero-panel__mini-cell--center {
-    cursor: pointer;
     border-radius: 6px;
     transition: all 0.12s ease;
 }
