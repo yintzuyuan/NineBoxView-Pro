@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Noto+Sans+TC:wght@500;700&family=Noto+Sans+SC:wght@500;700&family=Noto+Sans+JP:wght@500;700&family=Noto+Sans+KR:wght@500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            /* 淡色格線背景 - 與首頁風格一致 */
+            background-color: #f8f6f0;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'IBM Plex Sans', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            font-weight: 500;
+            color: #666666;
+            letter-spacing: 0.02em;
+        }
+
+        /* Language-specific fonts */
+        .lang-zh-Hant .subtitle,
+        .lang-zh-Hant .title {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .lang-zh-Hans .subtitle,
+        .lang-zh-Hans .title {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        .lang-ja .subtitle,
+        .lang-ja .title {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .lang-ko .subtitle,
+        .lang-ko .title {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .lang-en .title,
+        .lang-en .subtitle {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="lang-{{LANG}}">
+    <div class="container">
+        <img class="logo" src="{{LOGO_PATH}}" alt="Logo">
+        <h1 class="title">{{TITLE}}</h1>
+        <p class="subtitle">{{SUBTITLE}}</p>
+    </div>
+</body>
+</html>

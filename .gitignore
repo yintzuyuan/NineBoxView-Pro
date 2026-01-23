@@ -5,5 +5,13 @@ guide/search-index.json
 # macOS
 .DS_Store
 
+# Node.js (for OG image generation)
+node_modules/
+package-lock.json
+
 # Claude Code 記憶體（軟連結到私有儲存庫）
 CLAUDE.md
+.claude/
+
+# Python cache
+__pycache__/
