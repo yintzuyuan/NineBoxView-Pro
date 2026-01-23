@@ -493,18 +493,28 @@
     fill: var(--panel-text-secondary);
 }
 
-/* 鎖定狀態 - 中央按鈕高亮 */
+/* 鎖定狀態 - 非聚焦時維持一般按鈕樣式 */
 .hero-panel__mini-cell--center.hero-panel__mini-cell--locked {
+    background: var(--panel-bg);
+    border-color: var(--panel-border);
+}
+
+.hero-panel__mini-cell--center.hero-panel__mini-cell--locked svg {
+    fill: var(--panel-text-secondary);
+}
+
+/* 鎖定狀態 + 面板聚焦時才顯示系統高亮 */
+.hero-panel--focused .hero-panel__mini-cell--center.hero-panel__mini-cell--locked {
     background: #007AFF;
     border-color: #007AFF;
 }
 
-.hero-panel__mini-cell--center.hero-panel__mini-cell--locked svg {
+.hero-panel--focused .hero-panel__mini-cell--center.hero-panel__mini-cell--locked svg {
     fill: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-    .hero-panel__mini-cell--center.hero-panel__mini-cell--locked {
+    .hero-panel--focused .hero-panel__mini-cell--center.hero-panel__mini-cell--locked {
         background: #0A84FF;
         border-color: #0A84FF;
     }
