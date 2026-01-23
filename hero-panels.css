@@ -448,17 +448,19 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+}
+
+/* mini-grid 垂直居中 */
+.hero-panel[data-panel="locked"] .hero-panel__mini-grid {
+    margin: auto 0;
 }
 
 .hero-panel__mini-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    padding: 4px;
-    background: var(--panel-input-bg);
-    border: 1px solid var(--panel-border);
-    border-radius: 4px;
+    grid-template-columns: repeat(3, 36px);
+    justify-content: center;
+    gap: 8px;
+    padding: 4px 0;
 }
 
 .hero-panel__mini-cell {
@@ -466,44 +468,51 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 20px;
     font-family: "Noto Serif TC", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", serif;
-    background: var(--panel-bg);
+    background: var(--panel-bg-secondary);
     border: 1px solid var(--panel-border);
-    border-radius: 2px;
+    border-radius: 6px;
     color: var(--panel-text);
 }
 
 /* 中央鎖頭格 */
 .hero-panel__mini-cell--center {
     cursor: pointer;
+    border-radius: 6px;
     transition: all 0.12s ease;
 }
 
 .hero-panel__mini-cell--center:hover {
-    background: var(--panel-highlight);
+    opacity: 0.8;
 }
 
 .hero-panel__mini-cell--center svg {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     fill: var(--panel-text-secondary);
 }
 
-/* 空格子 */
-.hero-panel__mini-cell--empty {
-    background: transparent;
-    border-color: transparent;
+/* 鎖定狀態 - 中央按鈕高亮 */
+.hero-panel__mini-cell--center.hero-panel__mini-cell--locked {
+    background: #007AFF;
+    border-color: #007AFF;
+}
+
+.hero-panel__mini-cell--center.hero-panel__mini-cell--locked svg {
+    fill: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-panel__mini-cell--center.hero-panel__mini-cell--locked {
+        background: #0A84FF;
+        border-color: #0A84FF;
+    }
 }
 
 /* 鎖定字隱藏狀態 */
 .hero-panel__mini-grid--hidden .hero-panel__mini-cell:not(.hero-panel__mini-cell--center) {
     color: transparent;
-}
-
-/* Locked 面板 Save 按鈕（底部） */
-.hero-panel[data-panel="locked"] .hero-panel__save-btn {
-    margin-top: 6px;
 }
 
 /* --------------------------------------------------------------------------

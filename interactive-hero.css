@@ -129,16 +129,6 @@
     padding-bottom: 0.2em;
 }
 
-/* 鎖定字樣式 - 與參考字區分 */
-.interactive-hero__cell--locked {
-    color: #007AFF;
-}
-
-.interactive-hero[data-theme="dark"] .interactive-hero__cell--locked {
-    color: #0A84FF;
-}
-
-
 /* --------------------------------------------------------------------------
    Controls Bar - 底部控制列（視窗左下角）
    -------------------------------------------------------------------------- */

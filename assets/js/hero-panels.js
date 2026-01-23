@@ -117,6 +117,26 @@
         }
 
         /**
+         * Update Locked panel mini-grid cell backgrounds
+         * 只更新背景色，不改變內容（用於系統顏色切換）
+         */
+        function updateLockedPanelColors() {
+            const miniGrid = lockedPanel.querySelector('.hero-panel__mini-grid');
+            if (!miniGrid) return;
+
+            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            // 深色模式：filled 要比 empty 更暗（數值更小）
+            const filledBg = isDark ? '#2d2d2d' : '#f0f0f0';
+
+            const cells = miniGrid.querySelectorAll('.hero-panel__mini-cell:not(.hero-panel__mini-cell--center)');
+            cells.forEach(cell => {
+                const hasContent = cell.textContent.trim() !== '';
+                // 有內容才套用 inline style，空格子回歸 CSS 預設
+                cell.style.background = hasContent ? filledBg : '';
+            });
+        }
+
+        /**
          * Update Locked panel mini-grid
          */
         function updateLockedPanel() {
@@ -126,18 +146,19 @@
             const preset = presetData.locked[selectedLockedIndex];
             if (!preset) return;
 
-            // Update non-center cells
+            // Update non-center cells (always visible, empty cells show blank)
             const cells = miniGrid.querySelectorAll('.hero-panel__mini-cell:not(.hero-panel__mini-cell--center)');
             cells.forEach(cell => {
                 const pos = parseInt(cell.dataset.position, 10);
                 if (preset.positions[pos]) {
                     cell.textContent = preset.positions[pos];
-                    cell.classList.remove('hero-panel__mini-cell--empty');
                 } else {
                     cell.textContent = '';
-                    cell.classList.add('hero-panel__mini-cell--empty');
                 }
             });
+
+            // 套用背景色
+            updateLockedPanelColors();
         }
 
         /**
@@ -209,15 +230,65 @@
             populatePresetList();
         }
 
+        // 鎖定/解鎖圖示 SVG path (Phosphor Icons)
+        const LOCK_ICON = 'M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z';
+        const UNLOCK_ICON = 'M208,80H96V56a32,32,0,0,1,64,0,8,8,0,0,0,16,0,48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm0,128H48V96H208Z';
+
         /**
-         * Toggle locked characters visibility
+         * Toggle locked state (icon, button style, and main grid locked chars)
          */
         function toggleLockedVisibility() {
             lockedVisible = !lockedVisible;
-            const miniGrid = lockedPanel.querySelector('.hero-panel__mini-grid');
-            if (miniGrid) {
-                miniGrid.classList.toggle('hero-panel__mini-grid--hidden', !lockedVisible);
+            const centerCell = lockedPanel.querySelector('.hero-panel__mini-cell--center');
+
+            // Update center button highlight state and icon
+            if (centerCell) {
+                centerCell.classList.toggle('hero-panel__mini-cell--locked', lockedVisible);
+                const path = centerCell.querySelector('svg path');
+                if (path) {
+                    path.setAttribute('d', lockedVisible ? LOCK_ICON : UNLOCK_ICON);
+                }
             }
+
+            // Toggle main grid locked characters visibility
+            if (heroComponent) {
+                const cells = heroComponent.querySelectorAll('.interactive-hero__cell:not(.interactive-hero__cell--center)');
+                cells.forEach(cell => {
+                    if (cell.dataset.lockedChar) {
+                        if (lockedVisible) {
+                            // 鎖定：顯示鎖定字
+                            cell.textContent = cell.dataset.lockedChar;
+                        } else {
+                            // 解鎖：恢復顯示參考字，沒有則清空
+                            cell.textContent = cell.dataset.refChar || '';
+                        }
+                    }
+                });
+            }
+        }
+
+        /**
+         * Initialize center button locked state
+         */
+        function initLockedButtonState() {
+            const centerCell = lockedPanel.querySelector('.hero-panel__mini-cell--center');
+            if (centerCell && lockedVisible) {
+                centerCell.classList.add('hero-panel__mini-cell--locked');
+            }
+        }
+
+        /**
+         * Clear locked panel cells (initial state)
+         */
+        function clearLockedPanel() {
+            const miniGrid = lockedPanel.querySelector('.hero-panel__mini-grid');
+            if (!miniGrid) return;
+
+            const cells = miniGrid.querySelectorAll('.hero-panel__mini-cell:not(.hero-panel__mini-cell--center)');
+            cells.forEach(cell => {
+                cell.textContent = '';
+                cell.style.background = '';  // 清除 inline style，回歸 CSS 預設
+            });
         }
 
         /**
@@ -310,6 +381,15 @@
 
         // Initial population (只填充列表，不自動套用到面板)
         populatePresetList();
+
+        // Initialize locked button state
+        initLockedButtonState();
+
+        // 清空鎖定字面板（初始狀態應為空白）
+        clearLockedPanel();
+
+        // 監聽系統深淺模式變化，自動更新鎖定格背景色
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateLockedPanelColors);
 
         // Set initial focus to presets panel
         if (presetsPanel) {

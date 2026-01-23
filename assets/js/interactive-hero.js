@@ -83,6 +83,7 @@
                     cell.textContent = centerChar;
                 } else {
                     cell.textContent = surroundingChars[surroundingIndex];
+                    cell.dataset.refChar = surroundingChars[surroundingIndex];
                     surroundingIndex++;
                 }
             });
@@ -90,29 +91,33 @@
 
         /**
          * Shuffle surrounding characters (no animation)
-         * Respects locked characters - they remain fixed
+         * Respects locked characters - they remain fixed (only when locked is enabled)
          */
         function shuffleChars() {
-            // Count non-locked cells that need new characters
-            // Check both dataset.lockedChar and --locked class for robustness
-            let nonLockedCount = 0;
+            // Check if locked mode is enabled by checking the lock button state
+            const lockButton = document.querySelector('.hero-panel__mini-cell--center');
+            const lockedEnabled = lockButton && lockButton.classList.contains('hero-panel__mini-cell--locked');
+
+            // Count cells that need new characters
+            let shuffleCount = 0;
             cells.forEach((cell, index) => {
                 if (index !== 4) {
-                    const isLocked = cell.dataset.lockedChar || cell.classList.contains('interactive-hero__cell--locked');
+                    // Only respect lock when lockedEnabled is true
+                    const isLocked = lockedEnabled && cell.dataset.lockedChar;
                     if (!isLocked) {
-                        nonLockedCount++;
+                        shuffleCount++;
                     }
                 }
             });
 
-            // Get random characters only for non-locked cells
-            const surroundingChars = getRandomChars(charPool, nonLockedCount);
+            // Get random characters
+            const surroundingChars = getRandomChars(charPool, shuffleCount);
             let surroundingIndex = 0;
 
             cells.forEach((cell, index) => {
                 if (index !== 4) {
-                    // Skip cells with locked characters (check both attribute and class)
-                    const isLocked = cell.dataset.lockedChar || cell.classList.contains('interactive-hero__cell--locked');
+                    // Only respect lock when lockedEnabled is true
+                    const isLocked = lockedEnabled && cell.dataset.lockedChar;
                     if (isLocked) {
                         return;
                     }
