@@ -9,40 +9,28 @@
 - 各語系使用本地化字符，英文使用繁中文字池
 """
 
+import json
 from pathlib import Path
 
 
 # =============================================================================
-# 多語言文字池配置
+# 文字池載入（從 JSON 讀取，避免重複定義）
 # =============================================================================
-# 每個語系包含：
-# - reference: 參考字池（用於中層九宮格）
-# - locked: 鎖定字池（用於頂層九宮格，通常選取較複雜或代表性的字）
-# - center: 中央編輯字（用於底層九宮格）
 
-TEXT_POOLS = {
-    'zh-Hant': {
-        'reference': ['酬', '鷹', '靈', '南', '去', '經', '三', '來'],
-        'locked': ['東', '今', '國', '我'],  # 十字排列：上、左、右、下
-        'center': '永'
-    },
-    'zh-Hans': {
-        'reference': ['天', '地', '玄', '黄', '宇', '宙', '洪', '荒'],
-        'locked': ['鑫', '龙', '国', '今'],  # 十字排列：上、左、右、下
-        'center': '永'
-    },
-    'ja': {
-        'reference': ['い', 'う', 'え', 'お', 'か', 'き', 'く', 'さ'],
-        'locked': ['ア', 'イ', 'ウ', 'エ'],  # 十字排列：上、左、右、下
-        'center': 'あ'
-    },
-    'ko': {
-        'reference': ['가', '나', '다', '라', '마', '바', '사', '아'],
-        'locked': ['글', '힘', '빛', '꿈'],  # 十字排列：上、左、右、下
-        'center': '한'
-    },
-    'en': None  # 使用 zh-Hant 文字池
-}
+def load_text_pools() -> dict:
+    """
+    從 text-pools.json 載入文字池配置
+
+    Returns:
+        文字池字典，包含各語系的 reference、locked、center
+    """
+    json_path = Path(__file__).parent.parent / 'assets' / 'data' / 'text-pools.json'
+    with open(json_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+# 載入文字池（模組層級快取）
+TEXT_POOLS = load_text_pools()
 
 
 # =============================================================================
@@ -106,10 +94,10 @@ ICON_PATHS = {
 
 def get_text_pool(locale: str) -> dict:
     """取得指定語系的文字池，英文使用繁中"""
-    pool = TEXT_POOLS.get(locale)
-    if pool is None:
-        pool = TEXT_POOLS['zh-Hant']
-    return pool
+    # 英文版使用繁體中文字池
+    if locale == 'en':
+        locale = 'zh-Hant'
+    return TEXT_POOLS.get(locale, TEXT_POOLS['zh-Hant'])
 
 
 def generate_svg(locale: str, theme: str) -> str:

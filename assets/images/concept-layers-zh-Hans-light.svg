@@ -86,10 +86,10 @@
         <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
-                <text class="glyph glyph-locked" x="80" y="26">鑫</text>
-        <text class="glyph glyph-locked" x="26" y="80">龙</text>
-        <text class="glyph glyph-locked" x="134" y="80">国</text>
-        <text class="glyph glyph-locked" x="80" y="134">今</text>
+                <text class="glyph glyph-locked" x="80" y="26">灵</text>
+        <text class="glyph glyph-locked" x="26" y="80">三</text>
+        <text class="glyph glyph-locked" x="134" y="80">酬</text>
+        <text class="glyph glyph-locked" x="80" y="134">郁</text>
       </g>
     </g>
 

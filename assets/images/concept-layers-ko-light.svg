@@ -64,14 +64,14 @@
         <rect class="cell cell-reference" x="0" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
-                <text class="glyph glyph-reference" x="26" y="26">가</text>
-        <text class="glyph glyph-reference" x="80" y="26">나</text>
-        <text class="glyph glyph-reference" x="134" y="26">다</text>
-        <text class="glyph glyph-reference" x="26" y="80">라</text>
-        <text class="glyph glyph-reference" x="134" y="80">마</text>
+                <text class="glyph glyph-reference" x="26" y="26">다</text>
+        <text class="glyph glyph-reference" x="80" y="26">람</text>
+        <text class="glyph glyph-reference" x="134" y="26">쥐</text>
+        <text class="glyph glyph-reference" x="26" y="80">헌</text>
+        <text class="glyph glyph-reference" x="134" y="80">쳇</text>
         <text class="glyph glyph-reference" x="26" y="134">바</text>
-        <text class="glyph glyph-reference" x="80" y="134">사</text>
-        <text class="glyph glyph-reference" x="134" y="134">아</text>
+        <text class="glyph glyph-reference" x="80" y="134">퀴</text>
+        <text class="glyph glyph-reference" x="134" y="134">에</text>
       </g>
     </g>
 
@@ -86,10 +86,10 @@
         <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
-                <text class="glyph glyph-locked" x="80" y="26">글</text>
-        <text class="glyph glyph-locked" x="26" y="80">힘</text>
-        <text class="glyph glyph-locked" x="134" y="80">빛</text>
-        <text class="glyph glyph-locked" x="80" y="134">꿈</text>
+                <text class="glyph glyph-locked" x="80" y="26">가</text>
+        <text class="glyph glyph-locked" x="26" y="80">고</text>
+        <text class="glyph glyph-locked" x="134" y="80">노</text>
+        <text class="glyph glyph-locked" x="80" y="134">나</text>
       </g>
     </g>
 

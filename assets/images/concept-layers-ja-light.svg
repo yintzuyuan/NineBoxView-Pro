@@ -65,13 +65,13 @@
         <rect class="cell cell-reference" x="54" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-reference" x="108" y="108" width="52" height="52" rx="2"/>
                 <text class="glyph glyph-reference" x="26" y="26">い</text>
-        <text class="glyph glyph-reference" x="80" y="26">う</text>
-        <text class="glyph glyph-reference" x="134" y="26">え</text>
-        <text class="glyph glyph-reference" x="26" y="80">お</text>
-        <text class="glyph glyph-reference" x="134" y="80">か</text>
-        <text class="glyph glyph-reference" x="26" y="134">き</text>
-        <text class="glyph glyph-reference" x="80" y="134">く</text>
-        <text class="glyph glyph-reference" x="134" y="134">さ</text>
+        <text class="glyph glyph-reference" x="80" y="26">ろ</text>
+        <text class="glyph glyph-reference" x="134" y="26">は</text>
+        <text class="glyph glyph-reference" x="26" y="80">に</text>
+        <text class="glyph glyph-reference" x="134" y="80">ほ</text>
+        <text class="glyph glyph-reference" x="26" y="134">へ</text>
+        <text class="glyph glyph-reference" x="80" y="134">と</text>
+        <text class="glyph glyph-reference" x="134" y="134">ち</text>
       </g>
     </g>
 
@@ -86,10 +86,10 @@
         <rect class="cell cell-locked" x="0" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-locked" x="54" y="108" width="52" height="52" rx="2"/>
         <rect class="cell cell-locked" x="108" y="108" width="52" height="52" rx="2"/>
-                <text class="glyph glyph-locked" x="80" y="26">ア</text>
-        <text class="glyph glyph-locked" x="26" y="80">イ</text>
-        <text class="glyph glyph-locked" x="134" y="80">ウ</text>
-        <text class="glyph glyph-locked" x="80" y="134">エ</text>
+                <text class="glyph glyph-locked" x="80" y="26">リ</text>
+        <text class="glyph glyph-locked" x="26" y="80">エ</text>
+        <text class="glyph glyph-locked" x="134" y="80">ノ</text>
+        <text class="glyph glyph-locked" x="80" y="134">ム</text>
       </g>
     </g>
 

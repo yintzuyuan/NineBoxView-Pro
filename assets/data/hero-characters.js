@@ -36,7 +36,7 @@ const HERO_PRESETS = {
         ],
         locked: [
             { id: 'extremes', positions: { 0: '東', 2: '國', 6: '鷹', 8: '愛' } },
-            { id: 'density', positions: { 1: '靈', 3: '三', 5: '酬', 7: '鬱' } },
+            { id: 'density', positions: { 1: '酬', 3: '三', 5: '鷹', 7: '東' } },
             { id: 'balance', positions: { 0: '永', 2: '袋', 6: '今', 8: '力' } }
         ]
     },
@@ -84,7 +84,7 @@ const HERO_PRESETS = {
         ],
         locked: [
             { id: 'vertical', positions: { 0: '가', 2: '나', 6: '다', 8: '마' } },
-            { id: 'horizontal', positions: { 1: '고', 3: '노', 5: '도', 7: '모' } },
+            { id: 'horizontal', positions: { 1: '가', 3: '고', 5: '노', 7: '나' } },
             { id: 'complex', positions: { 0: '닭', 2: '읽', 6: '삶', 8: '없' } }
         ]
     }
