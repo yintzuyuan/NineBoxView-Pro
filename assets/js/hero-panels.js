@@ -59,9 +59,16 @@
                 if (currentTab === 'ref') {
                     li.textContent = item.chars.join('');
                 } else {
-                    // For locked presets, show positions
-                    const positions = Object.values(item.positions);
-                    li.textContent = positions.join('');
+                    // For locked presets, format: 第一行·第二行·第三行，空位用 □，跳過中央(4)
+                    const rows = [
+                        [0, 1, 2],  // 第一行
+                        [3, 5],     // 第二行（跳過中央 4）
+                        [6, 7, 8]   // 第三行
+                    ];
+                    const formatted = rows.map(row =>
+                        row.map(pos => item.positions[pos] || '□').join('')
+                    ).join('・');
+                    li.textContent = formatted;
                 }
 
                 // 單擊：選取項目（高亮）

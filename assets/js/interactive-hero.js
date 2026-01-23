@@ -98,33 +98,32 @@
             const lockButton = document.querySelector('.hero-panel__mini-cell--center');
             const lockedEnabled = lockButton && lockButton.classList.contains('hero-panel__mini-cell--locked');
 
-            // Count cells that need new characters
-            let shuffleCount = 0;
+            // Collect current reference characters from non-locked cells
+            const currentRefChars = [];
             cells.forEach((cell, index) => {
                 if (index !== 4) {
-                    // Only respect lock when lockedEnabled is true
                     const isLocked = lockedEnabled && cell.dataset.lockedChar;
-                    if (!isLocked) {
-                        shuffleCount++;
+                    if (!isLocked && cell.dataset.refChar) {
+                        currentRefChars.push(cell.dataset.refChar);
                     }
                 }
             });
 
-            // Get random characters
-            const surroundingChars = getRandomChars(charPool, shuffleCount);
-            let surroundingIndex = 0;
+            // Shuffle the collected characters
+            const shuffledChars = shuffle([...currentRefChars]);
+            let shuffleIndex = 0;
 
             cells.forEach((cell, index) => {
                 if (index !== 4) {
-                    // Only respect lock when lockedEnabled is true
                     const isLocked = lockedEnabled && cell.dataset.lockedChar;
                     if (isLocked) {
                         return;
                     }
                     // Update character and refChar data attribute
-                    cell.textContent = surroundingChars[surroundingIndex];
-                    cell.dataset.refChar = surroundingChars[surroundingIndex];
-                    surroundingIndex++;
+                    const newChar = shuffledChars[shuffleIndex];
+                    cell.textContent = newChar;
+                    cell.dataset.refChar = newChar;
+                    shuffleIndex++;
                 }
             });
         }
