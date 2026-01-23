@@ -193,8 +193,13 @@
 
             const cells = heroComponent.querySelectorAll('.interactive-hero__cell:not(.interactive-hero__cell--center)');
             const charsArray = preset.chars.replace(/\s/g, '').split('');
-            // 取前 8 個字並亂數排列
-            const shuffledChars = shuffle(charsArray.slice(0, 8));
+            // 將完整字組存到 grid，供 shuffleChars 使用
+            const grid = heroComponent.querySelector('.interactive-hero__grid');
+            if (grid) {
+                grid.dataset.charPool = JSON.stringify(charsArray);
+            }
+            // 亂數排列後取前 8 個字
+            const shuffledChars = shuffle(charsArray).slice(0, 8);
             cells.forEach((cell, index) => {
                 if (shuffledChars[index]) {
                     // 設定參考字為 data 屬性，作為基底層

@@ -97,6 +97,7 @@
         /**
          * Shuffle surrounding characters (no animation)
          * Respects locked characters - they remain fixed (only when locked is enabled)
+         * Each shuffle picks fresh random characters from the full character pool
          */
         function shuffleChars() {
             // Check if locked mode is enabled by checking the lock button state
@@ -105,20 +106,31 @@
             const lockButton = workspace ? workspace.querySelector('.hero-panel__mini-cell--center') : null;
             const lockedEnabled = lockButton && lockButton.classList.contains('hero-panel__mini-cell--locked');
 
-            // Collect current reference characters from non-locked cells
-            const currentRefChars = [];
+            // Get the full character pool from grid data attribute (set by hero-panels.js)
+            // Fall back to initial charPool if not set
+            let pool = charPool;
+            if (grid.dataset.charPool) {
+                try {
+                    pool = JSON.parse(grid.dataset.charPool);
+                } catch (e) {
+                    // Use default charPool on parse error
+                }
+            }
+
+            // Count how many non-locked cells need characters
+            let nonLockedCount = 0;
             cells.forEach((cell, index) => {
                 if (index !== 4) {
                     const isLocked = lockedEnabled && cell.dataset.lockedChar;
-                    if (!isLocked && cell.dataset.refChar) {
-                        currentRefChars.push(cell.dataset.refChar);
+                    if (!isLocked) {
+                        nonLockedCount++;
                     }
                 }
             });
 
-            // Shuffle the collected characters
-            const shuffledChars = shuffle([...currentRefChars]);
-            let shuffleIndex = 0;
+            // Get fresh random characters from the full pool
+            const freshChars = getRandomChars(pool, nonLockedCount);
+            let charIndex = 0;
 
             cells.forEach((cell, index) => {
                 if (index !== 4) {
@@ -127,10 +139,10 @@
                         return;
                     }
                     // Update character and refChar data attribute
-                    const newChar = shuffledChars[shuffleIndex];
+                    const newChar = freshChars[charIndex];
                     cell.textContent = newChar;
                     cell.dataset.refChar = newChar;
-                    shuffleIndex++;
+                    charIndex++;
                 }
             });
         }
