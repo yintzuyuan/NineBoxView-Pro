@@ -35,8 +35,9 @@ const HERO_PRESETS = {
             { id: '6', chars: '美麗島上經 散播了無限種子 自由的花 平等的樹' }
         ],
         locked: [
-            { id: 'corners', positions: { 0: '國', 2: '東', 6: '我', 8: '今' } },
-            { id: 'cross', positions: { 1: '上', 3: '左', 5: '右', 7: '下' } }
+            { id: 'extremes', positions: { 0: '東', 2: '國', 6: '鷹', 8: '愛' } },
+            { id: 'density', positions: { 1: '靈', 3: '三', 5: '酬', 7: '鬱' } },
+            { id: 'balance', positions: { 0: '永', 2: '袋', 6: '今', 8: '力' } }
         ]
     },
 
@@ -50,8 +51,9 @@ const HERO_PRESETS = {
             { id: '6', chars: '横眉冷对千夫指 俯首甘为孺子牛' }
         ],
         locked: [
-            { id: 'corners', positions: { 0: '东', 2: '西', 6: '南', 8: '北' } },
-            { id: 'cross', positions: { 1: '春', 3: '夏', 5: '秋', 7: '冬' } }
+            { id: 'extremes', positions: { 0: '东', 2: '国', 6: '鹰', 8: '爱' } },
+            { id: 'density', positions: { 1: '灵', 3: '三', 5: '酬', 7: '郁' } },
+            { id: 'simplified', positions: { 0: '龙', 2: '凤', 6: '龟', 8: '鸟' } }
         ]
     },
 
@@ -65,8 +67,9 @@ const HERO_PRESETS = {
             { id: '6', chars: 'あたらしい朝が来た希望の朝だ' }
         ],
         locked: [
-            { id: 'corners', positions: { 0: '東', 2: '西', 6: '南', 8: '北' } },
-            { id: 'seasons', positions: { 1: '春', 3: '夏', 5: '秋', 7: '冬' } }
+            { id: 'hiragana', positions: { 0: 'り', 2: 'の', 6: 'し', 8: 'む' } },
+            { id: 'katakana', positions: { 1: 'リ', 3: 'エ', 5: 'ノ', 7: 'ム' } },
+            { id: 'kanji', positions: { 0: '東', 2: '國', 6: '鷹', 8: '愛' } }
         ]
     },
 
@@ -80,8 +83,9 @@ const HERO_PRESETS = {
             { id: '6', chars: '야 니들 밥에 쵸코우유 토핑해 먹었쪄' }
         ],
         locked: [
-            { id: 'corners', positions: { 0: '東', 2: '西', 6: '南', 8: '北' } },
-            { id: 'elements', positions: { 1: '金', 3: '木', 5: '水', 7: '火' } }
+            { id: 'vertical', positions: { 0: '가', 2: '나', 6: '다', 8: '마' } },
+            { id: 'horizontal', positions: { 1: '고', 3: '노', 5: '도', 7: '모' } },
+            { id: 'complex', positions: { 0: '닭', 2: '읽', 6: '삶', 8: '없' } }
         ]
     }
 };
