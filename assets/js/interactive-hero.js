@@ -66,8 +66,13 @@
             ? HERO_CHARACTERS[lang]
             : HERO_CHARACTERS['zh-Hant'];
 
+        const presetData = (typeof HERO_PRESETS !== 'undefined' && HERO_PRESETS[lang])
+            ? HERO_PRESETS[lang]
+            : HERO_PRESETS['zh-Hant'];
+
         const centerChar = charData.center;
-        const charPool = charData.pool;
+        // 使用第一組參考字作為字池
+        const charPool = presetData.reference[0].chars;
 
         /**
          * Populate the grid with characters
@@ -83,6 +88,7 @@
                     cell.textContent = centerChar;
                 } else {
                     cell.textContent = surroundingChars[surroundingIndex];
+                    cell.dataset.refChar = surroundingChars[surroundingIndex];
                     surroundingIndex++;
                 }
             });
@@ -90,16 +96,41 @@
 
         /**
          * Shuffle surrounding characters (no animation)
+         * Respects locked characters - they remain fixed (only when locked is enabled)
          */
         function shuffleChars() {
-            const surroundingChars = getRandomChars(charPool, 8);
-            let surroundingIndex = 0;
+            // Check if locked mode is enabled by checking the lock button state
+            // Scope to current workspace to avoid cross-workspace interference
+            const workspace = container.closest('.hero-workspace');
+            const lockButton = workspace ? workspace.querySelector('.hero-panel__mini-cell--center') : null;
+            const lockedEnabled = lockButton && lockButton.classList.contains('hero-panel__mini-cell--locked');
+
+            // Collect current reference characters from non-locked cells
+            const currentRefChars = [];
+            cells.forEach((cell, index) => {
+                if (index !== 4) {
+                    const isLocked = lockedEnabled && cell.dataset.lockedChar;
+                    if (!isLocked && cell.dataset.refChar) {
+                        currentRefChars.push(cell.dataset.refChar);
+                    }
+                }
+            });
+
+            // Shuffle the collected characters
+            const shuffledChars = shuffle([...currentRefChars]);
+            let shuffleIndex = 0;
 
             cells.forEach((cell, index) => {
                 if (index !== 4) {
-                    // Update character immediately without animation
-                    cell.textContent = surroundingChars[surroundingIndex];
-                    surroundingIndex++;
+                    const isLocked = lockedEnabled && cell.dataset.lockedChar;
+                    if (isLocked) {
+                        return;
+                    }
+                    // Update character and refChar data attribute
+                    const newChar = shuffledChars[shuffleIndex];
+                    cell.textContent = newChar;
+                    cell.dataset.refChar = newChar;
+                    shuffleIndex++;
                 }
             });
         }

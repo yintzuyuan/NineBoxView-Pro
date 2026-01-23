@@ -14,22 +14,22 @@
     --hero-slider-track: rgba(0, 0, 0, 0.15);
     --hero-slider-thumb: #ffffff;
     --hero-icon-fill: #aaaaaa;
-    --cell-size: min(28vw, 160px);
+    --cell-size: 120px;
     --blur-amount: 0px;
 
     /* Container - 模擬視窗外框 */
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     margin: 0 auto var(--spacing-md);
     background: var(--hero-bg);
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.06),
         0 4px 8px rgba(0, 0, 0, 0.08),
         0 8px 16px rgba(0, 0, 0, 0.1);
-    min-height: calc(var(--cell-size) * 3 + 80px);
+    min-height: calc(var(--cell-size) * 3 + 70px);
 }
 
 .interactive-hero[data-theme="dark"] {
@@ -78,7 +78,6 @@
     gap: 3px;
     width: 16px;
     height: 16px;
-    cursor: pointer;
 }
 
 .interactive-hero__menu-line {
@@ -98,10 +97,9 @@
     justify-content: center;
     align-content: center;
     /* 九宮格垂直居中，有邊距 */
-    padding: 0px 20px 30px 20px;
-    cursor: pointer;
+    padding: 0px 16px 24px 16px;
     user-select: none;
-    min-height: calc(var(--cell-size) * 3 + 90px);
+    min-height: calc(var(--cell-size) * 3 + 70px);
 }
 
 /* --------------------------------------------------------------------------
@@ -128,7 +126,6 @@
     /* 微調垂直位置，補償 CJK 字體的 baseline 偏移 */
     padding-bottom: 0.2em;
 }
-
 
 /* --------------------------------------------------------------------------
    Controls Bar - 底部控制列（視窗左下角）
@@ -162,7 +159,6 @@
     padding: 0;
     background: transparent;
     border: none;
-    cursor: pointer;
 }
 
 .interactive-hero__icon-btn svg {
@@ -183,7 +179,6 @@
     padding: 0;
     background: transparent;
     border: none;
-    cursor: pointer;
 }
 
 .interactive-hero__theme-toggle svg {
@@ -255,36 +250,4 @@
     cursor: pointer;
 }
 
-/* --------------------------------------------------------------------------
-   Responsive Design
-   -------------------------------------------------------------------------- */
-@media (max-width: 600px) {
-    .interactive-hero {
-        --cell-size: 28vw;
-        border-radius: 8px;
-    }
-
-    .interactive-hero__grid {
-        padding: 15px 15px 45px 15px;
-    }
-}
-
-@media (max-width: 400px) {
-    .interactive-hero {
-        --cell-size: 27vw;
-    }
-
-    .interactive-hero__grid {
-        padding: 12px 12px 40px 12px;
-    }
-
-    .interactive-hero__controls {
-        bottom: 6px;
-        left: 8px;
-        gap: 4px;
-    }
-
-    .interactive-hero__blur-slider {
-        width: 40px;
-    }
-}
+/* 響應式設計已移除：工具模擬保持固定尺寸，允許裁切 */
