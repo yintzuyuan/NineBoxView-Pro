@@ -66,8 +66,13 @@
             ? HERO_CHARACTERS[lang]
             : HERO_CHARACTERS['zh-Hant'];
 
+        const presetData = (typeof HERO_PRESETS !== 'undefined' && HERO_PRESETS[lang])
+            ? HERO_PRESETS[lang]
+            : HERO_PRESETS['zh-Hant'];
+
         const centerChar = charData.center;
-        const charPool = charData.pool;
+        // 使用第一組參考字作為字池
+        const charPool = presetData.reference[0].chars;
 
         /**
          * Populate the grid with characters
