@@ -625,6 +625,7 @@
         max-width: 100%;
         gap: 8px;
         padding: 0 16px;
+        transform: none; /* 覆蓋 max-width: 480px 的 scale(0.88) */
     }
 
     .hero-workspace__left,
