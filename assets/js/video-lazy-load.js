@@ -1,43 +1,55 @@
 /**
- * Video Lazy Loading
- * 使用 Intersection Observer 延遲載入影片，提升初始載入效能
+ * Video Click-to-Play
+ * 點擊縮圖後才載入影片，大幅減少初始載入量
  */
 (function() {
     'use strict';
 
-    // 設定 Intersection Observer
-    const observerOptions = {
-        root: null,
-        rootMargin: '100px', // 提前 100px 開始載入
-        threshold: 0
-    };
+    /**
+     * 為影片容器加入播放覆蓋層
+     */
+    function addPlayOverlay(video) {
+        const container = video.closest('.feature-showcase__media, .bento__media');
+        if (!container || container.querySelector('.play-overlay')) return;
 
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const video = entry.target;
-                const src = video.dataset.src;
+        const overlay = document.createElement('div');
+        overlay.className = 'play-overlay';
+        overlay.setAttribute('role', 'button');
+        overlay.setAttribute('aria-label', '播放影片');
+        container.appendChild(overlay);
 
-                if (src) {
-                    video.src = src;
-                    video.removeAttribute('data-src');
+        // 點擊播放
+        container.addEventListener('click', () => handlePlay(video, container));
+    }
 
-                    // 如果影片設定為 autoplay，載入後開始播放
-                    if (video.hasAttribute('data-autoplay')) {
-                        video.play().catch(() => {
-                            // 靜默處理自動播放失敗（通常是瀏覽器策略限制）
-                        });
-                    }
-                }
+    /**
+     * 處理播放/暫停邏輯
+     */
+    function handlePlay(video, container) {
+        // 已在播放中，點擊則暫停
+        if (container.classList.contains('is-playing')) {
+            video.pause();
+            container.classList.remove('is-playing');
+            return;
+        }
 
-                videoObserver.unobserve(video);
-            }
+        // 載入影片（如果尚未載入）
+        const src = video.dataset.src;
+        if (src) {
+            video.src = src;
+            video.removeAttribute('data-src');
+        }
+
+        video.play().then(() => {
+            container.classList.add('is-playing');
+        }).catch(() => {
+            // 播放失敗時靜默處理
         });
-    }, observerOptions);
+    }
 
     // 初始化
     document.addEventListener('DOMContentLoaded', () => {
         const lazyVideos = document.querySelectorAll('video[data-src]');
-        lazyVideos.forEach(video => videoObserver.observe(video));
+        lazyVideos.forEach(video => addPlayOverlay(video));
     });
 })();

@@ -565,17 +565,67 @@ a:hover {
 }
 
 .feature-showcase__media {
+  position: relative;
   aspect-ratio: 4/3;
   /* 與 Bento Grid 統一的圓角 */
   border-radius: 20px;
   overflow: hidden;
   background-color: var(--color-border);
+  cursor: pointer;
   /* 多層次陰影 */
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.04),
     0 4px 8px rgba(0, 0, 0, 0.06),
     0 8px 16px rgba(0, 0, 0, 0.06);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* 影片播放按鈕覆蓋層 - hover 時才顯示 */
+.feature-showcase__media .play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  opacity: 0;
+  transition: opacity var(--transition-normal), background var(--transition-normal);
+  z-index: 1;
+}
+
+.feature-showcase__media:hover .play-overlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.feature-showcase__media .play-overlay::before {
+  content: '';
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform var(--transition-normal);
+}
+
+.feature-showcase__media:hover .play-overlay::before {
+  transform: scale(1);
+}
+
+.feature-showcase__media .play-overlay::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 24px;
+  border-color: transparent transparent transparent var(--color-text);
+  margin-left: 6px;
+}
+
+.feature-showcase__media.is-playing .play-overlay {
+  display: none;
 }
 
 .feature-showcase__media:hover {
@@ -763,9 +813,59 @@ a:hover {
 }
 
 .bento__media {
+  position: relative;
   flex: 1;
   overflow: hidden;
   background-color: var(--color-border);
+  cursor: pointer;
+}
+
+/* Bento Grid 播放按鈕覆蓋層 - hover 時才顯示 */
+.bento__media .play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  opacity: 0;
+  transition: opacity var(--transition-normal), background var(--transition-normal);
+  z-index: 1;
+}
+
+.bento__card:hover .bento__media .play-overlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bento__media .play-overlay::before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform var(--transition-normal);
+}
+
+.bento__card:hover .bento__media .play-overlay::before {
+  transform: scale(1);
+}
+
+.bento__media .play-overlay::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--color-text);
+  margin-left: 4px;
+}
+
+.bento__media.is-playing .play-overlay {
+  display: none;
 }
 
 .bento__card--large .bento__media {
