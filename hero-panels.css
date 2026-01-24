@@ -633,10 +633,3 @@
     }
 }
 
-/* 極小高度：隱藏側邊面板，專注主視窗 */
-@media (orientation: landscape) and (max-height: 380px) {
-    .hero-workspace__left,
-    .hero-workspace__right {
-        display: none;
-    }
-}
