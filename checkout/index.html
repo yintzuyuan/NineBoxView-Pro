@@ -151,6 +151,50 @@
         transform: rotate(360deg);
       }
     }
+
+    /* 響應式設計 - 平板 */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      .checkout-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .checkout-footer {
+        margin-top: 1.5rem;
+      }
+    }
+
+    /* 響應式設計 - 手機 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+
+      .checkout-logo {
+        font-size: 1.25rem;
+      }
+
+      .checkout-subtitle {
+        font-size: 0.875rem;
+      }
+
+      .checkout-header {
+        margin-bottom: 1rem;
+      }
+
+      .paddle-checkout-frame {
+        min-height: 500px; /* 手機上表單較長 */
+        border-radius: 12px;
+      }
+
+      .checkout-footer {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+      }
+    }
   </style>
     <!-- Umami Analytics -->
     <script defer src="https://analytics.erikyin.net/script.js" data-website-id="e186edab-7c13-4f03-b72e-353ea300595c" data-domains="erikyin.net"></script>
@@ -275,7 +319,7 @@
             displayMode: 'inline',
             frameTarget: 'paddle-checkout-frame',
             frameInitialHeight: 450,
-            frameStyle: 'width: 100%; min-width: 643px;',
+            frameStyle: 'width: 100%; min-width: 312px;',
             theme: 'light',
             variant: 'one-page',
             locale: config.paddle
