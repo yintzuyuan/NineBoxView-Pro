@@ -1181,6 +1181,12 @@ a:hover {
   }
 }
 
+.footer__note {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
 /* ==================== Responsive ==================== */
 
 /* 平板斷點 */
