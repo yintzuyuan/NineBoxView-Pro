@@ -1332,11 +1332,6 @@ a:hover {
   .hero {
     min-height: 100vh;
   }
-
-  /* 防止 testimonials 假卡片造成水平滾動（僅橫向模式） */
-  .testimonials {
-    overflow-x: clip;
-  }
 }
 
 /* ==================== Utilities ==================== */
@@ -1367,6 +1362,8 @@ a:hover {
 .testimonials {
   text-align: center;
   padding: var(--spacing-xl) 0;
+  /* 裁切假卡片溢出部分，防止行動裝置水平滾動 */
+  overflow-x: clip;
 }
 
 .testimonials__title {
