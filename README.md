@@ -9,7 +9,7 @@
   <p><strong>Nine-grid preview tool for Glyphs 3</strong></p>
 
   <a href="https://github.com/yintzuyuan/NineBoxView-Pro/releases/latest">
-    <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square" alt="Version">
+    <img src="https://img.shields.io/badge/Version-1.0.2-blue?style=flat-square" alt="Version">
   </a>
   <a href="#">
     <img src="https://img.shields.io/badge/macOS-12.0+-lightgrey?style=flat-square" alt="macOS">
@@ -81,7 +81,7 @@ Looking for the free version? See [NineBoxView (Python)](https://github.com/yint
   <p><strong>Glyphs 3 九宮格預覽工具</strong></p>
 
   <a href="https://github.com/yintzuyuan/NineBoxView-Pro/releases/latest">
-    <img src="https://img.shields.io/badge/版本-1.0.0-blue?style=flat-square" alt="版本">
+    <img src="https://img.shields.io/badge/版本-1.0.2-blue?style=flat-square" alt="版本">
   </a>
   <a href="#">
     <img src="https://img.shields.io/badge/macOS-12.0+-lightgrey?style=flat-square" alt="macOS">
