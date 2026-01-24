@@ -1077,3 +1077,11 @@ ARIA_TOGGLE_THEME:
   zh-Hans: 切换主题
   ja: テーマを切り替え
   ko: 테마 전환
+
+# 翻譯聲明橫幅（僅非中文語言顯示）
+TRANSLATION_BANNER:
+  en: '<div class="translation-banner">Translated with AI and official terminology. Spot an issue? <a href="mailto:support@erikyin.net">Let us know</a>.</div>'
+  zh-Hant: ''
+  zh-Hans: ''
+  ja: '<div class="translation-banner">AI翻訳・公式用語参照。問題があれば<a href="mailto:support@erikyin.net">お知らせください</a>。</div>'
+  ko: '<div class="translation-banner">AI 번역 · 공식 용어 참조. 문제가 있으면 <a href="mailto:support@erikyin.net">알려주세요</a>.</div>'

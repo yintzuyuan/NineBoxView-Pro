@@ -98,6 +98,29 @@ html[lang="en"]      { --font-sans: 'IBM Plex Sans', system-ui, sans-serif; }
   color: var(--color-text);
 }
 
+/* === Translation Banner === */
+.translation-banner {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+[data-theme="dark"] .translation-banner {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.translation-banner a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.translation-banner a:hover {
+  color: var(--color-accent);
+}
+
 /* === Override styles.css @media prefers-color-scheme for guide pages ===
    說明書只受 [data-theme] 控制，不受系統模式影響
 */
@@ -590,6 +613,10 @@ td .icon {
 }
 
 /* === Mobile Navigation Toggle === */
+.mobile-nav-backdrop {
+  display: none;
+}
+
 .mobile-nav-toggle {
   display: none;
   position: fixed;

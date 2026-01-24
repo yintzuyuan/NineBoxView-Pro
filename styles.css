@@ -1181,6 +1181,13 @@ a:hover {
   }
 }
 
+p.footer__note {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
+}
+
 /* ==================== Responsive ==================== */
 
 /* 平板斷點 */
