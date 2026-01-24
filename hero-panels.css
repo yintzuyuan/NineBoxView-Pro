@@ -614,3 +614,29 @@
         transform-origin: top center;
     }
 }
+
+/* --------------------------------------------------------------------------
+   Mobile Landscape Support
+   -------------------------------------------------------------------------- */
+
+/* Mobile Landscape: 自動填滿可用寬度 */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero-workspace {
+        max-width: 100%;
+        gap: 8px;
+        padding: 0 16px;
+    }
+
+    .hero-workspace__left,
+    .hero-workspace__right {
+        width: 140px;
+    }
+}
+
+/* 極小高度：隱藏側邊面板，專注主視窗 */
+@media (orientation: landscape) and (max-height: 380px) {
+    .hero-workspace__left,
+    .hero-workspace__right {
+        display: none;
+    }
+}

@@ -1323,6 +1323,22 @@ a:hover {
   }
 }
 
+/* --------------------------------------------------------------------------
+   Mobile Landscape Support
+   -------------------------------------------------------------------------- */
+
+/* 確保橫向時 hero 區域正確填滿 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  /* 防止 testimonials 假卡片造成水平滾動（僅橫向模式） */
+  .testimonials {
+    overflow-x: clip;
+  }
+}
+
 /* ==================== Utilities ==================== */
 .visually-hidden {
   position: absolute;
