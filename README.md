@@ -72,6 +72,8 @@ Looking for the free version? See [NineBoxView (Python)](https://github.com/yint
 - [Official Website](https://erikyin.net/NineBoxView-Pro/)
 - [Legacy Python Version](https://github.com/yintzuyuan/NineBoxView)
 
+*Translated with AI and official terminology. Spot an issue? [Let us know](mailto:support@erikyin.net).*
+
 ---
 
 # 九宮格預覽 Pro
