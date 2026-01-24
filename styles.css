@@ -1181,10 +1181,11 @@ a:hover {
   }
 }
 
-.footer__note {
+p.footer__note {
   color: var(--color-text-secondary);
-  font-size: 0.85rem;
-  opacity: 0.8;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
 }
 
 /* ==================== Responsive ==================== */

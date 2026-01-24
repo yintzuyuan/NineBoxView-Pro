@@ -698,6 +698,10 @@ def generate_page_html(
     search_placeholder = strings.get('SEARCH_PLACEHOLDER', {}).get(locale, 'Search...')
     html = html.replace('{{SEARCH_PLACEHOLDER}}', search_placeholder)
 
+    # 翻譯聲明橫幅（僅非中文語言顯示）
+    translation_banner = strings.get('TRANSLATION_BANNER', {}).get(locale, '')
+    html = html.replace('{{TRANSLATION_BANNER}}', translation_banner)
+
     return html
 
 

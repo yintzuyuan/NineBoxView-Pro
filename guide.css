@@ -100,11 +100,15 @@ html[lang="en"]      { --font-sans: 'IBM Plex Sans', system-ui, sans-serif; }
 
 /* === Translation Banner === */
 .translation-banner {
-  background-color: var(--color-border);
+  background-color: rgba(0, 0, 0, 0.03);
   color: var(--color-text-secondary);
   text-align: center;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
+}
+
+[data-theme="dark"] .translation-banner {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .translation-banner a {
@@ -609,6 +613,10 @@ td .icon {
 }
 
 /* === Mobile Navigation Toggle === */
+.mobile-nav-backdrop {
+  display: none;
+}
+
 .mobile-nav-toggle {
   display: none;
   position: fixed;
