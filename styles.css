@@ -981,6 +981,48 @@ a:hover {
   margin-bottom: var(--spacing-md);
 }
 
+/* Early Bird CTA */
+.final-cta__early-bird {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.final-cta__divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.final-cta__divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.final-cta__divider-text {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.final-cta__buy-btn {
+  margin-top: 0.25rem;
+}
+
+/* Outline 按鈕樣式 */
+.cta--outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-text);
+}
+
+.cta--outline:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
 .final-cta__trust {
   list-style: none;
   display: flex;
@@ -2171,3 +2213,83 @@ a:hover {
   background: var(--color-text-secondary);
   transform: translateY(-2px);
 }
+
+/* ==================== Early Bird Topbar ==================== */
+.early-bird-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  position: relative;
+}
+
+.early-bird-topbar--hidden {
+  display: none;
+}
+
+.early-bird-topbar__text {
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.early-bird-topbar__text:hover {
+  opacity: 0.8;
+}
+
+.early-bird-topbar__close {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-bg);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.early-bird-topbar__close:hover {
+  opacity: 1;
+}
+
+/* 調整 nav 在有 topbar 時的位置 */
+.has-topbar .nav {
+  top: 0;
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+  .early-bird-topbar {
+    background: color-mix(in srgb, var(--color-bg) 90%, var(--color-text) 30%);
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .early-bird-topbar__close {
+    color: var(--color-text);
+  }
+}
+
+/* 手機版 */
+@media (max-width: 480px) {
+  .early-bird-topbar {
+    font-size: 0.8rem;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+  }
+
+  .early-bird-topbar__close {
+    right: 0.5rem;
+  }
+}
+

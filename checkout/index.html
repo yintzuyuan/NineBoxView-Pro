@@ -169,17 +169,19 @@
     </footer>
   </div>
 
+  <!-- Early Bird Config -->
+  <script src="../early-bird-config.js"></script>
+
   <!-- Paddle.js SDK -->
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
   <script>
     // Paddle 配置
     const PADDLE_CONFIG = {
       token: 'live_bcd7ccbae67e2898f24a47b9021',
-      priceId: 'pri_01kbn8p26p62k3sv8tnbqg5kgc',
       environment: 'production'
     };
 
-    // 多語言設定
+    // 多語言設定（基本文案，早鳥文案由 early-bird-config 提供）
     const LOCALE_MAP = {
       'zh-Hant': { paddle: 'zh-TW', subtitle: '感謝試用，購買授權以繼續使用', back: '← 返回官網', loading: '載入中...' },
       'zh-Hans': { paddle: 'zh', subtitle: '感谢试用，购买授权以继续使用', back: '← 返回官网', loading: '载入中...' },
@@ -224,12 +226,33 @@
       }
     }
 
+    // 初始化早鳥狀態
+    function initEarlyBird(lang) {
+      const subtitleEl = document.getElementById('checkout-subtitle');
+      const earlyBirdI18n = getEarlyBirdI18n(lang);
+
+      if (isEarlyBirdActive()) {
+        // 顯示早鳥文案（靜態日期，不需倒數計時）
+        subtitleEl.textContent = earlyBirdI18n.checkoutSubtitle;
+      }
+    }
+
     // 初始化
     document.addEventListener('DOMContentLoaded', function() {
       const lang = getLanguage();
       const config = LOCALE_MAP[lang];
 
       setPageLanguage(lang);
+
+      // 初始化早鳥狀態
+      if (typeof isEarlyBirdActive === 'function') {
+        initEarlyBird(lang);
+      }
+
+      // 取得當前 Price ID（早鳥或原價）
+      const currentPriceId = typeof getCurrentPriceId === 'function'
+        ? getCurrentPriceId()
+        : 'pri_01kbn8p26p62k3sv8tnbqg5kgc';
 
       // 初始化 Paddle
       if (typeof Paddle !== 'undefined') {
@@ -245,7 +268,7 @@
 
         // 開啟 Inline Checkout
         Paddle.Checkout.open({
-          items: [{ priceId: PADDLE_CONFIG.priceId, quantity: 1 }],
+          items: [{ priceId: currentPriceId, quantity: 1 }],
           settings: {
             displayMode: 'inline',
             frameTarget: 'paddle-checkout-frame',
