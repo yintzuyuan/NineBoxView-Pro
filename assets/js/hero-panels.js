@@ -47,6 +47,27 @@
         let selectedLockedIndex = 0;
         let lockedVisible = true;
 
+        // Load and apply persisted panel visibility
+        const savedSettings = window.HeroSettings ? window.HeroSettings.get() : null;
+        if (savedSettings && savedSettings.panels) {
+            // Apply saved panel visibility (hidden class means not visible)
+            if (!savedSettings.panels.presets && presetsPanel) {
+                presetsPanel.classList.add('hero-panel--hidden');
+                const btn = workspace.querySelector('[data-toggle="presets"]');
+                if (btn) btn.classList.remove('interactive-hero__icon-btn--active');
+            }
+            if (!savedSettings.panels.locked && lockedPanel) {
+                lockedPanel.classList.add('hero-panel--hidden');
+                const btn = workspace.querySelector('[data-toggle="locked"]');
+                if (btn) btn.classList.remove('interactive-hero__icon-btn--active');
+            }
+            if (!savedSettings.panels.reference && referencePanel) {
+                referencePanel.classList.add('hero-panel--hidden');
+                const btn = workspace.querySelector('[data-toggle="reference"]');
+                if (btn) btn.classList.remove('interactive-hero__icon-btn--active');
+            }
+        }
+
         /**
          * Populate preset list based on current tab
          */
@@ -346,6 +367,11 @@
                 const btn = workspace.querySelector(`[data-toggle="${panelType}"]`);
                 if (btn) {
                     btn.classList.toggle('interactive-hero__icon-btn--active', isHidden);
+                }
+
+                // Persist panel visibility (isHidden before toggle = visible after toggle)
+                if (window.HeroSettings) {
+                    window.HeroSettings.save(`panels.${panelType}`, isHidden);
                 }
             }
         }

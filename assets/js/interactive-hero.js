@@ -60,6 +60,19 @@
         const themeToggle = container.querySelector('.interactive-hero__theme-toggle');
         const blurSlider = container.querySelector('.interactive-hero__blur-slider');
 
+        // Load persisted settings
+        const savedSettings = window.HeroSettings ? window.HeroSettings.get() : null;
+        if (savedSettings) {
+            // Apply saved theme
+            container.dataset.theme = savedSettings.theme;
+            // Apply saved blur
+            const blurPx = savedSettings.blur * 1;
+            container.style.setProperty('--blur-amount', `${blurPx}px`);
+            if (blurSlider) {
+                blurSlider.value = savedSettings.blur;
+            }
+        }
+
         // Get character data for this language
         // Fallback to zh-Hant if language not found (e.g., English uses Traditional Chinese characters)
         const charData = (typeof HERO_CHARACTERS !== 'undefined' && HERO_CHARACTERS[lang])
@@ -152,7 +165,12 @@
          */
         function toggleTheme() {
             const currentTheme = container.dataset.theme;
-            container.dataset.theme = currentTheme === 'dark' ? 'light' : 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            container.dataset.theme = newTheme;
+            // Persist setting
+            if (window.HeroSettings) {
+                window.HeroSettings.save('theme', newTheme);
+            }
         }
 
         /**
@@ -162,6 +180,10 @@
         function updateBlur(value) {
             const blurPx = value * 1; // 1px per step
             container.style.setProperty('--blur-amount', `${blurPx}px`);
+            // Persist setting
+            if (window.HeroSettings) {
+                window.HeroSettings.save('blur', value);
+            }
         }
 
         // Initial population
