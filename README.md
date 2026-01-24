@@ -61,6 +61,8 @@
 - [Official Guide](https://erikyin.net/NineBoxView-Pro/) (EN / 繁中 / 简中 / 日本語 / 한국어)
 - [Report Issues](https://github.com/yintzuyuan/NineBoxView-Pro/issues)
 
+> This documentation was translated with AI assistance and verified against official terminology. If you spot any issues, please [let us know](mailto:support@erikyin.net).
+
 ## License
 
 Commercial license with **14-day free trial**. Full functionality during trial. Purchase option available within the plugin.
