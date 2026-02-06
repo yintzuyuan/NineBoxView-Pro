@@ -69,6 +69,7 @@
 | 按钮 | 功能 |
 |-----|------|
 | {{ICON_SUN}} / {{ICON_MOON}} | 切换深色/浅色模式 |
+| {{ICON_HASH_STRAIGHT}} | 切换网格显示（Option：打开网格设置） |
 | {{ICON_PRESETS}} | 显示/隐藏{{PRESETS_WINDOW_TITLE|}}面板 |
 | {{ICON_LOCK}} | 显示/隐藏{{LOCKED_PANEL_TITLE|}}面板 |
 | {{ICON_REFERENCE}} | 显示/隐藏{{REFERENCE_PANEL_TITLE|}}面板 |
@@ -90,25 +91,42 @@
 
 网格功能可在九宫格中显示辅助线，帮助检查字符的对齐和比例。
 
-### 打开方式
+### 打开 / 关闭
 
-1. 在九宫格内容区按右键
-2. 选择「{{CONTEXT_MENU_SHOW_GRID_LINES|}}」
+- **工具栏**：点击 {{ICON_HASH_STRAIGHT}} 按钮
+- **右键菜单**：选择「{{CONTEXT_MENU_SHOW_GRID_LINES|}}」或「{{CONTEXT_MENU_HIDE_GRID_LINES|}}」
 
-### 网格内容
+### 网格样式
 
-网格会显示以下参考线：
+通过右键菜单的「{{CONTEXT_MENU_GRID_STYLE|}}」子菜单选择网格样式：
 
-- **{{GRID_EM_BOX}}**：字符的边界框
-- **{{GRID_CENTER_LINE}}**：水平和垂直中心线
+| 样式 | 说明 |
+|------|------|
+| {{GRID_STYLE_FIELD|}} | {{GRID_STYLE_FIELD_DESC}}（默认） |
+| {{GRID_STYLE_ASTERISK|}} | {{GRID_STYLE_ASTERISK_DESC}} |
+| {{GRID_STYLE_HASH|}} | {{GRID_STYLE_HASH_DESC}} |
 
-### 关闭方式
+### 字面框
 
-1. 在九宫格内容区按右键
-2. 选择「{{CONTEXT_MENU_HIDE_GRID_LINES|}}」
+字面框会在每个格子中显示一个内缩的矩形框，代表字面的大致范围，方便检查字符的字面比例是否一致。
+
+- **打开 / 关闭**：右键菜单选择「{{CONTEXT_MENU_SHOW_COUNTER_FRAME|}}」或「{{CONTEXT_MENU_HIDE_COUNTER_FRAME|}}」
+- **比例调整**：通过网格设置调整（见下方）
+
+### 网格设置
+
+按住 **Option** 键点击工具栏的 {{ICON_HASH_STRAIGHT}} 按钮，打开网格设置面板：
+
+- **网格样式**：选择{{GRID_STYLE_FIELD|}}、{{GRID_STYLE_ASTERISK|}}或{{GRID_STYLE_HASH|}}
+- **{{COUNTER_FRAME_LABEL|}}比例**：调整字面框的大小比例（默认 80%，即各边缩进 10%）
+
+> [!TIP]
+> 数字编辑框支持键盘操作：使用 **↑↓** 方向键以 1 为单位调整，按住 **Shift + ↑↓** 以 10 为单位调整。
+
+> 也可通过右键菜单的「{{CONTEXT_MENU_GRID_SETTINGS|}}」打开。
 
 > [!NOTE]
-> 网格设置会自动保存，重启后保持。
+> 所有网格设置会自动保存，重启后保持。
 
 ## 拖曳进阶操作
 

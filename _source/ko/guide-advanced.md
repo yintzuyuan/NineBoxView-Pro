@@ -69,6 +69,7 @@
 | 버튼 | 기능 |
 |-----|------|
 | {{ICON_SUN}} / {{ICON_MOON}} | 다크/라이트 모드 전환 |
+| {{ICON_HASH_STRAIGHT}} | 그리드 선 표시 전환 (Option: 그리드 설정 열기) |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} 패널 표시/숨기기 |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} 패널 표시/숨기기 |
 | {{ICON_REFERENCE}} | {{REFERENCE_PANEL_TITLE|}} 패널 표시/숨기기 |
@@ -90,25 +91,42 @@
 
 그리드 선 기능은 9칸에 가이드라인을 표시하여 글자의 정렬과 비율을 확인하는 데 도움이 됩니다.
 
-### 활성화
+### 활성화 / 비활성화
 
-1. 9칸 내부에서 오른쪽 클릭
-2. "{{CONTEXT_MENU_SHOW_GRID_LINES|}}" 선택
+- **툴바**: {{ICON_HASH_STRAIGHT}} 버튼 클릭
+- **컨텍스트 메뉴**: "{{CONTEXT_MENU_SHOW_GRID_LINES|}}" 또는 "{{CONTEXT_MENU_HIDE_GRID_LINES|}}" 선택
 
-### 그리드 내용
+### 그리드 선 스타일
 
-그리드 선은 다음 가이드라인을 표시합니다:
+컨텍스트 메뉴의 "{{CONTEXT_MENU_GRID_STYLE|}}" 하위 메뉴에서 그리드 선 스타일을 선택:
 
-- **{{GRID_EM_BOX}}**: 글자의 경계 상자
-- **{{GRID_CENTER_LINE}}**: 수평 및 수직 중심선
+| 스타일 | 설명 |
+|--------|------|
+| {{GRID_STYLE_FIELD|}} | {{GRID_STYLE_FIELD_DESC}} (기본값) |
+| {{GRID_STYLE_ASTERISK|}} | {{GRID_STYLE_ASTERISK_DESC}} |
+| {{GRID_STYLE_HASH|}} | {{GRID_STYLE_HASH_DESC}} |
 
-### 비활성화
+### 자면틀
 
-1. 9칸 내부에서 오른쪽 클릭
-2. "{{CONTEXT_MENU_HIDE_GRID_LINES|}}" 선택
+자면틀은 각 셀에 내부로 축소된 사각형 프레임을 표시하여 글자면의 대략적인 범위를 나타내며, 글자면 비율이 일관적인지 확인하는 데 편리합니다.
+
+- **활성화 / 비활성화**: 컨텍스트 메뉴에서 "{{CONTEXT_MENU_SHOW_COUNTER_FRAME|}}" 또는 "{{CONTEXT_MENU_HIDE_COUNTER_FRAME|}}" 선택
+- **비율 조정**: 그리드 설정에서 조정 (아래 참조)
+
+### 그리드 설정
+
+**Option** 키를 누른 채 툴바의 {{ICON_HASH_STRAIGHT}} 버튼을 클릭하면 그리드 설정 패널이 열립니다:
+
+- **그리드 선 스타일**: {{GRID_STYLE_FIELD|}}, {{GRID_STYLE_ASTERISK|}} 또는 {{GRID_STYLE_HASH|}} 선택
+- **{{COUNTER_FRAME_LABEL|}} 비율**: 자면틀의 크기 비율 조정 (기본값 80%, 각 변 10% 축소)
+
+> [!TIP]
+> 숫자 입력 필드는 키보드 조작을 지원합니다: **↑↓** 방향키로 1씩 조정, **Shift + ↑↓**로 10씩 조정할 수 있습니다.
+
+> 컨텍스트 메뉴의 "{{CONTEXT_MENU_GRID_SETTINGS|}}"에서도 열 수 있습니다.
 
 > [!NOTE]
-> 그리드 선 설정은 자동으로 저장되며 재시작 후에도 유지됩니다.
+> 모든 그리드 설정은 자동으로 저장되며 재시작 후에도 유지됩니다.
 
 ## 드래그 고급 조작
 

@@ -101,6 +101,7 @@ The 9-grid main window is a floating panel that contains:
 | Button | Function | Description |
 |--------|----------|-------------|
 | {{ICON_SUN}}/{{ICON_MOON}} | Theme toggle | Switch between light/dark mode |
+| {{ICON_HASH_STRAIGHT}} | Grid | Toggle grid lines (Option + click to open grid settings) |
 | Slider | Blur intensity | Adjust blur level for the entire grid window to check overall gray distribution |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | Open/close the presets panel |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | Open/close the Locked Glyph Panel |
@@ -139,6 +140,9 @@ Right-click inside the grid area to open the context menu:
 | {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | Toggle {{PRESETS_WINDOW_TITLE|}} visibility |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | Toggle theme mode |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | Toggle grid lines |
+| {{CONTEXT_MENU_GRID_STYLE|}} | Grid line style submenu ({{GRID_STYLE_FIELD|}} / {{GRID_STYLE_ASTERISK|}} / {{GRID_STYLE_HASH|}}) |
+| {{CONTEXT_MENU_SHOW_COUNTER_FRAME|}} / {{CONTEXT_MENU_HIDE_COUNTER_FRAME|}} | Toggle {{COUNTER_FRAME_LABEL|}} display |
+| {{CONTEXT_MENU_GRID_SETTINGS|}} | Open grid settings panel |
 
 ## Grid Position Definition
 

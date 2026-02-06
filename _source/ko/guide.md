@@ -101,6 +101,7 @@
 | 버튼 | 기능 | 설명 |
 |------|------|------|
 | {{ICON_SUN}}/{{ICON_MOON}} | 테마 전환 | 라이트/다크 모드 전환 |
+| {{ICON_HASH_STRAIGHT}} | 그리드 | 그리드 선 표시 전환 (Option + 클릭으로 그리드 설정 열기) |
 | 슬라이더 | 흐림 정도 | 9칸 창 전체의 흐림 정도를 조절하여 전체 회색 분포 확인 |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | 프리셋 패널 열기/닫기 |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | 잠금 글자 패널 열기/닫기 |
@@ -139,6 +140,9 @@
 | {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | {{PRESETS_WINDOW_TITLE|}} 표시 전환 |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | 테마 모드 전환 |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | 그리드 선 표시 전환 |
+| {{CONTEXT_MENU_GRID_STYLE|}} | 그리드 선 스타일 하위 메뉴 ({{GRID_STYLE_FIELD|}} / {{GRID_STYLE_ASTERISK|}} / {{GRID_STYLE_HASH|}}) |
+| {{CONTEXT_MENU_SHOW_COUNTER_FRAME|}} / {{CONTEXT_MENU_HIDE_COUNTER_FRAME|}} | {{COUNTER_FRAME_LABEL|}} 표시 전환 |
+| {{CONTEXT_MENU_GRID_SETTINGS|}} | 그리드 설정 패널 열기 |
 
 ## 9칸 위치 정의
 

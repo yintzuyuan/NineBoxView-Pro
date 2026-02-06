@@ -101,6 +101,7 @@
 | 按钮 | 功能 | 说明 |
 |------|------|------|
 | {{ICON_SUN}}/{{ICON_MOON}} | 主题切换 | 切换浅色/深色模式 |
+| {{ICON_HASH_STRAIGHT}} | 网格 | 切换网格显示（Option + 点击打开网格设置） |
 | 滑块 | 模糊程度 | 调整整个九宫格窗口的模糊程度，用于检视整体灰度分布 |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | 打开/关闭字组管理面板 |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | 打开/关闭锁定字面板 |
@@ -139,6 +140,9 @@
 | {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | 切换{{PRESETS_WINDOW_TITLE|}}显示 |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | 切换主题模式 |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | 切换网格显示 |
+| {{CONTEXT_MENU_GRID_STYLE|}} | 网格样式子菜单（{{GRID_STYLE_FIELD|}} / {{GRID_STYLE_ASTERISK|}} / {{GRID_STYLE_HASH|}}） |
+| {{CONTEXT_MENU_SHOW_COUNTER_FRAME|}} / {{CONTEXT_MENU_HIDE_COUNTER_FRAME|}} | 切换{{COUNTER_FRAME_LABEL|}}显示 |
+| {{CONTEXT_MENU_GRID_SETTINGS|}} | 打开网格设置面板 |
 
 ## 九宫格位置定义
 

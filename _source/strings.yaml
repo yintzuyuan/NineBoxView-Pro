@@ -1056,6 +1056,104 @@ GRID_CENTER_LINE:
   ja: センターライン
   ko: 중심선
 
+CONTEXT_MENU_GRID_STYLE:
+  en: Grid Style
+  zh-Hant: 格線樣式
+  zh-Hans: 网格样式
+  ja: グリッドスタイル
+  ko: 그리드 스타일
+
+CONTEXT_MENU_GRID_SETTINGS:
+  en: Grid Settings…
+  zh-Hant: 格線設定…
+  zh-Hans: 网格设置…
+  ja: グリッド設定…
+  ko: 그리드 설정…
+
+CONTEXT_MENU_SHOW_COUNTER_FRAME:
+  en: Show Bounding Box
+  zh-Hant: 顯示字面框
+  zh-Hans: 显示字面框
+  ja: 実ボディを表示
+  ko: 자면틀 표시
+
+CONTEXT_MENU_HIDE_COUNTER_FRAME:
+  en: Hide Bounding Box
+  zh-Hant: 隱藏字面框
+  zh-Hans: 隐藏字面框
+  ja: 実ボディを隠す
+  ko: 자면틀 숨기기
+
+GRID_STYLE_FIELD:
+  en: Cross Grid
+  zh-Hant: 田字格
+  zh-Hans: 田字格
+  ja: 十字マス
+  ko: 십자격자
+
+GRID_STYLE_ASTERISK:
+  en: Diagonal Grid
+  zh-Hant: 米字格
+  zh-Hans: 米字格
+  ja: 対角線マス
+  ko: 대각선격자
+
+GRID_STYLE_HASH:
+  en: Division Grid
+  zh-Hant: 井字格
+  zh-Hans: 井字格
+  ja: 三分割マス
+  ko: 삼분할격자
+
+COUNTER_FRAME_LABEL:
+  en: Bounding Box
+  zh-Hant: 字面框
+  zh-Hans: 字面框
+  ja: 実ボディ
+  ko: 자면틀
+
+GRID_TOGGLE_SHOW_TOOLTIP:
+  en: "Show Grid (Option: Settings)"
+  zh-Hant: "顯示格線（Option：設定）"
+  zh-Hans: "显示网格（Option：设置）"
+  ja: "グリッドを表示（Option：設定）"
+  ko: "격자 표시 (Option: 설정)"
+
+GRID_TOGGLE_HIDE_TOOLTIP:
+  en: "Hide Grid (Option: Settings)"
+  zh-Hant: "隱藏格線（Option：設定）"
+  zh-Hans: "隐藏网格（Option：设置）"
+  ja: "グリッドを隠す（Option：設定）"
+  ko: "격자 숨기기 (Option: 설정)"
+
+GRID_STYLE_LABEL:
+  en: Style
+  zh-Hant: 樣式
+  zh-Hans: 样式
+  ja: スタイル
+  ko: 스타일
+
+GRID_STYLE_FIELD_DESC:
+  en: "horizontal/vertical center lines"
+  zh-Hant: "水平中線 + 垂直中線"
+  zh-Hans: "水平中线 + 垂直中线"
+  ja: "水平/垂直の中心線"
+  ko: "수평/수직 중심선"
+
+GRID_STYLE_ASTERISK_DESC:
+  en: "cross grid + two diagonals"
+  zh-Hant: "田字格 + 兩條對角線"
+  zh-Hans: "田字格 + 两条对角线"
+  ja: "十字マス + 2本の対角線"
+  ko: "십자격자 + 대각선 2개"
+
+GRID_STYLE_HASH_DESC:
+  en: "two horizontal + two vertical third-lines"
+  zh-Hant: "三等分的兩水平線 + 兩垂直線"
+  zh-Hans: "三等分的两水平线 + 两垂直线"
+  ja: "三分割の水平線2本 + 垂直線2本"
+  ko: "3등분 수평선 2개 + 수직선 2개"
+
 # 搜尋功能
 SEARCH_PLACEHOLDER:
   en: Search guide...

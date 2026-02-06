@@ -50,7 +50,7 @@ To display comparison versions in the grid, the following conditions must be met
 | Cmd + click center          | Toggle lock feature | Enable/disable the lock feature                           |
 | Cmd + Option + click        | Glyph picker        | Open glyph picker to set locked glyph                     |
 | Cmd + Option + click center | Clear all locks     | Clear locks at all positions                              |
-| Cmd + Shift + click center  | Save lock preset    | Save current lock configuration to {{PRESETS_WINDOW_TITLE | }} |
+| Cmd + Shift + click center  | Save lock preset    | Save current lock configuration to {{PRESETS_WINDOW_TITLE|}} |
 
 ### Drag Operations
 
@@ -69,9 +69,10 @@ Toolbar buttons are triggered by clicking. Some buttons show tooltips on hover:
 | Button                       | Function                          |
 | ---------------------------- | --------------------------------- |
 | {{ICON_SUN}} / {{ICON_MOON}} | Toggle dark/light mode            |
-| {{ICON_PRESETS}}             | Show/hide {{PRESETS_WINDOW_TITLE  | }} panel |
-| {{ICON_LOCK}}                | Show/hide {{LOCKED_PANEL_TITLE    | }} panel |
-| {{ICON_REFERENCE}}           | Show/hide {{REFERENCE_PANEL_TITLE | }} panel |
+| {{ICON_HASH_STRAIGHT}}       | Toggle grid lines (Option: open grid settings) |
+| {{ICON_PRESETS}}             | Show/hide {{PRESETS_WINDOW_TITLE|}} panel |
+| {{ICON_LOCK}}                | Show/hide {{LOCKED_PANEL_TITLE|}} panel |
+| {{ICON_REFERENCE}}           | Show/hide {{REFERENCE_PANEL_TITLE|}} panel |
 
 ### Panel Snapping
 
@@ -90,25 +91,42 @@ Hold **Option** and click a panel button to snap the panel to the side of the ma
 
 The grid lines feature displays guides in the grid to help check glyph alignment and proportions.
 
-### Enable
+### Enable / Disable
 
-1. Right-click inside the grid area
-2. Select "{{CONTEXT_MENU_SHOW_GRID_LINES|}}"
+- **Toolbar**: Click the {{ICON_HASH_STRAIGHT}} button
+- **Context menu**: Select "{{CONTEXT_MENU_SHOW_GRID_LINES|}}" or "{{CONTEXT_MENU_HIDE_GRID_LINES|}}"
 
-### Grid Content
+### Grid Line Styles
 
-Grid lines show the following guides:
+Select a grid line style from the "{{CONTEXT_MENU_GRID_STYLE|}}" submenu in the context menu:
 
-- **{{GRID_EM_BOX}}**: Character bounding box
-- **{{GRID_CENTER_LINE}}**: Horizontal and vertical center lines
+| Style | Description |
+|-------|-------------|
+| {{GRID_STYLE_FIELD|}} | {{GRID_STYLE_FIELD_DESC}} (default) |
+| {{GRID_STYLE_ASTERISK|}} | {{GRID_STYLE_ASTERISK_DESC}} |
+| {{GRID_STYLE_HASH|}} | {{GRID_STYLE_HASH_DESC}} |
 
-### Disable
+### Counter Frame
 
-1. Right-click inside the grid area
-2. Select "{{CONTEXT_MENU_HIDE_GRID_LINES|}}"
+The counter frame displays an inset rectangle in each cell, representing the approximate character face area, making it easy to check whether the character face proportions are consistent.
+
+- **Enable / Disable**: Select "{{CONTEXT_MENU_SHOW_COUNTER_FRAME|}}" or "{{CONTEXT_MENU_HIDE_COUNTER_FRAME|}}" from the context menu
+- **Ratio adjustment**: Adjust via grid settings (see below)
+
+### Grid Settings
+
+Hold **Option** and click the {{ICON_HASH_STRAIGHT}} button in the toolbar to open the grid settings panel:
+
+- **Grid line style**: Select {{GRID_STYLE_FIELD|}}, {{GRID_STYLE_ASTERISK|}} or {{GRID_STYLE_HASH|}}
+- **{{COUNTER_FRAME_LABEL|}} ratio**: Adjust the counter frame size ratio (default 80%, i.e. 10% inset on each side)
+
+> [!TIP]
+> The number field supports keyboard input: use **↑↓** arrow keys to adjust by 1, or hold **Shift + ↑↓** to adjust by 10.
+
+> You can also open this via "{{CONTEXT_MENU_GRID_SETTINGS|}}" in the context menu.
 
 > [!NOTE]
-> Grid line settings are automatically saved and persist after restart.
+> All grid settings are automatically saved and persist after restart.
 
 ## Advanced Drag Operations
 
@@ -130,7 +148,7 @@ When editing a non-master layer in Glyphs, surrounding grid cells automatically 
 | Storage Location     | Content                                      | Description                              |
 | -------------------- | -------------------------------------------- | ---------------------------------------- |
 | Font file            | Reference glyphs, locked glyphs              | Saved with file, not shared across files |
-| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE | }}, theme, etc.                          | Global settings, usable across files |
+| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE|}}, theme, etc.                          | Global settings, usable across files |
 
 > [!TIP]
 > Use the import/export feature to share {{PRESETS_WINDOW_TITLE|}} between computers.

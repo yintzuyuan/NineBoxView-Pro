@@ -69,6 +69,7 @@
 | ボタン | 機能 |
 |-----|------|
 | {{ICON_SUN}} / {{ICON_MOON}} | ダーク/ライトモードを切り替え |
+| {{ICON_HASH_STRAIGHT}} | グリッド線表示を切り替え（Option：グリッド設定を開く） |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}}パネルを表示/非表示 |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}}パネルを表示/非表示 |
 | {{ICON_REFERENCE}} | {{REFERENCE_PANEL_TITLE|}}パネルを表示/非表示 |
@@ -90,25 +91,42 @@
 
 グリッド線機能は9マスにガイドラインを表示し、文字の整列と比率の確認に役立ちます。
 
-### 有効化
+### 有効化 / 無効化
 
-1. 9マス内で右クリック
-2. 「{{CONTEXT_MENU_SHOW_GRID_LINES|}}」を選択
+- **ツールバー**：{{ICON_HASH_STRAIGHT}} ボタンをクリック
+- **コンテキストメニュー**：「{{CONTEXT_MENU_SHOW_GRID_LINES|}}」または「{{CONTEXT_MENU_HIDE_GRID_LINES|}}」を選択
 
-### グリッド内容
+### グリッド線スタイル
 
-グリッド線は以下のガイドラインを表示します：
+コンテキストメニューの「{{CONTEXT_MENU_GRID_STYLE|}}」サブメニューからグリッド線スタイルを選択：
 
-- **{{GRID_EM_BOX}}**：文字の境界ボックス
-- **{{GRID_CENTER_LINE}}**：水平および垂直の中心線
+| スタイル | 説明 |
+|---------|------|
+| {{GRID_STYLE_FIELD|}} | {{GRID_STYLE_FIELD_DESC}}（デフォルト） |
+| {{GRID_STYLE_ASTERISK|}} | {{GRID_STYLE_ASTERISK_DESC}} |
+| {{GRID_STYLE_HASH|}} | {{GRID_STYLE_HASH_DESC}} |
 
-### 無効化
+### 実ボディ
 
-1. 9マス内で右クリック
-2. 「{{CONTEXT_MENU_HIDE_GRID_LINES|}}」を選択
+実ボディは各セルに内側に縮小された矩形枠を表示し、文字面のおおよその範囲を示します。文字面の比率が一致しているかどうかを確認するのに便利です。
+
+- **有効化 / 無効化**：コンテキストメニューから「{{CONTEXT_MENU_SHOW_COUNTER_FRAME|}}」または「{{CONTEXT_MENU_HIDE_COUNTER_FRAME|}}」を選択
+- **比率調整**：グリッド設定で調整（下記参照）
+
+### グリッド設定
+
+**Option** キーを押しながらツールバーの {{ICON_HASH_STRAIGHT}} ボタンをクリックすると、グリッド設定パネルが開きます：
+
+- **グリッド線スタイル**：{{GRID_STYLE_FIELD|}}、{{GRID_STYLE_ASTERISK|}}または{{GRID_STYLE_HASH|}}を選択
+- **{{COUNTER_FRAME_LABEL|}}比率**：実ボディのサイズ比率を調整（デフォルト80%、各辺10%縮小）
+
+> [!TIP]
+> 数値入力フィールドはキーボード操作に対応：**↑↓** キーで1単位ずつ調整、**Shift + ↑↓** で10単位ずつ調整できます。
+
+> コンテキストメニューの「{{CONTEXT_MENU_GRID_SETTINGS|}}」からも開けます。
 
 > [!NOTE]
-> グリッド線の設定は自動的に保存され、再起動後も維持されます。
+> すべてのグリッド設定は自動的に保存され、再起動後も維持されます。
 
 ## ドラッグ高度な操作
 

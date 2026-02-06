@@ -69,6 +69,7 @@
 | 按鈕 | 功能 |
 |-----|------|
 | {{ICON_SUN}} / {{ICON_MOON}} | 切換深色/淺色模式 |
+| {{ICON_HASH_STRAIGHT}} | 切換格線顯示（Option：開啟格線設定） |
 | {{ICON_PRESETS}} | 顯示/隱藏{{PRESETS_WINDOW_TITLE|}}面板 |
 | {{ICON_LOCK}} | 顯示/隱藏{{LOCKED_PANEL_TITLE|}}面板 |
 | {{ICON_REFERENCE}} | 顯示/隱藏{{REFERENCE_PANEL_TITLE|}}面板 |
@@ -90,25 +91,42 @@
 
 格線功能可在九宮格中顯示輔助線，幫助檢查字符的對齊和比例。
 
-### 開啟方式
+### 開啟 / 關閉
 
-1. 在九宮格內容區按右鍵
-2. 選擇「{{CONTEXT_MENU_SHOW_GRID_LINES|}}」
+- **工具列**：點擊 {{ICON_HASH_STRAIGHT}} 按鈕
+- **右鍵選單**：選擇「{{CONTEXT_MENU_SHOW_GRID_LINES|}}」或「{{CONTEXT_MENU_HIDE_GRID_LINES|}}」
 
-### 格線內容
+### 格線樣式
 
-格線會顯示以下參考線：
+透過右鍵選單的「{{CONTEXT_MENU_GRID_STYLE|}}」子選單選擇格線樣式：
 
-- **{{GRID_EM_BOX}}**：字符的邊界框
-- **{{GRID_CENTER_LINE}}**：水平和垂直中心線
+| 樣式 | 說明 |
+|------|------|
+| {{GRID_STYLE_FIELD|}} | {{GRID_STYLE_FIELD_DESC}}（預設） |
+| {{GRID_STYLE_ASTERISK|}} | {{GRID_STYLE_ASTERISK_DESC}} |
+| {{GRID_STYLE_HASH|}} | {{GRID_STYLE_HASH_DESC}} |
 
-### 關閉方式
+### 字面框
 
-1. 在九宮格內容區按右鍵
-2. 選擇「{{CONTEXT_MENU_HIDE_GRID_LINES|}}」
+字面框會在每個格子中顯示一個內縮的矩形框，代表字面的大致範圍，方便檢查字符的字面比例是否一致。
+
+- **開啟 / 關閉**：右鍵選單選擇「{{CONTEXT_MENU_SHOW_COUNTER_FRAME|}}」或「{{CONTEXT_MENU_HIDE_COUNTER_FRAME|}}」
+- **比例調整**：透過格線設定調整（見下方）
+
+### 格線設定
+
+按住 **Option** 鍵點擊工具列的 {{ICON_HASH_STRAIGHT}} 按鈕，開啟格線設定面板：
+
+- **格線樣式**：選擇{{GRID_STYLE_FIELD|}}、{{GRID_STYLE_ASTERISK|}}或{{GRID_STYLE_HASH|}}
+- **{{COUNTER_FRAME_LABEL|}}比例**：調整字面框的大小比例（預設 80%，即各邊縮進 10%）
+
+> [!TIP]
+> 數字編輯框支援鍵盤操作：使用 **↑↓** 方向鍵以 1 為單位調整，按住 **Shift + ↑↓** 以 10 為單位調整。
+
+> 也可透過右鍵選單的「{{CONTEXT_MENU_GRID_SETTINGS|}}」開啟。
 
 > [!NOTE]
-> 格線設定會自動儲存，重啟後保持。
+> 所有格線設定會自動儲存，重啟後保持。
 
 ## 拖曳進階操作
 
