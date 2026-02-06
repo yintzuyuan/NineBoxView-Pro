@@ -120,6 +120,9 @@ Hold **Option** and click the {{ICON_HASH_STRAIGHT}} button in the toolbar to op
 - **Grid line style**: Select {{GRID_STYLE_FIELD|}}, {{GRID_STYLE_ASTERISK|}} or {{GRID_STYLE_HASH|}}
 - **{{COUNTER_FRAME_LABEL|}} ratio**: Adjust the counter frame size ratio (default 80%, i.e. 10% inset on each side)
 
+> [!TIP]
+> The number field supports keyboard input: use **↑↓** arrow keys to adjust by 1, or hold **Shift + ↑↓** to adjust by 10.
+
 > You can also open this via "{{CONTEXT_MENU_GRID_SETTINGS|}}" in the context menu.
 
 > [!NOTE]

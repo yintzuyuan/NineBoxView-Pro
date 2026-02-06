@@ -120,6 +120,9 @@
 - **グリッド線スタイル**：{{GRID_STYLE_FIELD|}}、{{GRID_STYLE_ASTERISK|}}または{{GRID_STYLE_HASH|}}を選択
 - **{{COUNTER_FRAME_LABEL|}}比率**：実ボディのサイズ比率を調整（デフォルト80%、各辺10%縮小）
 
+> [!TIP]
+> 数値入力フィールドはキーボード操作に対応：**↑↓** キーで1単位ずつ調整、**Shift + ↑↓** で10単位ずつ調整できます。
+
 > コンテキストメニューの「{{CONTEXT_MENU_GRID_SETTINGS|}}」からも開けます。
 
 > [!NOTE]

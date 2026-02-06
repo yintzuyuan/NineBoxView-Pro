@@ -120,6 +120,9 @@
 - **그리드 선 스타일**: {{GRID_STYLE_FIELD|}}, {{GRID_STYLE_ASTERISK|}} 또는 {{GRID_STYLE_HASH|}} 선택
 - **{{COUNTER_FRAME_LABEL|}} 비율**: 자면틀의 크기 비율 조정 (기본값 80%, 각 변 10% 축소)
 
+> [!TIP]
+> 숫자 입력 필드는 키보드 조작을 지원합니다: **↑↓** 방향키로 1씩 조정, **Shift + ↑↓**로 10씩 조정할 수 있습니다.
+
 > 컨텍스트 메뉴의 "{{CONTEXT_MENU_GRID_SETTINGS|}}"에서도 열 수 있습니다.
 
 > [!NOTE]

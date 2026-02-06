@@ -120,6 +120,9 @@
 - **格線樣式**：選擇{{GRID_STYLE_FIELD|}}、{{GRID_STYLE_ASTERISK|}}或{{GRID_STYLE_HASH|}}
 - **{{COUNTER_FRAME_LABEL|}}比例**：調整字面框的大小比例（預設 80%，即各邊縮進 10%）
 
+> [!TIP]
+> 數字編輯框支援鍵盤操作：使用 **↑↓** 方向鍵以 1 為單位調整，按住 **Shift + ↑↓** 以 10 為單位調整。
+
 > 也可透過右鍵選單的「{{CONTEXT_MENU_GRID_SETTINGS|}}」開啟。
 
 > [!NOTE]
