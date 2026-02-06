@@ -42,6 +42,21 @@
 | `{{CONTEXT_MENU_DARK_MODE}}` | 深色模式 | Dark Mode |
 | `{{CONTEXT_MENU_SHOW_GRID_LINES}}` | 顯示格線 | Show Grid Lines |
 | `{{CONTEXT_MENU_HIDE_GRID_LINES}}` | 隱藏格線 | Hide Grid Lines |
+| `{{CONTEXT_MENU_GRID_STYLE}}` | 格線樣式 | Grid Style |
+| `{{CONTEXT_MENU_GRID_SETTINGS}}` | 格線設定… | Grid Settings… |
+| `{{CONTEXT_MENU_SHOW_COUNTER_FRAME}}` | 顯示字面框 | Show Bounding Box |
+| `{{CONTEXT_MENU_HIDE_COUNTER_FRAME}}` | 隱藏字面框 | Hide Bounding Box |
+
+### 格線樣式與字面框
+
+| 變數 | 繁中 | 英文 |
+|-----|------|------|
+| `{{GRID_STYLE_FIELD}}` | 田字格 | Cross Grid |
+| `{{GRID_STYLE_ASTERISK}}` | 米字格 | Diagonal Grid |
+| `{{GRID_STYLE_HASH}}` | 井字格 | Division Grid |
+| `{{COUNTER_FRAME_LABEL}}` | 字面框 | Bounding Box |
+| `{{GRID_TOGGLE_SHOW_TOOLTIP}}` | 顯示格線（Option：設定） | Show Grid (Option: Settings) |
+| `{{GRID_TOGGLE_HIDE_TOOLTIP}}` | 隱藏格線（Option：設定） | Hide Grid (Option: Settings) |
 
 ### 字組面板選單
 

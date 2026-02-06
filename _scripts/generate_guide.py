@@ -114,6 +114,7 @@ ICONS = {
     'ICON_MOON': 'moon',
     'ICON_PRESETS': 'cards-three',
     'ICON_REFERENCE': 'article',
+    'ICON_HASH_STRAIGHT': 'hash-straight',
     'ICON_MENU': 'list',
     # 拖曳圖示
     'ICON_SWAP': 'arrows-clockwise',

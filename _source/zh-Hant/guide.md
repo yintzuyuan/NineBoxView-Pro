@@ -101,6 +101,7 @@
 | 按鈕 | 功能 | 說明 |
 |------|------|------|
 | {{ICON_SUN}}/{{ICON_MOON}} | 主題切換 | 切換淺色/深色模式 |
+| {{ICON_HASH_STRAIGHT}} | 格線 | 切換格線顯示（Option + 點擊開啟格線設定） |
 | 滑桿 | 模糊程度 | 調整整個九宮格視窗的模糊程度，用於檢視整體灰度分佈 |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | 開啟/關閉字組管理面板 |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | 開啟/關閉鎖定字面板 |
@@ -139,6 +140,9 @@
 | {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | 切換{{PRESETS_WINDOW_TITLE|}}顯示 |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | 切換主題模式 |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | 切換格線顯示 |
+| {{CONTEXT_MENU_GRID_STYLE|}} | 格線樣式子選單（{{GRID_STYLE_FIELD|}} / {{GRID_STYLE_ASTERISK|}} / {{GRID_STYLE_HASH|}}） |
+| {{CONTEXT_MENU_SHOW_COUNTER_FRAME|}} / {{CONTEXT_MENU_HIDE_COUNTER_FRAME|}} | 切換{{COUNTER_FRAME_LABEL|}}顯示 |
+| {{CONTEXT_MENU_GRID_SETTINGS|}} | 開啟格線設定面板 |
 
 ## 九宮格位置定義
 
