@@ -101,6 +101,7 @@
 | ボタン | 機能 | 説明 |
 |-------|------|------|
 | {{ICON_SUN}}/{{ICON_MOON}} | テーマ切替 | ライト/ダークモードを切り替え |
+| {{ICON_HASH_STRAIGHT}} | グリッド | グリッド線の表示を切り替え（Option + クリックでグリッド設定を開く） |
 | スライダー | ぼかし度 | 9マスウィンドウ全体のぼかし度を調整し、全体のグレー分布を確認 |
 | {{ICON_PRESETS}} | {{PRESETS_WINDOW_TITLE|}} | プリセットパネルを開く/閉じる |
 | {{ICON_LOCK}} | {{LOCKED_PANEL_TITLE|}} | ロック文字パネルを開く/閉じる |
@@ -139,6 +140,9 @@
 | {{CONTEXT_MENU_SHOW_PRESETS|}} / {{CONTEXT_MENU_HIDE_PRESETS|}} | {{PRESETS_WINDOW_TITLE|}}の表示を切り替え |
 | {{CONTEXT_MENU_LIGHT_MODE|}} / {{CONTEXT_MENU_DARK_MODE|}} | テーマモードを切り替え |
 | {{CONTEXT_MENU_SHOW_GRID_LINES|}} / {{CONTEXT_MENU_HIDE_GRID_LINES|}} | グリッド線の表示を切り替え |
+| {{CONTEXT_MENU_GRID_STYLE|}} | グリッド線スタイルのサブメニュー（{{GRID_STYLE_FIELD|}} / {{GRID_STYLE_ASTERISK|}} / {{GRID_STYLE_HASH|}}） |
+| {{CONTEXT_MENU_SHOW_COUNTER_FRAME|}} / {{CONTEXT_MENU_HIDE_COUNTER_FRAME|}} | {{COUNTER_FRAME_LABEL|}}の表示を切り替え |
+| {{CONTEXT_MENU_GRID_SETTINGS|}} | グリッド設定パネルを開く |
 
 ## 9マス位置の定義
 
