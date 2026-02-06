@@ -50,7 +50,7 @@ To display comparison versions in the grid, the following conditions must be met
 | Cmd + click center          | Toggle lock feature | Enable/disable the lock feature                           |
 | Cmd + Option + click        | Glyph picker        | Open glyph picker to set locked glyph                     |
 | Cmd + Option + click center | Clear all locks     | Clear locks at all positions                              |
-| Cmd + Shift + click center  | Save lock preset    | Save current lock configuration to {{PRESETS_WINDOW_TITLE | }} |
+| Cmd + Shift + click center  | Save lock preset    | Save current lock configuration to {{PRESETS_WINDOW_TITLE|}} |
 
 ### Drag Operations
 
@@ -70,9 +70,9 @@ Toolbar buttons are triggered by clicking. Some buttons show tooltips on hover:
 | ---------------------------- | --------------------------------- |
 | {{ICON_SUN}} / {{ICON_MOON}} | Toggle dark/light mode            |
 | {{ICON_HASH_STRAIGHT}}       | Toggle grid lines (Option: open grid settings) |
-| {{ICON_PRESETS}}             | Show/hide {{PRESETS_WINDOW_TITLE  | }} panel |
-| {{ICON_LOCK}}                | Show/hide {{LOCKED_PANEL_TITLE    | }} panel |
-| {{ICON_REFERENCE}}           | Show/hide {{REFERENCE_PANEL_TITLE | }} panel |
+| {{ICON_PRESETS}}             | Show/hide {{PRESETS_WINDOW_TITLE|}} panel |
+| {{ICON_LOCK}}                | Show/hide {{LOCKED_PANEL_TITLE|}} panel |
+| {{ICON_REFERENCE}}           | Show/hide {{REFERENCE_PANEL_TITLE|}} panel |
 
 ### Panel Snapping
 
@@ -148,7 +148,7 @@ When editing a non-master layer in Glyphs, surrounding grid cells automatically 
 | Storage Location     | Content                                      | Description                              |
 | -------------------- | -------------------------------------------- | ---------------------------------------- |
 | Font file            | Reference glyphs, locked glyphs              | Saved with file, not shared across files |
-| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE | }}, theme, etc.                          | Global settings, usable across files |
+| Application settings | Window configuration, {{PRESETS_WINDOW_TITLE|}}, theme, etc.                          | Global settings, usable across files |
 
 > [!TIP]
 > Use the import/export feature to share {{PRESETS_WINDOW_TITLE|}} between computers.
