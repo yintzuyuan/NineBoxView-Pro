@@ -6,7 +6,7 @@
 // Paddle 配置
 const PADDLE_CONFIG = {
   token: 'live_bcd7ccbae67e2898f24a47b9021', // 你的 Paddle 公開 client-side token
-  priceId: 'pri_01kbn8p26p62k3sv8tnbqg5kgc',  // NineBoxView Pro 的價格 ID
+  priceId: 'pri_01kfq45n0w5qnj2zztdnxxhc36',  // NineBoxView Pro 的價格 ID
   environment: 'production'  // 可選 'sandbox' 或 'production'
 };
 
