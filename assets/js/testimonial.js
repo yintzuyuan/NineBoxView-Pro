@@ -9,7 +9,7 @@
   // Configuration
   const CONFIG = {
     // n8n webhook URL
-    webhookUrl: 'https://erikyin-n8n.zeabur.app/webhook/testimonial-a3f8b1c4',
+    webhookUrl: 'https://n8n.erikyin.net/webhook/testimonial-a3f8b1c4',
     maxFileSize: 5 * 1024 * 1024, // 5MB
     allowedTypes: ['image/jpeg', 'image/png'],
     minQuoteLength: 20,
